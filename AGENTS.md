@@ -1,5 +1,7 @@
 # AGENTS.md - Guía para Agentes de Código
 
+> **NOTA:** Este archivo es la guía principal. Para crear presentaciones de sesiones de clase, usar el subagente `sesiones_clase/AGENT.md`.
+
 ## 1. Identificación del Proyecto
 
 - **Curso:** INI04 - Introducción al Desarrollo Web
@@ -15,6 +17,7 @@
 
 ```
 clases-pweb-umax/
+├── AGENTS.md                      (este archivo - guía general)
 ├── ejercicios_clase/
 │   ├── sesion-01/
 │   │   ├── index.html
@@ -30,7 +33,8 @@ clases-pweb-umax/
 │   ├── plan_de_clase.html     (plan general 18 sesiones)
 │   └── contenidos-unidades.html (contenido detallado)
 └── sesiones_clase/
-    ├── sesion-01.html          (presentación sesión 1)
+    ├── AGENT.md               (formatos y estilos para presentaciones)
+    ├── sesion-01.html         (presentación sesión 1)
     ├── sesion-02.html
     └── sesion-18.html
 ```
@@ -153,43 +157,13 @@ document.getElementById('btnEnviar').addEventListener('click', () => {
 
 ---
 
-## 7. Formato Presentaciones (sesiones_clase/)
+## 7. Presentaciones de Sesiones de Clase
 
-### 7.1 Estructura
-
-- **Header:** Logo UMAX a la izquierda, título de sesión centrado/derecha
-- **Contenido:** Diapositivas organizadas por secciones
-- **Footer:** Número de sesión, nombre del curso
-
-### 7.2 Diseño
-
-```html
-<header class="presentacion-header">
-    <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo">
-    <h1>Sesión X: Título de la Clase</h1>
-</header>
-
-<main class="diapositivas">
-    <section class="diapositiva" id="slide-01">
-        <h2>Concepto Principal</h2>
-        <p>Explicación...</p>
-        <pre><code>// Ejemplo de código</code></pre>
-    </section>
-</main>
-
-<footer class="presentacion-footer">
-    <span>INI04 - Introducción al Desarrollo Web</span>
-    <span>Sesión X de 18</span>
-</footer>
-```
-
-### 7.3 Reglas
-
-- Incluir logo UMAX en todas las presentaciones
-- Usar paleta de colores institucional
-- Código debe ser visible y copy-pasteable
-- Incluir ejemplos funcionales
-- Responsive para proyector (字号 mínimo 18px para código)
+> **NOTA IMPORTANTE:** El archivo `sesiones_clase/AGENT.md` es un subagente especializado en la elaboración de presentaciones para las sesiones de clase.
+>
+> Para crear cualquier presentación de sesión de clase, **DEBE** consultarse y utilizarse exclusivamente el archivo `sesiones_clase/AGENT.md`, el cual contiene todos los formatos, estilos y plantillas actualizadas para generar las presentaciones del curso.
+>
+> El AGENTS.md principal solo proporciona referencias generales del proyecto.
 
 ---
 

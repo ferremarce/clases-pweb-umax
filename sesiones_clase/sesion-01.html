@@ -26,46 +26,76 @@
             background: var(--color-fondo);
             color: var(--color-texto);
             line-height: 1.6;
+            overflow: hidden;
         }
 
         header.presentacion-header {
             background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
             color: white;
-            padding: 30px 50px;
+            padding: 15px 50px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 100;
         }
 
         header.presentacion-header .logo {
-            width: 80px;
+            width: 60px;
             height: auto;
         }
 
         header.presentacion-header h1 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
+        header.presentacion-header .titulos {
+            flex: 1;
+        }
+
         header.presentacion-header .subtitulo {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             opacity: 0.9;
-            margin-top: 5px;
+            margin-top: 3px;
+        }
+
+        header.presentacion-header .profesor {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            white-space: nowrap;
+            text-align: right;
         }
 
         .contenedor {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 30px;
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 80px);
+            margin-top: 80px;
+            overflow: hidden;
         }
 
         .diapositiva {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: white;
-            border-radius: var(--borde-radio);
-            box-shadow: var(--sombra);
-            padding: 50px;
-            margin-bottom: 40px;
-            min-height: 500px;
+            padding: 40px 60px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .diapositiva.activa {
+            opacity: 1;
+            z-index: 1;
         }
 
         .diapositiva h2 {
@@ -128,33 +158,18 @@
             font-size: 18px;
         }
 
-        .etiqueta {
-            color: #569cd6;
-        }
-
-        .atributo {
-            color: #9cdcfe;
-        }
-
-        .valor {
-            color: #ce9178;
-        }
-
-        .comentario {
-            color: #6a9955;
-        }
-
-        .texto {
-            color: #dcdcaa;
-        }
+        .etiqueta { color: #569cd6; }
+        .atributo { color: #9cdcfe; }
+        .valor { color: #ce9178; }
+        .comentario { color: #6a9955; }
+        .texto { color: #dcdcaa; }
 
         .slide-portada {
-            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 550px;
+            text-align: center;
         }
 
         .slide-portada .logo-grande {
@@ -273,6 +288,8 @@
             font-weight: 600;
             margin-top: 20px;
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-navegacion:hover {
@@ -287,14 +304,74 @@
             color: var(--color-primario);
         }
 
-        footer.presentacion-footer {
+        .controles {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 200;
+            align-items: center;
+        }
+
+        .controles button {
             background: var(--color-primario);
             color: white;
-            padding: 20px 50px;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .controles button:hover {
+            background: var(--color-secundario);
+            transform: scale(1.1);
+        }
+
+        .controles button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .indicadores {
+            display: flex;
+            gap: 10px;
+        }
+
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .indicador:hover {
+            transform: scale(1.2);
+        }
+
+        .indicador.activo {
+            background: var(--color-primario);
+            transform: scale(1.2);
+        }
+
+        .numero-slide {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: var(--color-texto-claro);
+            z-index: 200;
         }
 
         .info-sesion {
@@ -338,18 +415,39 @@
 
         @media (max-width: 768px) {
             header.presentacion-header {
-                flex-direction: column;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 text-align: center;
-                padding: 20px;
+                padding: 10px 20px;
+                height: auto;
+                min-height: 80px;
+                gap: 10px;
             }
             header.presentacion-header .logo {
-                width: 60px;
+                width: 40px;
             }
             header.presentacion-header h1 {
-                font-size: 1.5rem;
+                font-size: 1rem;
+            }
+            header.presentacion-header .titulos {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            header.presentacion-header .subtitulo {
+                font-size: 0.8rem;
+            }
+            header.presentacion-header .profesor {
+                font-size: 0.8rem;
+                width: 100%;
+                text-align: center;
+            }
+            .contenedor {
+                margin-top: 110px;
+                height: calc(100vh - 110px);
             }
             .diapositiva {
-                padding: 30px 20px;
+                padding: 20px;
             }
             .comparacion {
                 grid-template-columns: 1fr;
@@ -358,28 +456,35 @@
                 font-size: 14px;
                 padding: 15px;
             }
+            .controles {
+                bottom: 15px;
+            }
+            .controles button {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            .numero-slide {
+                bottom: 70px;
+            }
         }
     </style>
 </head>
 <body>
     <header class="presentacion-header">
         <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo">
-        <div>
+        <div class="titulos">
             <h1>Sesión 1: Fundamentos de la Web y Entorno de Trabajo</h1>
             <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad I</div>
         </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
     </header>
 
-    <main class="contenedor">
-        <section class="diapositiva slide-portada" id="slide-01">
+    <main class="contenedor" id="carrusel">
+        <section class="diapositiva slide-portada activa" id="slide-01">
             <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo-grande">
             <h2>Fundamentos de la Web y Entorno de Trabajo</h2>
             <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad I - Introducción al Desarrollo Web</p>
-            <div class="meta">
-                <span>18 Sesiones</span>
-                <span>4 Horas por Sesión</span>
-                <span>72 Horas Totales</span>
-            </div>
         </section>
 
         <section class="diapositiva" id="slide-02">
@@ -411,6 +516,13 @@
                 <li><strong>Protocolos estándar:</strong> TCP/IP para comunicación</li>
                 <li><strong>Servicios:</strong> Correo electrónico, transferencia de archivos, web, etc.</li>
             </ul>
+
+            <figure style="text-align: center; margin: 30px 0;">
+                <img src="../img/servicios-internet.svg" alt="Servicios de Internet: Email, FTP y Web" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <figcaption style="font-size: 0.9rem; color: var(--color-texto-claro); margin-top: 10px;">
+                    Principales servicios que funcionan sobre Internet
+                </figcaption>
+            </figure>
         </section>
 
         <section class="diapositiva" id="slide-04">
@@ -482,22 +594,84 @@
         </section>
 
         <section class="diapositiva" id="slide-07">
-            <h2>Herramientas del Desarrollador Web</h2>
-            <p>Para crear páginas web necesitas tres herramientas fundamentales:</p>
+            <h2>Entorno de Desarrollo (IDE)</h2>
+            <p>Para crear páginas web necesitamos un <strong>Entorno de Desarrollo Integrado (IDE)</strong>. Es el programa donde escribiremos, probaremos y depuraremos nuestro código.</p>
 
             <div class="tarjeta">
-                <h3>1. Navegador Web</h3>
-                <p>Chrome, Firefox, Edge o Safari. Todos incluyen <strong>herramientas de desarrollo</strong> (F12) para inspeccionar y depurar código.</p>
+                <h3>¿Qué es un IDE?</h3>
+                <p>Un <strong>IDE (Integrated Development Environment)</strong> es un software que combina varias herramientas en una sola aplicación:</p>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Editor de código:</strong> Con resaltado de sintaxis y numeración de líneas</li>
+                    <li><strong>Depurador (Debugger):</strong> Para encontrar y corregir errores</li>
+                    <li><strong>Compilador/Intérprete:</strong> Para ejecutar el código</li>
+                    <li><strong>Terminal:</strong> Para ejecutar comandos del sistema</li>
+                    <li><strong>Integración con Git:</strong> Para control de versiones</li>
+                </ul>
             </div>
 
-            <div class="tarjeta">
-                <h3>2. Editor de Código</h3>
-                <p><strong>Visual Studio Code (VS Code)</strong> es el más popular. Es gratuito, ligero y con múltiples extensiones.</p>
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>📝 Editor de Texto</h4>
+                    <p>Solo escribe y guarda texto. Ejemplos: <em>Notepad, TextEdit</em></p>
+                    <p style="margin-top: 10px; color: #666;">➜ Ligero pero limitado</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>💻 IDE</h4>
+                    <p>Editor + herramientas + automatización. Ejemplos: <em>VS Code, WebStorm</em></p>
+                    <p style="margin-top: 10px; color: #27ae60;">➜ Potente y completo</p>
+                </div>
             </div>
 
+            <h3>IDEs y Editores más Populares para Desarrollo Web</h3>
+
             <div class="tarjeta">
-                <h3>3. Navegador de Archivos</h3>
-                <p>Para organizar tus proyectos en carpetas y archivos.</p>
+                <h3>🥇 Visual Studio Code (VS Code)</h3>
+                <p><strong>Gratis y multiplataforma</strong> (Windows, Mac, Linux). Creado por Microsoft. El más popular para desarrollo web.</p>
+                <ul style="margin-top: 10px;">
+                    <li>IntelliSense (autocompletado inteligente)</li>
+                    <li>Depuración integrada</li>
+                    <li>Terminal integrada</li>
+                    <li>Extensiones para cualquier tecnología</li>
+                    <li>Control de versiones con Git</li>
+                </ul>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>🔥 WebStorm</h4>
+                    <p>IDE especializado en JavaScript. <strong>De pago</strong> pero muy potente.</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Excelente para proyectos grandes en React, Vue, Angular</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>📦 Sublime Text</h4>
+                    <p>Editor rápido y ligero. <strong>Freemium</strong> (gratis con limitaciones).</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Ideal si tu computadora es lenta</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>⚡ Atom</h4>
+                    <p>Editor de GitHub. <strong>Gratis y código abierto.</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Muy personalizable pero ya no se desarrolla activamente</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>📐 Brackets</h4>
+                    <p>Editor de Adobe para desarrollo web. <strong>Gratis.</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">Enfoque en edición visual para HTML/CSS</p>
+                </div>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>🎯 Nuestra elección: Visual Studio Code</h3>
+                <p>Usaremos <strong>VS Code</strong> durante todo el curso porque:</p>
+                <ul style="margin-top: 10px;">
+                    <li>✅ Es completamente gratuito</li>
+                    <li>✅ Funciona en Windows, Mac y Linux</li>
+                    <li>✅ Tiene gran comunidad y documentación</li>
+                    <li>✅ Miles de extensiones disponibles</li>
+                    <li>✅ Ideal para principiantes y profesionales</li>
+                </ul>
             </div>
         </section>
 
@@ -743,13 +917,75 @@
                 </ul>
             </div>
 
-            <a href="#" class="btn-navegacion">Continuar</a>
+            <button class="btn-navegacion" onclick="mostrarSlide(0)">Volver al Inicio</button>
         </section>
     </main>
 
-    <footer class="presentacion-footer">
-        <span>INI04 - Introducción al Desarrollo Web</span>
-        <span>Sesión 1 de 18</span>
-    </footer>
+    <div class="numero-slide" id="numero-slide">1 / 17</div>
+
+    <div class="controles">
+        <button id="btn-anterior" aria-label="Anterior">❮</button>
+        <div class="indicadores" id="indicadores"></div>
+        <button id="btn-siguiente" aria-label="Siguiente">❯</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.diapositiva');
+            const indicadoresContainer = document.getElementById('indicadores');
+            const btnAnterior = document.getElementById('btn-anterior');
+            const btnSiguiente = document.getElementById('btn-siguiente');
+            const numeroSlide = document.getElementById('numero-slide');
+            
+            let slideActual = 0;
+            const totalSlides = slides.length;
+
+            slides.forEach((_, index) => {
+                const indicador = document.createElement('div');
+                indicador.classList.add('indicador');
+                if (index === 0) indicador.classList.add('activo');
+                indicador.addEventListener('click', () => mostrarSlide(index));
+                indicadoresContainer.appendChild(indicador);
+            });
+
+            const indicadores = document.querySelectorAll('.indicador');
+
+            function mostrarSlide(index) {
+                slides.forEach(slide => slide.classList.remove('activa'));
+                indicadores.forEach(ind => ind.classList.remove('activo'));
+                
+                slides[index].classList.add('activa');
+                indicadores[index].classList.add('activo');
+                slideActual = index;
+                
+                numeroSlide.textContent = `${index + 1} / ${totalSlides}`;
+                
+                btnAnterior.disabled = index === 0;
+                btnSiguiente.disabled = index === totalSlides - 1;
+            }
+
+            function siguienteSlide() {
+                if (slideActual < totalSlides - 1) {
+                    mostrarSlide(slideActual + 1);
+                }
+            }
+
+            function anteriorSlide() {
+                if (slideActual > 0) {
+                    mostrarSlide(slideActual - 1);
+                }
+            }
+
+            btnSiguiente.addEventListener('click', siguienteSlide);
+            btnAnterior.addEventListener('click', anteriorSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') siguienteSlide();
+                if (e.key === 'ArrowLeft') anteriorSlide();
+            });
+
+            mostrarSlide(0);
+        });
+    </script>
 </body>
 </html>
