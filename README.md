@@ -97,12 +97,12 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 | Tecnología | Descripción |
 |-----------|-------------|
-| **HTML5** ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) | Lenguaje de marcado para estructurar contenido web |
-| **CSS3** ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) | Hojas de estilo en cascada para el diseño visual |
-| **JavaScript** ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Lenguaje de programación para interactividad |
-| **Bootstrap 5** ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) | Framework CSS para desarrollo responsivo |
-| **Git** ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) | Sistema de control de versiones |
-| **GitHub** ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) | Plataforma de publicación y colaboración |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) **HTML5** | Lenguaje de marcado para estructurar contenido web |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) **CSS3** | Hojas de estilo en cascada para el diseño visual |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) **JavaScript** | Lenguaje de programación para interactividad |
+| ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white) **Bootstrap 5** | Framework CSS para desarrollo responsivo |
+| ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) **Git** | Sistema de control de versiones |
+| ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white) **GitHub** | Plataforma de publicación y colaboración |
 
 ---
 
