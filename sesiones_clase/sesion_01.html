@@ -71,6 +71,25 @@
             text-align: right;
         }
 
+        header.presentacion-header .enlaces-plan {
+            display: flex;
+            gap: 15px;
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        header.presentacion-header .enlaces-plan a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+
+        header.presentacion-header .enlaces-plan a:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+
         header.presentacion-header.mini {
             height: 50px;
             padding: 8px 30px;
@@ -454,7 +473,12 @@
             <h1>Sesión 1: Fundamentos de la Web y Entorno de Trabajo</h1>
             <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad I</div>
         </div>
-        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
     </header>
 
     <main class="contenedor" id="carrusel">

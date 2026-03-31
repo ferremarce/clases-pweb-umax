@@ -37,7 +37,12 @@
             <h1>Sesión X: Título de la Sesión</h1>
             <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad Y</div>
         </div>
-        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
     </header>
 
     <main class="contenedor">
@@ -56,7 +61,7 @@
 
         <section class="diapositiva" id="slide-XX">
             <!-- Slide de cierre/proxima sesión -->
-            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;">Volver al Inicio</a>
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
     </main>
 
@@ -140,6 +145,25 @@ header.presentacion-header .profesor {
     text-align: right;
 }
 
+header.presentacion-header .enlaces-plan {
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+header.presentacion-header .enlaces-plan a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+header.presentacion-header .enlaces-plan a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
 /* Header mini (a partir de slide 2) */
 header.presentacion-header.mini {
     height: 50px;
@@ -158,6 +182,11 @@ header.presentacion-header.mini h1 {
 header.presentacion-header.mini .subtitulo,
 header.presentacion-header.mini .profesor {
     font-size: 0.8rem;
+}
+
+header.presentacion-header.mini .enlaces-plan {
+    font-size: 0.65rem;
+    gap: 8px;
 }
 
 /* Contenedor con scroll vertical */
