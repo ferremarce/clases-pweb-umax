@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Explorando Etiquetas de Texto - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .enunciado {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .enunciado h2 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+        }
+        .requisitos {
+            background: #fff3f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--color-primario);
+        }
+        .requisitos ul {
+            margin-left: 25px;
+        }
+        .requisitos li {
+            margin-bottom: 10px;
+        }
+        .pistas {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .resultado-esperado {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--color-primario);
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background: var(--color-primario);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="enunciado">
+        <header style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="../../../img/logo_umax.png" alt="Logo UMAX" style="width: 50px;">
+            <div>
+                <h1 style="margin: 0; font-size: 1.5rem;">Ejercicio 2: Explorando Etiquetas de Texto</h1>
+                <p style="color: #666; margin: 5px 0 0;">Sesión 1 - Fundamentos de la Web</p>
+            </div>
+        </header>
+
+        <section class="requisitos">
+            <h2>📝 Enunciado</h2>
+            <p>Crear una página que demuestre el uso de diferentes etiquetas HTML para formatear texto. Esta página servirá como referencia rápida de etiquetas.</p>
+        </section>
+
+        <section class="requisitos">
+            <h2>✅ Requisitos</h2>
+            <p>Crear una página que muestre ejemplos de TODAS estas etiquetas:</p>
+            <ul>
+                <li><strong>Encabezados:</strong> <code>&lt;h1&gt;</code> hasta <code>&lt;h6&gt;</code></li>
+                <li><strong>Párrafos:</strong> <code>&lt;p&gt;</code></li>
+                <li><strong>Salto de línea:</strong> <code>&lt;br&gt;</code></li>
+                <li><strong>Línea horizontal:</strong> <code>&lt;hr&gt;</code></li>
+                <li><strong>Texto importante:</strong> <code>&lt;strong&gt;</code></li>
+                <li><strong>Texto enfatizado:</strong> <code>&lt;em&gt;</code></li>
+            </ul>
+            
+            <p style="margin-top: 15px;">Además, organiza el contenido en secciones claras con títulos descriptivos.</p>
+        </section>
+
+        <section class="pistas">
+            <h2>💡 Pistas</h2>
+            <details>
+                <summary>Ver pistas</summary>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Pista 1:</strong> Cada tipo de etiqueta debe estar claramente identificada con un <code>&lt;h2&gt;</code> o <code>&lt;h3&gt;</code></li>
+                    <li><strong>Pista 2:</strong> Después de cada ejemplo, incluye una breve explicación de para qué sirve</li>
+                    <li><strong>Pista 3:</strong> Usa <code>&lt;hr&gt;</code> para separar las diferentes secciones</li>
+                    <li><strong>Pista 4:</strong> Experimenta: cambia el texto y observa cómo cambia el resultado</li>
+                </ul>
+            </details>
+        </section>
+
+        <section class="resultado-esperado">
+            <h2>🎯 Estructura Sugerida</h2>
+            <table>
+                <tr>
+                    <th>Sección</th>
+                    <th>Contenido</th>
+                </tr>
+                <tr>
+                    <td>Encabezados</td>
+                    <td>Mostrar h1 hasta h6</td>
+                </tr>
+                <tr>
+                    <td>Párrafos</td>
+                    <td>2-3 párrafos de ejemplo</td>
+                </tr>
+                <tr>
+                    <td>Formato de texto</td>
+                    <td>strong, em, br, hr</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="pistas" style="background: #e3f2fd;">
+            <h2>🚀 Consejo</h2>
+            <p>Esta página te servirá como <strong>cheat sheet</strong> (hoja de referencia) durante todo el curso. ¡Hazla completa y guárdala!</p>
+        </section>
+    </div>
+</body>
+</html>

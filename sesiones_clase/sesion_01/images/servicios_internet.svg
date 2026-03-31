@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="iconBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B0000"/>
+      <stop offset="100%" style="stop-color:#DC143C"/>
+    </linearGradient>
+    <linearGradient id="iconBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50"/>
+      <stop offset="100%" style="stop-color:#34495e"/>
+    </linearGradient>
+    <linearGradient id="iconBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2980b9"/>
+      <stop offset="100%" style="stop-color:#3498db"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="800" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Título -->
+  <text x="400" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Servicios de Internet</text>
+  
+  <!-- Servicio 1: Email -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="180" height="200" rx="15" fill="white" stroke="#ddd" stroke-width="2"/>
+    <circle cx="90" cy="60" r="45" fill="url(#iconBg1)"/>
+    <!-- Icono Email -->
+    <path d="M60 55 L90 75 L120 55" stroke="white" stroke-width="3" fill="none"/>
+    <rect x="65" y="55" width="50" height="35" rx="3" stroke="white" stroke-width="2" fill="none"/>
+    <text x="90" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="#8B0000" text-anchor="middle">Email</text>
+    <text x="90" y="155" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">SMTP / POP3 / IMAP</text>
+    <text x="90" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#999" text-anchor="middle">Correo electrónico</text>
+  </g>
+  
+  <!-- Servicio 2: FTP -->
+  <g transform="translate(310, 100)">
+    <rect x="0" y="0" width="180" height="200" rx="15" fill="white" stroke="#ddd" stroke-width="2"/>
+    <circle cx="90" cy="60" r="45" fill="url(#iconBg2)"/>
+    <!-- Icono FTP/Servidor -->
+    <rect x="60" y="40" width="60" height="40" rx="3" stroke="white" stroke-width="2" fill="none"/>
+    <line x1="70" y1="50" x2="130" y2="50" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="58" x2="130" y2="58" stroke="white" stroke-width="2"/>
+    <line x1="70" y1="66" x2="110" y2="66" stroke="white" stroke-width="2"/>
+    <circle cx="90" cy="105" r="8" fill="#27ae60"/>
+    <circle cx="90" cy="125" r="8" fill="#27ae60"/>
+    <circle cx="90" cy="145" r="8" fill="#e74c3c"/>
+    <text x="90" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50" text-anchor="middle">FTP</text>
+    <text x="90" y="155" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">FTP / SFTP / FTPS</text>
+    <text x="90" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#999" text-anchor="middle">Transferencia de archivos</text>
+  </g>
+  
+  <!-- Servicio 3: Web -->
+  <g transform="translate(520, 100)">
+    <rect x="0" y="0" width="180" height="200" rx="15" fill="white" stroke="#ddd" stroke-width="2"/>
+    <circle cx="90" cy="60" r="45" fill="url(#iconBg3)"/>
+    <!-- Icono Web/Globo -->
+    <ellipse cx="90" cy="55" rx="35" ry="25" stroke="white" stroke-width="2" fill="none"/>
+    <ellipse cx="90" cy="55" rx="25" ry="15" stroke="white" stroke-width="2" fill="none" transform="rotate(-30 90 55)"/>
+    <ellipse cx="90" cy="55" rx="25" ry="15" stroke="white" stroke-width="2" fill="none" transform="rotate(30 90 55)"/>
+    <circle cx="90" cy="55" r="4" fill="white"/>
+    <text x="90" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" fill="#2980b9" text-anchor="middle">Web</text>
+    <text x="90" y="155" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">HTTP / HTTPS</text>
+    <text x="90" y="175" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#999" text-anchor="middle">World Wide Web</text>
+  </g>
+  
+  <!-- Leyenda inferior -->
+  <text x="400" y="350" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">Todos estos servicios funcionan sobre la infraestructura de Internet</text>
+</svg>

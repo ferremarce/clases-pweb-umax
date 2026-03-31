@@ -27,7 +27,25 @@ clases-pweb-umax/
 │   └── plan_de_clase_detallado.html
 └── sesiones_clase/
     ├── AGENT.md
-    └── sesion_01.html ... sesion_18.html
+    └── sesion_01/
+        ├── index.html              (presentación)
+        ├── index_ejercicios.html  (enunciados)
+        ├── README.md
+        ├── ejercicios/
+        │   ├── ejercicio_01.html
+        │   ├── ejercicio_02.html
+        │   └── ejercicio_03.html
+        ├── soluciones/
+        │   ├── solucion_01.html
+        │   ├── solucion_02.html
+        │   └── solucion_03.html
+        ├── css/
+        │   ├── estilos_slides.css
+        │   └── estilos_practica.css
+        ├── js/
+        │   └── script.js
+        └── images/
+            └── ...
 ```
 
 ---
@@ -88,23 +106,7 @@ const validarCampo = (id) => {
 
 ## 6. Ejercicios
 
-```
-sesion-XX/
-├── index.html        (enunciado)
-├── ejercicios/
-│   ├── ejercicio-01.html ...
-├── soluciones/
-│   ├── solucion-01.html ...
-├── assets/
-│   ├── estilos.css / script.js
-└── README.md
-```
-
-### Plantilla
-```html
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ejercicio - INI04</title><link rel="stylesheet" href="../assets/estilos.css"></head><body><header><img src="../../img/logo_umax.png" alt="Logo"><h1>Ejercicio</h1></header><main><section class="enunciado"><h2>Enunciado</h2><p>...</p></section><section class="resultado"><h2>Resultado Esperado</h2><p>...</p></section><section class="pistas"><details><summary>Pistas</summary><ul><li>...</li></ul></details></section></main><script src="../assets/script.js"></script></body></html>
-```
-- Enunciado claro, código base proporcionado, pistas con `<details>`
+> Ver `sesiones_clase/AGENT.md` para plantillas y estructura de ejercicios.
 
 ---
 

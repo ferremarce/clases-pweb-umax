@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Página de Presentación - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .enunciado {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .enunciado h2 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+        }
+        .requisitos {
+            background: #fff3f3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--color-primario);
+        }
+        .requisitos ul {
+            margin-left: 25px;
+        }
+        .requisitos li {
+            margin-bottom: 10px;
+        }
+        .pistas {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .resultado-esperado {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--color-primario);
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .badge-desafio {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="enunciado">
+        <header style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="../../../img/logo_umax.png" alt="Logo UMAX" style="width: 50px;">
+            <div>
+                <h1 style="margin: 0; font-size: 1.5rem;">Ejercicio 3: Página de Presentación Completa</h1>
+                <p style="color: #666; margin: 5px 0 0;">Sesión 1 - Fundamentos de la Web</p>
+            </div>
+        </header>
+
+        <span class="badge-desafio">Desafío Extra - Intermedio</span>
+
+        <section class="requisitos">
+            <h2>📝 Enunciado</h2>
+            <p>Este es un ejercicio integrador que combina todo lo aprendido en la sesión. Crearás una página de presentación completa con múltiples secciones.</p>
+        </section>
+
+        <section class="requisitos">
+            <h2>✅ Requisitos</h2>
+            <p>Tu página debe tener las siguientes secciones:</p>
+            <ul>
+                <li><strong>Sección 1 - Presentación:</strong>
+                    <ul>
+                        <li>Título principal con tu nombre</li>
+                        <li>Breve descripción sobre ti</li>
+                        <li>Usa <code>&lt;strong&gt;</code> para destacar palabras clave</li>
+                    </ul>
+                </li>
+                <li><strong>Sección 2 - Sobre Mí:</strong>
+                    <ul>
+                        <li>Subtítulo con <code>&lt;h2&gt;</code></li>
+                        <li>2-3 párrafos con información personal/ficticia</li>
+                        <li>Usa <code>&lt;em&gt;</code> para énfasis</li>
+                    </ul>
+                </li>
+                <li><strong>Sección 3 - Mis Hobbies:</strong>
+                    <ul>
+                        <li>Subtítulo con <code>&lt;h2&gt;</code></li>
+                        <li>Lista de al menos 5 hobbies usando párrafos</li>
+                        <li>Cada hobby en su propio <code>&lt;p&gt;</code></li>
+                    </ul>
+                </li>
+                <li><strong>Sección 4 - Datos Curiosos:</strong>
+                    <ul>
+                        <li>Subtítulo con <code>&lt;h2&gt;</code></li>
+                        <li>Incluye <code>&lt;hr&gt;</code> para separar</li>
+                        <li>Mínimo 3 datos usando formato de texto</li>
+                    </ul>
+                </li>
+                <li><strong>Requisitos técnicos:</strong>
+                    <ul>
+                        <li>Estructura HTML5 completa</li>
+                        <li>Uso correcto de TODOS los encabezados (h1 a h6)</li>
+                        <li>Mínimo 3 líneas horizontales <code>&lt;hr&gt;</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section class="pistas">
+            <h2>💡 Pistas</h2>
+            <details>
+                <summary>Ver pistas</summary>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Pista 1:</strong> Planifica primero: ¿cuántas secciones necesitas? ¿qué contenido irá en cada una?</li>
+                    <li><strong>Pista 2:</strong> Usa <code>&lt;hr&gt;</code> para separar visualmente las secciones principales</li>
+                    <li><strong>Pista 3:</strong> El <code>&lt;h1&gt;</code> es solo para el título de la página, usa <code>&lt;h2&gt;</code> para los títulos de sección</li>
+                    <li><strong>Pista 4:</strong> Incluye al menos un <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code> y <code>&lt;h6&gt;</code> en algún lugar de tu página (para demostrar que los conoces)</li>
+                    <li><strong>Pista 5:</strong> ¡Usa tu imaginación! Los mejores ejercicios son los que personalizas</li>
+                </ul>
+            </details>
+        </section>
+
+        <section class="resultado-esperado">
+            <h2>🎯 Criterios de Evaluación</h2>
+            <ul style="margin-left: 25px;">
+                <li>✅ Estructura HTML correcta y completa</li>
+                <li>✅ Uso de todos los tipos de encabezados</li>
+                <li>✅ Párrafos bien escritos</li>
+                <li>✅ Formato de texto apropiado</li>
+                <li>✅ Separadores horizontales entre secciones</li>
+                <li>✅ Código limpio y bien indentado</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 1 - Mi Primera Página Personal</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #e8f5e9;
+        }
+        .solucion {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .solucion header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        .solucion h1 {
+            color: #2e7d32;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .codigo {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 20px 0;
+            white-space: pre;
+        }
+        .comentario { color: #6a9955; }
+        .etiqueta { color: #569cd6; }
+        .atributo { color: #9cdcfe; }
+        .valor { color: #ce9178; }
+        .texto { color: #dcdcaa; }
+        .nota {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ff9800;
+        }
+        .nota strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="solucion">
+        <header>
+            <img src="../../../img/logo_umax.png" alt="Logo UMAX" style="width: 50px;">
+            <div>
+                <h1>Solución: Ejercicio 1 - Mi Primera Página Personal</h1>
+                <p style="color: #666;">Sesión 1 - Fundamentos de la Web</p>
+            </div>
+        </header>
+
+        <h2 style="color: #2e7d32; margin-bottom: 15px;">Código de la Solución</h2>
+        
+        <div class="codigo"><span class="comentario">&lt;!-- Estructura básica HTML5 --&gt;</span>
+<span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Mi Página Personal<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="comentario">&lt;!-- Título principal con mi nombre --&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>Juan Pérez<span class="etiqueta">&lt;/h1&gt;</span>
+
+    <span class="comentario">&lt;!-- Primer párrafo: presentación --&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        ¡Hola! Soy <span class="etiqueta">&lt;strong&gt;</span>estudiante de Ingeniería Informática<span class="etiqueta">&lt;/strong&gt;</span> 
+        y estoy aprendiendo a crear páginas web. Este es mi primer sitio web 
+        y estoy muy emocionado por aprender más sobre 
+        <span class="etiqueta">&lt;em&gt;</span>desarrollo web<span class="etiqueta">&lt;/em&gt;</span>.
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="comentario">&lt;!-- Línea horizontal para separar secciones --&gt;</span>
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- Subtítulo para la sección Mis Gustos --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Mis Gustos<span class="etiqueta">&lt;/h2&gt;</span>
+
+    <span class="comentario">&lt;!-- Segundo párrafo: hobbies --&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        Me encanta la <span class="etiqueta">&lt;strong&gt;</span>música<span class="etiqueta">&lt;/strong&gt;</span>, 
+        especialmente el rock clásico. También disfruto mucho de la 
+        <span class="etiqueta">&lt;em&gt;</span>programación<span class="etiqueta">&lt;/em&gt;</span> 
+        y resolver problemas lógicos. En mi tiempo libre me gusta leer 
+        libros de ciencia ficción y jugar videojuegos.
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="comentario">&lt;!-- Tercer párrafo: metas --&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        Mis metas para este curso son: 
+        <span class="etiqueta">&lt;strong&gt;</span>dominar HTML y CSS<span class="etiqueta">&lt;/strong&gt;</span>, 
+        aprender JavaScript y crear proyectos web increíbles. 
+        Estoy listo para <span class="etiqueta">&lt;em&gt;</span>dedicar tiempo y esfuerzo<span class="etiqueta">&lt;/em&gt;</span> 
+        a este aprendizaje.
+    <span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+
+<span class="etiqueta">&lt;/html&gt;</span></div>
+
+        <div class="nota">
+            <strong>💡 Nota:</strong> Esta es UNA posible solución. Tu código puede ser diferente pero cumplir los mismos requisitos. Lo importante es que la estructura sea correcta y contenga todas las etiquetas solicitadas.
+        </div>
+
+        <h2 style="color: #2e7d32; margin: 30px 0 15px;">Resultado Visual</h2>
+        <div style="border: 2px solid #2e7d32; border-radius: 8px; padding: 20px; background: white; min-height: 300px;">
+            <h1 style="color: #1a1a1a; font-size: 2rem; margin-bottom: 15px;">Juan Pérez</h1>
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px;">
+                ¡Hola! Soy <strong>estudiante de Ingeniería Informática</strong> 
+                y estoy aprendiendo a crear páginas web. Este es mi primer sitio web 
+                y estoy muy emocionado por aprender más sobre 
+                <em>desarrollo web</em>.
+            </p>
+            <hr style="margin: 20px 0; border: none; border-top: 2px solid #ccc;">
+            <h2 style="color: #2e7d32; font-size: 1.5rem; margin-bottom: 15px;">Mis Gustos</h2>
+            <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 15px;">
+                Me encanta la <strong>música</strong>, 
+                especialmente el rock clásico. También disfruto mucho de la 
+                <em>programación</em> 
+                y resolver problemas lógicos. En mi tiempo libre me gusta leer 
+                libros de ciencia ficción y jugar videojuegos.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.6;">
+                Mis metas para este curso son: 
+                <strong>dominar HTML y CSS</strong>, 
+                aprender JavaScript y crear proyectos web increíbles. 
+                Estoy listo para <em>dedicar tiempo y esfuerzo</em> 
+                a este aprendizaje.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
