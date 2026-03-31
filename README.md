@@ -33,80 +33,30 @@ Al finalizar la asignatura, el estudiante será capaz de crear sitios web intera
 
 ---
 
-## 📚 Unidades Temáticas
+## 📚 Sesiones de Clase
 
-| Unidad | Nombre | Sesiones |
-|--------|--------|----------|
-| I | Introducción al Desarrollo Web | 1 |
-| II | HTML Básico | 2-4 |
-| III | Conceptos Básicos de CSS | 5-8 |
-| IV | Conceptos Básicos de JavaScript | 9-12 |
-| V | Primeros Pasos con Bootstrap | 13-14 |
-| VI | Publicación de un Sitio Web | 15-18 |
+El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6 unidades temáticas.
 
-### Unidad I: Introducción al Desarrollo Web (Sesión 1)
-
-- La Web: significado, funcionamiento, navegadores web
-- Desarrollo web: Definición, tipos, herramientas, lenguajes, formatos
-- Reglas generales para el desarrollo web:
-  - Legibilidad
-  - Posicionamiento
-  - Carpetas y rutas de archivos
-  - Editores de Código
-
-### Unidad II: HTML Básico (Sesiones 2-4)
-
-- Introducción al HTML
-- Versiones de HTML
-- Textos
-- Listas
-- Enlaces
-- Imágenes
-- Audio y Video
-- Tablas
-- Formularios
-
-### Unidad III: Conceptos Básicos de CSS (Sesiones 5-8)
-
-- Introducción a CSS
-- Color
-- Texto
-- Cajas (Modelo de caja)
-- Listas, tablas y formularios
-- Layouts (Flexbox, Grid)
-- Imágenes
-- Diseño responsivo (Media queries)
-
-### Unidad IV: Conceptos Básicos de JavaScript (Sesiones 9-12)
-
-- Introducción a JavaScript
-- Variables y asignaciones
-- Tipos de variables
-- Los operadores
-- Las condiciones
-- Iteraciones
-- Depuración de un programa
-- Las cookies
-- Interacción entre JavaScript, HTML y CSS
-- Manipulación del DOM
-- Lista de tareas (proyecto integrador)
-
-### Unidad V: Primeros Pasos con Bootstrap (Sesiones 13-14)
-
-- Introducción a Bootstrap
-- Grid de Bootstrap
-- Elementos de Bootstrap
-- Componentes
-- Formularios
-- Flexbox
-- Clases de utilidad
-
-### Unidad VI: Publicación de un Sitio Web (Sesiones 15-18)
-
-- Proyecto de creación de una página web completa
-- Publicación en servidor (FTP)
-- GitHub Pages
-- Control de versiones con Git
+| Sesión | Unidad | Título | Actividades Clave |
+|:------:|:------:|--------|------------------|
+| 1 | Unidad I | Fundamentos de la Web y Entorno de Trabajo | Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server. |
+| 2 | Unidad II | HTML I: Estructura, Texto y Listas | Etiquetas semánticas, títulos, párrafos, listas ordenadas y desordenadas, primera página personal. |
+| 3 | Unidad II | HTML II: Enlaces, Imágenes y Multimedia | Rutas relativas/absolutas, `<a>`, `<img>`, audio/video, barra de navegación. |
+| 4 | Unidad II | HTML III: Tablas y Formularios | Creación de tablas, formularios con campos básicos, atributos de validación required. |
+| 5 | Unidad III | CSS I: Fundamentos, Color y Texto | Selectores, colores, tipografías, modelo de caja básico, archivo CSS externo. |
+| 6 | Unidad III | CSS II: Modelo de Cajas y Layouts | Padding, margin, border, posicionamiento estático y relativo, float. |
+| 7 | Unidad III | CSS III: Flexbox y Grid | Introducción a Flexbox y CSS Grid para layouts modernos y responsivos. |
+| 8 | Unidad III | CSS IV: Diseño Responsivo | Media queries, diseño mobile-first, estilización de formularios y tablas. |
+| 9 | Unidad IV | JavaScript I: Variables y Operadores | Declaración de variables, tipos primitivos, operadores aritméticos y lógicos, consola. |
+| 10 | Unidad IV | JavaScript II: Condicionales e Iteraciones | if/else, switch, bucles for/while, ejercicios de lógica. |
+| 11 | Unidad IV | JavaScript III: Funciones y Eventos | Funciones, parámetros, eventos del DOM (click, submit, mouseover). |
+| 12 | Unidad IV | JavaScript IV: DOM y Cookies | Seleccionar elementos, modificar contenido/estilos, localStorage, lista de tareas. |
+| 13 | Unidad V | Bootstrap I: Fundamentos y Grid | CDN, sistema de rejilla, contenedores, filas y columnas responsivas. |
+| 14 | Unidad V | Bootstrap II: Componentes y Formularios | Navbar, cards, modales, carrusel, formularios estilizados. |
+| 15 | Unidad VI | Proyecto Final: Planificación | Formación de grupos, selección de proyecto, repositorio Git, estructura de carpetas. |
+| 16 | Unidad VI | Desarrollo I: HTML y CSS | Implementación de estructura semántica, estilos con CSS puro o Bootstrap. |
+| 17 | Unidad VI | Desarrollo II: JavaScript | Validación de formularios, interactividad, localStorage, funcionalidades dinámicas. |
+| 18 | Unidad VI | Publicación y Evaluación Final | GitHub Pages, presentaciones grupales, feedback y cierre del proyecto. |
 
 ---
 
@@ -143,42 +93,6 @@ Al finalizar la asignatura, el estudiante será capaz de crear sitios web intera
 
 ---
 
-## 📁 Estructura del Repositorio
-
-```
-clases-pweb-umax/
-├── AGENTS.md                    # Convenciones para agentes de código
-├── README.md                    # Este archivo
-├── plan_clase/
-│   ├── plan_de_clase.html      # Plan general de 18 sesiones
-│   ├── contenidos-unidades.html # Contenidos detallados por unidad
-│   └── programa_de_estudio.txt  # Programa oficial de la asignatura
-├── sesiones_clase/
-│   ├── sesion-01.html          # Presentación Sesión 1
-│   ├── sesion-02.html          # Presentación Sesión 2
-│   └── sesion-XX.html          # ... (hasta sesión 18)
-├── ejercicios_clase/
-│   ├── sesion-01/
-│   │   ├── index.html          # Índice de ejercicios
-│   │   ├── README.md          # Instrucciones
-│   │   ├── assets/
-│   │   │   └── estilos.css     # Estilos base
-│   │   ├── ejercicios/
-│   │   │   ├── ejercicio-01.html
-│   │   │   ├── ejercicio-02.html
-│   │   │   └── ejercicio-03.html
-│   │   └── soluciones/
-│   │       ├── solucion-01.html
-│   │       ├── solucion-02.html
-│   │       └── solucion-03.html
-│   ├── sesion-02/
-│   └── sesion-XX/              # ... (hasta sesión 18)
-└── img/
-    └── logo-umax.png           # Logo institucional
-```
-
----
-
 ## 🚀 Tecnologías
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -196,18 +110,6 @@ clases-pweb-umax/
 | Bootstrap 5 | Framework CSS para desarrollo responsivo |
 | Git | Sistema de control de versiones |
 | GitHub Pages | Plataforma de publicación de sitios estáticos |
-
----
-
-## 🎨 Paleta de Colores Institucional
-
-| Color | Hexadecimal | Uso |
-|-------|-------------|-----|
-| Rojo Oscuro (Primario) | `#8B0000` | Encabezados, botones principales |
-| Rojo Carmesí (Secundario) | `#DC143C` | Acentos, enlaces, elementos destacados |
-| Blanco (Fondo) | `#FFFFFF` | Fondo principal de páginas |
-| Gris Oscuro (Texto) | `#1A1A1A` | Texto principal |
-| Gris Claro (Texto secundario) | `#555555` | Texto secundario, metadatos |
 
 ---
 
