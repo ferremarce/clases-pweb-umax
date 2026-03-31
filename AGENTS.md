@@ -37,8 +37,8 @@ clases-pweb-umax/
 | Elemento | Formato | Ejemplo |
 |----------|---------|---------|
 | Carpetas sesión | `sesion-XX` | `sesion_01/` |
-| Archivos | `kebab-case` | `estilos-generales.css` |
-| Clases CSS | `kebab-case` | `.tarjeta-principal` |
+| Archivos | `snake_case` | `estilos_generales.css` |
+| Clases CSS | `snake_case` | `.tarjeta_principal` |
 | Variables/Funciones JS | `camelCase` | `nombreUsuario` |
 | Constantes JS | `UPPER_SNAKE_CASE` | `MAX_INTENTOS` |
 
