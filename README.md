@@ -39,7 +39,7 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 | Sesión | Unidad | Título | Actividades Clave |
 |:------:|:------:|--------|------------------|
-| 1 | Unidad I | Fundamentos de la Web y Entorno de Trabajo | Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server. |
+| 1 | Unidad I | [Fundamentos de la Web y Entorno de Trabajo](sesiones_clase/sesion-01.html) | Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server. |
 | 2 | Unidad II | HTML I: Estructura, Texto y Listas | Etiquetas semánticas, títulos, párrafos, listas ordenadas y desordenadas, primera página personal. |
 | 3 | Unidad II | HTML II: Enlaces, Imágenes y Multimedia | Rutas relativas/absolutas, `<a>`, `<img>`, audio/video, barra de navegación. |
 | 4 | Unidad II | HTML III: Tablas y Formularios | Creación de tablas, formularios con campos básicos, atributos de validación required. |
@@ -106,6 +106,43 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 ---
 
+## 📝 Metodología de Evaluación
+
+| Tipo | Descripción |
+|------|-------------|
+| **Participación en clase** | Asistencia, participación activa, ejercicios prácticos |
+| **Proyectos** | Desarrollo de páginas web siguiendo las mejores prácticas |
+| **Exámenes parciales** | Evaluación teórica de los conceptos adquiridos |
+| **Proyecto final** | Sitio web completo integrando HTML, CSS, JavaScript y Bootstrap |
+| **Presentación** | Demostración del proyecto final publicado en GitHub Pages |
+
+---
+
+## 🔧 Herramientas Recomendadas
+
+### Editores de Código
+
+- **Visual Studio Code** 
+  - Editor principal recomendado
+  - Extensiones: Live Server, Prettier, Auto Rename Tag
+
+### Navegadores Web
+
+- Google Chrome (con DevTools)
+- Mozilla Firefox
+- Microsoft Edge
+
+### Control de Versiones
+
+- Git
+- GitHub / GitHub Desktop
+
+### Publicación
+
+- GitHub Pages
+- FileZilla (FTP)
+
+---
 ## 📖 Bibliografía
 
 ### Básica
@@ -130,50 +167,12 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 ---
 
-## 📝 Metodología de Evaluación
-
-| Tipo | Descripción |
-|------|-------------|
-| **Participación en clase** | Asistencia, participación activa, ejercicios prácticos |
-| **Proyectos** | Desarrollo de páginas web siguiendo las mejores prácticas |
-| **Exámenes parciales** | Evaluación teórica de los conceptos adquiridos |
-| **Proyecto final** | Sitio web completo integrando HTML, CSS, JavaScript y Bootstrap |
-| **Presentación** | Demostración del proyecto final publicado en GitHub Pages |
-
----
-
-## 🔧 Herramientas Recomendadas
-
-### Editores de Código
-
-- **Visual Studio Code** - Editor principal recomendado
-  - Extensiones: Live Server, Prettier, Auto Rename Tag
-
-### Navegadores Web
-
-- Google Chrome (con DevTools)
-- Mozilla Firefox
-- Microsoft Edge
-
-### Control de Versiones
-
-- Git
-- GitHub / GitHub Desktop
-
-### Publicación
-
-- GitHub Pages
-- FileZilla (FTP)
-
----
-
 ## 📧 Contacto
 
-**Universidad UMAX**  
+**Universidad María Auxiliadora**  
 [Juan Marcelo Ferreira Aranda](https://cvpy.conacyt.gov.py/publicar/cv?id=24771f7d22cc9d9500d01700d80733c4)
 Ingeniero Informático
 Carrera de Ingeniería en Informática  
-Asignatura: INI04 - Introducción al Desarrollo Web
 
 ---
 
