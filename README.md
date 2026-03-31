@@ -167,23 +167,11 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 ---
 
-## 📌 Normas del Repositorio
-
-Para mantener la calidad y consistencia del contenido, este repositorio sigue las convenciones definidas en [AGENTS.md](./AGENTS.md).
-
-### Principios fundamentales
-
-1. **Accesibilidad**: Todo contenido debe ser accesible para personas con diferentes capacidades
-2. **Semántica HTML**: Uso correcto de etiquetas semánticas (header, main, section, article, footer)
-3. **Responsive Design**: El contenido debe adaptarse a diferentes tamaños de pantalla
-4. **Código limpio**: Separación de estructura (HTML), presentación (CSS) y comportamiento (JavaScript)
-5. **Comentarios en español**: El código debe estar comentado en español para facilitar el aprendizaje
-
----
-
 ## 📧 Contacto
 
 **Universidad UMAX**  
+[Juan Marcelo Ferreira Aranda](https://cvpy.conacyt.gov.py/publicar/cv?id=24771f7d22cc9d9500d01700d80733c4)
+Ingeniero Informático
 Carrera de Ingeniería en Informática  
 Asignatura: INI04 - Introducción al Desarrollo Web
 
