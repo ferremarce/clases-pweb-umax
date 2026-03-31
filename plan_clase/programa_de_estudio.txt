@@ -1,0 +1,289 @@
+3.2.14.4  INI04 - INTRODUCCIÓN AL DESARROLLO WEB
+
+L IDENTIFICACIÓN
+
+INTRODUCCIÓN AL DESARROLLO
+
+Denominación WEB
+Código INI-04
+Semestre PRIMERO
+Carga Horaria Total 94
+
+Horas Teóricas 30
+
+Horas Prácticas 42
+
+Horas de trabajo independiente 22
+Prerrequisito NINGUNO
+Créditos 3.1
+
+In. FUNDAMENTACIÓN DEL PROGRAMA DE LA ASIGNATURA
+
+En la era digital actual, el desarrollo web se ha consolidado como una de las competencias
+más demandadas tanto en el ámbito profesional como en el académico. Las tecnologías de
+la información y la comunicación (TIC) han transformado la manera en que las personas
+interactúan, acceden a la información y realizan transacciones, lo que ha impulsado la
+necesidad de contar con profesionales capacitados en el diseño, desarrollo y mantenimiento
+
+de aplicaciones web.
+
+La asignatura Introducción al Desarrollo Web tiene como propósito fundamental
+proporcionar a los estudiantes los conocimientos esenciales para comprender el
+funcionamiento de la web y las tecnologías asociadas al desarrollo de sitios y aplicaciones
+web. A través de esta materia, los estudiantes adquirirán habilidades prácticas para crear
+interfaces web interactivas, estructurar contenido utilizando HTML, dar estilo a través de
+
+CSS y añadir funcionalidades dinámicas con JavaScript.
+
+Además, esta asignatura promueve el desarrollo de competencias transversales, como el
+pensamiento lógico, la resolución de problemas y el trabajo colaborativo, aspectos
+fundamentales para el trabajo en equipo dentro de proyectos de desarrollo. De igual manera,
+se abordarán aspectos éticos relacionados con la accesibilidad, la usabilidad y el respeto a
+los estándares internacionales en la creación de soluciones web, alineados con las mejores
+
+prácticas de la industria.
+
+En un entorno donde la web evoluciona rápidamente y los avances tecnológicos surgen de
+
+manera continua, es esencial que los estudiantes adquieran una base sólida en las
+
+Carrera de Ingeniería en Informática UMAX
+
+
+
+ses PNIVERSIDAD
+
+herramientas y técnicas del desarrollo web, preparándose para enfrentar futuros desafíos y
+
+contribuir de manera significativa en el diseño y construcción de experiencias digitales
+
+inclusivas y eficientes.
+
+HI. COMPETENCIAS
+a. Del perfil de salida
+
+Diseñar, proyectar y programar soluciones informáticas, utilizando software, procesos u
+otros medios tecnológicos, con el fin de desarrollar sistemas eficientes y adaptados a las
+
+necesidades del entorno profesional.
+b. Específica de la asignatura
+
+Al finalizar la asignatura, el estudiante será capaz de erear sitios web interactivos utilizando
+HTML, CSS y JavaScript, aplicando principios básicos de accesibilidad, usabilidad y
+
+estándares web.
+
+c. Capacidades
+
+e Comprende los fundamentos del desarrollo web, conociendo la historia y evolución
+de la web y sus tecnologías, además, identifica los componentes fundamentales de
+una página web y su desarrollo, entendiendo la importancia de los estándares web y
+la accesibilidad en el desarrollo de sitios web.
+
+e Conoce la sintaxis y semántica del lenguaje HTML, identificando y utilizando de
+manera adecuada las etiquetas básicas y avanzadas de HTML para estructurar
+contenido de manera coherente y Semántica.
+
++ Diferencia entre etiquetas estructurales, de formato y multimedia para crear páginas
+web completas con HTML.
+
++ Conoce los conceptos fundamentales de diseño con CSS, comprendiendo el uso de
+selectores, propiedades y valores para estilizar páginas web. Además, reconoce la
+importancia de los estilos responsivos y las técnicas como media queries para crear
+
+diseños adaptativos.
+
+e Interpreta la programación básica en JavaScript para agregar interactividad,
+comprendiendo el modelo de programación basado en eventos. Además, identificar
+las estructuras de control (bucles, condicionales) y las funciones en JavaScript para
+manipular el comportamiento de las páginas web.
+
++ Comprende el uso de Bootstrap para el diseño web responsivo, reconociendo las
+ventajas del uso de un framework CSS como Bootstrap para la creación rápida de
+interfaces web responsivas. Además, conoce el sistema de rejilla (grid) de Bootstrap y
+
+Carrera de Ingeniería en Informática UMAX
+
+
+PROCEDIMENTALES
+
+A UNIVERSIDAD
+
+==
+
+sus componentes básicos.
+
+Comprende el proceso de publicación de páginas web, entendiendo los diferentes
+métodos de hospedaje y publicación de sitios web, incluyendo servidores web,
+dominios y el uso de FTP. Además, conoce herramientas como GitHub Pages para la
+publicación sencilla de sitios web estáticos.
+
+Desarrolla páginas web estructuradas con HTML, creando documentos HTML que
+sigan las mejores prácticas de semántica y estructura.
+
+Implementa con HTML listas, tablas, formularios, enlaces y multimedia dentro de las
+páginas web.
+
+Aplica estilos visuales usando CSS, utilizando CSS para personalizar la apariencia de
+los elementos HTML. Además, implementa estilos responsivos para que las páginas
+se adapten a dispositivos móviles, utilizando flexbox, grid y media queries.
+
+Programa interacciones con JavaScript, escribiendo scripts en JavaScript para agregar
+funcionalidad dinámica a las páginas web, como validaciones de formularios y
+animaciones simples. Además, manipula el DOM para cambiar el contenido y los
+estilos en respuesta a las acciones del usuario.
+
+Construye diseños web responsivos con Bootstrap, utilizando el sistema de rejilla de
+Bootstrap para crear layouts que se adapten a diferentes tamaños de pantalla.
+Además, integra componentes de Bootstrap como botones, menús de navegación,
+modales y carruseles para mejorar la interfaz de usuario.
+
+Publica páginas web en un servidor, subiendo un sitio web a un servidor usando FTP
+o plataformas de hospedaje web. Además, configura GitHub Pages para la
+publicación de sitios estáticos y utilizar sistemas de control de versiones para la
+gestión de proyectos web.
+
+ACTITUDINALES
+
+Desarrolla una actitud proactiva hacia el aprendizaje continuo, manteniéndose
+actualizado sobre las últimas tendencias y herramientas en el desarrollo web.
+Además, participando en comunidades de desarrollo web para compartir
+conocimientos y aprender de otros.
+
+Fomenta la creatividad y la innovación en el diseño web, explorando nuevas formas
+de mejorar la experiencia de usuario en las páginas web, buscando soluciones
+originales. Además, valora el diseño web accesible e inclusivo, respetando las
+necesidades de todos los usuarios.
+
+Adopta una actitud ética y responsable en la publicación de contenido, respetando los
+derechos de autor y las licencias de los recursos utilizados (imágenes, fuentes, etc.).
+Además, asegura que los sitios web publicados sean accesibles y seguros,
+protegiendo la privacidad y los datos de los usuarios.
+
+Carrera de Inseniería en Informática IIVAY
+
+
+Creada por Ley de la Nación Paraguaya N' 3.501/08.
+
+* Promueve la colaboración y el trabajo en equipo, colaborando efectivamente con
+
+Otros estudiantes en el desarrollo de proyectos web, compartiendo responsabilidades
+y ofreciendo retroalimentación constructiva. Además, utiliza herramientas
+colaborativas como Git para el trabajo en equipo y la gestión de versiones en
+proyectos web.
+
+IV. — CONTENIDOS PROGRAMÁTICOS
+
+) UNIDAD I
+INTRODUCCIÓN AL DESARROLLO WEB
+La Web: significado, funcionamiento, navegadores web.
+Desarrollo web: Definición, tipos, herramientas, lenguajes, formatos.
++ Reglas generales para el desarrollo web:
+
+- — Legibilidad
+
+- Posicionamiento
+
+- Carpetas y rutas de archivos
+
+- Editores de Código
+
+UNIDAD Il
+HTML BÁSICO
+
+Introducción al HTML
+Textos
+
+Listas
+
+Enlaces
+
+Imágenes
+
+Tablas
+
+Formularios
+
+Versiones de HTML
+Audio y Video
+
+UNIDAD III
+
+CONCEPTOS BÁSICOS DE CSS
+
++ Introducción a CSS
+
+* Color
+
+. Texto
+
+. Cajas
+
++ Listas, tablas y Formularios
++ Layouts
+
++ Imágenes
+
+UNIDAD IV
+
+CONCEPTOS BÁSICOS DE JAVASCRIPT
+
+MATA >
+
+EA A MES)
+Carrera de Ingeniería en Informática UMAX F qe.
+
+
+Introducción a JavaScript
+Lista de tareas
+Variables y asignaciones
+Tipos de variables
+Los operadores
+Las condiciones
+Iteraciones
+Depuración de un programa
+Las cookies
+Interacción entre JavaScript, HTML y CSS
+UNIDAD V
+PRIMEROS PASO CON BOOTSTRAP
+Introducción a bootstrap
+Grid de Bootstrap
+Elementos de Bootstrap
+Componentes
+Formularios
+Flexbox
+Clases de utilidad
+UNIDAD VI
+PUBLICACIÓN DE UN SITIO WEB
+Proyecto de creación de una página web completa
+
+Bibliografía
+Básica
+
+Aubry, C. (2014). AHTMLS y CSS3: Domine los estándares de creación de sitios
+web (2* ed.). ENL
+
+Aubry, C. (2016). Responsive Web Design, diseños y cuadrículas: Técnicas
+modernas de diseño web (2* ed.). ENL
+
+Aubry, C. (2017). ATMLS y CSS3: Revolucione el diseño de sus sitios web (4*
+ed.). ENI.
+
+Duckett, J. (2024). HTML $ CSS: Diseño y construcción de sitios web. Anaya
+Multimedia.
+
+Matarazzo, D. (2018). Aprenda los lenguajes HTML5, CSS3 y JavaScript para
+crear su primer sitio web (2* ed.). ENI.
+
+Complementaria
+
+Albeláez, J. (2020). Introducción al desarrollo web: Comprendiendo los
+fundamentos (Edición Kindle). Amazon Digital Services LLC.
+
+Pacheco, M. (2023). Desarrollo web: HTML, CSS y JavaScript para
+Principiantes (Edición en español). Independently Published.
+
+Rubiales Gómez, M. (2021). Curso de desarrollo web. HTML, CSS y JavaScript.
+Independently Published.
+
+Carrera de Inoeniería on Infremátira TIIAAV
