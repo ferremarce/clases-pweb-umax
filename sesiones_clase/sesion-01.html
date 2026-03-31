@@ -26,7 +26,6 @@
             background: var(--color-fondo);
             color: var(--color-texto);
             line-height: 1.6;
-            overflow: hidden;
         }
 
         header.presentacion-header {
@@ -72,30 +71,62 @@
             text-align: right;
         }
 
+        header.presentacion-header.mini {
+            height: 50px;
+            padding: 8px 30px;
+            gap: 20px;
+        }
+
+        header.presentacion-header.mini .logo {
+            width: 35px;
+        }
+
+        header.presentacion-header.mini h1 {
+            font-size: 1rem;
+        }
+
+        header.presentacion-header.mini .subtitulo,
+        header.presentacion-header.mini .profesor {
+            font-size: 0.8rem;
+        }
+
         .contenedor {
-            position: relative;
             width: 100%;
-            height: calc(100vh - 80px);
             margin-top: 80px;
-            overflow: hidden;
+            padding: 20px 40px 40px;
         }
 
         .diapositiva {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background: white;
             padding: 40px 60px;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            overflow-y: auto;
+            margin-bottom: 30px;
+            min-height: 300px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            counter-increment: slide;
+            position: relative;
+            scroll-margin-top: 100px;
         }
 
-        .diapositiva.activa {
-            opacity: 1;
-            z-index: 1;
+        .diapositiva::before {
+            content: counter(slide);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: var(--color-primario);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        main.contenedor {
+            counter-reset: slide;
         }
 
         .diapositiva h2 {
@@ -173,8 +204,14 @@
         }
 
         .slide-portada .logo-grande {
-            width: 150px;
+            width: 100px;
             margin-bottom: 30px;
+        }
+
+        .logo-grande {
+            width: 100px;
+            display: block;
+            margin: 0 auto 30px;
         }
 
         .slide-portada h2 {
@@ -296,82 +333,29 @@
             background: var(--color-secundario);
         }
 
+        .btn-siguiente {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 10px;
+            background: var(--color-primario);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-siguiente:hover {
+            background: var(--color-secundario);
+        }
+
         .codigo-inline {
             background: #f0f0f0;
             padding: 3px 8px;
             border-radius: 4px;
             font-family: monospace;
             color: var(--color-primario);
-        }
-
-        .controles {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 30px;
-            z-index: 200;
-            align-items: center;
-        }
-
-        .controles button {
-            background: var(--color-primario);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .controles button:hover {
-            background: var(--color-secundario);
-            transform: scale(1.1);
-        }
-
-        .controles button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .indicadores {
-            display: flex;
-            gap: 10px;
-        }
-
-        .indicador {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ccc;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .indicador:hover {
-            transform: scale(1.2);
-        }
-
-        .indicador.activo {
-            background: var(--color-primario);
-            transform: scale(1.2);
-        }
-
-        .numero-slide {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9rem;
-            color: var(--color-texto-claro);
-            z-index: 200;
         }
 
         .info-sesion {
@@ -464,9 +448,6 @@
                 height: 40px;
                 font-size: 18px;
             }
-            .numero-slide {
-                bottom: 70px;
-            }
         }
     </style>
 </head>
@@ -481,7 +462,7 @@
     </header>
 
     <main class="contenedor" id="carrusel">
-        <section class="diapositiva slide-portada activa" id="slide-01">
+        <section class="diapositiva" id="slide-01">
             <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo-grande">
             <h2>Fundamentos de la Web y Entorno de Trabajo</h2>
             <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad I - Introducción al Desarrollo Web</p>
@@ -562,6 +543,15 @@
                 </ol>
             </div>
 
+            <figure style="text-align: center; margin: 30px 0;">
+                <img src="../img/diagrama_modelo_cliente_servidor.png" 
+                     alt="Diagrama del modelo cliente-servidor" 
+                     style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <figcaption style="font-size: 0.9rem; color: var(--color-texto-claro); margin-top: 10px;">
+                    Flujo de comunicación entre cliente y servidor
+                </figcaption>
+            </figure>
+
             <h3>Componentes clave:</h3>
             <ul>
                 <li><strong>URL:</strong> Dirección única del recurso (ej: www.ejemplo.com)</li>
@@ -594,6 +584,67 @@
         </section>
 
         <section class="diapositiva" id="slide-07">
+            <h2>¿Qué es HTML?</h2>
+            <p><strong>HTML (HyperText Markup Language)</strong> es el lenguaje estándar para crear páginas web. No es un lenguaje de programación, sino un <strong>lenguaje de marcado</strong> que estructura el contenido.</p>
+
+            <div class="tarjeta">
+                <h3>¿Para qué sirve?</h3>
+                <ul>
+                    <li><strong>Estructurar contenido:</strong> Definir encabezados, párrafos, listas, tablas</li>
+                    <li><strong>Crear hipervínculos:</strong> Conectar páginas entre sí</li>
+                    <li><strong>Insertar medios:</strong> Imágenes, videos, audio</li>
+                    <li><strong>Crear formularios:</strong> Recopilar datos del usuario</li>
+                    <li><strong>Definir semántica:</strong> Dar significado al contenido</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Anatomía de un elemento HTML</h3>
+                <p>Un elemento HTML está formado por:</p>
+<pre><code><span class="etiqueta">&lt;etiqueta</span> <span class="atributo">atributo</span>=<span class="valor">"valor"</span><span class="etiqueta">&gt;</span>Contenido<span class="etiqueta">&lt;/etiqueta&gt;</span></code></pre>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Etiqueta de apertura:</strong> <code>&lt;etiqueta&gt;</code></li>
+                    <li><strong>Contenido:</strong> El texto u otros elementos</li>
+                    <li><strong>Etiqueta de cierre:</strong> <code>&lt;/etiqueta&gt;</code></li>
+                    <li><strong>Atributos:</strong> Propiedades adicionales (opcional)</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Jerarquía de elementos</h3>
+                <p>Los elementos pueden ser <strong>padres</strong> (contienen otros) o <strong>hijos</strong> (están dentro de otros):</p>
+<pre><code><span class="etiqueta">&lt;html&gt;</span>
+    <span class="etiqueta">&lt;head&gt;</span>
+        <span class="etiqueta">&lt;title&gt;</span>Título<span class="etiqueta">&lt;/title&gt;</span>
+    <span class="etiqueta">&lt;/head&gt;</span>
+    <span class="etiqueta">&lt;body&gt;</span>
+        <span class="etiqueta">&lt;header&gt;</span>
+            <span class="etiqueta">&lt;h1&gt;</span>Mi Página<span class="etiqueta">&lt;/h1&gt;</span>
+        <span class="etiqueta">&lt;/header&gt;</span>
+    <span class="etiqueta">&lt;/body&gt;</span>
+<span class="etiqueta">&lt;/html&gt;</span></code></pre>
+                <figure style="text-align: center; margin: 30px 0;">
+                    <img src="../img/jerarquia_html.png" 
+                         alt="Jerarquía de elementos HTML" 
+                         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <figcaption style="font-size: 0.9rem; color: var(--color-texto-claro); margin-top: 10px;">
+                        Ejemplo visual de la jerarquía HTML
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Usos principales de HTML</h3>
+                <ul>
+                    <li><strong>Páginas estáticas:</strong> Blogs, portafolios, landing pages</li>
+                    <li><strong>Aplicaciones web:</strong> Con frameworks como React, Angular, Vue</li>
+                    <li><strong>Correo electrónico:</strong> Plantillas de email marketing</li>
+                    <li><strong>Documentación:</strong> Manuales y guías online</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
             <h2>Entorno de Desarrollo (IDE)</h2>
             <p>Para crear páginas web necesitamos un <strong>Entorno de Desarrollo Integrado (IDE)</strong>. Es el programa donde escribiremos, probaremos y depuraremos nuestro código.</p>
 
@@ -675,7 +726,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-08">
+        <section class="diapositiva" id="slide-09">
             <h2>Instalación de Visual Studio Code</h2>
             <p>VS Code es el editor de código que usaremos durante todo el curso.</p>
 
@@ -692,7 +743,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-09">
+        <section class="diapositiva" id="slide-10">
             <h2>Extensiones para VS Code</h2>
             <p>Las extensiones añaden funcionalidad adicional al editor.</p>
 
@@ -717,7 +768,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-10">
+        <section class="diapositiva" id="slide-11">
             <h2>Estructura Básica de un Documento HTML</h2>
             <p>Todo archivo HTML sigue una estructura estándar:</p>
 
@@ -749,7 +800,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-11">
+        <section class="diapositiva" id="slide-12">
             <h2>Mi Primer Archivo HTML</h2>
             <p>Vamos a crear paso a paso tu primera página web:</p>
 
@@ -779,7 +830,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-12">
+        <section class="diapositiva" id="slide-13">
             <h2>Etiquetas de Texto en HTML</h2>
             <p>HTML ofrece múltiples etiquetas para formatear texto:</p>
 
@@ -803,7 +854,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-13">
+        <section class="diapositiva" id="slide-14">
             <h2>Organización de Archivos del Proyecto</h2>
             <p>Es fundamental organizar tu proyecto web de manera clara:</p>
 
@@ -829,7 +880,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-14">
+        <section class="diapositiva" id="slide-17">
             <h2>Actividad Práctica</h2>
             
             <div class="actividad-practica">
@@ -860,7 +911,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-15">
+        <section class="diapositiva" id="slide-18">
             <h2>Demo: Creando la Página en Vivo</h2>
             <p>El docente demostrará paso a paso la creación de la página web.</p>
 
@@ -879,7 +930,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-16">
+        <section class="diapositiva" id="slide-19">
             <h2>Resumen de la Sesión</h2>
             
             <h3>Conceptos aprendidos:</h3>
@@ -902,7 +953,7 @@
             </div>
         </section>
 
-        <section class="diapositiva slide-portada" id="slide-17">
+        <section class="diapositiva slide-portada" id="slide-20">
             <h2>Próxima Clase</h2>
             <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 2: HTML I - Estructura, Texto y Listas</p>
             
@@ -917,74 +968,42 @@
                 </ul>
             </div>
 
-            <button class="btn-navegacion" onclick="mostrarSlide(0)">Volver al Inicio</button>
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;">Volver al Inicio</a>
         </section>
     </main>
 
-    <div class="numero-slide" id="numero-slide">1 / 17</div>
-
-    <div class="controles">
-        <button id="btn-anterior" aria-label="Anterior">❮</button>
-        <div class="indicadores" id="indicadores"></div>
-        <button id="btn-siguiente" aria-label="Siguiente">❯</button>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header.presentacion-header');
             const slides = document.querySelectorAll('.diapositiva');
-            const indicadoresContainer = document.getElementById('indicadores');
-            const btnAnterior = document.getElementById('btn-anterior');
-            const btnSiguiente = document.getElementById('btn-siguiente');
-            const numeroSlide = document.getElementById('numero-slide');
-            
-            let slideActual = 0;
-            const totalSlides = slides.length;
 
-            slides.forEach((_, index) => {
-                const indicador = document.createElement('div');
-                indicador.classList.add('indicador');
-                if (index === 0) indicador.classList.add('activo');
-                indicador.addEventListener('click', () => mostrarSlide(index));
-                indicadoresContainer.appendChild(indicador);
+            slides.forEach((slide, index) => {
+                if (index < slides.length - 1) {
+                    const btn = document.createElement('a');
+                    btn.href = '#';
+                    btn.className = 'btn-siguiente';
+                    btn.textContent = 'Siguiente \u25B6';
+                    btn.onclick = (e) => {
+                        e.preventDefault();
+                        const nextSlide = slides[index + 1];
+                        nextSlide.scrollIntoView({ behavior: 'smooth' });
+                    };
+                    slide.appendChild(btn);
+                }
             });
 
-            const indicadores = document.querySelectorAll('.indicador');
-
-            function mostrarSlide(index) {
-                slides.forEach(slide => slide.classList.remove('activa'));
-                indicadores.forEach(ind => ind.classList.remove('activo'));
-                
-                slides[index].classList.add('activa');
-                indicadores[index].classList.add('activo');
-                slideActual = index;
-                
-                numeroSlide.textContent = `${index + 1} / ${totalSlides}`;
-                
-                btnAnterior.disabled = index === 0;
-                btnSiguiente.disabled = index === totalSlides - 1;
-            }
-
-            function siguienteSlide() {
-                if (slideActual < totalSlides - 1) {
-                    mostrarSlide(slideActual + 1);
+            function actualizarHeader() {
+                const slide01 = document.getElementById('slide-01');
+                const rect = slide01.getBoundingClientRect();
+                if (rect.bottom <= 80) {
+                    header.classList.add('mini');
+                } else {
+                    header.classList.remove('mini');
                 }
             }
 
-            function anteriorSlide() {
-                if (slideActual > 0) {
-                    mostrarSlide(slideActual - 1);
-                }
-            }
-
-            btnSiguiente.addEventListener('click', siguienteSlide);
-            btnAnterior.addEventListener('click', anteriorSlide);
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight') siguienteSlide();
-                if (e.key === 'ArrowLeft') anteriorSlide();
-            });
-
-            mostrarSlide(0);
+            window.addEventListener('scroll', actualizarHeader);
+            actualizarHeader();
         });
     </script>
 </body>

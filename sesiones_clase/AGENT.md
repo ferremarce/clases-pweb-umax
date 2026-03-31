@@ -12,7 +12,7 @@
   - [7.2 Variables y Estilos CSS](#72-variables-y-estilos-css)
   - [7.3 Clases Utilitarias para Contenido](#73-clases-utilitarias-para-contenido)
   - [7.4 Responsive (Mobile)](#74-responsive-mobile)
-  - [7.5 JavaScript del Carrusel](#75-javascript-del-carrusel)
+  - [7.5 JavaScript para Navegación](#75-javascript-para-navegación)
   - [7.6 Reglas para Crear Sesiones](#76-reglas-para-crear-sesiones)
 
 ---
@@ -40,9 +40,12 @@
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
     </header>
 
-    <main class="contenedor" id="carrusel">
-        <section class="diapositiva slide-portada activa" id="slide-01">
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
             <!-- Contenido de portada -->
+            <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>Título de la Sesión</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad Y - Título de la Unidad</p>
         </section>
 
         <section class="diapositiva" id="slide-02">
@@ -51,21 +54,14 @@
 
         <!-- Más slides... -->
 
-        <section class="diapositiva slide-portada" id="slide-XX">
+        <section class="diapositiva" id="slide-XX">
             <!-- Slide de cierre/proxima sesión -->
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;">Volver al Inicio</a>
         </section>
     </main>
 
-    <div class="numero-slide" id="numero-slide">1 / XX</div>
-
-    <div class="controles">
-        <button id="btn-anterior" aria-label="Anterior">❮</button>
-        <div class="indicadores" id="indicadores"></div>
-        <button id="btn-siguiente" aria-label="Siguiente">❯</button>
-    </div>
-
     <script>
-        // JavaScript del carrusel - ver sección 7.5
+        // JavaScript para navegación - ver sección 7.5
     </script>
 </body>
 </html>
@@ -97,7 +93,6 @@ body {
     background: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
-    overflow: hidden;
 }
 
 /* Header fijo */
@@ -115,6 +110,7 @@ header.presentacion-header {
     width: 100%;
     height: 80px;
     z-index: 100;
+    transition: all 0.3s ease;
 }
 
 header.presentacion-header .logo {
@@ -144,32 +140,63 @@ header.presentacion-header .profesor {
     text-align: right;
 }
 
-/* Contenedor del carrusel */
-.contenedor {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 80px);
-    margin-top: 80px;
-    overflow: hidden;
+/* Header mini (a partir de slide 2) */
+header.presentacion-header.mini {
+    height: 50px;
+    padding: 8px 30px;
+    gap: 20px;
 }
 
-/* Diapositiva base */
-.diapositiva {
-    position: absolute;
-    top: 0;
-    left: 0;
+header.presentacion-header.mini .logo {
+    width: 35px;
+}
+
+header.presentacion-header.mini h1 {
+    font-size: 1rem;
+}
+
+header.presentacion-header.mini .subtitulo,
+header.presentacion-header.mini .profesor {
+    font-size: 0.8rem;
+}
+
+/* Contenedor con scroll vertical */
+.contenedor {
     width: 100%;
-    height: 100%;
+    margin-top: 80px;
+    padding: 20px 40px 40px;
+    counter-reset: slide;
+}
+
+/* Diapositiva con recuadro sombreado */
+.diapositiva {
     background: white;
     padding: 40px 60px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    overflow-y: auto;
+    margin-bottom: 30px;
+    min-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    counter-increment: slide;
+    position: relative;
+    scroll-margin-top: 100px;
 }
 
-.diapositiva.activa {
-    opacity: 1;
-    z-index: 1;
+/* Numeración de diapositiva */
+.diapositiva::before {
+    content: counter(slide);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--color-primario);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /* Títulos dentro de diapositiva */
@@ -258,7 +285,7 @@ code {
 }
 
 .slide-portada .logo-grande {
-    width: 150px;
+    width: 100px;
     margin-bottom: 30px;
 }
 
@@ -282,6 +309,13 @@ code {
     padding: 8px 20px;
     border-radius: 30px;
     font-weight: 600;
+}
+
+/* Logo grande (para portada) */
+.logo-grande {
+    width: 100px;
+    display: block;
+    margin: 0 auto 30px;
 }
 
 /* Lista de objetivos numerada */
@@ -366,7 +400,7 @@ code {
     font-size: 0.9rem;
 }
 
-/* Botones */
+/* Botones de navegación */
 .btn-navegacion {
     display: inline-block;
     background: var(--color-primario);
@@ -385,84 +419,30 @@ code {
     background: var(--color-secundario);
 }
 
+/* Botón siguiente (agregado dinámicamente) */
+.btn-siguiente {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 10px;
+    background: var(--color-primario);
+    color: white;
+    padding: 12px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-siguiente:hover {
+    background: var(--color-secundario);
+}
+
 .codigo-inline {
     background: #f0f0f0;
     padding: 3px 8px;
     border-radius: 4px;
     font-family: monospace;
     color: var(--color-primario);
-}
-
-/* Controles del carrusel */
-.controles {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 30px;
-    z-index: 200;
-    align-items: center;
-}
-
-.controles button {
-    background: var(--color-primario);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.controles button:hover {
-    background: var(--color-secundario);
-    transform: scale(1.1);
-}
-
-.controles button:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Indicadores (dots) */
-.indicadores {
-    display: flex;
-    gap: 10px;
-}
-
-.indicador {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.indicador:hover {
-    transform: scale(1.2);
-}
-
-.indicador.activo {
-    background: var(--color-primario);
-    transform: scale(1.2);
-}
-
-.numero-slide {
-    position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9rem;
-    color: var(--color-texto-claro);
-    z-index: 200;
 }
 
 /* Tarjeta de actividad práctica */
@@ -527,7 +507,7 @@ code {
     }
     .contenedor {
         margin-top: 110px;
-        height: calc(100vh - 110px);
+        padding: 15px 20px;
     }
     .diapositiva {
         padding: 20px;
@@ -539,83 +519,49 @@ code {
         font-size: 14px;
         padding: 15px;
     }
-    .controles {
-        bottom: 15px;
-    }
-    .controles button {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    .numero-slide {
-        bottom: 70px;
-    }
 }
 ```
 
 ---
 
-## 7.5 JavaScript del Carrusel
+## 7.5 JavaScript para Navegación
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header.presentacion-header');
     const slides = document.querySelectorAll('.diapositiva');
-    const indicadoresContainer = document.getElementById('indicadores');
-    const btnAnterior = document.getElementById('btn-anterior');
-    const btnSiguiente = document.getElementById('btn-siguiente');
-    const numeroSlide = document.getElementById('numero-slide');
-    
-    let slideActual = 0;
-    const totalSlides = slides.length;
 
-    // Crear indicadores dinámicamente
-    slides.forEach((_, index) => {
-        const indicador = document.createElement('div');
-        indicador.classList.add('indicador');
-        if (index === 0) indicador.classList.add('activo');
-        indicador.addEventListener('click', () => mostrarSlide(index));
-        indicadoresContainer.appendChild(indicador);
+    // Agregar botón "Siguiente" a cada diapositiva (excepto la última)
+    slides.forEach((slide, index) => {
+        if (index < slides.length - 1) {
+            const btn = document.createElement('a');
+            btn.href = '#';
+            btn.className = 'btn-siguiente';
+            btn.textContent = 'Siguiente ▶';
+            btn.onclick = (e) => {
+                e.preventDefault();
+                const nextSlide = slides[index + 1];
+                nextSlide.scrollIntoView({ behavior: 'smooth' });
+            };
+            slide.appendChild(btn);
+        }
     });
 
-    const indicadores = document.querySelectorAll('.indicador');
-
-    function mostrarSlide(index) {
-        slides.forEach(slide => slide.classList.remove('activa'));
-        indicadores.forEach(ind => ind.classList.remove('activo'));
-        
-        slides[index].classList.add('activa');
-        indicadores[index].classList.add('activo');
-        slideActual = index;
-        
-        numeroSlide.textContent = `${index + 1} / ${totalSlides}`;
-        
-        btnAnterior.disabled = index === 0;
-        btnSiguiente.disabled = index === totalSlides - 1;
-    }
-
-    function siguienteSlide() {
-        if (slideActual < totalSlides - 1) {
-            mostrarSlide(slideActual + 1);
+    // Detectar scroll para header reducido
+    function actualizarHeader() {
+        const slide01 = document.getElementById('slide-01');
+        if (slide01) {
+            const rect = slide01.getBoundingClientRect();
+            if (rect.bottom <= 80) {
+                header.classList.add('mini');
+            } else {
+                header.classList.remove('mini');
+            }
         }
     }
 
-    function anteriorSlide() {
-        if (slideActual > 0) {
-            mostrarSlide(slideActual - 1);
-        }
-    }
-
-    btnSiguiente.addEventListener('click', siguienteSlide);
-    btnAnterior.addEventListener('click', anteriorSlide);
-
-    // Navegación con teclado
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') siguienteSlide();
-        if (e.key === 'ArrowLeft') anteriorSlide();
-    });
-
-    // Inicializar
-    mostrarSlide(0);
+    window.addEventListener('scroll', actualizarHeader);
+    actualizarHeader();
 });
 ```
 
@@ -624,9 +570,11 @@ document.addEventListener('DOMContentLoaded', () => {
 ## 7.6 Reglas para Crear Sesiones
 
 - **Cantidad mínima:** 15 diapositivas por sesión
-- **Portada:** Primer slide con logo UMAX, título, unidad y meta (18 sesiones, 4 horas)
+- **Portada:** Primer slide con logo UMAX (100px), título, unidad
 - **Cierre:** Último slide con resumen y temas de la próxima sesión
-- **Transiciones:** Usar siempre `opacity` con `transition: 0.5s ease-in-out`
+- **Navegación:** Scroll vertical con botones "Siguiente" automático
+- **Header:** Completo en slide-01, reducido en slides posteriores
 - **Código:** Usar etiquetas `<pre><code>` con colores para sintaxis
 - **Imágenes:** Guardar en `img/` con nombres descriptivos
+- **Imágenes en slides:** Usar `<figure>` con `<figcaption>` descriptivo
 - **Responsive:** Probar en viewport de 768px y 480px
