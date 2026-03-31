@@ -1,6 +1,8 @@
+<img src="img/logo-umax.png" width="300">
+
 # INI04 - Introducción al Desarrollo Web
 
-Material educativo para el curso de Introducción al Desarrollo Web de la carrera de Ingeniería en Informática de UMAX.
+Material educativo para el curso de Introducción al Desarrollo Web de la carrera de Ingeniería en Informática de [UMAX](https://www.umax.edu.py "Universidad María Auxiliadora, Asunción - Paraguay")
 
 ---
 
