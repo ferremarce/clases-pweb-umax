@@ -31,8 +31,8 @@ clases-pweb-umax/
 │   ├── logo-umax.png          (logo institucional)
 │   └── ...                    (imágenes de apoyo)
 ├── plan_clase/
-│   ├── plan_de_clase.html     (plan general 18 sesiones)
-│   └── contenidos_unidades.html (contenido detallado)
+│   ├── plan_de_clase_general.html  (plan general 18 sesiones)
+│   └── plan_de_clase_detallado.html (contenido detallado)
 └── sesiones_clase/
     ├── AGENT.md               (formatos y estilos para presentaciones)
     ├── sesion_01.html         (presentación sesión 1)
