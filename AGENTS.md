@@ -290,6 +290,8 @@ main                    (producción)
 
 - Commits atómicos: un cambio por commit
 - Mensajes en español, imperativos presente
+- Después de cada commit, ejecutar automáticamente `git push`
+- Usar formato completo: `git add . && git commit -m "mensaje" && git push`
 - Pull requests con descripción del contenido agregado
 
 ---
