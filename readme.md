@@ -39,7 +39,7 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 
 | Sesión | Unidad | Título | Actividades Clave |
 |:------:|:------:|--------|------------------|
-| 1 | Unidad I | [Fundamentos de la Web y Entorno de Trabajo](sesiones_clase/sesion-01.html) | Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server. |
+| 1 | Unidad I | [Fundamentos de la Web y Entorno de Trabajo](sesiones_clase/sesion_01.html) | Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server. |
 | 2 | Unidad II | HTML I: Estructura, Texto y Listas | Etiquetas semánticas, títulos, párrafos, listas ordenadas y desordenadas, primera página personal. |
 | 3 | Unidad II | HTML II: Enlaces, Imágenes y Multimedia | Rutas relativas/absolutas, `<a>`, `<img>`, audio/video, barra de navegación. |
 | 4 | Unidad II | HTML III: Tablas y Formularios | Creación de tablas, formularios con campos básicos, atributos de validación required. |

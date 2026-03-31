@@ -35,9 +35,9 @@ clases-pweb-umax/
 │   └── contenidos_unidades.html (contenido detallado)
 └── sesiones_clase/
     ├── AGENT.md               (formatos y estilos para presentaciones)
-    ├── sesion-01.html         (presentación sesión 1)
-    ├── sesion-02.html
-    └── sesion-18.html
+    ├── sesion_01.html         (presentación sesión 1)
+    ├── sesion_02.html
+    └── sesion_18.html
 ```
 
 ---
