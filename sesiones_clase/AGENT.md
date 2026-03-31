@@ -18,7 +18,7 @@
 </head>
 <body>
     <header class="presentacion-header">
-        <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo">
+        <img src="../img/logo_umax.png" alt="Logo UMAX" class="logo">
         <div class="titulos">
             <h1>Sesión X: Título</h1>
             <div class="subtitulo">INI04 - Desarrollo Web | Unidad Y</div>
@@ -33,7 +33,7 @@
 
     <main class="contenedor">
         <section class="diapositiva" id="slide-01">
-            <img src="../img/logo-umax.png" alt="Logo" class="logo-grande">
+            <img src="../img/logo_umax.png" alt="Logo" class="logo-grande">
             <h2>Título de la Sesión</h2>
             <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad Y</p>
         </section>

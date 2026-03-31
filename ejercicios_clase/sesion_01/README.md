@@ -59,7 +59,7 @@ Crea una página más elaborada:
 ## Entrega
 Guarda todos los archivos en la carpeta `sesion-01` siguiendo la estructura:
 ```
-sesion-01/
+sesion_01/
 ├── ejercicio-01/
 │   └── index.html
 ├── ejercicio-02/

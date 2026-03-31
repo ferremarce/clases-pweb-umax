@@ -21,7 +21,7 @@
 clases-pweb-umax/
 ├── AGENTS.md / readme.md
 ├── ejercicios_clase/sesion-XX/
-├── img/ (logo-umax.png, ...)
+├── img/ (logo_umax.png, ...)
 ├── plan_clase/
 │   ├── plan_de_clase_general.html
 │   └── plan_de_clase_detallado.html
@@ -36,7 +36,7 @@ clases-pweb-umax/
 
 | Elemento | Formato | Ejemplo |
 |----------|---------|---------|
-| Carpetas sesión | `sesion-XX` | `sesion-01/` |
+| Carpetas sesión | `sesion-XX` | `sesion_01/` |
 | Archivos | `kebab-case` | `estilos-generales.css` |
 | Clases CSS | `kebab-case` | `.tarjeta-principal` |
 | Variables/Funciones JS | `camelCase` | `nombreUsuario` |
@@ -48,7 +48,7 @@ clases-pweb-umax/
 
 ### HTML
 - `<!DOCTYPE html>` + `lang="es"`
-- Logo UMAX en header (`img/logo-umax.png`)
+- Logo UMAX en header (`img/logo_umax.png`)
 - Semántico: `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<nav>`
 - Imágenes con `alt` descriptivo
 - Botones con `<button>`, enlaces con `<a>`
@@ -102,7 +102,7 @@ sesion-XX/
 
 ### Plantilla
 ```html
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ejercicio - INI04</title><link rel="stylesheet" href="../assets/estilos.css"></head><body><header><img src="../../img/logo-umax.png" alt="Logo"><h1>Ejercicio</h1></header><main><section class="enunciado"><h2>Enunciado</h2><p>...</p></section><section class="resultado"><h2>Resultado Esperado</h2><p>...</p></section><section class="pistas"><details><summary>Pistas</summary><ul><li>...</li></ul></details></section></main><script src="../assets/script.js"></script></body></html>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ejercicio - INI04</title><link rel="stylesheet" href="../assets/estilos.css"></head><body><header><img src="../../img/logo_umax.png" alt="Logo"><h1>Ejercicio</h1></header><main><section class="enunciado"><h2>Enunciado</h2><p>...</p></section><section class="resultado"><h2>Resultado Esperado</h2><p>...</p></section><section class="pistas"><details><summary>Pistas</summary><ul><li>...</li></ul></details></section></main><script src="../assets/script.js"></script></body></html>
 ```
 - Enunciado claro, código base proporcionado, pistas con `<details>`
 

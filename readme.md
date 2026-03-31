@@ -1,4 +1,4 @@
-<img src="img/logo-umax.png" width="300">
+<img src="img/logo_umax.png" width="300">
 
 # INI04 - Introducción al Desarrollo Web
 
