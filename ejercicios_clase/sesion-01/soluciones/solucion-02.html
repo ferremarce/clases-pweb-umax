@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 2 - Explorando Etiquetas de Texto</title>
+    <link rel="stylesheet" href="../../assets/estilos.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #e8f5e9;
+        }
+        .solucion {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .solucion header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        .solucion h1 {
+            color: #2e7d32;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .codigo {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .comentario { color: #6a9955; }
+        .etiqueta { color: #569cd6; }
+        .atributo { color: #9cdcfe; }
+        .valor { color: #ce9178; }
+        .texto { color: #dcdcaa; }
+        .nota {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ff9800;
+        }
+        .nota strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="solucion">
+        <header>
+            <img src="../../../img/logo-umax.png" alt="Logo UMAX" style="width: 50px;">
+            <div>
+                <h1>Solución: Ejercicio 2 - Explorando Etiquetas de Texto</h1>
+                <p style="color: #666;">Sesión 1 - Fundamentos de la Web</p>
+            </div>
+        </header>
+
+        <h2 style="color: #2e7d32; margin-bottom: 15px;">Código de la Solución</h2>
+        
+        <div class="codigo">
+<span class="comentario">&lt;!-- Estructura básica HTML5 --&gt;</span>
+<span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Guía de Etiquetas HTML<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="comentario">&lt;!-- ========== ENCABEZADOS ========== --&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>Guía de Etiquetas de Texto en HTML<span class="etiqueta">&lt;/h1&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Esta página demuestra el uso de las principales etiquetas de texto.<span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;h2&gt;</span>Niveles de Encabezados<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;h3&gt;</span>Este es un h3<span class="etiqueta">&lt;/h3&gt;</span>
+    <span class="etiqueta">&lt;h4&gt;</span>Este es un h4<span class="etiqueta">&lt;/h4&gt;</span>
+    <span class="etiqueta">&lt;h5&gt;</span>Este es un h5<span class="etiqueta">&lt;/h5&gt;</span>
+    <span class="etiqueta">&lt;h6&gt;</span>Este es un h6<span class="etiqueta">&lt;/h6&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== PÁRRAFOS ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Párrafos<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Este es un párrafo. Los párrafos se usan para agrupar 
+    oraciones relacionadas sobre un mismo tema. Cada párrafo tiene su 
+    propio espacio vertical para separarlo de otros contenidos.<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Este es otro párrafo diferente. Los navegadores añaden 
+    automáticamente espacio antes y después de cada párrafo.<span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== SALTO DE LÍNEA ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Salto de Línea<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        Primera línea del texto.<span class="etiqueta">&lt;br&gt;</span>
+        Segunda línea (mismo párrafo).<span class="etiqueta">&lt;br&gt;</span>
+        Tercera línea (mismo párrafo).
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== TEXTO IMPORTANTE ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Texto Importante (strong)<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>El elemento <span class="etiqueta">&lt;strong&gt;</span>se usa para 
+    indicar que un texto es <span class="etiqueta">&lt;strong&gt;</span>muy importante<span class="etiqueta">&lt;/strong&gt;</span>, 
+    como <span class="etiqueta">&lt;strong&gt;</span>advertencias<span class="etiqueta">&lt;/strong&gt;</span> o 
+    <span class="etiqueta">&lt;strong&gt;</span>información crítica<span class="etiqueta">&lt;/strong&gt;</span>.<span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== TEXTO ENFATIZADO ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Texto Enfatizado (em)<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>El elemento <span class="etiqueta">&lt;em&gt;</span>se usa para 
+    dar <span class="etiqueta">&lt;em&gt;</span>énfasis<span class="etiqueta">&lt;/em&gt;</span> a una palabra o frase, 
+    como si la estuviéramos <span class="etiqueta">&lt;em&gt;</span>diciendo con voz diferente<span class="etiqueta">&lt;/em&gt;</span>.<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+<span class="etiqueta">&lt;/html&gt;</span>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Nota:</strong> Esta página sirve como referencia rápida. Puedes guardarla y consultarla durante todo el curso. Los colores y énfasis son ejemplos de cómo se渲染an estas etiquetas en el navegador.
+        </div>
+    </div>
+</body>
+</html>

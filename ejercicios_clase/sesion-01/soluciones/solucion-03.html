@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 3 - Página de Presentación Completa</title>
+    <link rel="stylesheet" href="../../assets/estilos.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #e8f5e9;
+        }
+        .solucion {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .solucion header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #c8e6c9;
+        }
+        .solucion h1 {
+            color: #2e7d32;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .codigo {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 25px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .comentario { color: #6a9955; }
+        .etiqueta { color: #569cd6; }
+        .atributo { color: #9cdcfe; }
+        .valor { color: #ce9178; }
+        .texto { color: #dcdcaa; }
+        .nota {
+            background: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #ff9800;
+        }
+        .nota strong {
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="solucion">
+        <header>
+            <img src="../../../img/logo-umax.png" alt="Logo UMAX" style="width: 50px;">
+            <div>
+                <h1>Solución: Ejercicio 3 - Página de Presentación Completa</h1>
+                <p style="color: #666;">Sesión 1 - Fundamentos de la Web</p>
+            </div>
+        </header>
+
+        <h2 style="color: #2e7d32; margin-bottom: 15px;">Código de la Solución</h2>
+        
+        <div class="codigo">
+<span class="comentario">&lt;!-- Estructura básica HTML5 --&gt;</span>
+<span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Página de Presentación<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="comentario">&lt;!-- ========== SECCIÓN 1: PRESENTACIÓN ========== --&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>María García López<span class="etiqueta">&lt;/h1&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        ¡Hola! Soy <span class="etiqueta">&lt;strong&gt;</span>estudiante de primer año<span class="etiqueta">&lt;/strong&gt;</span> 
+        de Ingeniería Informática. Me apasiona la tecnología y estoy 
+        <span class="etiqueta">&lt;em&gt;</span>empezando mi viaje<span class="etiqueta">&lt;/em&gt;</span> 
+        en el mundo del desarrollo web.
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== SECCIÓN 2: SOBRE MÍ ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Sobre Mí<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;h3&gt;</span>Mi historia<span class="etiqueta">&lt;/h3&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        Nací en una pequeña ciudad y siempre me interesó cómo funcionan 
+        las computadoras. Cuando era niña, <span class="etiqueta">&lt;strong&gt;</span>rompí mi primer juguete<span class="etiqueta">&lt;/strong&gt;</span> 
+        para ver qué había dentro. ¡Y no pude volver a armarlo!
+    <span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        Actualmente estoy aprendiendo <span class="etiqueta">&lt;em&gt;</span>HTML y CSS<span class="etiqueta">&lt;/em&gt;</span> 
+        en mi primer curso de desarrollo web. Mi objetivo es crear 
+        <span class="etiqueta">&lt;strong&gt;</span>aplicaciones útiles<span class="etiqueta">&lt;/strong&gt;</span> 
+        que mejoren la vida de las personas.
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== SECCIÓN 3: MIS HOBBIES ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Mis Hobbies<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;h4&gt;</span>En mi tiempo libre:<span class="etiqueta">&lt;/h4&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>1. Leer libros de ciencia ficción y fantasía.<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>2. Escuchar música, especialmente rock y jazz.<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>3. Jugar videojuegos de estrategia y aventura.<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>4. Programar pequeños proyectos como práctica.<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>5. Hacer senderismo y explorar la naturaleza.<span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;hr&gt;</span>
+
+    <span class="comentario">&lt;!-- ========== SECCIÓN 4: DATOS CURIOSOS ========== --&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Datos Curiosos<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;h5&gt;</span>Cosas que quizás no sabías:<span class="etiqueta">&lt;/h5&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        <span class="etiqueta">&lt;strong&gt;</span>Dato 1:<span class="etiqueta">&lt;/strong&gt;</span> 
+        El primer programa fue escrito por Ada Lovelace en el siglo XIX.
+    <span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        <span class="etiqueta">&lt;strong&gt;</span>Dato 2:<span class="etiqueta">&lt;/strong&gt;</span> 
+        La palabra "bug" para errores de programación viene de una 
+        <span class="etiqueta">&lt;em&gt;</span>polilla real<span class="etiqueta">&lt;/em&gt;</span> 
+        encontrada en un computador en 1947.
+    <span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>
+        <span class="etiqueta">&lt;strong&gt;</span>Dato 3:<span class="etiqueta">&lt;/strong&gt;</span> 
+        HTML significa <span class="etiqueta">&lt;em&gt;</span>HyperText Markup Language<span class="etiqueta">&lt;/em&gt;</span>.
+    <span class="etiqueta">&lt;/p&gt;</span>
+
+    <span class="etiqueta">&lt;h6&gt;</span>Gracias por visitar mi página :)<span class="etiqueta">&lt;/h6&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+<span class="etiqueta">&lt;/html&gt;</span>
+        </div>
+
+        <div class="nota">
+            <strong>💡 Nota:</strong> Esta solución demuestra:
+            <ul style="margin-top: 10px;">
+                <li>✅ Un solo h1 para el título principal</li>
+                <li>✅ Múltiples h2 para secciones principales</li>
+                <li>✅ h3, h4, h5, h6 para subsecciones</li>
+                <li>✅ Varios párrafos bien estructurados</li>
+                <li>✅ strong y em usados apropiadamente</li>
+                <li>✅ Líneas hr separando secciones</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

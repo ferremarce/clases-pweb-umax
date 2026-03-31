@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 1: Fundamentos de la Web y Entorno de Trabajo - INI04</title>
+    <style>
+        :root {
+            --color-primario: #8B0000;
+            --color-secundario: #DC143C;
+            --color-fondo: #FFFFFF;
+            --color-texto: #1a1a1a;
+            --color-texto-claro: #555555;
+            --sombra: 0 4px 12px rgba(0,0,0,0.15);
+            --borde-radio: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        header.presentacion-header {
+            background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+            color: white;
+            padding: 30px 50px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        header.presentacion-header .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        header.presentacion-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        header.presentacion-header .subtitulo {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .contenedor {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        .diapositiva {
+            background: white;
+            border-radius: var(--borde-radio);
+            box-shadow: var(--sombra);
+            padding: 50px;
+            margin-bottom: 40px;
+            min-height: 500px;
+        }
+
+        .diapositiva h2 {
+            color: var(--color-primario);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--color-secundario);
+        }
+
+        .diapositiva h3 {
+            color: var(--color-secundario);
+            font-size: 1.3rem;
+            margin: 20px 0 15px;
+        }
+
+        .diapositiva p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--color-texto);
+        }
+
+        .diapositiva ul, .diapositiva ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .diapositiva li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .tarjeta {
+            background: #f8f9fa;
+            border-radius: var(--borde-radio);
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        .tarjeta-importante {
+            background: #fff3f3;
+            border-left-color: var(--color-primario);
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: var(--borde-radio);
+            padding: 25px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+        }
+
+        .etiqueta {
+            color: #569cd6;
+        }
+
+        .atributo {
+            color: #9cdcfe;
+        }
+
+        .valor {
+            color: #ce9178;
+        }
+
+        .comentario {
+            color: #6a9955;
+        }
+
+        .texto {
+            color: #dcdcaa;
+        }
+
+        .slide-portada {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 550px;
+        }
+
+        .slide-portada .logo-grande {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .slide-portada h2 {
+            font-size: 2.5rem;
+            border: none;
+            padding: 0;
+        }
+
+        .slide-portada .meta {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .slide-portada .meta span {
+            background: rgba(139, 0, 0, 0.1);
+            color: var(--color-primario);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .objetivos-lista {
+            counter-reset: objetivo;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .objetivos-lista li {
+            counter-increment: objetivo;
+            padding-left: 50px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .objetivos-lista li::before {
+            content: counter(objetivo);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background: var(--color-primario);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .comparacion-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: var(--borde-radio);
+            text-align: center;
+        }
+
+        .comparacion-item h4 {
+            color: var(--color-primario);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .pasos {
+            counter-reset: paso;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .pasos li {
+            counter-increment: paso;
+            padding-left: 45px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .pasos li::before {
+            content: counter(paso);
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 30px;
+            height: 30px;
+            background: var(--color-secundario);
+            color: white;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .btn-navegacion {
+            display: inline-block;
+            background: var(--color-primario);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn-navegacion:hover {
+            background: var(--color-secundario);
+        }
+
+        .codigo-inline {
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--color-primario);
+        }
+
+        footer.presentacion-footer {
+            background: var(--color-primario);
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .info-sesion {
+            background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--borde-radio);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .info-sesion h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .actividad-practica {
+            background: #fff9e6;
+            border: 2px solid #e6c200;
+            border-radius: var(--borde-radio);
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .actividad-practica h4 {
+            color: #b8860b;
+            margin-bottom: 15px;
+        }
+
+        .tiempo-badge {
+            display: inline-block;
+            background: var(--color-secundario);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header.presentacion-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            header.presentacion-header .logo {
+                width: 60px;
+            }
+            header.presentacion-header h1 {
+                font-size: 1.5rem;
+            }
+            .diapositiva {
+                padding: 30px 20px;
+            }
+            .comparacion {
+                grid-template-columns: 1fr;
+            }
+            pre {
+                font-size: 14px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo">
+        <div>
+            <h1>Sesión 1: Fundamentos de la Web y Entorno de Trabajo</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad I</div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva slide-portada" id="slide-01">
+            <img src="../img/logo-umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>Fundamentos de la Web y Entorno de Trabajo</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad I - Introducción al Desarrollo Web</p>
+            <div class="meta">
+                <span>18 Sesiones</span>
+                <span>4 Horas por Sesión</span>
+                <span>72 Horas Totales</span>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender la diferencia entre Internet y la World Wide Web</li>
+                <li>Conocer cómo funciona la comunicación cliente-servidor</li>
+                <li>Instalar y configurar Visual Studio Code con extensiones útiles</li>
+                <li>Crear tu primera página web con estructura HTML básica</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Nota:</strong> Esta sesión es la base para todo el curso. Asegúrate de entender bien estos conceptos antes de continuar.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>¿Qué es Internet?</h2>
+            <p>Internet es una <strong>red global de computadoras</strong> interconectadas que comparten información a través de protocolos estándar.</p>
+            
+            <div class="tarjeta">
+                <h3>Analogía sencilla</h3>
+                <p>Imagina Internet como el <strong>sistema de carreteras</strong> de un país. Las carreteras conectan ciudades (computadoras) y permiten que personas (datos) viajen de un lugar a otro.</p>
+            </div>
+
+            <h3>Características principales:</h3>
+            <ul>
+                <li><strong>Red descentralizada:</strong> No existe un servidor central</li>
+                <li><strong>Protocolos estándar:</strong> TCP/IP para comunicación</li>
+                <li><strong>Servicios:</strong> Correo electrónico, transferencia de archivos, web, etc.</li>
+            </ul>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Internet vs World Wide Web</h2>
+            <p>Es común confundir ambos términos, pero no son lo mismo:</p>
+            
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>🌐 Internet</h4>
+                    <p>La <strong>infraestructura física</strong> de cables, servidores, routers y protocolos que conecta computadoras en todo el mundo.</p>
+                    <p style="margin-top: 15px;"><em>Es como el sistema de carreteras</em></p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>🖥️ World Wide Web</h4>
+                    <p>Un <strong>servicio</strong> que funciona sobre Internet. Permite acceder a documentos y recursos mediante navegadores.</p>
+                    <p style="margin-top: 15px;"><em>Es como los vehículos que circulan por las carreteras</em></p>
+                </div>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Dato importante:</strong> La Web es solo UN servicio de Internet. También existen el correo electrónico, FTP, videojuegos en línea, etc.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>¿Cómo funciona la Web?</h2>
+            <p>Cuando visitas una página web, ocurre un proceso de comunicación entre tu computadora (cliente) y un servidor:</p>
+
+            <div class="tarjeta">
+                <h3>El modelo Cliente-Servidor</h3>
+                <ol class="pasos">
+                    <li><strong>Cliente:</strong> Tu navegador (Chrome, Firefox, Edge) solicita una página web</li>
+                    <li><strong>Petición HTTP:</strong> La solicitud viaja por Internet usando el protocolo HTTP</li>
+                    <li><strong>Servidor:</strong> Una computadora remota procesa tu solicitud</li>
+                    <li><strong>Respuesta:</strong> El servidor envía los archivos HTML, CSS, JS de vuelta</li>
+                    <li><strong>Navegador:</strong> Tu navegador interpreta y muestra la página</li>
+                </ol>
+            </div>
+
+            <h3>Componentes clave:</h3>
+            <ul>
+                <li><strong>URL:</strong> Dirección única del recurso (ej: www.ejemplo.com)</li>
+                <li><strong>HTTP/HTTPS:</strong> Protocolos para transferir datos</li>
+                <li><strong>DNS:</strong> Traduce nombres de dominio a direcciones IP</li>
+            </ul>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Historia de la Web</h2>
+            
+            <div class="tarjeta">
+                <h3>📅 1989 - Web 1.0</h3>
+                <p>Tim Berners-Lee inventa la World Wide Web. Páginas <strong>estáticas</strong> y <strong>solo lectura</strong>. Contenido informativo con enlaces entre páginas.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>📅 2004 - Web 2.0</h3>
+                <p>La web se vuelve <strong>social y participativa</strong>. Blogs, redes sociales, wikis, YouTube. Los usuarios pueden crear y compartir contenido.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>📅 2010+ - Web 3.0</h3>
+                <p>Web <strong>semántica e inteligente</strong>. IA, blockchain, aplicaciones descentralizadas, experiencias personalizadas.</p>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>🏆 W3C:</strong> El World Wide Web Consortium, fundado por Tim Berners-Lee, establece los estándares que aseguran que todos los navegadores interpreten el código de la misma manera.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Herramientas del Desarrollador Web</h2>
+            <p>Para crear páginas web necesitas tres herramientas fundamentales:</p>
+
+            <div class="tarjeta">
+                <h3>1. Navegador Web</h3>
+                <p>Chrome, Firefox, Edge o Safari. Todos incluyen <strong>herramientas de desarrollo</strong> (F12) para inspeccionar y depurar código.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>2. Editor de Código</h3>
+                <p><strong>Visual Studio Code (VS Code)</strong> es el más popular. Es gratuito, ligero y con múltiples extensiones.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>3. Navegador de Archivos</h3>
+                <p>Para organizar tus proyectos en carpetas y archivos.</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Instalación de Visual Studio Code</h2>
+            <p>VS Code es el editor de código que usaremos durante todo el curso.</p>
+
+            <h3>Pasos de instalación:</h3>
+            <ol class="pasos">
+                <li>Descarga VS Code desde <span class="codigo-inline">code.visualstudio.com</span></li>
+                <li>Selecciona la versión para tu sistema operativo (Windows, Mac o Linux)</li>
+                <li>Ejecuta el instalador y sigue los pasos</li>
+                <li>Abre VS Code al finalizar</li>
+            </ol>
+
+            <div class="tarjeta">
+                <strong>💡 Recomendación:</strong> Durante la instalación en Windows, marca la opción "Agregar al PATH" para poder abrir VS Code desde la terminal.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Extensiones para VS Code</h2>
+            <p>Las extensiones añaden funcionalidad adicional al editor.</p>
+
+            <h3>Extensiones esenciales:</h3>
+            
+            <div class="tarjeta">
+                <h3>1. Live Server</h3>
+                <p>Permite ver los cambios en tiempo real en el navegador mientras editas. Ideal para desarrollo frontend.</p>
+                <p><em>Busca: "Live Server" de Ritwick Dey</em></p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>2. Prettier</h3>
+                <p>Formatea automáticamente tu código para que siempre se vea limpio y organizado.</p>
+                <p><em>Busca: "Prettier - Code formatter" de Prettier</em></p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>3. Auto Rename Tag</h3>
+                <p>Al editar una etiqueta HTML, renombra automáticamente la etiqueta de cierre.</p>
+                <p><em>Busca: "Auto Rename Tag" de Jun Han</em></p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Estructura Básica de un Documento HTML</h2>
+            <p>Todo archivo HTML sigue una estructura estándar:</p>
+
+<pre><code><span class="comentario">&lt;!-- Declara que este es un documento HTML5 --&gt;</span>
+<span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="comentario">&lt;!-- Metadatos de la página --&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> 
+          <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Mi Primera Página<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="comentario">&lt;!-- Contenido visible de la página --&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>¡Hola Mundo!<span class="etiqueta">&lt;/h1&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+
+<span class="etiqueta">&lt;/html&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>📌 Recuerda:</strong>
+                <ul>
+                    <li><code>&lt;head&gt;</code>: Contiene información para el navegador (no visible)</li>
+                    <li><code>&lt;body&gt;</code>: Contiene todo el contenido que ve el usuario</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Mi Primer Archivo HTML</h2>
+            <p>Vamos a crear paso a paso tu primera página web:</p>
+
+            <h3>Paso 1: Crear el archivo</h3>
+            <ol class="pasos">
+                <li>Abre VS Code</li>
+                <li>Crea una carpeta para tu proyecto (Ej: <code>mi-primer-web</code>)</li>
+                <li>Crea un archivo llamado <code>index.html</code></li>
+            </ol>
+
+            <h3>Paso 2: Escribir el código</h3>
+<pre><code><span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> 
+          <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Mi Página Personal<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>Bienvenidos a mi página<span class="etiqueta">&lt;/h1&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+<span class="etiqueta">&lt;/html&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Escribe el código manualmente para practicar. No copies y pegues, ¡la repetición te ayuda a memorizar!
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Etiquetas de Texto en HTML</h2>
+            <p>HTML ofrece múltiples etiquetas para formatear texto:</p>
+
+            <h3>Encabezados (h1 - h6)</h3>
+<pre><code><span class="etiqueta">&lt;h1&gt;</span>Encabezado Principal (solo uno por página)<span class="etiqueta">&lt;/h1&gt;</span>
+<span class="etiqueta">&lt;h2&gt;</span>Subtítulo (sección importante)<span class="etiqueta">&lt;/h2&gt;</span>
+<span class="etiqueta">&lt;h3&gt;</span>Subsección<span class="etiqueta">&lt;/h3&gt;</span>
+<span class="etiqueta">&lt;h4&gt;</span>Subsección menor<span class="etiqueta">&lt;/h4&gt;</span>
+<span class="etiqueta">&lt;h5&gt;</span>Subsección pequeña<span class="etiqueta">&lt;/h5&gt;</span>
+<span class="etiqueta">&lt;h6&gt;</span>Nivel más bajo<span class="etiqueta">&lt;/h6&gt;</span></code></pre>
+
+            <h3>Etiquetas de texto</h3>
+<pre><code><span class="etiqueta">&lt;p&gt;</span>Esto es un párrafo.<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;strong&gt;</span>Texto importante (negrita)<span class="etiqueta">&lt;/strong&gt;</span>
+<span class="etiqueta">&lt;em&gt;</span>Texto enfatizado (cursiva)<span class="etiqueta">&lt;/em&gt;</span>
+<span class="etiqueta">&lt;br&gt;</span>  <span class="comentario">&lt;!-- Salto de línea --&gt;</span>
+<span class="etiqueta">&lt;hr&gt;</span>   <span class="comentario">&lt;!-- Línea horizontal --&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>⚠️ Importante:</strong> Usa <code>&lt;h1&gt;</code> solo una vez por página para el título principal. Los demás encabezados pueden repetirse según la jerarquía.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Organización de Archivos del Proyecto</h2>
+            <p>Es fundamental organizar tu proyecto web de manera clara:</p>
+
+            <h3>Estructura recomendada:</h3>
+<pre><code>mi-primer-web/
+├── index.html        <span class="comentario">← Archivo principal</span>
+├── estilos.css       <span class="comentario">← Estilos (próximas sesiones)</span>
+├── script.js         <span class="comentario">← JavaScript (próximas sesiones)</span>
+└── img/
+    ├── foto.jpg      <span class="comentario">← Imágenes del sitio</span>
+    └── logo.png</code></pre>
+
+            <h3>Rutas de archivos:</h3>
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>Ruta relativa:</strong> <code>img/foto.jpg</code> (misma carpeta)</li>
+                    <li><strong>Ruta absoluta:</strong> <code>C:/misitio/img/foto.jpg</code> (no recomendada)</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>📌 Regla de oro:</strong> Usa siempre rutas relativas. Son más portables y funcionan en cualquier servidor.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Actividad Práctica</h2>
+            
+            <div class="actividad-practica">
+                <h4>🎯 Mi Primera Página Personal</h4>
+                <p><span class="tiempo-badge">2.5 horas</span>Duración estimada</p>
+                
+                <h3 style="margin-top: 20px;">Requisitos:</h3>
+                <ol>
+                    <li>Crear una carpeta llamada <code>mi-biografia</code></li>
+                    <li>Crear el archivo <code>index.html</code> con la estructura básica</li>
+                    <li>Agregar un título principal con tu nombre usando <code>&lt;h1&gt;</code></li>
+                    <li>Escribir una breve biografía usando párrafos <code>&lt;p&gt;</code></li>
+                    <li>Agregar una sección de "Mis Hobbies" con <code>&lt;h2&gt;</code> y una lista</li>
+                    <li>Usar al menos 3 tipos de etiquetas de texto (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>)</li>
+                    <li>Agregar una línea horizontal <code>&lt;hr&gt;</code> para separar secciones</li>
+                </ol>
+            </div>
+
+            <div class="tarjeta">
+                <h3>💡 Pasos para usar Live Server:</h3>
+                <ol class="pasos">
+                    <li>Instala la extensión "Live Server" en VS Code</li>
+                    <li>Haz clic derecho sobre tu archivo HTML</li>
+                    <li>Selecciona "Open with Live Server"</li>
+                    <li>Tu página se abrirá en el navegador</li>
+                    <li>Cualquier cambio en el código se actualizará automáticamente</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Demo: Creando la Página en Vivo</h2>
+            <p>El docente demostrará paso a paso la creación de la página web.</p>
+
+            <div class="tarjeta">
+                <h3>Durante la demo, observa:</h3>
+                <ul>
+                    <li>Cómo se estructura el documento HTML</li>
+                    <li>Cómo se comporta el navegador al mostrar la página</li>
+                    <li>Cómo usar Live Server para ver cambios en tiempo real</li>
+                    <li>Los errores comunes y cómo corregirlos</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⌨️ Práctica guiada:</strong> Iremos creando la página juntos. No te preocupes si cometes errores, son parte del aprendizaje.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>Internet</strong> es la red global de computadoras</li>
+                <li><strong>World Wide Web</strong> es un servicio que funciona sobre Internet</li>
+                <li>El modelo <strong>cliente-servidor</strong> permite la comunicación web</li>
+                <li><strong>VS Code</strong> es el editor que usaremos</li>
+                <li>Las <strong>extensiones</strong> como Live Server facilitan el desarrollo</li>
+                <li>Todo documento HTML tiene estructura básica: <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code></li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Para la próxima sesión:</h3>
+                <ul>
+                    <li>Revisa tu página personal y haz ajustes</li>
+                    <li>Investiga qué son los servidores web y dominios</li>
+                    <li>Practica creando más contenido con las etiquetas vistas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva slide-portada" id="slide-17">
+            <h2>Próxima Clase</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 2: HTML I - Estructura, Texto y Listas</p>
+            
+            <div class="tarjeta" style="text-align: left; max-width: 600px;">
+                <h3>Temas que cubriremos:</h3>
+                <ul>
+                    <li>Semántica HTML: etiquetas estructurales</li>
+                    <li>Formato de texto avanzado</li>
+                    <li>Listas ordenadas y desordenadas</li>
+                    <li>Buenas prácticas de indentación</li>
+                    <li>Validación de código con W3C Validator</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion">Continuar</a>
+        </section>
+    </main>
+
+    <footer class="presentacion-footer">
+        <span>INI04 - Introducción al Desarrollo Web</span>
+        <span>Sesión 1 de 18</span>
+    </footer>
+</body>
+</html>
