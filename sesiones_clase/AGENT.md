@@ -2,11 +2,11 @@
 
 > **NOTA:** Este archivo es el subagente especializado en la elaboración de presentaciones para las sesiones de clase del curso INI04.
 >
-> Este subagente es invocado desde el agents.md principal cuando se solicita crear o modificar presentaciones de sesiones de clase.
+> Este subagente es invocado desde el AGENTS.md principal cuando se solicita crear o modificar presentaciones de sesiones de clase.
 
 ## Índice
 
-- [agent.md - Subagente de Presentaciones de Sesiones](#agentmd---subagente-de-presentaciones-de-sesiones)
+- [AGENT.md - Subagente de Presentaciones de Sesiones](#agentmd---subagente-de-presentaciones-de-sesiones)
   - [Índice](#índice)
   - [7.1 Estructura HTML Base](#71-estructura-html-base)
   - [7.2 Variables y Estilos CSS](#72-variables-y-estilos-css)

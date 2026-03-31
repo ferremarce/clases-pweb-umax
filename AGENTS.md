@@ -1,6 +1,6 @@
-# agents.md - Guía para Agentes de Código
+# AGENTS.md - Guía para Agentes de Código
 
-> **NOTA:** Este archivo es la guía principal. Para crear presentaciones de sesiones de clase, usar el subagente `sesiones_clase/agent.md`.
+> **NOTA:** Este archivo es la guía principal. Para crear presentaciones de sesiones de clase, usar el subagente `sesiones_clase/AGENT.md`.
 
 ## 1. Identificación del Proyecto
 
@@ -17,7 +17,7 @@
 
 ```
 clases-pweb-umax/
-├── agents.md                      (este archivo - guía general)
+├── AGENTS.md                      (este archivo - guía general)
 ├── readme.md
 ├── ejercicios_clase/
 │   ├── sesion-01/
@@ -34,7 +34,7 @@ clases-pweb-umax/
 │   ├── plan_de_clase.html     (plan general 18 sesiones)
 │   └── contenidos_unidades.html (contenido detallado)
 └── sesiones_clase/
-    ├── agent.md               (formatos y estilos para presentaciones)
+    ├── AGENT.md               (formatos y estilos para presentaciones)
     ├── sesion-01.html         (presentación sesión 1)
     ├── sesion-02.html
     └── sesion-18.html
@@ -160,11 +160,11 @@ document.getElementById('btnEnviar').addEventListener('click', () => {
 
 ## 7. Presentaciones de Sesiones de Clase
 
-> **NOTA IMPORTANTE:** El archivo `sesiones_clase/agent.md` es un subagente especializado en la elaboración de presentaciones para las sesiones de clase.
+> **NOTA IMPORTANTE:** El archivo `sesiones_clase/AGENT.md` es un subagente especializado en la elaboración de presentaciones para las sesiones de clase.
 >
-> Para crear cualquier presentación de sesión de clase, **DEBE** consultarse y utilizarse exclusivamente el archivo `sesiones_clase/agent.md`, el cual contiene todos los formatos, estilos y plantillas actualizadas para generar las presentaciones del curso.
+> Para crear cualquier presentación de sesión de clase, **DEBE** consultarse y utilizarse exclusivamente el archivo `sesiones_clase/AGENT.md`, el cual contiene todos los formatos, estilos y plantillas actualizadas para generar las presentaciones del curso.
 >
-> El agents.md principal solo proporciona referencias generales del proyecto.
+> El AGENTS.md principal solo proporciona referencias generales del proyecto.
 
 ---
 
