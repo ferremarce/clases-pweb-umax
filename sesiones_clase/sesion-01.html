@@ -103,31 +103,27 @@
             min-height: 300px;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            counter-increment: slide;
             position: relative;
             scroll-margin-top: 100px;
         }
 
-        .diapositiva::before {
-            content: counter(slide);
+        .numeracion {
             position: absolute;
             top: 15px;
             right: 20px;
             background: var(--color-primario);
             color: white;
-            width: 35px;
+            width: 50px;
             height: 35px;
-            border-radius: 50%;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         main.contenedor {
-            counter-reset: slide;
-        }
 
         .diapositiva h2 {
             color: var(--color-primario);
@@ -499,7 +495,7 @@
             </ul>
 
             <figure style="text-align: center; margin: 30px 0;">
-                <img src="../img/servicios-internet.svg" alt="Servicios de Internet: Email, FTP y Web" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <img src="../img/servicios_internet.svg" alt="Servicios de Internet: Email, FTP y Web" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                 <figcaption style="font-size: 0.9rem; color: var(--color-texto-claro); margin-top: 10px;">
                     Principales servicios que funcionan sobre Internet
                 </figcaption>
@@ -976,8 +972,16 @@
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.querySelector('header.presentacion-header');
             const slides = document.querySelectorAll('.diapositiva');
+            const totalSlides = slides.length;
 
+            // Agregar numeración a cada diapositiva
             slides.forEach((slide, index) => {
+                const numeracion = document.createElement('div');
+                numeracion.className = 'numeracion';
+                numeracion.textContent = `${index + 1}/${totalSlides}`;
+                slide.appendChild(numeracion);
+
+                // Agregar botón "Siguiente" (excepto última slide)
                 if (index < slides.length - 1) {
                     const btn = document.createElement('a');
                     btn.href = '#';

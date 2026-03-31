@@ -2,11 +2,11 @@
 
 > **NOTA:** Este archivo es el subagente especializado en la elaboración de presentaciones para las sesiones de clase del curso INI04.
 >
-> Este subagente es invocado desde el AGENTS.md principal cuando se solicita crear o modificar presentaciones de sesiones de clase.
+> Este subagente es invocado desde el agents.md principal cuando se solicita crear o modificar presentaciones de sesiones de clase.
 
 ## Índice
 
-- [AGENT.md - Subagente de Presentaciones de Sesiones](#agentmd---subagente-de-presentaciones-de-sesiones)
+- [agent.md - Subagente de Presentaciones de Sesiones](#agentmd---subagente-de-presentaciones-de-sesiones)
   - [Índice](#índice)
   - [7.1 Estructura HTML Base](#71-estructura-html-base)
   - [7.2 Variables y Estilos CSS](#72-variables-y-estilos-css)
@@ -165,7 +165,6 @@ header.presentacion-header.mini .profesor {
     width: 100%;
     margin-top: 80px;
     padding: 20px 40px 40px;
-    counter-reset: slide;
 }
 
 /* Diapositiva con recuadro sombreado */
@@ -176,27 +175,25 @@ header.presentacion-header.mini .profesor {
     min-height: 300px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    counter-increment: slide;
     position: relative;
     scroll-margin-top: 100px;
 }
 
-/* Numeración de diapositiva */
-.diapositiva::before {
-    content: counter(slide);
+/* Numeración de diapositiva (X/Y) */
+.numeracion {
     position: absolute;
     top: 15px;
     right: 20px;
     background: var(--color-primario);
     color: white;
-    width: 35px;
+    width: 50px;
     height: 35px;
-    border-radius: 50%;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Títulos dentro de diapositiva */
@@ -530,9 +527,17 @@ code {
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header.presentacion-header');
     const slides = document.querySelectorAll('.diapositiva');
+    const totalSlides = slides.length;
 
-    // Agregar botón "Siguiente" a cada diapositiva (excepto la última)
+    // Agregar numeración y botón "Siguiente" a cada diapositiva
     slides.forEach((slide, index) => {
+        // Numeración X/Y
+        const numeracion = document.createElement('div');
+        numeracion.className = 'numeracion';
+        numeracion.textContent = `${index + 1}/${totalSlides}`;
+        slide.appendChild(numeracion);
+
+        // Botón "Siguiente" (excepto última slide)
         if (index < slides.length - 1) {
             const btn = document.createElement('a');
             btn.href = '#';
