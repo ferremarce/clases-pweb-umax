@@ -1,11 +1,11 @@
-# AGENT.md - Subagente de Presentaciones de Sesiones
+# AGENT.md - Subagente de Sesiones (Presentaciones, Ejercicios y Soluciones)
 
-> Subagente especializado en la elaboración de presentaciones para sesiones del curso INI04.
-> Invocado desde AGENTS.md cuando se requieren presentaciones de clase.
+> Subagente especializado en elaborar presentaciones de clase, ejercicios de práctica y soluciones del curso INI04.
+> Invocado desde AGENTS.md cuando se requieren contenidos de sesiones.
 
 ---
 
-## 7.1 Estructura HTML Base
+## 1. Slides de Presentación (index.html)
 
 ```html
 <!DOCTYPE html>
@@ -38,7 +38,7 @@
             <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad Y</p>
         </section>
         <section class="diapositiva" id="slide-02"><!-- Contenido --></section>
-        <!-- Más slides -->
+        <!-- Más slides (mín 15) -->
         <section class="diapositiva" id="slide-XX">
             <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
@@ -50,24 +50,198 @@
 
 ---
 
-## 7.2 CSS Principal
+## 2. CSS de Slides
 
-> Todo el CSS ya está incluido en `css/estilos_slides.css`. No es necesario incluir CSS inline.
-
----
-
-## 7.3 JavaScript
-
-> Todo el JavaScript ya está incluido en `js/script.js`. No es necesario incluir scripts inline.
+> Todo el CSS de presentaciones está en `css/estilos_slides.css`. No usar CSS inline.
 
 ---
 
-## 7.4 Estructura de Carpetas
+## 3. JavaScript
+
+> El JavaScript para navegación de slides está en `js/script.js`.
+
+---
+
+## 4. Ejercicios de Práctica
+
+### 4.1 index_ejercicios.html (Índice de ejercicios)
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión X - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión X: Título de la Sesión</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>Descripción de la actividad.</p>
+                <p><strong>Duración:</strong> X horas</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Nombre del Ejercicio</h1>
+                    <p>Descripción breve.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                </div>
+            </div>
+
+            <!-- Más ejercicios -->
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+                    <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools - Tutorial de HTML</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+```
+
+### 4.2 ejercicios/ejercicio_XX.html (Enunciados)
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio X - Nombre - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio X: Nombre del Ejercicio</h1>
+            <p>Sesión N - Título de la Sesión</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Descripción del ejercicio.</p>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Requisito 1</li>
+                    <li>Requisito 2</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Pista 1</li>
+                        <li>Pista 2</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <p>Descripción visual o textual del resultado.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
+```
+
+### 4.3 CSS de Práctica
+
+> Todo el CSS de ejercicios y soluciones está en `css/estilos_practica.css`. No usar CSS inline.
+> Los estilos incluyen: header-ejercicios, contenedor, enunciado, requisitos, pistas, solucion, codigo, vista-previa.
+
+---
+
+## 5. Soluciones
+
+### 5.1 soluciones/solucion_XX.html
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio X - Nombre</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio X - Nombre</h1>
+            <p>Sesión N - Título de la Sesión</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- Código con highlighting --&gt;</span>
+<span class="etiqueta">&lt;html&gt;</span>...<span class="etiqueta">&lt;/html&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa">
+                <!-- Renderizado visual del código -->
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+```
+
+---
+
+## 6. Estructura de Carpetas
 
 ```
 sesion_XX/
 ├── index.html              (presentación de la sesión)
-├── index_ejercicios.html   (enunciados de ejercicios)
+├── index_ejercicios.html   (índice de ejercicios)
 ├── README.md
 ├── ejercicios/
 │   ├── ejercicio_01.html
@@ -89,8 +263,9 @@ sesion_XX/
 
 ---
 
-## 7.5 Reglas
+## 7. Reglas
 
+### Slides de Presentación
 - Mín: 15 slides por sesión
 - Slide-01: Logo UMAX (100px), título, unidad
 - Slide final: Resumen y temas próximos
@@ -99,3 +274,53 @@ sesion_XX/
 - Código: `<pre><code>` con colores para sintaxis
 - Imágenes: `images/` con nombres descriptivos
 - Responsive: Probar en 768px y 480px
+
+### Ejercicios
+- Usar siempre `css/estilos_practica.css` (NO CSS inline)
+- Header: clase `header-ejercicios` con logo, título, subtítulo y profesor alineado a la derecha
+- Estructura: `<header>`, `<main class="contenedor">`, contenido en `<div class="enunciado">`
+- No incluir indicadores de nivel (Básico/Intermedio)
+- Profesores: siempre "Prof. Ing. Juan M. Ferreira"
+
+### Soluciones
+- Usar siempre `css/estilos_practica.css` (NO CSS inline)
+- Incluir código con highlighting + resultado visual
+- Estructura similar a ejercicios
+- Usar clases: `.codigo`, `.comentario`, `.etiqueta`, `.atributo`, `.valor`, `.vista-previa`, `.nota`
+
+### Convenciones de Nombres
+- Archivos: snake_case (ejercicio_01.html, solucion_02.html)
+- Imágenes: snake_case (logo_umax.png, diagrama_cliente_servidor.png)
+- Carpetas sesión: sesion_XX (sesion_01, sesion_02)
+
+### Rutas
+- Desde sesión raíz: `css/`, `js/`, `images/`
+- Desde ejercicios/soluciones: `../css/`, `../images/`
+- Links a planes: `../../plan_clase/`
+
+---
+
+## 8. Directrices de Ejercicios
+
+### Siempre 3 ejercicios por sesión
+
+| Ejercicio | Nivel | Descripción |
+|-----------|-------|-------------|
+| ejercicio_01.html | **Básico** | Conceptos fundamentales, introducción al tema |
+| ejercicio_02.html | **Intermedio** | Aplicación de conceptos, práctica guiada |
+| ejercicio_03.html | **Avanzado** | Integración, desafíos, uso de todos los conceptos |
+
+### Estructura de cada ejercicio
+- **Enunciado:** claro y conciso
+- **Requisitos:** específicos y medibles
+- **Pistas:** opcionales (usar `<details><summary>`)
+- **Resultado esperado:** visual o textual
+
+### Estructura de cada solución
+- Código con highlighting de sintaxis
+- Resultado visual renderizado
+- Nota explicativa ("UNA posible solución")
+
+### Notas importantes
+- **Los niveles son internos** - Guía para crear contenido, pero NO se muestran como badges en la UI (ya fueron eliminados)
+- El subagente debe crear los 3 ejercicios en orden de dificultad progresiva
