@@ -1,0 +1,422 @@
+:root {
+    --color-primario: #8B0000;
+    --color-secundario: #DC143C;
+    --color-fondo: #FFFFFF;
+    --color-texto: #1a1a1a;
+    --color-texto-claro: #555555;
+    --sombra: 0 4px 12px rgba(0,0,0,0.15);
+    --borde-radio: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+header.presentacion-header {
+    background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+}
+
+header.presentacion-header .logo {
+    width: 60px;
+    height: auto;
+}
+
+header.presentacion-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header.presentacion-header .titulos {
+    flex: 1;
+}
+
+header.presentacion-header .subtitulo {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-top: 3px;
+}
+
+header.presentacion-header .profesor {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    white-space: nowrap;
+    text-align: right;
+}
+
+header.presentacion-header .enlaces-plan {
+    display: flex;
+    gap: 15px;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+header.presentacion-header .enlaces-plan a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+header.presentacion-header .enlaces-plan a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+header.presentacion-header.mini {
+    height: 50px;
+    padding: 8px 30px;
+    gap: 20px;
+}
+
+header.presentacion-header.mini .logo {
+    width: 35px;
+}
+
+header.presentacion-header.mini h1 {
+    font-size: 1rem;
+}
+
+header.presentacion-header.mini .subtitulo,
+header.presentacion-header.mini .profesor {
+    font-size: 0.8rem;
+}
+
+.contenedor {
+    width: 100%;
+    margin-top: 80px;
+    padding: 20px 40px 40px;
+}
+
+.diapositiva {
+    background: white;
+    padding: 40px 60px;
+    margin-bottom: 30px;
+    min-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: relative;
+    scroll-margin-top: 100px;
+}
+
+.numeracion {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: var(--color-primario);
+    color: white;
+    width: 50px;
+    height: 35px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.diapositiva h2 {
+    color: var(--color-primario);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--color-secundario);
+}
+
+.diapositiva h3 {
+    color: var(--color-secundario);
+    font-size: 1.3rem;
+    margin: 20px 0 15px;
+}
+
+.diapositiva p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--color-texto);
+}
+
+.diapositiva ul, .diapositiva ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.diapositiva li {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.tarjeta {
+    background: #f8f9fa;
+    border-radius: var(--borde-radio);
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid var(--color-secundario);
+}
+
+.tarjeta-importante {
+    background: #fff3f3;
+    border-left-color: var(--color-primario);
+}
+
+.logo-grande {
+    width: 100px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.objetivos-lista {
+    counter-reset: objetivo;
+    list-style: none;
+    margin-left: 0;
+}
+
+.objetivos-lista li {
+    counter-increment: objetivo;
+    padding-left: 50px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.objetivos-lista li::before {
+    content: counter(objetivo);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background: var(--color-primario);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.comparacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.comparacion-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: var(--borde-radio);
+    text-align: center;
+}
+
+.comparacion-item h4 {
+    color: var(--color-primario);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.pasos {
+    counter-reset: paso;
+    list-style: none;
+    margin-left: 0;
+}
+
+.pasos li {
+    counter-increment: paso;
+    padding-left: 45px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.pasos li::before {
+    content: counter(paso);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 30px;
+    height: 30px;
+    background: var(--color-secundario);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: var(--borde-radio);
+    padding: 25px;
+    margin: 20px 0;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+}
+
+.etiqueta { color: #569cd6; }
+.atributo { color: #9cdcfe; }
+.valor { color: #ce9178; }
+.comentario { color: #6a9955; }
+.texto { color: #dcdcaa; }
+
+.btn-navegacion {
+    display: inline-block;
+    background: var(--color-primario);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-navegacion:hover {
+    background: var(--color-secundario);
+}
+
+.btn-siguiente {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 10px;
+    background: var(--color-primario);
+    color: white;
+    padding: 12px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-siguiente:hover {
+    background: var(--color-secundario);
+}
+
+.codigo-inline {
+    background: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--color-primario);
+}
+
+.info-sesion {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    color: white;
+    padding: 40px;
+    border-radius: var(--borde-radio);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-sesion h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.actividad-practica {
+    background: #fff9e6;
+    border: 2px solid #e6c200;
+    border-radius: var(--borde-radio);
+    padding: 30px;
+    margin: 25px 0;
+}
+
+.actividad-practica h4 {
+    color: #b8860b;
+    margin-bottom: 15px;
+}
+
+.tiempo-badge {
+    display: inline-block;
+    background: var(--color-secundario);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    header.presentacion-header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+        min-height: 80px;
+        gap: 10px;
+    }
+    header.presentacion-header .logo {
+        width: 40px;
+    }
+    header.presentacion-header h1 {
+        font-size: 1rem;
+    }
+    header.presentacion-header .titulos {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    header.presentacion-header .subtitulo {
+        font-size: 0.8rem;
+    }
+    header.presentacion-header .profesor {
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+    .contenedor {
+        margin-top: 110px;
+        height: calc(100vh - 110px);
+    }
+    .diapositiva {
+        padding: 20px;
+    }
+    .comparacion {
+        grid-template-columns: 1fr;
+    }
+    pre {
+        font-size: 14px;
+        padding: 15px;
+    }
+    .controles {
+        bottom: 15px;
+    }
+    .controles button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}

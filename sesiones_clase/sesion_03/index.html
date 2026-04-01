@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 3: HTML II: Enlaces, Imágenes y Multimedia - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 3: HTML II: Enlaces, Imágenes y Multimedia</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad II</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>HTML II: Enlaces, Imágenes y Multimedia</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad II - Fundamentos de HTML</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender la diferencia entre rutas relativas y absolutas</li>
+                <li>Crear enlaces externos e internos con la etiqueta &lt;a&gt;</li>
+                <li>Insertar imágenes con la etiqueta &lt;img&gt;</li>
+                <li>Integrar audio y video en páginas web</li>
+                <li>Crear barras de navegación funcionales</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Nota:</strong> Los enlaces e imágenes son fundamentales para la navegación y experiencia del usuario en la web.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Rutas de Archivos</h2>
+            <p>Las rutas definen la ubicación de los recursos (imágenes, páginas, etc.):</p>
+
+            <div class="tarjeta">
+                <h3>Ruta Absoluta</h3>
+                <p>Define la ubicación completa desde el dominio:</p>
+<pre><code><span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"https://ejemplo.com/images/foto.jpg"</span><span class="etiqueta">&gt;</span></code></pre>
+                <p><strong>Usar:</strong> Solo para recursos externos (CDN, APIs)</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Ruta Relativa</h3>
+                <p>Define la ubicación desde el archivo actual:</p>
+<pre><code><span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"images/foto.jpg"</span><span class="etiqueta">&gt;</span>      <span class="comentario">&lt;!-- misma carpeta --&gt;</span>
+<span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"../images/foto.jpg"</span><span class="etiqueta">&gt;</span>   <span class="comentario">&lt;!-- carpeta padre --&gt;</span>
+<span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"../../images/foto.jpg"</span><span class="etiqueta">&gt;</span> <span class="comentario">&lt;!-- dos niveles arriba --&gt;</span></code></pre>
+                <p><strong>Usar:</strong> Siempre que sea posible (recursos locales)</p>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Regla de oro:</strong> Usa rutas relativas para tus propios archivos. Son más portables y funcionan en cualquier servidor.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>La Etiqueta de Enlace &lt;a&gt;</h2>
+            <p>La etiqueta &lt;a&gt; (anchor) crea enlaces a otras páginas o recursos:</p>
+
+<pre><code><span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"https://google.com"</span><span class="etiqueta">&gt;</span>Ir a Google<span class="etiqueta">&lt;/a&gt;</span>
+<span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"pagina.html"</span><span class="etiqueta">&gt;</span>Nuestra Página<span class="etiqueta">&lt;/a&gt;</span>
+<span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"archivo.pdf"</span><span class="etiqueta">&gt;</span>Descargar PDF<span class="etiqueta">&lt;/a&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Atributos principales de &lt;a&gt;:</h3>
+                <ul>
+                    <li><strong>href</strong>: URL o ruta del destino</li>
+                    <li><strong>target</strong>: Dónde abrir el enlace</li>
+                    <li><strong>title</strong>: Texto emergente (tooltip)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Atributo Target</h2>
+            <p>El atributo <code>target</code> especifica dónde abrir el enlace:</p>
+
+            <div class="tarjeta">
+                <h3>Valores de target:</h3>
+                <ul>
+                    <li><strong>_self</strong> (valor por defecto) - Abre en la misma pestaña</li>
+                    <li><strong>_blank</strong> - Abre en una nueva pestaña</li>
+                    <li><strong>_parent</strong> - Abre en el marco padre</li>
+                    <li><strong>_top</strong> - Abre en la ventana completa</li>
+                </ul>
+            </div>
+
+<pre><code><span class="comentario">&lt;!-- Abre en nueva pestaña --&gt;</span>
+<span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"https://google.com"</span> <span class="atributo">target</span>=<span class="valor">"_blank"</span><span class="etiqueta">&gt;</span>Google<span class="etiqueta">&lt;/a&gt;</span>
+
+<span class="comentario">&lt;!-- Abre en la misma pestaña (por defecto) --&gt;</span>
+<span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"pagina.html"</span> <span class="atributo">target</span>=<span class="valor">"_self"</span><span class="etiqueta">&gt;</span>Nuestra Página<span class="etiqueta">&lt;/a&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Usa siempre <code>target="_blank"</code> para enlaces externos, así el usuario no pierde tu página.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Enlaces Internos (Anclas)</h2>
+            <p>Los enlaces internos permiten navegar dentro de la misma página:</p>
+
+<pre><code><span class="comentario">&lt;!-- Definir el ancla --&gt;</span>
+<span class="etiqueta">&lt;h2</span> <span class="atributo">id</span>=<span class="valor">"seccion1"</span><span class="etiqueta">&gt;</span>Sección 1<span class="etiqueta">&lt;/h2&gt;</span>
+
+<span class="comentario">&lt;!-- Enlazar al ancla --&gt;</span>
+<span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#seccion1"</span><span class="etiqueta">&gt;</span>Ir a Sección 1<span class="etiqueta">&lt;/a&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Ejemplo de menú de navegación:</h3>
+<pre><code><span class="etiqueta">&lt;nav&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#inicio"</span><span class="etiqueta">&gt;</span>Inicio<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#nosotros"</span><span class="etiqueta">&gt;</span>Nosotros<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#servicios"</span><span class="etiqueta">&gt;</span>Servicios<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#contacto"</span><span class="etiqueta">&gt;</span>Contacto<span class="etiqueta">&lt;/a&gt;</span>
+<span class="etiqueta">&lt;/nav&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>La Etiqueta de Imagen &lt;img&gt;</h2>
+            <p>La etiqueta &lt;img&gt; inserta imágenes en la página:</p>
+
+<pre><code><span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"images/foto.jpg"</span> 
+       <span class="atributo">alt</span>=<span class="valor">"Descripción de la imagen"</span>
+       <span class="atributo">width</span>=<span class="valor">"400"</span>
+       <span class="atributo">height</span>=<span class="valor">"300"</span><span class="etiqueta">&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Atributos esenciales:</h3>
+                <ul>
+                    <li><strong>src</strong>: Ruta de la imagen (obligatorio)</li>
+                    <li><strong>alt</strong>: Texto alternativo (obligatorio para accesibilidad)</li>
+                    <li><strong>width</strong>: Ancho en píxeles</li>
+                    <li><strong>height</strong>: Alto en píxeles</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Importante:</strong> El atributo <code>alt</code> es obligatorio. Describe la imagen para lectores de pantalla y SEO.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Formatos de Imagen</h2>
+            <p>Conoce los formatos más utilizados en la web:</p>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>🖼️ JPG/JPEG</h4>
+                    <p>Ideal para fotografías. Compresión con pérdida. No transparencias.</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>🖼️ PNG</h4>
+                    <p>Para gráficos con transparencias. Compresión sin pérdida. Fondos transparentes.</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>🎯 SVG</h4>
+                    <p>Gráficos vectoriales. Escalables sin pérdida. Ideal para iconos y logos.</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>🌐 WebP</h4>
+                    <p>Formato moderno. Mejor compresión que JPG y PNG. Soporte universal.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Usa WebP cuando sea posible (menor tamaño, misma calidad). Ten versiones PNG de respaldo.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Imágenes Responsivas</h2>
+            <p>Las imágenes deben adaptarse a diferentes tamaños de pantalla:</p>
+
+            <div class="tarjeta">
+                <h3>Consejo básico:</h3>
+                <p>Usa CSS para hacer imágenes flexibles:</p>
+<pre><code><span class="etiqueta">img</span> {
+    <span class="atributo">max-width</span>: <span class="valor">100%</span>;
+    <span class="atributo">height</span>: <span class="valor">auto</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Atributo srcset (avanzado):</h3>
+<pre><code><span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"imagen-grande.jpg"</span>
+       <span class="atributo">srcset</span>=<span class="valor">"imagen-chica.jpg 480w, imagen-mediana.jpg 800w, imagen-grande.jpg 1200w"</span>
+       <span class="atributo">alt</span>=<span class="valor">"Descripción"</span><span class="etiqueta">&gt;</span></code></pre>
+                <p>El navegador elige la mejor versión según el dispositivo.</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Audio en HTML</h2>
+            <p>La etiqueta &lt;audio&gt; permite reproducir sonido:</p>
+
+<pre><code><span class="etiqueta">&lt;audio</span> <span class="atributo">controls</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;source</span> <span class="atributo">src</span>=<span class="valor">"audio.mp3"</span> <span class="atributo">type</span>=<span class="valor">"audio/mpeg"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;source</span> <span class="atributo">src</span>=<span class="valor">"audio.ogg"</span> <span class="atributo">type</span>=<span class="valor">"audio/ogg"</span><span class="etiqueta">&gt;</span>
+    Tu navegador no soporta audio.
+<span class="etiqueta">&lt;/audio&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Atributos de &lt;audio&gt;:</h3>
+                <ul>
+                    <li><strong>controls</strong>: Muestra los controles de reproducción</li>
+                    <li><strong>autoplay</strong>: Reproduce automáticamente</li>
+                    <li><strong>loop</strong>: Repite infinitamente</li>
+                    <li><strong>muted</strong>: Silenciado al inicio</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Video en HTML</h2>
+            <p>La etiqueta &lt;video&gt; permite reproducir video:</p>
+
+<pre><code><span class="etiqueta">&lt;video</span> <span class="atributo">controls</span> <span class="atributo">width</span>=<span class="valor">"640"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;source</span> <span class="atributo">src</span>=<span class="valor">"video.mp4"</span> <span class="atributo">type</span>=<span class="valor">"video/mp4"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;source</span> <span class="atributo">src</span>=<span class="valor">"video.webm"</span> <span class="atributo">type</span>=<span class="valor">"video/webm"</span><span class="etiqueta">&gt;</span>
+    Tu navegador no soporta video.
+<span class="etiqueta">&lt;/video&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Atributos de &lt;video&gt;:</h3>
+                <ul>
+                    <li><strong>controls</strong>: Muestra los controles</li>
+                    <li><strong>width/height</strong>: Dimensiones</li>
+                    <li><strong>poster</strong>: Imagen de portada</li>
+                    <li><strong>autoplay, loop, muted</strong>: Comportamiento</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Formatos recomendados:</strong> MP4 (H.264) + WebM. Siempre proporciona ambos para compatibilidad.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Iframes</h2>
+            <p>Los iframes permiten incrustar contenido externo:</p>
+
+            <div class="tarjeta">
+                <h3>YouTube:</h3>
+<pre><code><span class="etiqueta">&lt;iframe</span> <span class="atributo">width</span>=<span class="valor">"560"</span> <span class="atributo">height</span>=<span class="valor">"315"</span>
+          <span class="atributo">src</span>=<span class="valor">"https://www.youtube.com/embed/VIDEO_ID"</span>
+          <span class="atributo">frameborder</span>=<span class="valor">"0"</span>
+          <span class="atributo">allowfullscreen</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;/iframe&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Google Maps:</h3>
+<pre><code><span class="etiqueta">&lt;iframe</span> <span class="atributo">src</span>=<span class="valor">"https://www.google.com/maps/embed?..."</span>
+          <span class="atributo">width</span>=<span class="valor">"600"</span> <span class="atributo">height</span>=<span class="valor">"450"</span>
+          <span class="atributo">style</span>=<span class="valor">"border:0;"</span>
+          <span class="atributo">allowfullscreen</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;/iframe&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Barra de Navegación</h2>
+            <p>La navbar es el menú principal de un sitio web:</p>
+
+<pre><code><span class="etiqueta">&lt;nav&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"index.html"</span><span class="etiqueta">&gt;</span>Inicio<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"nosotros.html"</span><span class="etiqueta">&gt;</span>Nosotros<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"servicios.html"</span><span class="etiqueta">&gt;</span>Servicios<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"contacto.html"</span><span class="etiqueta">&gt;</span>Contacto<span class="etiqueta">&lt;/a&gt;</span>
+<span class="etiqueta">&lt;/nav&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Mejores prácticas:</h3>
+                <ul>
+                    <li>Usar la etiqueta semántica &lt;nav&gt;</li>
+                    <li>Mantener enlaces claros y organizados</li>
+                    <li>Alta contraste para accesibilidad</li>
+                    <li>Testear en dispositivos móviles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Ejemplo: Página Completa con Multimedia</h2>
+            <p>Veamos una página que integra todos los elementos:</p>
+
+<pre><code><span class="etiqueta">&lt;header&gt;</span>
+    <span class="etiqueta">&lt;h1&gt;</span>Mi Sitio de Viajes<span class="etiqueta">&lt;/h1&gt;</span>
+    <span class="etiqueta">&lt;nav&gt;</span>
+        <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#inicio"</span><span class="etiqueta">&gt;</span>Inicio<span class="etiqueta">&lt;/a&gt;</span>
+        <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#destinos"</span><span class="etiqueta">&gt;</span>Destinos<span class="etiqueta">&lt;/a&gt;</span>
+        <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#videos"</span><span class="etiqueta">&gt;</span>Videos<span class="etiqueta">&lt;/a&gt;</span>
+    <span class="etiqueta">&lt;/nav&gt;</span>
+<span class="etiqueta">&lt;/header&gt;</span>
+
+<span class="etiqueta">&lt;main&gt;</span>
+    <span class="etiqueta">&lt;section</span> <span class="atributo">id</span>=<span class="valor">"destinos"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;img</span> <span class="atributo">src</span>=<span class="valor">"images/playa.jpg"</span> <span class="atributo">alt</span>=<span class="valor">"Playa Tropical"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;/section&gt;</span>
+    
+    <span class="etiqueta">&lt;section</span> <span class="atributo">id</span>=<span class="valor">"videos"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;video</span> <span class="atributo">controls</span><span class="etiqueta">&gt;</span>
+            <span class="etiqueta">&lt;source</span> <span class="atributo">src</span>=<span class="valor">"videos/travel.mp4"</span> <span class="atributo">type</span>=<span class="valor">"video/mp4"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;/video&gt;</span>
+    <span class="etiqueta">&lt;/section&gt;</span>
+<span class="etiqueta">&lt;/main&gt;</span></code></pre>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Buenas Prácticas</h2>
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar rutas relativas para recursos locales</li>
+                    <li>Agregar siempre atributo alt a imágenes</li>
+                    <li>Proporcionar múltiples formatos de video</li>
+                    <li>Usar target="_blank" para enlaces externos</li>
+                    <li>Comprimir imágenes antes de subirlas</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>Rutas absolutas innecesarias</li>
+                    <li>Imágenes sin texto alternativo</li>
+                    <li>Videos con autoplay con sonido</li>
+                    <li>Archivos de imagen muy grandes</li>
+                    <li>Iframes sin permisos o contexto</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Accesibilidad en Medios</h2>
+            <p>Garantiza que todos puedan acceder al contenido:</p>
+
+            <div class="tarjeta">
+                <h3>Imágenes:</h3>
+                <ul>
+                    <li>Siempre usar alt descriptivo</li>
+                    <li>alt="" para imágenes decorativas</li>
+                    <li>No usar imágenes de texto</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Video y Audio:</h3>
+                <ul>
+                    <li>Proporcionar subtítulos (track)</li>
+                    <li>Transcripciones de audio</li>
+                    <li>Controles accesibles</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Herramientas:</strong> Usa Lighthouse de Chrome para auditar accesibilidad.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Crear navegación interna con enlaces de anclas</li>
+                    <li>Insertar imágenes con atributos completos</li>
+                    <li>Agregar audio y video a una página</li>
+                    <li>Crear una barra de navegación funcional</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>Rutas:</strong> Diferencia entre absolutas y relativas</li>
+                <li><strong>Enlaces:</strong> etiqueta &lt;a&gt;, target, anclas internas</li>
+                <li><strong>Imágenes:</strong> &lt;img&gt;, atributos src, alt, formatos</li>
+                <li><strong>Audio:</strong> etiqueta &lt;audio&gt;, controles</li>
+                <li><strong>Video:</strong> etiqueta &lt;video&gt;, múltiples formatos</li>
+                <li><strong>Iframes:</strong> YouTube, Maps</li>
+                <li><strong>Navbar:</strong> menú de navegación con &lt;nav&gt;</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Para la próxima sesión:</h3>
+                <ul>
+                    <li>HTML III: Tablas y Formularios</li>
+                    <li>Practica creando tu propio sitio con multimedia</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

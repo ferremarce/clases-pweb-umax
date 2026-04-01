@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 2: HTML I: Estructura, Texto y Listas - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 2: HTML I: Estructura, Texto y Listas</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad II</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>HTML I: Estructura, Texto y Listas</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad II - Fundamentos de HTML</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender y aplicar etiquetas semánticas de HTML5</li>
+                <li>Utilizar correctamente encabezados (h1-h6) y párrafos</li>
+                <li>Crear listas ordenadas y desordenadas</li>
+                <li>Implementar indentación y buenas prácticas de código</li>
+                <li>Validar código HTML con W3C Validator</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Nota:</strong> HTML5 introduce etiquetas semánticas que mejoran la estructura y accesibilidad de las páginas web.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Repaso: Estructura Básica HTML</h2>
+            <p>Todo documento HTML tiene una estructura básica que debemos recordar:</p>
+
+<pre><code><span class="comentario">&lt;!-- Documento HTML5 --&gt;</span>
+<span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> <span class="atributo">content</span>=<span class="valor">"width=device-width, initial-scale=1.0"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Título de la Página<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="comentario">&lt;!-- Contenido visible --&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+
+<span class="etiqueta">&lt;/html&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Dato clave:</strong> El DOCTYPE indica al navegador que usamos HTML5, el estándar actual.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Etiquetas Semánticas de HTML5</h2>
+            <p>Las etiquetas semánticas describen el <strong>significado</strong> del contenido, no solo su apariencia:</p>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>🎯 Beneficios</h4>
+                    <ul style="text-align: left;">
+                        <li>Mejor accesibilidad</li>
+                        <li>SEO mejorado</li>
+                        <li> Código más legible</li>
+                        <li>Mantenimiento fácil</li>
+                    </ul>
+                </div>
+                <div class="comparacion-item">
+                    <h4>⚠️ Antigua forma</h4>
+                    <p style="text-align: left;">Usar solo <code>&lt;div&gt;</code> para todo, sin significado semántico.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Etiquetas estructurales principales:</h3>
+                <ul>
+                    <li><strong>&lt;header&gt;</strong> - Encabezado de página o sección</li>
+                    <li><strong>&lt;nav&gt;</strong> - Navegación principal</li>
+                    <li><strong>&lt;main&gt;</strong> - Contenido principal</li>
+                    <li><strong>&lt;section&gt;</strong> - Sección temática</li>
+                    <li><strong>&lt;article&gt;</strong> - Contenido independiente</li>
+                    <li><strong>&lt;aside&gt;</strong> - Contenido relacionado</li>
+                    <li><strong>&lt;footer&gt;</strong> - Pie de página</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Estructura Semántica Completa</h2>
+            <p>Veamos cómo se relacionan las etiquetas semánticas en una página:</p>
+
+<pre><code><span class="etiqueta">&lt;body&gt;</span>
+    <span class="etiqueta">&lt;header&gt;</span>
+        <span class="etiqueta">&lt;h1&gt;</span>Mi Sitio Web<span class="etiqueta">&lt;/h1&gt;</span>
+        <span class="etiqueta">&lt;nav&gt;</span>
+            <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#"</span><span class="etiqueta">&gt;</span>Inicio<span class="etiqueta">&lt;/a&gt;</span>
+            <span class="etiqueta">&lt;a</span> <span class="atributo">href</span>=<span class="valor">"#"</span><span class="etiqueta">&gt;</span>Nosotros<span class="etiqueta">&lt;/a&gt;</span>
+        <span class="etiqueta">&lt;/nav&gt;</span>
+    <span class="etiqueta">&lt;/header&gt;</span>
+
+    <span class="etiqueta">&lt;main&gt;</span>
+        <span class="etiqueta">&lt;section&gt;</span>
+            <span class="etiqueta">&lt;article&gt;</span>
+                <span class="etiqueta">&lt;h2&gt;</span>Artículo Principal<span class="etiqueta">&lt;/h2&gt;</span>
+                <span class="etiqueta">&lt;p&gt;</span>Contenido del artículo...<span class="etiqueta">&lt;/p&gt;</span>
+            <span class="etiqueta">&lt;/article&gt;</span>
+        <span class="etiqueta">&lt;/section&gt;</span>
+    <span class="etiqueta">&lt;/main&gt;</span>
+
+    <span class="etiqueta">&lt;footer&gt;</span>
+        <span class="etiqueta">&lt;p&gt;</span>&copy; 2024 Mi Sitio Web<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;/footer&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span></code></pre>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Importante:</strong> Solo debe haber UN &lt;body&gt;, UN &lt;header&gt; principal y UN &lt;main&gt; por página.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Encabezados (h1 - h6)</h2>
+            <p>Los encabezados definen la jerarquía del contenido. Van del 1 al 6:</p>
+
+<pre><code><span class="etiqueta">&lt;h1&gt;</span>Encabezado Principal (solo uno por página)<span class="etiqueta">&lt;/h1&gt;</span>
+<span class="etiqueta">&lt;h2&gt;</span>Sección Importante<span class="etiqueta">&lt;/h2&gt;</span>
+<span class="etiqueta">&lt;h3&gt;</span>Subsección<span class="etiqueta">&lt;/h3&gt;</span>
+<span class="etiqueta">&lt;h4&gt;</span>Subsección Menor<span class="etiqueta">&lt;/h4&gt;</span>
+<span class="etiqueta">&lt;h5&gt;</span>Detalle Pequeño<span class="etiqueta">&lt;/h5&gt;</span>
+<span class="etiqueta">&lt;h6&gt;</span>Nivel Más Bajo<span class="etiqueta">&lt;/h6&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Reglas de uso:</h3>
+                <ul>
+                    <li>Solo un <code>&lt;h1&gt;</code> por página (el título principal)</li>
+                    <li>No saltarse niveles (no pasar de h2 a h4)</li>
+                    <li>Los搜索引擎 usan los encabezados para entender la estructura</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Párrafos y Texto</h2>
+            <p>Las etiquetas básicas para texto:</p>
+
+<pre><code><span class="etiqueta">&lt;p&gt;</span>Este es un párrafo de texto.<span class="etiqueta">&lt;/p&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>Este texto tiene 
+    <span class="etiqueta">&lt;strong&gt;</span>negrita<span class="etiqueta">&lt;/strong&gt;</span> 
+    y <span class="etiqueta">&lt;em&gt;</span>cursiva<span class="etiqueta">&lt;/em&gt;</span>.<span class="etiqueta">&lt;/p&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>Texto con 
+    <span class="etiqueta">&lt;u&gt;</span>subrayado<span class="etiqueta">&lt;/u&gt;</span>, 
+    <span class="etiqueta">&lt;s&gt;</span>tachado<span class="etiqueta">&lt;/s&gt;</span>, 
+    <span class="etiqueta">&lt;mark&gt;</span>resaltado<span class="etiqueta">&lt;/mark&gt;</span>.<span class="etiqueta">&lt;/p&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>Una línea horizontal:<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;hr&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>Salto de línea:<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;br&gt;</span>
+<span class="etiqueta">&lt;p&gt;</span>Sigue en nueva línea<span class="etiqueta">&lt;/p&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Usa &lt;strong&gt; para texto importante (no solo visual) y &lt;em&gt; para énfasis. Los lectores de pantalla lo reconocen.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Listas Desordenadas</h2>
+            <p>Las listas desordenadas (&lt;ul&gt;) muestran elementos sin orden específico:</p>
+
+<pre><code><span class="etiqueta">&lt;ul&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Elemento 1<span class="etiqueta">&lt;/li&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Elemento 2<span class="etiqueta">&lt;/li&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Elemento 3<span class="etiqueta">&lt;/li&gt;</span>
+<span class="etiqueta">&lt;/ul&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Resultado:</h3>
+                <ul style="list-style-type: disc; margin-left: 20px;">
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Tipos de viñeta (type):</h3>
+                <ul>
+                    <li><strong>disc</strong> (por defecto) - Círculo sólido</li>
+                    <li><strong>circle</strong> - Círculo vacío</li>
+                    <li><strong>square</strong> - Cuadrado</li>
+                </ul>
+                <p style="margin-top: 10px;">Ejemplo: <code>&lt;ul type="square"&gt;</code></p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Listas Ordenadas</h2>
+            <p>Las listas ordenadas (&lt;ol&gt;) muestran elementos en secuencia:</p>
+
+<pre><code><span class="etiqueta">&lt;ol&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Primer paso<span class="etiqueta">&lt;/li&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Segundo paso<span class="etiqueta">&lt;/li&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Tercer paso<span class="etiqueta">&lt;/li&gt;</span>
+<span class="etiqueta">&lt;/ol&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Resultado:</h3>
+                <ol style="margin-left: 20px;">
+                    <li>Primer paso</li>
+                    <li>Segundo paso</li>
+                    <li>Tercer paso</li>
+                </ol>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Atributos de &lt;ol&gt;:</h3>
+                <ul>
+                    <li><strong>type</strong> - Tipo de numeración: "1", "A", "a", "I", "i"</li>
+                    <li><strong>start</strong> - Número inicial: start="5"</li>
+                    <li><strong>reversed</strong> - Orden inverso</li>
+                </ul>
+                <p style="margin-top: 10px;">Ejemplo: <code>&lt;ol type="A" start="3"&gt;</code></p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Listas Anidadas</h2>
+            <p>Puedes combinar listas ordenadas y desordenadas:</p>
+
+<pre><code><span class="etiqueta">&lt;ul&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Frutas
+        <span class="etiqueta">&lt;ul&gt;</span>
+            <span class="etiqueta">&lt;li&gt;</span>Manzana<span class="etiqueta">&lt;/li&gt;</span>
+            <span class="etiqueta">&lt;li&gt;</span>Plátano<span class="etiqueta">&lt;/li&gt;</span>
+        <span class="etiqueta">&lt;/ul&gt;</span>
+    <span class="etiqueta">&lt;/li&gt;</span>
+    <span class="etiqueta">&lt;li&gt;</span>Verduras
+        <span class="etiqueta">&lt;ol&gt;</span>
+            <span class="etiqueta">&lt;li&gt;</span>Lechuga<span class="etiqueta">&lt;/li&gt;</span>
+            <span class="etiqueta">&lt;li&gt;</span>Zanahoria<span class="etiqueta">&lt;/li&gt;</span>
+        <span class="etiqueta">&lt;/ol&gt;</span>
+    <span class="etiqueta">&lt;/li&gt;</span>
+<span class="etiqueta">&lt;/ul&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Las listas anidadas son ideales para menús de navegación y структуру de contenido.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Ejemplo: Página Personal Completa</h2>
+            <p>Vamos a crear una página personal con todo lo aprendido:</p>
+
+<pre><code><span class="etiqueta">&lt;!DOCTYPE html&gt;</span>
+<span class="etiqueta">&lt;html</span> <span class="atributo">lang</span>=<span class="valor">"es"</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;head&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">charset</span>=<span class="valor">"UTF-8"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;meta</span> <span class="atributo">name</span>=<span class="valor">"viewport"</span> <span class="atributo">content</span>=<span class="valor">"width=device-width"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;title&gt;</span>Mi Página Personal<span class="etiqueta">&lt;/title&gt;</span>
+<span class="etiqueta">&lt;/head&gt;</span>
+<span class="etiqueta">&lt;body&gt;</span>
+    <span class="etiqueta">&lt;header&gt;</span>
+        <span class="etiqueta">&lt;h1&gt;</span>Juan Pérez<span class="etiqueta">&lt;/h1&gt;</span>
+    <span class="etiqueta">&lt;/header&gt;</span>
+    <span class="etiqueta">&lt;main&gt;</span>
+        <span class="etiqueta">&lt;section&gt;</span>
+            <span class="etiqueta">&lt;h2&gt;</span>Sobre Mí<span class="etiqueta">&lt;/h2&gt;</span>
+            <span class="etiqueta">&lt;p&gt;</span>Soy estudiante de Ingeniería en Sistemas...<span class="etiqueta">&lt;/p&gt;</span>
+        <span class="etiqueta">&lt;/section&gt;</span>
+        <span class="etiqueta">&lt;section&gt;</span>
+            <span class="etiqueta">&lt;h2&gt;</span>Mis Gustos<span class="etiqueta">&lt;/h2&gt;</span>
+            <span class="etiqueta">&lt;ul&gt;</span>
+                <span class="etiqueta">&lt;li&gt;</span>Programación<span class="etiqueta">&lt;/li&gt;</span>
+                <span class="etiqueta">&lt;li&gt;</span>Música<span class="etiqueta">&lt;/li&gt;</span>
+            <span class="etiqueta">&lt;/ul&gt;</span>
+        <span class="etiqueta">&lt;/section&gt;</span>
+    <span class="etiqueta">&lt;/main&gt;</span>
+    <span class="etiqueta">&lt;footer&gt;</span>
+        <span class="etiqueta">&lt;p&gt;</span>&copy; 2024 Juan Pérez<span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;/footer&gt;</span>
+<span class="etiqueta">&lt;/body&gt;</span>
+<span class="etiqueta">&lt;/html&gt;</span></code></pre>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Buenas Prácticas de Código</h2>
+            <p>Un código limpio y bien estructurado es más fácil de mantener:</p>
+
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar indentación (2 o 4 espacios)</li>
+                    <li>Nombrar archivos en minúsculas</li>
+                    <li>Agregar comentarios descriptivos</li>
+                    <li>Cerrar todas las etiquetas</li>
+                    <li>Usar rutas relativas</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>Saltarse niveles de encabezados</li>
+                    <li>Usar mayúsculas en etiquetas</li>
+                    <li>Olvidar el atributo lang</li>
+                    <li>No agregar meta viewport</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Validación de Código HTML</h2>
+            <p>El W3C (World Wide Web Consortium) ofrece un validador gratuito:</p>
+
+            <div class="tarjeta">
+                <h3>🔗 W3C Validator</h3>
+                <p><strong>URL:</strong> <span class="codigo-inline">validator.w3.org</span></p>
+                <p>Permite validar tu código HTML por URL, archivo o texto directo.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Errores comunes:</h3>
+                <ul>
+                    <li>Etiquetas sin cerrar</li>
+                    <li>Atributos sin valor</li>
+                    <li>Doctype incorrecto</li>
+                    <li>Elementos mal anidados</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Valida tu código frecuentemente durante el desarrollo. Es más fácil corregir errores pequeños que grandes.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Herramientas de Desarrollo</h2>
+            <p>Los navegadores incluyen herramientas para inspeccionar y depurar:</p>
+
+            <div class="tarjeta">
+                <h3>🔧 DevTools (F12)</h3>
+                <ul>
+                    <li><strong>Elements:</strong> Ver estructura HTML y estilos</li>
+                    <li><strong>Console:</strong> Ver errores de JavaScript</li>
+                    <li><strong>Network:</strong> Analizar cargas de página</li>
+                    <li><strong>Inspector:</strong> Seleccionar elementos visuales</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>⌨️ Atajos útiles en VS Code:</h3>
+                <ul>
+                    <li><strong>Ctrl + /</strong> - Comentar/Descomentar</li>
+                    <li><strong>Ctrl + D</strong> - Seleccionar siguiente igual</li>
+                    <li><strong>Alt + ↑/↓</strong> - Mover línea</li>
+                    <li><strong>Ctrl + Shift + K</strong> - Eliminar línea</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Resumen de Etiquetas Aprendidas</h2>
+            
+            <div class="tarjeta">
+                <h3>Estructurales:</h3>
+                <ul>
+                    <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li><code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code></li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Texto:</h3>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> - Encabezados</li>
+                    <li><code>&lt;p&gt;</code> - Párrafo</li>
+                    <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;s&gt;</code>, <code>&lt;mark&gt;</code></li>
+                    <li><code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code></li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Listas:</h3>
+                <ul>
+                    <li><code>&lt;ul&gt;</code> - Lista desordenada</li>
+                    <li><code>&lt;ol&gt;</code> - Lista ordenada</li>
+                    <li><code>&lt;li&gt;</code> - Elemento de lista</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Crear una página con estructura semántica</li>
+                    <li>Agregar encabezados y párrafos</li>
+                    <li>Crear listas ordenadas y desordenadas</li>
+                    <li>Anidar listas para menus</li>
+                    <li>Validar tu código con W3C</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>Etiquetas semánticas:</strong> header, main, nav, section, article, footer</li>
+                <li><strong>Encabezados:</strong> h1 a h6 con jerarquía correcta</li>
+                <li><strong>Texto:</strong> párrafos, negrita, cursiva, énfasis</li>
+                <li><strong>Listas:</strong> ordenadas (ol) y desordenadas (ul)</li>
+                <li><strong>Listas anidadas:</strong> combinar tipos de listas</li>
+                <li><strong>Validación:</strong> W3C Validator paraHTML correcto</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Para la próxima sesión:</h3>
+                <ul>
+                    <li>Practica creando tu propia página personal</li>
+                    <li>Experimenta con diferentes tipos de listas</li>
+                    <li>Próxima clase: Enlaces, Imágenes y Multimedia</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Próxima Clase</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 3: HTML II - Enlaces, Imágenes y Multimedia</p>
+            
+            <div class="tarjeta" style="text-align: left; max-width: 600px;">
+                <h3>Temas que cubriremos:</h3>
+                <ul>
+                    <li>Rutas relativas y absolutas</li>
+                    <li>Etiqueta &lt;a&gt; para enlaces</li>
+                    <li>Etiqueta &lt;img&gt; para imágenes</li>
+                    <li>Audio y video embebido</li>
+                    <li>Barra de navegación</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

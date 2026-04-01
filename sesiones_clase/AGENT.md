@@ -348,4 +348,24 @@ sesion_XX/
 
 ## 9. Comportamiento con Git
 
-Sigue la directivas del AGENTS.md principal 
+Sigue la directivas del AGENTS.md principal
+
+---
+
+## 10. Actualización de Enlaces en Planes de Clase
+
+### Regla Obligatoria
+Al crear una nueva sesión, EL SUBAGENTE DEBE actualizar automáticamente los enlaces en:
+1. `plan_clase/plan_de_clase_general.html` - Tabla de sesiones (línea por sesión)
+2. `plan_clase/plan_de_clase_detallado.html` - Cards de cada sesión
+
+### Formato de enlace
+- Ruta: `../sesiones_clase/sesion_XX/index.html`
+- El enlace debe estar en el elemento `<td class="session-title">` del plan general
+- En plan detallado: dentro de `<span class="session-title"><a href="...">`
+
+### Ejecutar SIEMPRE antes de finalizar la sesión
+1. Crear la estructura de carpetas y archivos de la sesión
+2. Actualizar el enlace correspondiente en plan_general.html
+3. Actualizar el enlace correspondiente en plan_detallado.html
+4. Verificar que ambos enlaces funcionen 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 3 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 3: HTML II - Enlaces, Imágenes y Multimedia</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás creando enlaces, insertando imágenes y multimedia, y construyendo barras de navegación. Cada ejercicio integra los conceptos aprendidos.</p>
+                <p><strong>Duración:</strong> 2 horas</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Página con Navegación Interna</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Crea una página de una sola página (SPA) con navegación interna usando enlaces de anclas y una barra de navegación.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Galería de Imágenes</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea una página con una galería de imágenes que incluya diferentes formatos, captions y enlaces a las imágenes.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>Sitio Multipágina con Multimedia</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Crea un sitio de 3 páginas (index, videos, contacto) con menú de navegación, video embebido de YouTube e imágenes.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/a" target="_blank">MDN - Elemento a (enlaces)</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/img" target="_blank">MDN - Elemento img</a></li>
+                    <li><a href="https://www.w3schools.com/html/html_images.asp" target="_blank">W3Schools - Imágenes</a></li>
+                    <li><a href="https://www.w3schools.com/html/html_media.asp" target="_blank">W3Schools - Multimedia</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>

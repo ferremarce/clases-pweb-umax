@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 2 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 2: HTML I - Estructura, Texto y Listas</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás creando estructuras HTML semánticas, encabezados, párrafos y listas. Cada ejercicio aumenta en complejidad.</p>
+                <p><strong>Duración:</strong> 2 horas</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Mi Página de Presentación</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Crea una página de presentación personal con estructura semántica básica, un encabezado principal y un párrafo introductorio.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Lista de Compras con Categorías</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea una lista de compras organizada por categorías usando listas anidadas (ordenadas y desordenadas).</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>Página de Recetas</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Crea una página completa de recetas con estructura semántica, múltiples secciones, encabezados jerárquicos y listas.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+                    <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools - Tutorial de HTML</a></li>
+                    <li><a href="https://validator.w3.org/" target="_blank">W3C Validator</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>
