@@ -343,3 +343,9 @@ sesion_XX/
 - Los niveles (Básico/Intermedio/Avanzado) se muestran como badges en la UI usando la clase `.badge-dificultad`
 - El subagente debe crear los 3 ejercicios en orden de dificultad progresiva
 - Los botones "Ver Solución" solo son visibles cuando se accede desde localhost o 127.0.0.1
+
+---
+
+## 9. Comportamiento con Git
+
+Sigue la directivas del AGENTS.md principal 
