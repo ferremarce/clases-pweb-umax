@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Formulario Completo Validado - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: Formulario Completo Validado</h1>
+            <p>Sesión 4 - HTML III: Tablas y Formularios</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un formulario de inscripción a un evento con validación HTML5 completa:</p>
+                <ul>
+                    <li>Usa método POST y action="#"</li>
+                    <li>Campos obligatorios marcados con required</li>
+                    <li>Validación de longitud mínima (minlength)</li>
+                    <li>Placeholder con ejemplos</li>
+                    <li>Un textarea para comentarios</li>
+                    <li>Botón de envío con type="submit"</li>
+                </ul>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Todos los campos deben tener labels</li>
+                    <li>Nombre: required, minlength 2</li>
+                    <li>Email: required, type="email"</li>
+                    <li>Teléfono: required, type="tel"</li>
+                    <li>Contraseña: required, minlength 8</li>
+                    <li>Confirmar contraseña: required, minlength 8</li>
+                    <li>textarea con rows="4"</li>
+                    <li>Al menos 1 checkbox marcado por defecto</li>
+                    <li>Usa fieldset y legend para agrupar</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>placeholder="ejemplo@email.com" da提示 de formato</li>
+                        <li>minlength="8" requiere mínimo 8 caracteres</li>
+                        <li>type="email" valida formato de email automáticamente</li>
+                        <li>checked en checkbox lo marca por defecto</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <p>Un formulario completo con toda la validación HTML5. El navegador mostrará errores si se intenta enviar sin completar los campos requeridos.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

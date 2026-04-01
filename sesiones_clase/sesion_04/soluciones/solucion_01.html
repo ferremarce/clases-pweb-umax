@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 1 - Tabla de Datos</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 1 - Tabla de Datos</h1>
+            <p>Sesión 4 - HTML III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            <div class="codigo">&lt;table border="1" style="border-collapse: collapse; width: 100%;"&gt;
+    &lt;thead&gt;
+        &lt;tr style="background: #f0f0f0;"&gt;
+            &lt;th scope="col"&gt;Estudiante&lt;/th&gt;
+            &lt;th scope="col"&gt;Matemáticas&lt;/th&gt;
+            &lt;th scope="col"&gt;Historia&lt;/th&gt;
+            &lt;th scope="col"&gt;Ciencias&lt;/th&gt;
+            &lt;th scope="col"&gt;Promedio&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Juan Pérez&lt;/th&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;90&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;87.7&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;María López&lt;/th&gt;
+            &lt;td&gt;92&lt;/td&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;91.7&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Carlos Gómez&lt;/th&gt;
+            &lt;td&gt;78&lt;/td&gt;
+            &lt;td&gt;82&lt;/td&gt;
+            &lt;td&gt;80&lt;/td&gt;
+            &lt;td&gt;80.0&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Ana Martínez&lt;/th&gt;
+            &lt;td&gt;95&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+            &lt;td&gt;98&lt;/td&gt;
+            &lt;td&gt;95.0&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Luis Rodríguez&lt;/th&gt;
+            &lt;td&gt;88&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+            &lt;td&gt;90&lt;/td&gt;
+            &lt;td&gt;87.7&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr style="background: #e0e0e0; font-weight: bold;"&gt;
+            &lt;th scope="row"&gt;Promedio General&lt;/th&gt;
+            &lt;td&gt;87.6&lt;/td&gt;
+            &lt;td&gt;87.4&lt;/td&gt;
+            &lt;td&gt;90.2&lt;/td&gt;
+            &lt;td&gt;88.4&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa la estructura semántica con thead, tbody y tfoot. Los encabezados usan scope para accesibilidad.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: white; padding: 20px; border-radius: 8px; overflow-x: auto;">
+                <table border="1" style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                        <tr style="background: #f0f0f0;">
+                            <th scope="col" style="padding: 8px;">Estudiante</th>
+                            <th scope="col" style="padding: 8px;">Matemáticas</th>
+                            <th scope="col" style="padding: 8px;">Historia</th>
+                            <th scope="col" style="padding: 8px;">Ciencias</th>
+                            <th scope="col" style="padding: 8px;">Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" style="padding: 8px;">Juan Pérez</th>
+                            <td style="padding: 8px;">85</td>
+                            <td style="padding: 8px;">90</td>
+                            <td style="padding: 8px;">88</td>
+                            <td style="padding: 8px;">87.7</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="padding: 8px;">María López</th>
+                            <td style="padding: 8px;">92</td>
+                            <td style="padding: 8px;">88</td>
+                            <td style="padding: 8px;">95</td>
+                            <td style="padding: 8px;">91.7</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr style="background: #e0e0e0; font-weight: bold;">
+                            <th scope="row" style="padding: 8px;">Promedio General</th>
+                            <td style="padding: 8px;">87.6</td>
+                            <td style="padding: 8px;">87.4</td>
+                            <td style="padding: 8px;">90.2</td>
+                            <td style="padding: 8px;">88.4</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 4: HTML III: Tablas y Formularios - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 4: HTML III: Tablas y Formularios</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad II</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>HTML III: Tablas y Formularios</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad II - Fundamentos de HTML</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Crear tablas con estructura semántica (thead, tbody, tfoot)</li>
+                <li>Utilizar celdas de encabezado y combinación de celdas</li>
+                <li>Crear formularios con diferentes tipos de campos</li>
+                <li>Implementar validación de formularios con HTML5</li>
+                <li>Agrupar campos relacionados con fieldset y legend</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Nota:</strong> Las tablas y formularios son esenciales para presentar datos estructurados y recopilar información del usuario.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Estructura de una Tabla</h2>
+            <p>Las tablas en HTML5 tienen una estructura semántica:</p>
+
+<pre><code><span class="etiqueta">&lt;table&gt;</span>
+    <span class="etiqueta">&lt;thead&gt;</span>
+        <span class="etiqueta">&lt;tr&gt;</span>
+            <span class="etiqueta">&lt;th&gt;</span>Encabezado 1<span class="etiqueta">&lt;/th&gt;</span>
+            <span class="etiqueta">&lt;th&gt;</span>Encabezado 2<span class="etiqueta">&lt;/th&gt;</span>
+        <span class="etiqueta">&lt;/tr&gt;</span>
+    <span class="etiqueta">&lt;/thead&gt;</span>
+    <span class="etiqueta">&lt;tbody&gt;</span>
+        <span class="etiqueta">&lt;tr&gt;</span>
+            <span class="etiqueta">&lt;td&gt;</span>Dato 1<span class="etiqueta">&lt;/td&gt;</span>
+            <span class="etiqueta">&lt;td&gt;</span>Dato 2<span class="etiqueta">&lt;/td&gt;</span>
+        <span class="etiqueta">&lt;/tr&gt;</span>
+    <span class="etiqueta">&lt;/tbody&gt;</span>
+<span class="etiqueta">&lt;/table&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Etiquetas de tabla:</h3>
+                <ul>
+                    <li><strong>&lt;table&gt;</strong> - Contenedor principal</li>
+                    <li><strong>&lt;tr&gt;</strong> - Fila (table row)</li>
+                    <li><strong>&lt;th&gt;</strong> - Celda de encabezado</li>
+                    <li><strong>&lt;td&gt;</strong> - Celda de datos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Partes de una Tabla</h2>
+            <p>HTML5 divide las tablas en tres secciones:</p>
+
+            <div class="tarjeta">
+                <h3>&lt;thead&gt; - Encabezado</h3>
+                <p>Define la fila de encabezados. Usualmente contiene &lt;th&gt;.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>&lt;tbody&gt; - Cuerpo</h3>
+                <p>Contiene las filas de datos principales.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>&lt;tfoot&gt; - Pie</h3>
+                <p>Resumen o totales. Siempre aparece después de tbody.</p>
+            </div>
+
+<pre><code><span class="etiqueta">&lt;table&gt;</span>
+    <span class="etiqueta">&lt;thead&gt;</span><span class="etiqueta">&lt;tr&gt;</span><span class="etiqueta">&lt;th&gt;</span>Producto<span class="etiqueta">&lt;/th&gt;</span><span class="etiqueta">&lt;th&gt;</span>Precio<span class="etiqueta">&lt;/th&gt;</span><span class="etiqueta">&lt;/tr&gt;</span><span class="etiqueta">&lt;/thead&gt;</span>
+    <span class="etiqueta">&lt;tbody&gt;</span><span class="etiqueta">&lt;tr&gt;</span><span class="etiqueta">&lt;td&gt;</span> Laptop <span class="etiqueta">&lt;/td&gt;</span><span class="etiqueta">&lt;td&gt;</span> $999 <span class="etiqueta">&lt;/td&gt;</span><span class="etiqueta">&lt;/tr&gt;</span><span class="etiqueta">&lt;/tbody&gt;</span>
+    <span class="etiqueta">&lt;tfoot&gt;</span><span class="etiqueta">&lt;tr&gt;</span><span class="etiqueta">&lt;td&gt;</span> Total <span class="etiqueta">&lt;/td&gt;</span><span class="etiqueta">&lt;td&gt;</span> $999 <span class="etiqueta">&lt;/td&gt;</span><span class="etiqueta">&lt;/tr&gt;</span><span class="etiqueta">&lt;/tfoot&gt;</span>
+<span class="etiqueta">&lt;/table&gt;</span></code></pre>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Combinar Celdas</h2>
+            <p>Usa colspan y rowspan para expandir celdas:</p>
+
+            <div class="tarjeta">
+                <h3>colspan - Columnas</h3>
+                <p>Une celdas horizontalmente:</p>
+<pre><code><span class="etiqueta">&lt;td</span> <span class="atributo">colspan</span>=<span class="valor">"2"</span><span class="etiqueta">&gt;</span>Esta celda ocupa 2 columnas<span class="etiqueta">&lt;/td&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>rowspan - Filas</h3>
+                <p>Une celdas verticalmente:</p>
+<pre><code><span class="etiqueta">&lt;td</span> <span class="atributo">rowspan</span>=<span class="valor">"2"</span><span class="etiqueta">&gt;</span>Esta celda ocupa 2 filas<span class="etiqueta">&lt;/td&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Ejemplo completo:</h3>
+<pre><code><span class="etiqueta">&lt;table border</span>=<span class="valor">"1"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;tr&gt;</span>
+        <span class="etiqueta">&lt;th</span> <span class="atributo">colspan</span>=<span class="valor">"2"</span><span class="etiqueta">&gt;</span>Horario Semanal<span class="etiqueta">&lt;/th&gt;</span>
+    <span class="etiqueta">&lt;/tr&gt;</span>
+    <span class="etiqueta">&lt;tr&gt;</span>
+        <span class="etiqueta">&lt;td&gt;</span>Lunes<span class="etiqueta">&lt;/td&gt;</span>
+        <span class="etiqueta">&lt;td&gt;</span>Matemáticas<span class="etiqueta">&lt;/td&gt;</span>
+    <span class="etiqueta">&lt;/tr&gt;</span>
+<span class="etiqueta">&lt;/table&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Accesibilidad en Tablas</h2>
+            <p>El atributo scope ayuda a lectores de pantalla:</p>
+
+<pre><code><span class="etiqueta">&lt;thead&gt;</span>
+    <span class="etiqueta">&lt;tr&gt;</span>
+        <span class="etiqueta">&lt;th</span> <span class="atributo">scope</span>=<span class="valor">"col"</span><span class="etiqueta">&gt;</span>Producto<span class="etiqueta">&lt;/th&gt;</span>
+        <span class="etiqueta">&lt;th</span> <span class="atributo">scope</span>=<span class="valor">"col"</span><span class="etiqueta">&gt;</span>Precio<span class="etiqueta">&lt;/th&gt;</span>
+    <span class="etiqueta">&lt;/tr&gt;</span>
+<span class="etiqueta">&lt;/thead&gt;</span>
+<span class="etiqueta">&lt;tbody&gt;</span>
+    <span class="etiqueta">&lt;tr&gt;</span>
+        <span class="etiqueta">&lt;th</span> <span class="atributo">scope</span>=<span class="valor">"row"</span><span class="etiqueta">&gt;</span>Laptop<span class="etiqueta">&lt;/th&gt;</span>
+        <span class="etiqueta">&lt;td&gt;</span>$999<span class="etiqueta">&lt;/td&gt;</span>
+    <span class="etiqueta">&lt;/tr&gt;</span>
+<span class="etiqueta">&lt;/tbody&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>scope="col"</strong> - Encabezado de columna</li>
+                    <li><strong>scope="row"</strong> - Encabezado de fila</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Introducción a Formularios</h2>
+            <p>Los formularios permiten recopilar datos del usuario:</p>
+
+<pre><code><span class="etiqueta">&lt;form</span> <span class="atributo">action</span>=<span class="valor">"procesar.php"</span> <span class="atributo">method</span>=<span class="valor">"POST"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"nombre"</span><span class="etiqueta">&gt;</span>Nombre:<span class="etiqueta">&lt;/label&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"text"</span> <span class="atributo">id</span>=<span class="valor">"nombre"</span> <span class="atributo">name</span>=<span class="valor">"nombre"</span><span class="etiqueta">&gt;</span>
+    
+    <span class="etiqueta">&lt;button</span> <span class="atributo">type</span>=<span class="valor">"submit"</span><span class="etiqueta">&gt;</span>Enviar<span class="etiqueta">&lt;/button&gt;</span>
+<span class="etiqueta">&lt;/form&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Atributos de &lt;form&gt;:</h3>
+                <ul>
+                    <li><strong>action</strong> - URL del script que procesa los datos</li>
+                    <li><strong>method</strong> - Método HTTP (GET o POST)</li>
+                    <li><strong>enctype</strong> - Tipo de codificación (para subir archivos)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>La Etiqueta &lt;label&gt;</h2>
+            <p>Los labels son esenciales para accesibilidad:</p>
+
+            <div class="tarjeta">
+                <h3>Método 1: for + id</h3>
+<pre><code><span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"email"</span><span class="etiqueta">&gt;</span>Email:<span class="etiqueta">&lt;/label&gt;</span>
+<span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"email"</span> <span class="atributo">id</span>=<span class="valor">"email"</span><span class="etiqueta">&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Método 2: anidado</h3>
+<pre><code><span class="etiqueta">&lt;label&gt;</span>
+    Nombre:
+    <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"text"</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;/label&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Importante:</strong> Siempre usa labels. Los usuarios no pueden hacer clic en el texto sin él.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Tipos de Input</h2>
+            <p>HTML5 ofrece muchos tipos de campos:</p>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Texto</h4>
+                    <code>type="text"</code>
+                    <p>Entrada de texto básica</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Email</h4>
+                    <code>type="email"</code>
+                    <p>Validación automática de email</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Contraseña</h4>
+                    <code>type="password"</code>
+                    <p>Oculta caracteres</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Número</h4>
+                    <code>type="number"</code>
+                    <p>Solo entrada numérica</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Fecha</h4>
+                    <code>type="date"</code>
+                    <p>Selector de fecha</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Checkbox</h4>
+                    <code>type="checkbox"</code>
+                    <p>Casilla de verificación</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Más Tipos de Input</h2>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Radio</h4>
+                    <code>type="radio"</code>
+                    <p>Opción única en grupo</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Archivo</h4>
+                    <code>type="file"</code>
+                    <p>Selector de archivos</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>URL</h4>
+                    <code>type="url"</code>
+                    <p>Validación de URL</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Teléfono</h4>
+                    <code>type="tel"</code>
+                    <p>Entrada telefónica</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Color</h4>
+                    <code>type="color"</code>
+                    <p>Selector de color</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Rango</h4>
+                    <code>type="range"</code>
+                    <p>Deslizador numérico</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Elementos de Formulario</h2>
+
+            <div class="tarjeta">
+                <h3>&lt;textarea&gt; - Área de texto</h3>
+<pre><code><span class="etiqueta">&lt;textarea</span> <span class="atributo">name</span>=<span class="valor">"comentario"</span> <span class="atributo">rows</span>=<span class="valor">"4"</span> <span class="atributo">cols</span>=<span class="valor">"50"</span><span class="etiqueta">&gt;</span><span class="etiqueta">&lt;/textarea&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>&lt;select&gt; - Lista desplegable</h3>
+<pre><code><span class="etiqueta">&lt;select</span> <span class="atributo">name</span>=<span class="valor">"pais"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;option</span> <span class="atributo">value</span>=<span class="valor">"py"</span><span class="etiqueta">&gt;</span>Paraguay<span class="etiqueta">&lt;/option&gt;</span>
+    <span class="etiqueta">&lt;option</span> <span class="atributo">value</span>=<span class="valor">"ar"</span><span class="etiqueta">&gt;</span>Argentina<span class="etiqueta">&lt;/option&gt;</span>
+<span class="etiqueta">&lt;/select&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>&lt;button&gt; - Botón</h3>
+<pre><code><span class="etiqueta">&lt;button</span> <span class="atributo">type</span>=<span class="valor">"submit"</span><span class="etiqueta">&gt;</span>Enviar<span class="etiqueta">&lt;/button&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Validación con HTML5</h2>
+            <p>HTML5 incluye validación incorporada:</p>
+
+            <div class="tarjeta">
+                <h3>Atributos de validación:</h3>
+                <ul>
+                    <li><strong>required</strong> - Campo obligatorio</li>
+                    <li><strong>minlength</strong> - Mínimo de caracteres</li>
+                    <li><strong>maxlength</strong> - Máximo de caracteres</li>
+                    <li><strong>min</strong> - Valor mínimo (números)</li>
+                    <li><strong>max</strong> - Valor máximo (números)</li>
+                    <li><strong>pattern</strong> - Expresión regular</li>
+                    <li><strong>placeholder</strong> - Texto de ejemplo</li>
+                </ul>
+            </div>
+
+<pre><code><span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"email"</span> <span class="atributo">required</span> <span class="atributo">placeholder</span>=<span class="valor">"tu@email.com"</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"password"</span> <span class="atributo">minlength</span>=<span class="valor">"8"</span> <span class="atributo">required</span><span class="etiqueta">&gt;</span>
+<span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"number"</span> <span class="atributo">min</span>=<span class="valor">"1"</span> <span class="atributo">max</span>=<span class="valor">"100"</span><span class="etiqueta">&gt;</span></code></pre>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Agrupación: fieldset y legend</h2>
+            <p>Agrupa campos relacionados visualmente:</p>
+
+<pre><code><span class="etiqueta">&lt;form&gt;</span>
+    <span class="etiqueta">&lt;fieldset&gt;</span>
+        <span class="etiqueta">&lt;legend&gt;</span>Información Personal<span class="etiqueta">&lt;/legend&gt;</span>
+        <span class="etiqueta">&lt;label&gt;</span>Nombre:<span class="etiqueta">&lt;/label&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"text"</span> <span class="atributo">name</span>=<span class="valor">"nombre"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;label&gt;</span>Apellido:<span class="etiqueta">&lt;/label&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"text"</span> <span class="atributo">name</span>=<span class="valor">"apellido"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;/fieldset&gt;</span>
+
+    <span class="etiqueta">&lt;fieldset&gt;</span>
+        <span class="etiqueta">&lt;legend&gt;</span>Preferencias<span class="etiqueta">&lt;/legend&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"checkbox"</span> <span class="atributo">id</span>=<span class="valor">"news"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"news"</span><span class="etiqueta">&gt;</span>Recibir noticias<span class="etiqueta">&lt;/label&gt;</span>
+    <span class="etiqueta">&lt;/fieldset&gt;</span>
+<span class="etiqueta">&lt;/form&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <strong>💡 Beneficios:</strong> Mejor organización visual, accesibilidad mejorada para lectores de pantalla.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Métodos GET vs POST</h2>
+            <p>Elige el método adecuado para tu formulario:</p>
+
+            <div class="tarjeta">
+                <h3>GET</h3>
+                <ul>
+                    <li>Datos visibles en la URL</li>
+                    <li>Para búsquedas, filtros</li>
+                    <li>Limitado en longitud (~2000 chars)</li>
+                    <li>No usar para datos sensibles</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>POST</h3>
+                <ul>
+                    <li>Datos en el cuerpo de la petición</li>
+                    <li>Para enviar datos sensibles</li>
+                    <li>Sin límite de tamaño</li>
+                    <li>Más seguro</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Regla:</strong> Usa POST para formularios que envíen datos al servidor. Usa GET solo para búsquedas.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Ejemplo: Formulario de Registro</h2>
+<pre><code><span class="etiqueta">&lt;form</span> <span class="atributo">action</span>=<span class="valor">"registro.php"</span> <span class="atributo">method</span>=<span class="valor">"POST"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;fieldset&gt;</span>
+        <span class="etiqueta">&lt;legend&gt;</span>Datos de Cuenta<span class="etiqueta">&lt;/legend&gt;</span>
+        
+        <span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"usuario"</span><span class="etiqueta">&gt;</span>Usuario:<span class="etiqueta">&lt;/label&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"text"</span> <span class="atributo">id</span>=<span class="valor">"usuario"</span> <span class="atributo">name</span>=<span class="valor">"usuario"</span> <span class="atributo">required</span><span class="etiqueta">&gt;</span>
+        
+        <span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"email"</span><span class="etiqueta">&gt;</span>Email:<span class="etiqueta">&lt;/label&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"email"</span> <span class="atributo">id</span>=<span class="valor">"email"</span> <span class="atributo">name</span>=<span class="valor">"email"</span> <span class="atributo">required</span><span class="etiqueta">&gt;</span>
+        
+        <span class="etiqueta">&lt;label</span> <span class="atributo">for</span>=<span class="valor">"pass"</span><span class="etiqueta">&gt;</span>Contraseña:<span class="etiqueta">&lt;/label&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="atributo">type</span>=<span class="valor">"password"</span> <span class="atributo">id</span>=<span class="valor">"pass"</span> <span class="atributo">name</span>=<span class="valor">"pass"</span> <span class="atributo">minlength</span>=<span class="valor">"8"</span> <span class="atributo">required</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;/fieldset&gt;</span>
+
+    <span class="etiqueta">&lt;button</span> <span class="atributo">type</span>=<span class="valor">"submit"</span><span class="etiqueta">&gt;</span>Registrarse<span class="etiqueta">&lt;/button&gt;</span>
+<span class="etiqueta">&lt;/form&gt;</span></code></pre>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Buenas Prácticas</h2>
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar labels asociados a cada input</li>
+                    <li>Agrupar campos relacionados con fieldset</li>
+                    <li>Usar type correcto para cada campo</li>
+                    <li>Agregar required a campos obligatorios</li>
+                    <li>Proporcionar placeholder útil</li>
+                    <li>Usar POST para datos sensibles</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>Campos sin label</li>
+                    <li>Usar solo mayúsculas o minúsculas</li>
+                    <li>Olvidar el atributo name</li>
+                    <li>No validar datos importantes</li>
+                    <li>Usar GET para contraseñas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Crear tablas con thead, tbody, tfoot</li>
+                    <li>Combinar celdas con colspan y rowspan</li>
+                    <li>Crear formularios con múltiples tipos de input</li>
+                    <li>Agregar validación con HTML5</li>
+                    <li>Agrupar campos con fieldset/legend</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>Tablas:</strong> table, tr, th, td, thead, tbody, tfoot</li>
+                <li><strong>Combinación:</strong> colspan y rowspan</li>
+                <li><strong>Formularios:</strong> form, label, input, textarea, select</li>
+                <li><strong>Tipos de input:</strong> text, email, password, number, date, checkbox, radio</li>
+                <li><strong>Validación:</strong> required, minlength, pattern, placeholder</li>
+                <li><strong>Agrupación:</strong> fieldset y legend</li>
+                <li><strong>Métodos:</strong> GET vs POST</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Para la próxima sesión:</h3>
+                <ul>
+                    <li>CSS I: Fundamentos, Color y Texto</li>
+                    <li>Practica creando tablas y formularios</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

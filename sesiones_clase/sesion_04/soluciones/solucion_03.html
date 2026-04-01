@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 3 - Formulario Completo Validado</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - Formulario Completo</h1>
+            <p>Sesión 4 - HTML III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            <div class="codigo">&lt;form action="#" method="POST"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Datos de Cuenta&lt;/legend&gt;
+        
+        &lt;label for="usuario"&gt;Nombre de Usuario:&lt;/label&gt;
+        &lt;input type="text" id="usuario" name="usuario" 
+               required minlength="3" placeholder="mínimo 3 caracteres"&gt;
+        
+        &lt;label for="email"&gt;Correo Electrónico:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" 
+               required placeholder="tu@email.com"&gt;
+        
+        &lt;label for="telefono"&gt;Teléfono:&lt;/label&gt;
+        &lt;input type="tel" id="telefono" name="telefono" 
+               required placeholder="+595 000 000000"&gt;
+        
+        &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" 
+               required minlength="8" placeholder="mínimo 8 caracteres"&gt;
+        
+        &lt;label for="confirmar"&gt;Confirmar Contraseña:&lt;/label&gt;
+        &lt;input type="password" id="confirmar" name="confirmar" 
+               required minlength="8" placeholder="repite la contraseña"&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Información Adicional&lt;/legend&gt;
+        
+        &lt;label for="comentarios"&gt;Comentarios:&lt;/label&gt;
+        &lt;textarea id="comentarios" name="comentarios" 
+                  rows="4" placeholder="Comentarios adicionales..."&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;input type="checkbox" id="noticias" name="noticias" checked&gt;
+        &lt;label for="noticias"&gt;Recibir noticias y actualizaciones&lt;/label&gt;
+        
+        &lt;input type="checkbox" id="terminos" name="terminos" required&gt;
+        &lt;label for="terminos"&gt;Acepto los términos y condiciones *&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;button type="submit"&gt;Inscribirse&lt;/button&gt;
+&lt;/form&gt;</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa validación HTML5 con required, minlength, placeholders, y checkbox marcado por defecto (checked).
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: white; padding: 20px; border-radius: 8px;">
+                <form onsubmit="event.preventDefault();" style="max-width: 500px;">
+                    <fieldset style="margin-bottom: 15px; padding: 15px; border: 1px solid #ccc;">
+                        <legend style="font-weight: bold; color: #8B0000;">Datos de Cuenta</legend>
+                        <label style="display: block; margin-top: 10px;">Nombre de Usuario:</label>
+                        <input type="text" placeholder="mínimo 3 caracteres" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" placeholder="tu@email.com" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                        <label>Teléfono:</label>
+                        <input type="tel" placeholder="+595 000 000000" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                        <label>Contraseña:</label>
+                        <input type="password" placeholder="mínimo 8 caracteres" style="width: 100%; padding: 8px;">
+                    </fieldset>
+                    <button type="submit" style="background: #8B0000; color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer;">Inscribirse</button>
+                </form>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">* El navegador mostrará errores si los campos requeridos están vacíos.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

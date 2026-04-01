@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 2 - Formulario de Registro</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 2 - Formulario de Registro</h1>
+            <p>Sesión 4 - HTML III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            <div class="codigo">&lt;form action="#" method="POST"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Información Personal&lt;/legend&gt;
+        
+        &lt;label for="nombre"&gt;Nombre Completo:&lt;/label&gt;
+        &lt;input type="text" id="nombre" name="nombre" required&gt;
+        
+        &lt;label for="email"&gt;Correo Electrónico:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" required&gt;
+        
+        &lt;label for="nacimiento"&gt;Fecha de Nacimiento:&lt;/label&gt;
+        &lt;input type="date" id="nacimiento" name="nacimiento"&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Ubicación&lt;/legend&gt;
+        
+        &lt;label for="pais"&gt;País:&lt;/label&gt;
+        &lt;select id="pais" name="pais"&gt;
+            &lt;option value=""&gt;Seleccionar...&lt;/option&gt;
+            &lt;option value="py"&gt;Paraguay&lt;/option&gt;
+            &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+            &lt;option value="uy"&gt;Uruguay&lt;/option&gt;
+            &lt;option value="br"&gt;Brasil&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Género&lt;/legend&gt;
+        
+        &lt;input type="radio" id="masculino" name="genero" value="m"&gt;
+        &lt;label for="masculino"&gt;Masculino&lt;/label&gt;
+        
+        &lt;input type="radio" id="femenino" name="genero" value="f"&gt;
+        &lt;label for="femenino"&gt;Femenino&lt;/label&gt;
+        
+        &lt;input type="radio" id="otro" name="genero" value="o"&gt;
+        &lt;label for="otro"&gt;Otro&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;input type="checkbox" id="terminos" name="terminos" required&gt;
+        &lt;label for="terminos"&gt;Acepto los términos y condiciones&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;button type="submit"&gt;Registrarse&lt;/button&gt;
+&lt;/form&gt;</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usan dos fieldset para agrupar información personal y ubicación, radio buttons para género con el mismo nombre, y checkbox para términos.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: white; padding: 20px; border-radius: 8px;">
+                <form onsubmit="event.preventDefault();">
+                    <fieldset style="margin-bottom: 15px; padding: 15px;">
+                        <legend style="font-weight: bold; color: #8B0000;">Información Personal</legend>
+                        <label style="display: block; margin-top: 10px;">Nombre Completo:</label>
+                        <input type="text" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" style="width: 100%; padding: 8px; margin-bottom: 10px;">
+                        <label>Contraseña:</label>
+                        <input type="password" style="width: 100%; padding: 8px;">
+                    </fieldset>
+                    <fieldset style="margin-bottom: 15px; padding: 15px;">
+                        <legend style="font-weight: bold; color: #8B0000;">Género</legend>
+                        <input type="radio" id="m" name="gen"><label for="m"> Masculino</label>
+                        <input type="radio" id="f" name="gen"><label for="f"> Femenino</label>
+                    </fieldset>
+                    <button type="submit" style="background: #8B0000; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
