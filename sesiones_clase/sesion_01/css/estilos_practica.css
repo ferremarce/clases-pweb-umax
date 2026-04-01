@@ -157,6 +157,18 @@ body {
     background: var(--color-secundario);
 }
 
+.btn-ejercicio.btn-secundario {
+    background: transparent;
+    border: 2px solid var(--color-primario);
+    color: var(--color-primario);
+    margin-left: 10px;
+}
+
+.btn-ejercicio.btn-secundario:hover {
+    background: var(--color-primario);
+    color: white;
+}
+
 .badge-dificultad {
     display: inline-block;
     background: #e6f3f8;
