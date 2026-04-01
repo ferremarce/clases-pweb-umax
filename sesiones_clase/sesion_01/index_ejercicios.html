@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios - Sesión 1 - INI04</title>
     <link rel="stylesheet" href="css/estilos_practica.css">
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
 </head>
 <body>
     <header class="header-ejercicios">
@@ -35,7 +47,7 @@
                     <span class="badge-dificultad">Básico</span>
                     <p>Crea tu primera página web con información sobre ti.</p>
                     <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
-                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario">Ver Solución</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
                 </div>
             </div>
 
@@ -46,7 +58,7 @@
                     <span class="badge-dificultad">Intermedio</span>
                     <p>Practica con diferentes etiquetas HTML para formatear texto.</p>
                     <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
-                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario">Ver Solución</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
                 </div>
             </div>
 
@@ -57,7 +69,7 @@
                     <span class="badge-dificultad">Avanzado</span>
                     <p>Crea una página más completa combinando todo lo aprendido.</p>
                     <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
-                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario">Ver Solución</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
                 </div>
             </div>
         </section>
