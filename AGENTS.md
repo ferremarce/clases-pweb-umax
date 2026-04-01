@@ -20,7 +20,6 @@
 ```
 clases-pweb-umax/
 ├── AGENTS.md / readme.md
-├── ejercicios_clase/sesion-XX/
 ├── img/ (logo_umax.png, ...)
 ├── plan_clase/
 │   ├── plan_de_clase_general.html
@@ -30,7 +29,6 @@ clases-pweb-umax/
     └── sesion_01/
         ├── index.html              (presentación)
         ├── index_ejercicios.html  (enunciados)
-        ├── README.md
         ├── ejercicios/
         │   ├── ejercicio_01.html
         │   ├── ejercicio_02.html
@@ -45,7 +43,7 @@ clases-pweb-umax/
         ├── js/
         │   └── script.js
         └── images/
-            └── ...
+            └── logo_umax.png
 ```
 
 ---

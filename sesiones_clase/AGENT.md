@@ -100,9 +100,11 @@
             <div class="tarjeta-ejercicio">
                 <div class="ejercicio-numero">01</div>
                 <div class="ejercicio-contenido">
-                    <h3>Nombre del Ejercicio</h1>
+                    <h3>Nombre del Ejercicio</h3>
+                    <span class="badge-dificultad">Básico</span>
                     <p>Descripción breve.</p>
                     <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
                 </div>
             </div>
 
@@ -120,6 +122,20 @@
             </div>
         </section>
     </main>
+
+    <!-- Script para mostrar botones de solución solo en localhost/127.0.0.1 -->
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
 </body>
 </html>
 ```
@@ -279,11 +295,13 @@ sesion_XX/
 - Usar siempre `css/estilos_practica.css` (NO CSS inline)
 - Header: clase `header-ejercicios` con logo, título, subtítulo y profesor alineado a la derecha
 - Estructura: `<header>`, `<main class="contenedor">`, contenido en `<div class="enunciado">`
-- No incluir indicadores de nivel (Básico/Intermedio)
+- **Incluir badge de dificultad** (Básico/Intermedio/Avanzado) con clase `.badge-dificultad`
 - Profesores: siempre "Prof. Ing. Juan M. Ferreira"
+- Botones "Ver Enunciado" y "Ver Solución" en cada ejercicio (el botón solución solo visible en localhost/127.0.0.1)
 
 ### Soluciones
 - Usar siempre `css/estilos_practica.css` (NO CSS inline)
+- **Incluir badge de dificultad** (Básico/Intermedio/Avanzado) con clase `.badge-dificultad`
 - Incluir código con highlighting + resultado visual
 - Estructura similar a ejercicios
 - Usar clases: `.codigo`, `.comentario`, `.etiqueta`, `.atributo`, `.valor`, `.vista-previa`, `.nota`
@@ -322,5 +340,6 @@ sesion_XX/
 - Nota explicativa ("UNA posible solución")
 
 ### Notas importantes
-- **Los niveles son internos** - Guía para crear contenido, pero NO se muestran como badges en la UI (ya fueron eliminados)
+- Los niveles (Básico/Intermedio/Avanzado) se muestran como badges en la UI usando la clase `.badge-dificultad`
 - El subagente debe crear los 3 ejercicios en orden de dificultad progresiva
+- Los botones "Ver Solución" solo son visibles cuando se accede desde localhost o 127.0.0.1
