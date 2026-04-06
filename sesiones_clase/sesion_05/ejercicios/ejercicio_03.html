@@ -20,20 +20,23 @@
         <div class="enunciado">
             <section class="requisitos">
                 <h2>📝 Enunciado</h2>
-                <p>Crea una tarjeta de perfil profesional que incluya: foto de perfil (puedes usar un placeholder), nombre, cargo, descripción y botones de acción. Todo estilizado con CSS externo usando variables CSS.</p>
+                <p>Aplica estilos CSS a la <strong> página personal</strong> que creaste en las sesiones anteriores (S2-S4). Toma tu archivo HTML existente y crea un archivo CSS externo para estilizar toda la página con un diseño profesional usando colores corporativos de UMAX.</p>
+                <p><em>Este ejercicio integra todo lo aprendido: es el resultado final de tu proyecto personal ahora estilizado con CSS.</em></p>
             </section>
 
             <section class="requisitos">
                 <h2>✅ Requisitos</h2>
                 <ul>
-                    <li>Crear archivo CSS externo con variables CSS</li>
-                    <li>Usar variables para los colores principales</li>
+                    <li>Usar el archivo HTML de tu página personal (creada en S2-S4) como base</li>
+                    <li>Crear archivo CSS externo (estilos.css) vinculado al HTML</li>
+                    <li>Crear variables CSS para los colores corporativos de UMAX</li>
                     <li>Aplicar modelo de caja completo (padding, margin, border)</li>
-                    <li>Usar border-radius para bordes redondeados</li>
+                    <li>Usar border-radius para bordes redondeados en tarjetas</li>
                     <li>Agregar box-shadow para efecto de sombra</li>
-                    <li>Centrar la tarjeta usando margin: auto</li>
-                    <li>Estilizar botones con diferentes colores</li>
+                    <li>Estilizar encabezados con colores UMAX</li>
+                    <li>Estilizar botones de navegación</li>
                     <li>Usar unidades rem para tamaños de texto</li>
+                    <li>Aplicar line-height para mejor lectura</li>
                 </ul>
             </section>
 
@@ -42,18 +45,27 @@
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>Define variables: <code>:root { --primary: #8B0000; --secondary: #DC143C; }</code></li>
-                        <li>Usa <code>padding: 2rem;</code> para el espacio interno</li>
-                        <li>Para centrar: <code>margin: 2rem auto;</code></li>
+                        <li>Vincula tu CSS: <code>&lt;link rel="stylesheet" href="estilos.css"&gt;</code></li>
+                        <li>Define variables en :root: <code>:root { --primary: #8B0000; --secondary: #DC143C; }</code></li>
+                        <li>Usa las variables: <code>color: var(--primary);</code></li>
                         <li>Sombra: <code>box-shadow: 0 4px 12px rgba(0,0,0,0.15);</code></li>
                         <li>border-radius: <code>border-radius: 12px;</code></li>
+                        <li>Usa selectores de clase para estilizar elementos repetidos</li>
                     </ul>
                 </details>
             </section>
 
             <section class="resultado-esperado">
                 <h2>🎯 Resultado Esperado</h2>
-                <p>Una tarjeta de perfil profesional con sombra, bordes redondeados, colores corporativos de UMAX, y botones estilizados.</p>
+                <p>Tu página personal (de S2-S4) ahora tiene un diseño profesional con:</p>
+                <ul>
+                    <li>Colores corporativos de UMAX (#8B0000, #DC143C)</li>
+                    <li>Tarjetas con sombras y bordes redondeados</li>
+                    <li>Texto legible con tipografía consistente</li>
+                    <li>Botones de navegación estilizados</li>
+                    <li>CSS externo separado del HTML</li>
+                </ul>
+                <p><strong>Este ejercicio conecta todas las sesiones anteriores: HTML (contenido) + CSS (estilo) = página web completa.</strong></p>
             </section>
         </div>
     </main>
