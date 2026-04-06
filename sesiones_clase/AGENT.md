@@ -359,13 +359,44 @@ Al crear una nueva sesión, EL SUBAGENTE DEBE actualizar automáticamente los en
 1. `plan_clase/plan_de_clase_general.html` - Tabla de sesiones (línea por sesión)
 2. `plan_clase/plan_de_clase_detallado.html` - Cards de cada sesión
 
-### Formato de enlace
-- Ruta: `../sesiones_clase/sesion_XX/index.html`
-- El enlace debe estar en el elemento `<td class="session-title">` del plan general
-- En plan detallado: dentro de `<span class="session-title"><a href="...">`
+### Enlaces a incluir en plan_detallado:
+
+| Enlace | Ruta | Descripción |
+|--------|------|-------------|
+| Presentación | `../sesiones_clase/sesion_XX/index.html` | Slide de la sesión |
+| Ejercicios | `../sesiones_clase/sesion_XX/index_ejercicios.html` | Índice de ejercicios |
+
+### Formato de enlace para plan_detallado:
+
+```html
+<span class="session-title">
+    <a href="../sesiones_clase/sesion_XX/index.html">Título de la Sesión</a>
+</span>
+<span class="session-exercises">
+    <a href="../sesiones_clase/sesion_XX/index_ejercicios.html">📝 Ejercicios</a>
+</span>
+```
+
+### CSS requerido para .session-exercises:
+```css
+.session-exercises {
+    margin-left: auto;
+}
+
+.session-exercises a {
+    background: #28a745;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+```
 
 ### Ejecutar SIEMPRE antes de finalizar la sesión
 1. Crear la estructura de carpetas y archivos de la sesión
-2. Actualizar el enlace correspondiente en plan_general.html
-3. Actualizar el enlace correspondiente en plan_detallado.html
-4. Verificar que ambos enlaces funcionen 
+2. Crear el archivo `index_ejercicios.html`
+3. Actualizar el enlace en plan_general.html
+4. Actualizar ambos enlaces en plan_detallado.html (presentación + ejercicios)
+5. Verificar que todos los enlaces funcionen 
