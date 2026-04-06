@@ -175,7 +175,24 @@
 
 <span class="etiqueta">&lt;p&gt;</span>Salto de línea:<span class="etiqueta">&lt;/p&gt;</span>
 <span class="etiqueta">&lt;br&gt;</span>
-<span class="etiqueta">&lt;p&gt;</span>Sigue en nueva línea<span class="etiqueta">&lt;/p&gt;</span></code></pre>
+<span class="etiqueta">&lt;p&gt;</span>Sigue en nueva línea<span class="etiqueta">&lt;/p&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>Esta es una <span class="etiqueta">&lt;abbr</span> <span class="atributo">title</span>=<span class="valor">"HyperText Markup Language"</span><span class="etiqueta">&gt;</span>HTML<span class="etiqueta">&lt;/abbr&gt;</span>.<span class="etiqueta">&lt;/p&gt;</span>
+
+<span class="etiqueta">&lt;blockquote</span> <span class="atributo">cite</span>=<span class="valor">"https://ejemplo.com"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Una cita importante que destaca un concepto.<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/blockquote&gt;</span>
+
+<span class="etiqueta">&lt;p&gt;</span>El libro <span class="etiqueta">&lt;cite&gt;</span>El Gran Gatsby<span class="etiqueta">&lt;/cite&gt;</span> es un clásico.<span class="etiqueta">&lt;/p&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Etiquetas adicionales de texto:</h3>
+                <ul>
+                    <li><strong>&lt;abbr title=""&gt;</strong>: Abreviatura con título completo (accessibility)</li>
+                    <li><strong>&lt;blockquote cite=""&gt;</strong>:Cita larga de otra fuente</li>
+                    <li><strong>&lt;cite&gt;</strong>: Título de una obra (libro, película, etc.)</li>
+                </ul>
+            </div>
 
             <div class="tarjeta">
                 <strong>💡 Consejo:</strong> Usa &lt;strong&gt; para texto importante (no solo visual) y &lt;em&gt; para énfasis. Los lectores de pantalla lo reconocen.
@@ -263,6 +280,29 @@
 
             <div class="tarjeta">
                 <strong>💡 Consejo:</strong> Las listas anidadas son ideales para menús de navegación y структуру de contenido.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10b">
+            <h2>Contenido Colapsable (Details)</h2>
+            <p>Las etiquetas &lt;details&gt; y &lt;summary&gt; permiten crear contenido interactivo:</p>
+
+<pre><code><span class="etiqueta">&lt;details&gt;</span>
+    <span class="etiqueta">&lt;summary&gt;</span>Haz clic para ver más<span class="etiqueta">&lt;/summary&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Este contenido está oculto y aparece al hacer clic.<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/details&gt;</span></code></pre>
+
+            <div class="tarjeta">
+                <h3>Casos de uso:</h3>
+                <ul>
+                    <li>Preguntas frecuentes (FAQ)</li>
+                    <li>Acordeones</li>
+                    <li>Información adicional opcional</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Beneficio:</strong> Mejora la experiencia del usuario al mostrar información solo cuando la necesita.
             </div>
         </section>
 
@@ -395,6 +435,14 @@
                     <li><code>&lt;p&gt;</code> - Párrafo</li>
                     <li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;s&gt;</code>, <code>&lt;mark&gt;</code></li>
                     <li><code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code></li>
+                    <li><code>&lt;abbr&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;cite&gt;</code></li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Interactivo:</h3>
+                <ul>
+                    <li><code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code> - Contenido colapsable</li>
                 </ul>
             </div>
 
