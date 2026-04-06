@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 3 - Tarjeta de Perfil</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - Tarjeta de Perfil</h1>
+            <p>Sesión 5 - CSS I: Fundamentos, Color y Texto</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <h3>HTML (index.html)</h3>
+            <div class="codigo">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Tarjeta de Perfil&lt;/title&gt;
+    &lt;link rel="stylesheet" href="estilos.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="perfil-tarjeta"&gt;
+        &lt;img src="https://via.placeholder.com/150" alt="Foto de perfil" class="perfil-foto"&gt;
+        &lt;h2 class="perfil-nombre"&gt;Juan Pérez&lt;/h2&gt;
+        &lt;p class="perfil-cargo"&gt;Desarrollador Web&lt;/p&gt;
+        &lt;p class="perfil-descripcion"&gt;Apasionado por el desarrollo web con más de 5 años de experiencia creando aplicaciones modernas.&lt;/p&gt;
+        &lt;div class="perfil-botones"&gt;
+            &lt;button class="btn btn-primario"&gt;Contactar&lt;/button&gt;
+            &lt;button class="btn btn-secundario"&gt;Portafolio&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+            <h3>CSS (estilos.css)</h3>
+            <div class="codigo"><span class="comentario">/* Variables CSS */</span>
+<span class="selector">:root</span> {
+    <span class="propiedad">--color-primario</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">--color-secundario</span>: <span class="valor">#DC143C</span>;
+    <span class="propiedad">--color-fondo</span>: <span class="valor">#f5f7fb</span>;
+    <span class="propiedad">--color-texto</span>: <span class="valor">#1a1a1a</span>;
+    <span class="propiedad">--color-texto-claro</span>: <span class="valor">#666</span>;
+    <span class="propiedad">--sombra</span>: <span class="valor">0 4px 12px rgba(0,0,0,0.15)</span>;
+    <span class="propiedad">--radio</span>: <span class="valor">12px</span>;
+}
+
+<span class="selector">body</span> {
+    <span class="propiedad">font-family</span>: <span class="valor">'Poppins', sans-serif</span>;
+    <span class="propiedad">background</span>: <span class="valor">var(--color-fondo)</span>;
+    <span class="propiedad">display</span>: <span class="valor">flex</span>;
+    <span class="propiedad">justify-content</span>: <span class="valor">center</span>;
+    <span class="propiedad">align-items</span>: <span class="valor">center</span>;
+    <span class="propiedad">min-height</span>: <span class="valor">100vh</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+}
+
+<span class="selector">.perfil-tarjeta</span> {
+    <span class="propiedad">background</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">2rem</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">var(--radio)</span>;
+    <span class="propiedad">box-shadow</span>: <span class="valor">var(--sombra)</span>;
+    <span class="propiedad">max-width</span>: <span class="valor">320px</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+}
+
+<span class="selector">.perfil-foto</span> {
+    <span class="propiedad">width</span>: <span class="valor">120px</span>;
+    <span class="propiedad">height</span>: <span class="valor">120px</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">50%</span>;
+    <span class="propiedad">object-fit</span>: <span class="valor">cover</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">1rem</span>;
+    <span class="propiedad">border</span>: <span class="valor">4px solid var(--color-secundario)</span>;
+}
+
+<span class="selector">.perfil-nombre</span> {
+    <span class="propiedad">font-size</span>: <span class="valor">1.5rem</span>;
+    <span class="propiedad">font-weight</span>: <span class="valor">600</span>;
+    <span class="propiedad">color</span>: <span class="valor">var(--color-texto)</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0.5rem 0</span>;
+}
+
+<span class="selector">.perfil-cargo</span> {
+    <span class="propiedad">color</span>: <span class="valor">var(--color-secundario)</span>;
+    <span class="propiedad">font-weight</span>: <span class="valor">500</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">1rem</span>;
+}
+
+<span class="selector">.perfil-descripcion</span> {
+    <span class="propiedad">color</span>: <span class="valor">var(--color-texto-claro)</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">0.9rem</span>;
+    <span class="propiedad">line-height</span>: <span class="valor">1.6</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">1.5rem</span>;
+}
+
+<span class="selector">.perfil-botones</span> {
+    <span class="propiedad">display</span>: <span class="valor">flex</span>;
+    <span class="propiedad">gap</span>: <span class="valor">10px</span>;
+    <span class="propiedad">justify-content</span>: <span class="valor">center</span>;
+}
+
+<span class="selector">.btn</span> {
+    <span class="propiedad">padding</span>: <span class="valor">0.75rem 1.5rem</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">6px</span>;
+    <span class="propiedad">font-weight</span>: <span class="valor">500</span>;
+    <span class="propiedad">cursor</span>: <span class="valor">pointer</span>;
+    <span class="propiedad">border</span>: <span class="valor">none</span>;
+    <span class="propiedad">transition</span>: <span class="valor">0.3s</span>;
+}
+
+<span class="selector">.btn-primario</span> {
+    <span class="propiedad">background</span>: <span class="valor">var(--color-primario)</span>;
+    <span class="propiedad">color</span>: <span class="valor">white</span>;
+}
+
+<span class="selector">.btn-secundario</span> {
+    <span class="propiedad">background</span>: <span class="valor">transparent</span>;
+    <span class="propiedad">color</span>: <span class="valor">var(--color-primario)</span>;
+    <span class="propiedad">border</span>: <span class="valor">2px solid var(--color-primario)</span>;
+}</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se demuestra el uso de variables CSS, modelo de caja completo, border-radius, box-shadow, y unidades rem.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: #f5f7fb; padding: 30px; border: 1px solid #ddd; border-radius: 8px; text-align: center;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 320px; margin: 0 auto;">
+                    <img src="https://via.placeholder.com/150" alt="Foto de perfil" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; border: 4px solid #DC143C;">
+                    <h2 style="font-size: 1.5rem; font-weight: 600; color: #1a1a1a; margin: 0.5rem 0;">Juan Pérez</h2>
+                    <p style="color: #DC143C; font-weight: 500; margin-bottom: 1rem;">Desarrollador Web</p>
+                    <p style="color: #666; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">Apasionado por el desarrollo web con más de 5 años de experiencia creando aplicaciones modernas.</p>
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <button style="padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 500; cursor: pointer; background: #8B0000; color: white; border: none;">Contactar</button>
+                        <button style="padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 500; cursor: pointer; background: transparent; color: #8B0000; border: 2px solid #8B0000;">Portafolio</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

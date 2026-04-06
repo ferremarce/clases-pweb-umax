@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 2 - Estilos Tipográficos</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 2 - Estilos Tipográficos</h1>
+            <p>Sesión 5 - CSS I: Fundamentos, Color y Texto</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <h3>HTML (index.html)</h3>
+            <div class="codigo">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Blog de Ejemplo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="estilos.css"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Mi Blog Personal&lt;/h1&gt;
+        &lt;p class="subtitulo"&gt;Compartiendo conocimientos&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Mi Primer Artículo&lt;/h2&gt;
+            &lt;p class="fecha"&gt;15 de Marzo, 2024&lt;/p&gt;
+            &lt;p&gt;Este es el contenido de mi primer artículo de blog. 
+            Aquí puedo escribir párrafos largos que demuestren el uso de 
+            line-height para mejorar la lectura.&lt;/p&gt;
+            &lt;p&gt;Otro párrafo más para ver cómo se ve el texto con 
+            interlineado adecuado.&lt;/p&gt;
+        &lt;/article&gt;
+        
+        &lt;article&gt;
+            &lt;h2&gt;Segundo Artículo&lt;/h2&gt;
+            &lt;p class="fecha"&gt;10 de Marzo, 2024&lt;/p&gt;
+            &lt;p&gt;Continuando con más contenido interesante sobre 
+            desarrollo web y programación.&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+            <h3>CSS (estilos.css)</h3>
+            <div class="codigo"><span class="selector">body</span> {
+    <span class="propiedad">font-family</span>: <span class="valor">'Poppins', sans-serif</span>;
+    <span class="propiedad">line-height</span>: <span class="valor">1.8</span>;
+    <span class="propiedad">color</span>: <span class="valor">#333</span>;
+    <span class="propiedad">max-width</span>: <span class="valor">800px</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0 auto</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+}
+
+<span class="selector">h1</span> {
+    <span class="propiedad">font-size</span>: <span class="valor">2.5rem</span>;
+    <span class="propiedad">font-weight</span>: <span class="valor">700</span>;
+    <span class="propiedad">color</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">0.5rem</span>;
+}
+
+<span class="selector">h2</span> {
+    <span class="propiedad">font-size</span>: <span class="valor">1.75rem</span>;
+    <span class="propiedad">font-weight</span>: <span class="valor">600</span>;
+    <span class="propiedad">color</span>: <span class="valor">#1a1a1a</span>;
+    <span class="propiedad">margin-top</span>: <span class="valor">1.5rem</span>;
+}
+
+<span class="selector">.subtitulo</span> {
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+    <span class="propiedad">text-transform</span>: <span class="valor">uppercase</span>;
+    <span class="propiedad">letter-spacing</span>: <span class="valor">2px</span>;
+    <span class="propiedad">color</span>: <span class="valor">#666</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">0.9rem</span>;
+}
+
+<span class="selector">.fecha</span> {
+    <span class="propiedad">color</span>: <span class="valor">#888</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">0.875rem</span>;
+    <span class="propiedad">font-style</span>: <span class="valor">italic</span>;
+}
+
+<span class="selector">article</span> {
+    <span class="propiedad">margin-bottom</span>: <span class="valor">2rem</span>;
+    <span class="propiedad">padding-bottom</span>: <span class="valor">1rem</span>;
+    <span class="propiedad">border-bottom</span>: <span class="valor">1px solid #eee</span>;
+}</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se demuestra el uso de Google Fonts, unidades rem, font-weight, text-transform, letter-spacing y line-height.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: white; padding: 30px; border: 1px solid #ddd; border-radius: 8px;">
+                <h1 style="font-size: 2.5rem; font-weight: 700; color: #8B0000; text-align: center; margin-bottom: 0.5rem;">Mi Blog Personal</h1>
+                <p style="text-align: center; text-transform: uppercase; letter-spacing: 2px; color: #666; font-size: 0.9rem; margin-bottom: 2rem;">Compartiendo conocimientos</p>
+                
+                <article style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+                    <h2 style="font-size: 1.75rem; font-weight: 600; color: #1a1a1a; margin-top: 1.5rem;">Mi Primer Artículo</h2>
+                    <p style="color: #888; font-size: 0.875rem; font-style: italic;">15 de Marzo, 2024</p>
+                    <p style="line-height: 1.8;">Este es el contenido de mi primer artículo de blog. Aquí puedo escribir párrafos largos que demuestren el uso de line-height para mejorar la lectura.</p>
+                    <p style="line-height: 1.8;">Otro párrafo más para ver cómo se ve el texto con interlineado adecuado.</p>
+                </article>
+                
+                <article>
+                    <h2 style="font-size: 1.75rem; font-weight: 600; color: #1a1a1a;">Segundo Artículo</h2>
+                    <p style="color: #888; font-size: 0.875rem; font-style: italic;">10 de Marzo, 2024</p>
+                    <p style="line-height: 1.8;">Continuando con más contenido interesante sobre desarrollo web y programación.</p>
+                </article>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

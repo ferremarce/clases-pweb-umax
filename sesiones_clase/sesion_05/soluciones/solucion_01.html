@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Ejercicio 1 - Selectores y Colores</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 1 - Selectores y Colores</h1>
+            <p>Sesión 5 - CSS I: Fundamentos, Color y Texto</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <h3>HTML (index.html)</h3>
+            <div class="codigo">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Ejercicio 1: Selectores y Colores&lt;/title&gt;
+    &lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bienvenido a mi Página&lt;/h1&gt;
+    
+    &lt;div class="tarjeta"&gt;
+        &lt;h2&gt;Tarjeta de Información&lt;/h2&gt;
+        &lt;p&gt;Este es un ejemplo de contenido con estilos CSS.&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;button id="mi-boton"&gt;Haz clic aquí&lt;/button&gt;
+    
+    &lt;ul class="lista-estilos"&gt;
+        &lt;li&gt;Elemento 1&lt;/li&gt;
+        &lt;li&gt;Elemento 2&lt;/li&gt;
+        &lt;li&gt;Elemento 3&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+
+            <h3>CSS (estilos.css)</h3>
+            <div class="codigo"><span class="comentario">/* Selector de etiqueta */</span>
+<span class="selector">h1</span> {
+    <span class="propiedad">color</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+    <span class="propiedad">font-family</span>: <span class="valor">Segoe UI, sans-serif</span>;
+}
+
+<span class="comentario">/* Selector de clase */</span>
+<span class="selector">.tarjeta</span> {
+    <span class="propiedad">background</span>: <span class="valor">rgb(245, 247, 251)</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+    <span class="propiedad">margin</span>: <span class="valor">20px auto</span>;
+    <span class="propiedad">max-width</span>: <span class="valor">500px</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">8px</span>;
+    <span class="propiedad">box-shadow</span>: <span class="valor">0 2px 8px rgba(0,0,0,0.1)</span>;
+}
+
+<span class="comentario">/* Selector de ID */</span>
+<span class="selector">#mi-boton</span> {
+    <span class="propiedad">background</span>: <span class="valor">hsl(350, 100%, 46%)</span>;
+    <span class="propiedad">color</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">12px 24px</span>;
+    <span class="propiedad">border</span>: <span class="valor">none</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">4px</span>;
+    <span class="propiedad">cursor</span>: <span class="valor">pointer</span>;
+    <span class="propiedad">display</span>: <span class="valor">block</span>;
+    <span class="propiedad">margin</span>: <span class="valor">20px auto</span>;
+}
+
+<span class="comentario">/* Selector combinador descendiente */</span>
+<span class="selector">.lista-estilos li</span> {
+    <span class="propiedad">padding</span>: <span class="valor">8px</span>;
+    <span class="propiedad">color</span>: <span class="valor">#333</span>;
+}
+
+<span class="comentario">/* Selector combinador hijo directo */</span>
+<span class="selector">.lista-estilos &gt; li</span> {
+    <span class="propiedad">border-bottom</span>: <span class="valor">1px solid #ddd</span>;
+}</div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se demuestra el uso de selectores de etiqueta, clase, ID y combinadores, así como colores en formato hexadecimal, rgb() y hsl().
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: white; padding: 30px; border: 1px solid #ddd; border-radius: 8px;">
+                <h1 style="color: #8B0000; text-align: center; font-family: Segoe UI, sans-serif;">Bienvenido a mi Página</h1>
+                
+                <div style="background: rgb(245, 247, 251); padding: 20px; margin: 20px auto; max-width: 500px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <h2 style="color: #333; margin-top: 0;">Tarjeta de Información</h2>
+                    <p style="color: #333;">Este es un ejemplo de contenido con estilos CSS.</p>
+                </div>
+                
+                <button style="background: hsl(350, 100%, 46%); color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; display: block; margin: 20px auto;">Haz clic aquí</button>
+                
+                <ul style="list-style: none; padding: 0; max-width: 500px; margin: 20px auto;">
+                    <li style="padding: 8px; color: #333; border-bottom: 1px solid #ddd;">Elemento 1</li>
+                    <li style="padding: 8px; color: #333; border-bottom: 1px solid #ddd;">Elemento 2</li>
+                    <li style="padding: 8px; color: #333; border-bottom: 1px solid #ddd;">Elemento 3</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

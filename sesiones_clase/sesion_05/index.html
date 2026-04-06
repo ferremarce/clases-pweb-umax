@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 5: CSS I: Fundamentos, Color y Texto - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 5: CSS I: Fundamentos, Color y Texto</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad III</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>CSS I: Fundamentos, Color y Texto</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad III - Introducción a CSS</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender qué es CSS y su sintaxis básica</li>
+                <li>Apply CSS de tres formas diferentes (inline, interno, externo)</li>
+                <li>Utilizar selectores de etiquetas, clases y IDs</li>
+                <li>Aplicar colores usando diferentes formatos</li>
+                <li>Estilizar texto con propiedades tipográficas</li>
+                <li>Comprender el modelo de caja básico</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Nota:</strong> CSS (Cascading Style Sheets) es el lenguaje que da estilo y diseño a las páginas web.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>¿Qué es CSS?</h2>
+            <p><strong>CSS (Cascading Style Sheets)</strong> es un lenguaje de hojas de estilo que define la presentación visual de documentos HTML.</p>
+            
+            <div class="tarjeta">
+                <h3>¿Para qué sirve?</h3>
+                <ul>
+                    <li><strong>Colores:</strong> Definir paletas de color para el sitio</li>
+                    <li><strong>Tipografía:</strong> Elegir fuentes, tamaños y estilos</li>
+                    <li><strong>Layout:</strong> Crear disposición de elementos</li>
+                    <li><strong>Animaciones:</strong> Añadir movimiento y transiciones</li>
+                    <li><strong>Responsive:</strong> Adaptar a diferentes dispositivos</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Dato clave:</strong> HTML estructura el contenido, CSS define la apariencia. Juntos crean páginas web completas.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Sintaxis de CSS</h2>
+            <p>Una regla CSS tiene tres partes principales:</p>
+
+            <div class="tarjeta">
+                <h3>Anatomía de una regla CSS</h3>
+<pre><code><span class="selector">selector</span> {
+    <span class="propiedad">propiedad</span>: <span class="valor">valor</span>;
+    <span class="propiedad">propiedad</span>: <span class="valor">valor</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Ejemplo concreto:</h3>
+<pre><code><span class="selector">h1</span> {
+    <span class="propiedad">color</span>: <span class="valor">#DC143C</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">2rem</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>Selector:</strong> Indica qué elemento estilizar</li>
+                    <li><strong>Propiedad:</strong> Característica a modificar</li>
+                    <li><strong>Valor:</strong> Configuración específica</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Formas de Aplicar CSS</h2>
+            <p>Existen tres métodos para incluir estilos en una página:</p>
+
+            <div class="tarjeta">
+                <h3>1. CSS Inline (en línea)</h3>
+                <p>Se aplica directamente en la etiqueta HTML:</p>
+<pre><code><span class="etiqueta">&lt;p</span> <span class="atributo">style</span>=<span class="valor">"color: blue; font-size: 18px;"</span><span class="etiqueta">&gt;</span>Texto<span class="etiqueta">&lt;/p&gt;</span></code></pre>
+                <p><em>⚠️ No recomendado: difícil de mantener</em></p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>2. CSS Interno (en el head)</h3>
+                <p>Se define dentro de la página HTML:</p>
+<pre><code><span class="etiqueta">&lt;style&gt;</span>
+    p { color: blue; font-size: 18px; }
+<span class="etiqueta">&lt;/style&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>3. CSS Externo (archivo separado)</h3>
+                <p>Se vincula un archivo .css externo:</p>
+<pre><code><span class="etiqueta">&lt;link</span> <span class="atributo">rel</span>=<span class="valor">"stylesheet"</span> <span class="atributo">href</span>=<span class="valor">"css/estilos.css"</span><span class="etiqueta">&gt;</span></code></pre>
+                <p><em>✅ Mejor práctica: mantenible y reutilizable</em></p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Selectores Básicos</h2>
+            <p>Los selectores indican qué elementos HTML serán estilizados:</p>
+
+            <div class="tarjeta">
+                <h3>Selector de Etiqueta</h3>
+                <p>Aplica a todas las etiquetas especificadas:</p>
+<pre><code><span class="selector">p</span> {
+    <span class="propiedad">color</span>: <span class="valor">#333</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Selector de Clase (.)</h3>
+                <p>Aplica a elementos con esa clase:</p>
+<pre><code><span class="selector">.tarjeta</span> {
+    <span class="propiedad">background</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+}</code></pre>
+<pre><code><span class="etiqueta">&lt;p</span> <span class="atributo">class</span>=<span class="valor">"tarjeta"</span><span class="etiqueta">&gt;</span>Contenido<span class="etiqueta">&lt;/p&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Selector de ID (#)</h3>
+                <p>Aplica a un elemento único:</p>
+<pre><code><span class="selector">#encabezado-principal</span> {
+    <span class="propiedad">font-size</span>: <span class="valor">2rem</span>;
+}</code></pre>
+<pre><code><span class="etiqueta">&lt;h1</span> <span class="atributo">id</span>=<span class="valor">"encabezado-principal"</span><span class="etiqueta">&gt;</span>Título<span class="etiqueta">&lt;/h1&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Selectores Combinadores</h2>
+            <p>Los combinadores permiten seleccionar elementos según su relación:</p>
+
+            <div class="tarjeta">
+                <h3>Descendiente (espacio)</h3>
+                <p>Selecciona elementos dentro de otro:</p>
+<pre><code><span class="selector">article p</span> {
+    <span class="propiedad">color</span>: <span class="valor">#333</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Hijo directo (&gt;)</h3>
+                <p>Selecciona hijos directos:</p>
+<pre><code><span class="selector">ul > li</span> {
+    <span class="propiedad">list-style</span>: <span class="valor">none</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Hermano adyacente (+)</h3>
+                <p>Selecciona el elemento que sigue:</p>
+<pre><code><span class="selector">h2 + p</span> {
+    <span class="propiedad">font-style</span>: <span class="valor">italic</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Colores en CSS</h2>
+            <p>CSS ofrece varias formas de especificar colores:</p>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Nombre</h4>
+                    <code>color: red;</code>
+                    <p>Más simple pero limitado</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Hexadecimal</h4>
+                    <code>color: #FF5733;</code>
+                    <p>Formato más usado</p>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>RGB</h4>
+                    <code>color: rgb(255, 87, 51);</code>
+                    <p>Mezcla de rojo, verde, azul</p>
+                </div>
+                <div class="comparacion-item">
+                    <h4>RGBA</h4>
+                    <code>color: rgba(255, 87, 51, 0.5);</code>
+                    <p>RGB con transparencia</p>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>HSL (Hue, Saturation, Lightness)</h3>
+                <code>color: hsl(0, 100%, 50%);</code>
+                <p>Tono, saturación y luminosidad. Más intuitivo para ajustar colores.</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Paleta de Colores UMAX</h2>
+            <p>Usaremos esta paleta institucional en el curso:</p>
+
+            <div class="tarjeta">
+                <h3>Colores UMAX</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px; background: #8B0000; color: white; margin: 5px 0;">Primario: #8B0000 (Rojo oscuro)</li>
+                    <li style="padding: 10px; background: #DC143C; color: white; margin: 5px 0;">Secundario: #DC143C (Rojo crimson)</li>
+                    <li style="padding: 10px; background: #1a1a1a; color: white; margin: 5px 0;">Texto: #1a1a1a (Casi negro)</li>
+                    <li style="padding: 10px; background: #f5f7fb; color: #1a1a1a; margin: 5px 0;">Fondo: #f5f7fb (Gris claro)</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Variables CSS</h3>
+                <p>Definimos variables para reutilizar colores:</p>
+<pre><code><span class="selector">:root</span> {
+    <span class="propiedad">--color-primario</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">--color-secundario</span>: <span class="valor">#DC143C</span>;
+    <span class="propiedad">--color-texto</span>: <span class="valor">#1a1a1a</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Propiedades de Texto</h2>
+            <p>CSS ofrece múltiples propiedades para estilizar texto:</p>
+
+            <div class="tarjeta">
+                <h3>Familia de Fuente</h3>
+<pre><code><span class="propiedad">font-family</span>: <span class="valor">"Segoe UI", sans-serif</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Tamaño de Fuente</h3>
+<pre><code><span class="propiedad">font-size</span>: <span class="valor">16px</span>;
+<span class="propiedad">font-size</span>: <span class="valor">1.5rem</span>;
+<span class="propiedad">font-size</span>: <span class="valor">150%</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Peso de Fuente</h3>
+<pre><code><span class="propiedad">font-weight</span>: <span class="valor">normal</span>;  <span class="comentario">/* 400 */</span>
+<span class="propiedad">font-weight</span>: <span class="valor">bold</span>;    <span class="comentario">/* 700 */</span>
+<span class="propiedad">font-weight</span>: <span class="valor">300</span>;    <span class="comentario">/* light */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Alineación</h3>
+<pre><code><span class="propiedad">text-align</span>: <span class="valor">left</span>;
+<span class="propiedad">text-align</span>: <span class="valor">center</span>;
+<span class="propiedad">text-align</span>: <span class="valor">justify</span>;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Más Propiedades de Texto</h2>
+
+            <div class="tarjeta">
+                <h3>Altura de Línea</h3>
+<pre><code><span class="propiedad">line-height</span>: <span class="valor">1.6</span>;  <span class="comentario">/*Recomendado: 1.5-1.8 */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Decoración de Texto</h3>
+<pre><code><span class="propiedad">text-decoration</span>: <span class="valor">underline</span>;
+<span class="propiedad">text-decoration</span>: <span class="valor">line-through</span>;
+<span class="propiedad">text-decoration</span>: <span class="valor">none</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Transformación</h3>
+<pre><code><span class="propiedad">text-transform</span>: <span class="valor">uppercase</span>;   <span class="comentario">/* MAYÚSCULAS */</span>
+<span class="propiedad">text-transform</span>: <span class="valor">lowercase</span>;   <span class="comentario">/* minúsculas */</span>
+<span class="propiedad">text-transform</span>: <span class="valor">capitalize</span>; <span class="comentario">/* Primera Mayúscula */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Espaciado</h3>
+<pre><code><span class="propiedad">letter-spacing</span>: <span class="valor">2px</span>;
+<span class="propiedad">word-spacing</span>: <span class="valor">5px</span>;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Modelo de Caja (Box Model)</h2>
+            <p>Todo elemento HTML es una caja compuesta por:</p>
+
+            <div class="tarjeta" style="text-align: center;">
+                <div style="display: inline-block; border: 3px dashed #8B0000; padding: 15px; margin: 5px; background: #f0f0f0;">
+                    <strong>margin</strong> (exterior)
+                    <div style="border: 3px solid #DC143C; padding: 15px; margin: 5px; background: white;">
+                        <strong>border</strong>
+                        <div style="border: 3px dotted #333; padding: 20px; margin: 5px; background: #e8f4f8;">
+                            <strong>padding</strong>
+                            <div style="border: 2px solid #8B0000; padding: 10px; background: #8B0000; color: white;">
+                                <strong>content</strong> (contenido)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>Content:</strong> El contenido (texto, imágenes)</li>
+                    <li><strong>Padding:</strong> Espacio entre contenido y borde</li>
+                    <li><strong>Border:</strong> Línea alrededor del padding</li>
+                    <li><strong>Margin:</strong> Espacio exterior hacia otros elementos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Propiedades del Modelo de Caja</h2>
+
+            <div class="tarjeta">
+                <h3> Padding (espacio interno)</h3>
+<pre><code><span class="propiedad">padding</span>: <span class="valor">20px</span>;              <span class="comentario">/* 4 lados */</span>
+<span class="propiedad">padding</span>: <span class="valor">10px 20px</span>;        <span class="comentario">/* vertical horizontal */</span>
+<span class="propiedad">padding-top</span>: <span class="valor">10px</span>;
+<span class="propiedad">padding-right</span>: <span class="valor">20px</span>;
+<span class="propiedad">padding-bottom</span>: <span class="valor">10px</span>;
+<span class="propiedad">padding-left</span>: <span class="valor">20px</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Margin (espacio externo)</h3>
+<pre><code><span class="propiedad">margin</span>: <span class="valor">20px</span>;
+<span class="propiedad">margin</span>: <span class="valor">10px auto</span>;        <span class="comentario">/* centrar horizontalmente */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Border (borde)</h3>
+<pre><code><span class="propiedad">border</span>: <span class="valor">2px solid #333</span>;
+<span class="propiedad">border-radius</span>: <span class="valor">8px</span>;       <span class="comentario">/* bordes redondeados */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Unidades de Medida</h2>
+            <p>CSS ofrece diferentes unidades para medidas:</p>
+
+            <div class="tarjeta">
+                <h3>Unidades Absolutas</h3>
+                <ul>
+                    <li><strong>px</strong> (píxeles): Valor fijo, no cambia</li>
+                </ul>
+<pre><code><span class="propiedad">font-size</span>: <span class="valor">16px</span>;
+<span class="propiedad">border</span>: <span class="valor">1px solid black</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Unidades Relativas</h3>
+                <ul>
+                    <li><strong>em</strong>: Relativo al font-size del padre</li>
+                    <li><strong>rem</strong>: Relativo al font-size del root (html)</li>
+                    <li><strong>%</strong>: Porcentaje respecto al padre</li>
+                </ul>
+<pre><code><span class="propiedad">font-size</span>: <span class="valor">1.5rem</span>;
+<span class="propiedad">width</span>: <span class="valor">80%</span>;
+<span class="propiedad">margin</span>: <span class="valor">1em</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Usa <code>rem</code> para tamaños de texto y <code>%</code> para layouts. Evita <code>px</code> para texto que deba ser accesible.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Ejemplo Práctico</h2>
+            <p>Vamos a estilizar una tarjeta:</p>
+
+            <div class="tarjeta">
+                <h3>HTML</h3>
+<pre><code><span class="etiqueta">&lt;article</span> <span class="atributo">class</span>=<span class="valor">"tarjeta"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Título de la Tarjeta<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Contenido de ejemplo.<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/article&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>CSS</h3>
+<pre><code><span class="selector">.tarjeta</span> {
+    <span class="propiedad">background</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+    <span class="propiedad">border</span>: <span class="valor">1px solid #ddd</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">8px</span>;
+    <span class="propiedad">margin</span>: <span class="valor">20px</span>;
+    <span class="propiedad">box-shadow</span>: <span class="valor">0 2px 8px rgba(0,0,0,0.1)</span>;
+}
+
+<span class="selector">.tarjeta h2</span> {
+    <span class="propiedad">color</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">1.5rem</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">10px</span>;
+}
+
+<span class="selector">.tarjeta p</span> {
+    <span class="propiedad">color</span>: <span class="valor">#333</span>;
+    <span class="propiedad">line-height</span>: <span class="valor">1.6</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Buenas Prácticas</h2>
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar archivo CSS externo</li>
+                    <li>Usar clases en lugar de IDs para estilos</li>
+                    <li>Usar unidades relativas (rem, %) para accesibilidad</li>
+                    <li>Definir variables CSS para colores</li>
+                    <li>Comentar el código CSS</li>
+                    <li>Usar selectores específicos y no demasiado genéricos</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>CSS inline en etiquetas</li>
+                    <li>Usar <code>!important</code> excesivamente</li>
+                    <li>Selectores demasiado específicos</li>
+                    <li>Olvidar el box-sizing: border-box</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Cascada y Especificidad</h2>
+            <p>Cuando hay conflictos, CSS usa reglas para decidir qué estilo aplicar:</p>
+
+            <div class="tarjeta">
+                <h3>Orden de Cascada</h3>
+                <ol>
+                    <li>Origen (inline > interno > externo)</li>
+                    <li>Especificidad (ID > clase > etiqueta)</li>
+                    <li>Orden en el código (el último gana)</li>
+                </ol>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Ejemplo de Especificidad</h3>
+<pre><code><span class="comentario">/* Menos específico */</span>
+<span class="selector">p</span> { color: blue; }
+
+<span class="comentario">/* Más específico */</span>
+<span class="selector">article p.destacado</span> { color: red; }
+
+<span class="comentario">/* Gana porque tiene mayor especificidad */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Crear un archivo CSS externo</li>
+                    <li>Aplicar selectores de etiqueta, clase y ID</li>
+                    <li>Definir colores usando diferentes formatos</li>
+                    <li>Estilizar texto con propiedades tipográficas</li>
+                    <li>Aplicar el modelo de caja a elementos</li>
+                    <li>Usar unidades rem y porcentajes</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-19">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>CSS:</strong> Lenguaje de hojas de estilo</li>
+                <li><strong>Sintaxis:</strong> selector { propiedad: valor; }</li>
+                <li><strong>Métodos:</strong> inline, interno, externo</li>
+                <li><strong>Selectores:</strong> etiqueta, clase (.), ID (#)</li>
+                <li><strong>Colores:</strong> nombres, hex, rgb, hsl, rgba</li>
+                <li><strong>Texto:</strong> font-family, size, weight, align, line-height</li>
+                <li><strong>Modelo de caja:</strong> content, padding, border, margin</li>
+                <li><strong>Unidades:</strong> px, em, rem, %</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Para la próxima sesión:</h3>
+                <ul>
+                    <li>Practica creando tu archivo CSS</li>
+                    <li>Experimenta con colores y fuentes</li>
+                    <li>Próxima clase: CSS II - Modelo de Cajas y Layouts</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-20">
+            <h2>Próxima Clase</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 6: CSS II: Modelo de Cajas y Layouts Básicos</p>
+            
+            <div class="tarjeta" style="text-align: left; max-width: 600px;">
+                <h3>Temas que cubriremos:</h3>
+                <ul>
+                    <li>Profundización en modelo de caja (box-sizing)</li>
+                    <li>Display: block, inline, inline-block, none</li>
+                    <li>Posicionamiento: static, relative, absolute, fixed</li>
+                    <li>z-index y overflow</li>
+                    <li>Layouts con float</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
