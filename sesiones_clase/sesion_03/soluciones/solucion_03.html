@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución: Ejercicio 3 - Sitio Multipágina</title>
+    <title>Solución: Ejercicio 3 - Ampliar Página Personal</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 3 - Sitio Multipágina</h1>
-            <p>Sesión 3 - HTML II</p>
+            <h1>Solución: Ejercicio 3 - Ampliar la Página Personal</h1>
+            <p>Sesión 3 - HTML II: Enlaces, Imágenes y Multimedia</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
     </header>
@@ -19,104 +19,136 @@
     <main class="contenedor">
         <div class="solucion">
             <h2>Código de la Solución - index.html</h2>
-            <div class="codigo">&lt;!-- index.html --&gt;
+            <p>Este ejercicio amplía la página personal de S2 con navegación, galería, video y página "Acerca de".</p>
+            
+            <h3>index.html</h3>
+            <div class="codigo">&lt;!-- index.html - Página Principal --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Mi Sitio - Inicio&lt;/title&gt;
+    &lt;title&gt;Mi Página Personal&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header&gt;
+        &lt;h1&gt;Juan Pérez - Mi Página Personal&lt;/h1&gt;
         &lt;nav&gt;
-            &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
-            &lt;a href="videos.html"&gt;Videos&lt;/a&gt;
-            &lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+            &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#galeria"&gt;Galería&lt;/a&gt;
+            &lt;a href="#video"&gt;Video&lt;/a&gt;
+            &lt;a href="acerca.html"&gt;Acerca de&lt;/a&gt;
         &lt;/nav&gt;
     &lt;/header&gt;
+
     &lt;main&gt;
-        &lt;h1&gt;Bienvenido a Mi Sitio&lt;/h1&gt;
-        &lt;img src="imagenes/portada.jpg" alt="Portada"&gt;
-        &lt;p&gt;Explora nuestro contenido multimedia.&lt;/p&gt;
+        &lt;section id="inicio"&gt;
+            &lt;h2&gt;Bienvenido&lt;/h2&gt;
+            &lt;p&gt;Esta es mi página personal donde comparto mis intereses y proyectos.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section id="galeria"&gt;
+            &lt;h2&gt;Mi Galería&lt;/h2&gt;
+            &lt;div class="galeria"&gt;
+                &lt;img src="https://picsum.photos/300/200" alt="Imagen 1"&gt;
+                &lt;img src="https://picsum.photos/300/201" alt="Imagen 2"&gt;
+                &lt;img src="https://picsum.photos/300/202" alt="Imagen 3"&gt;
+                &lt;img src="https://picsum.photos/300/203" alt="Imagen 4"&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id="video"&gt;
+            &lt;h2&gt;Video Favorito&lt;/h2&gt;
+            &lt;iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                frameborder="0" allowfullscreen&gt;
+            &lt;/iframe&gt;
+        &lt;/section&gt;
     &lt;/main&gt;
+
     &lt;footer&gt;
-        &lt;p&gt;&copy; 2024 Mi Sitio&lt;/p&gt;
+        &lt;p&gt;&copy; 2024 Juan Pérez&lt;/p&gt;
     &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
 
-            <h2>Código - videos.html</h2>
-            <div class="codigo">&lt;!-- videos.html --&gt;
+            <h3>acerca.html</h3>
+            <div class="codigo">&lt;!-- acerca.html - Acerca de Mí --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Mi Sitio - Videos&lt;/title&gt;
+    &lt;title&gt;Acerca de Mí&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header&gt;
+        &lt;h1&gt;Acerca de Mí&lt;/h1&gt;
         &lt;nav&gt;
-            &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
-            &lt;a href="videos.html"&gt;Videos&lt;/a&gt;
-            &lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+            &lt;a href="index.html#inicio"&gt;Inicio&lt;/a&gt;
+            &lt;a href="index.html#galeria"&gt;Galería&lt;/a&gt;
+            &lt;a href="index.html#video"&gt;Video&lt;/a&gt;
+            &lt;a href="acerca.html"&gt;Acerca de&lt;/a&gt;
         &lt;/nav&gt;
     &lt;/header&gt;
-    &lt;main&gt;
-        &lt;h1&gt;Videos&lt;/h1&gt;
-        &lt;iframe width="560" height="315" 
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-            frameborder="0" allowfullscreen&gt;
-        &lt;/iframe&gt;
-    &lt;/main&gt;
-    &lt;footer&gt;
-        &lt;p&gt;&copy; 2024 Mi Sitio&lt;/p&gt;
-    &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</div>
 
-            <h2>Código - contacto.html</h2>
-            <div class="codigo">&lt;!-- contacto.html --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Mi Sitio - Contacto&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;nav&gt;
-            &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
-            &lt;a href="videos.html"&gt;Videos&lt;/a&gt;
-            &lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
-        &lt;/nav&gt;
-    &lt;/header&gt;
     &lt;main&gt;
-        &lt;h1&gt;Contacto&lt;/h1&gt;
-        &lt;p&gt;Email: info@misitio.com&lt;/p&gt;
-        &lt;p&gt;Teléfono: 123-456-7890&lt;/p&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Quién Soy&lt;/h2&gt;
+            &lt;p&gt;Soy Juan Pérez, estudiante de Ingeniería en Sistemas.&lt;/p&gt;
+            &lt;p&gt;Me apasiona el desarrollo web y la tecnología.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;Mis Habilidades&lt;/h2&gt;
+            &lt;ul&gt;
+                &lt;li&gt;HTML5 y CSS3&lt;/li&gt;
+                &lt;li&gt;JavaScript básico&lt;/li&gt;
+                &lt;li&gt;Trabajo en equipo&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;h2&gt;Contacto&lt;/h2&gt;
+            &lt;p&gt;Email: juan@email.com&lt;/p&gt;
+            &lt;p&gt;Teléfono: +595 123 456789&lt;/p&gt;
+        &lt;/section&gt;
     &lt;/main&gt;
+
     &lt;footer&gt;
-        &lt;p&gt;&copy; 2024 Mi Sitio&lt;/p&gt;
+        &lt;p&gt;&copy; 2024 Juan Pérez&lt;/p&gt;
     &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se necesitan 3 archivos en la misma carpeta: index.html, videos.html y contacto.html. El iframe de YouTube es un ejemplo - puedes usar cualquier video.
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se necesitan 2 archivos: index.html y acerca.html. El proyecto conecta con las sesiones anteriores (S2 - página base) y las siguientes (S4 - formularios, S5 - CSS).
             </div>
 
             <h2>Resultado Visual - index.html</h2>
             <div class="vista-previa" style="background: white; padding: 20px; border-radius: 8px;">
-                <nav style="background: #333; padding: 10px;">
-                    <a href="#" style="color: white; margin-right: 15px;">Inicio</a>
-                    <a href="#" style="color: white; margin-right: 15px;">Videos</a>
-                    <a href="#" style="color: white;">Contacto</a>
-                </nav>
-                <h1 style="color: #8B0000;">Bienvenido a Mi Sitio</h1>
-                <p>Explora nuestro contenido multimedia.</p>
+                <header style="background: #8B0000; color: white; padding: 15px;">
+                    <h1 style="margin: 0;">Juan Pérez - Mi Página Personal</h1>
+                    <nav style="margin-top: 10px;">
+                        <a href="#" style="color: white; margin-right: 15px;">Inicio</a>
+                        <a href="#" style="color: white; margin-right: 15px;">Galería</a>
+                        <a href="#" style="color: white; margin-right: 15px;">Video</a>
+                        <a href="#" style="color: white;">Acerca de</a>
+                    </nav>
+                </header>
+                <section style="padding: 20px;">
+                    <h2>Bienvenido</h2>
+                    <p>Esta es mi página personal donde comparto mis intereses y proyectos.</p>
+                </section>
+                <section id="galeria" style="padding: 20px; background: #f5f5f5;">
+                    <h2>Mi Galería</h2>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                        <div style="background: #ddd; height: 100px; display: flex; align-items: center; justify-content: center;">Imagen 1</div>
+                        <div style="background: #ddd; height: 100px; display: flex; align-items: center; justify-content: center;">Imagen 2</div>
+                        <div style="background: #ddd; height: 100px; display: flex; align-items: center; justify-content: center;">Imagen 3</div>
+                        <div style="background: #ddd; height: 100px; display: flex; align-items: center; justify-content: center;">Imagen 4</div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
