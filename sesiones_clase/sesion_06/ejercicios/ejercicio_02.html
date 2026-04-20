@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Posicionamiento - Sesión 6</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tarjeta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .resultado {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+        .tarjetas-ejemplo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .tarjeta-producto {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: #DC143C;
+            color: white;
+            padding: 5px 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+        .badge-oferta {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #8B0000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        .tarjeta-producto h3 {
+            color: #8B0000;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .precio {
+            font-size: 1.5rem;
+            color: #DC143C;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 2: Posicionamiento Relative y Absolute</h1>
+        
+        <div class="tarjeta">
+            <h2>Enunciado</h2>
+            <p>Crea tarjetas de productos con badges de oferta posicionados absolutamente.</p>
+            
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>El contenedor de la tarjeta debe tener <code>position: relative</code></li>
+                <li>El badge debe tener <code>position: absolute</code></li>
+                <li>Usa top/right/left/bottom para posicionar el badge</li>
+                <li>Crea al menos 2 tarjetas diferentes</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <h2>HTML Sugerido</h2>
+<pre><code>&lt;article class="tarjeta-producto"&gt;
+    &lt;span class="badge"&gt;20% DESC&lt;/span&gt;
+    &lt;img src="imagen.jpg" alt="Producto"&gt;
+    &lt;h3&gt;Producto&lt;/h3&gt;
+    &lt;p&gt;Descripción&lt;/p&gt;
+    &lt;span class="precio"&gt;$99.99&lt;/span&gt;
+&lt;/article&gt;</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS Sugerido</h2>
+<pre><code>.tarjeta-producto {
+    position: relative;
+    overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    transform: rotate(45deg);
+}</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Variación: Badge Esquina</h2>
+<pre><code>.badge-oferta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 20px;
+}</code></pre>
+        </div>
+
+        <div class="resultado">
+            <h3>Resultado Esperado</h3>
+            <p>Tarjetas con badges posicionados en diferentes esquinas.</p>
+            <div class="tarjetas-ejemplo">
+                <article class="tarjeta-producto">
+                    <span class="badge">20% DESC</span>
+                    <h3>Producto 1</h3>
+                    <p>Descripción del producto.</p>
+                    <span class="precio">$99.99</span>
+                </article>
+                <article class="tarjeta-producto">
+                    <span class="badge-oferta">Nuevo</span>
+                    <h3>Producto 2</h3>
+                    <p>Descripción del producto.</p>
+                    <span class="precio">$149.99</span>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

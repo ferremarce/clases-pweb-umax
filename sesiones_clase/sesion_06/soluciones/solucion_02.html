@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución 2: Posicionamiento - Sesión 6</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tarjetas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .tarjeta-producto {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .badge {
+            position: absolute;
+            background: #DC143C;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .badge-descuento {
+            top: 15px;
+            right: -30px;
+            transform: rotate(45deg);
+        }
+        .badge-nuevo {
+            top: 10px;
+            left: 10px;
+            border-radius: 20px;
+        }
+        .badge-oferta {
+            top: 10px;
+            right: 10px;
+            background: #8B0000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+        .imagen-producto {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            margin-bottom: 15px;
+        }
+        .tarjeta-producto h3 {
+            color: #8B0000;
+            margin: 10px 0;
+        }
+        .precio {
+            font-size: 1.5rem;
+            color: #DC143C;
+            font-weight: bold;
+        }
+        .precio-antiguo {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .explicacion {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .explicacion h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Solución: Ejercicio 2 - Posicionamiento</h1>
+
+        <div class="explicacion">
+            <h3>Código CSS</h3>
+            <pre>.tarjeta-producto {
+    position: relative;
+    overflow: hidden;
+}
+
+.badge {
+    position: absolute;
+}
+
+.badge-descuento {
+    top: 15px;
+    right: -30px;
+    transform: rotate(45deg);
+}
+
+.badge-nuevo {
+    top: 10px;
+    left: 10px;
+    border-radius: 20px;
+}
+
+.badge-oferta {
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+}</pre>
+        </div>
+
+        <div class="explicacion">
+            <h3>HTML</h3>
+            <pre>&lt;article class="tarjeta-producto"&gt;
+    &lt;span class="badge badge-descuento"&gt;-20%&lt;/span&gt;
+    &lt;div class="imagen-producto"&gt;Imagen&lt;/div&gt;
+    &lt;h3&gt;Producto&lt;/h3&gt;
+    &lt;p&gt;Descripción del producto&lt;/p&gt;
+    &lt;span class="precio"&gt;$79.99&lt;/span&gt;
+&lt;/article&gt;</pre>
+        </div>
+
+        <h2>Resultado Visual</h2>
+        <div class="tarjetas-grid">
+            <article class="tarjeta-producto">
+                <span class="badge badge-descuento">-20%</span>
+                <div class="imagen-producto">Imagen</div>
+                <h3>Laptop Pro</h3>
+                <p>Potente laptop para profesionales</p>
+                <div>
+                    <span class="precio-antiguo">$999</span>
+                    <span class="precio">$799</span>
+                </div>
+            </article>
+
+            <article class="tarjeta-producto">
+                <span class="badge badge-nuevo">Nuevo</span>
+                <div class="imagen-producto">Imagen</div>
+                <h3>Smartphone X</h3>
+                <p>Última generación</p>
+                <span class="precio">$699</span>
+            </article>
+
+            <article class="tarjeta-producto">
+                <span class="badge badge-oferta">-30%</span>
+                <div class="imagen-producto">Imagen</div>
+                <h3>Tablet Mini</h3>
+                <p>Compañera perfecta</p>
+                <span class="precio">$349</span>
+            </article>
+        </div>
+
+        <div class="explicacion">
+            <h3>Explicación</h3>
+            <ul>
+                <li><strong>position: relative</strong> en el contenedor establece un contexto de posicionamiento</li>
+                <li><strong>position: absolute</strong> permite posicionar el elemento respecto al contenedor padre</li>
+                <li><strong>top, right, left, bottom</strong> definen la posición exacta</li>
+                <li><strong>transform: rotate()</strong> rota el elemento para efectos decorativos</li>
+                <li><strong>overflow: hidden</strong> recorta el badge si se sale del contenedor</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

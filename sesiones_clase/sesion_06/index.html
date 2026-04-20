@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 6: CSS II: Modelo de Cajas y Layouts - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 6: CSS II: Modelo de Cajas y Layouts</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad III</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>CSS II: Modelo de Cajas y Layouts</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad III - Profundización en CSS</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender y aplicar box-sizing correctamente</li>
+                <li>Utilizar la propiedad display para controlar el flujo</li>
+                <li>Dominar el posicionamiento de elementos</li>
+                <li>Controlar capas con z-index</li>
+                <li>Manejar desbordamiento con overflow</li>
+                <li>Crear layouts básicos con float</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Repaso:</strong> En la sesión anterior aprendimos el modelo de caja básico (content, padding, border, margin).
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Box-Sizing: El Problema</h2>
+            <p>El modelo de caja por defecto incluye el padding y border <strong>dentro</strong> del width:</p>
+
+            <div class="tarjeta" style="text-align: center;">
+                <div style="display: inline-block; width: 200px; padding: 20px; border: 5px solid #8B0000; background: #f0f0f0; box-sizing: content-box;">
+                    <strong>content-box</strong><br>
+                    <small>width = 200 + 40 + 10 = 250px</small>
+                </div>
+                <div style="display: inline-block; width: 200px; padding: 20px; border: 5px solid #DC143C; background: #e8f4f8; margin-left: 20px; box-sizing: border-box;">
+                    <strong>border-box</strong><br>
+                    <small>width = 200px (incluye padding)</small>
+                </div>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <strong>⚠️ Problema:</strong> Con content-box, al agregar padding/border, el elemento crece más allá del width esperado.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>La Solución: box-sizing</h2>
+            <p>La propiedad box-sizing cambia cómo se calcula el tamaño:</p>
+
+            <div class="tarjeta">
+                <h3>content-box (por defecto)</h3>
+                <pre><code><span class="propiedad">box-sizing</span>: <span class="valor">content-box</span>;
+<span class="propiedad">width</span>: <span class="valor">200px</span>;
+<span class="propiedad">padding</span>: <span class="valor">20px</span>;
+<span class="propiedad">border</span>: <span class="valor">5px solid black</span>;
+<span class="comentario">/* Ancho total: 200 + 40 + 10 = 250px */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>border-box (recomendado)</h3>
+                <pre><code><span class="propiedad">box-sizing</span>: <span class="valor">border-box</span>;
+<span class="propiedad">width</span>: <span class="valor">200px</span>;
+<span class="propiedad">padding</span>: <span class="valor">20px</span>;
+<span class="propiedad">border</span>: <span class="valor">5px solid black</span>;
+<span class="comentario">/* Ancho total: 200px (el padding está dentro) */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Mejor práctica:</strong> Usar <code>* { box-sizing: border-box; }</code> al inicio de todo CSS.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>La Propiedad Display</h2>
+            <p>Display define cómo se comporta un elemento en el flujo de la página:</p>
+
+            <div class="tarjeta">
+                <h3>block</h3>
+                <p>Ocupa todo el ancho disponible, comienza en nueva línea:</p>
+                <pre><code><span class="propiedad">display</span>: <span class="valor">block</span>;</code></pre>
+                <div style="background: #f0f0f0; padding: 10px;">
+                    <div style="background: #DC143C; color: white; padding: 5px;">Elemento block 1</div>
+                    <div style="background: #8B0000; color: white; padding: 5px;">Elemento block 2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>inline</h3>
+                <p>Comparte línea con otros elementos, ignora width/height:</p>
+                <pre><code><span class="propiedad">display</span>: <span class="valor">inline</span>;</code></pre>
+                <div style="background: #f0f0f0; padding: 10px;">
+                    <span style="background: #DC143C; color: white; padding: 5px;">Texto inline 1</span>
+                    <span style="background: #8B0000; color: white; padding: 5px;">Texto inline 2</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Display: inline-block</h2>
+            <p>Combina las ventajas de ambos:</p>
+
+            <div class="tarjeta">
+                <h3>inline-block</h3>
+                <p>Comparte línea + acepta width/height:</p>
+                <pre><code><span class="propiedad">display</span>: <span class="valor">inline-block</span>;</code></pre>
+                <div style="background: #f0f0f0; padding: 10px;">
+                    <span style="background: #DC143C; color: white; padding: 10px 20px; display: inline-block;">Botón 1</span>
+                    <span style="background: #8B0000; color: white; padding: 10px 20px; display: inline-block;">Botón 2</span>
+                    <span style="background: #333; color: white; padding: 10px 20px; display: inline-block;">Botón 3</span>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>none</h3>
+                <p>Oculta el elemento (no ocupa espacio):</p>
+                <pre><code><span class="propiedad">display</span>: <span class="valor">none</span>;
+<span class="comentario">/* Oculta y remove del flujo */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Posicionamiento en CSS</h2>
+            <p>La propiedad position determina el método de posicionamiento:</p>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>static</h4>
+                    <p>Por defecto, sigue el flujo normal</p>
+                    <pre><code><span class="propiedad">position</span>: <span class="valor">static</span>;</code></pre>
+                </div>
+                <div class="comparacion-item">
+                    <h4>relative</h4>
+                    <p>Posición relativa a su posición original</p>
+                    <pre><code><span class="propiedad">position</span>: <span class="valor">relative</span>;</code></pre>
+                </div>
+            </div>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>absolute</h4>
+                    <p>Se posiciona respecto al ancestro posicionado</p>
+                    <pre><code><span class="propiedad">position</span>: <span class="valor">absolute</span>;</code></pre>
+                </div>
+                <div class="comparacion-item">
+                    <h4>fixed</h4>
+                    <p>Fijo respecto a la ventana del navegador</p>
+                    <pre><code><span class="propiedad">position</span>: <span class="valor">fixed</span>;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Position: Relative</h2>
+            <p>El elemento se mueve <strong>respecto</strong> a su posición original:</p>
+
+            <div class="tarjeta">
+                <h3>Ejemplo</h3>
+                <pre><code><span class="selector">.caja</span> {
+    <span class="propiedad">position</span>: <span class="valor">relative</span>;
+    <span class="propiedad">top</span>: <span class="valor">20px</span>;
+    <span class="propiedad">left</span>: <span class="valor">30px</span>;
+}</code></pre>
+                <div style="background: #f0f0f0; padding: 20px; height: 100px; position: relative;">
+                    <div style="background: #DC143C; color: white; padding: 10px 20px; position: relative; top: 10px; left: 20px; display: inline-block;">Me moví 20px abajo y 30px derecha</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>top, right, bottom, left</strong>: desplazan respecto a posición original</li>
+                    <li><strong>El espacio original se preserva</strong> en el flujo</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Position: Absolute</h2>
+            <p>El elemento se posiciona <strong>respecto al ancestro posicionado</strong> más cercano:</p>
+
+            <div class="tarjeta">
+                <h3>Ejemplo</h3>
+                <pre><code><span class="selector">.tarjeta</span> { <span class="propiedad">position</span>: <span class="valor">relative</span>; }
+
+<span class="selector">.badge</span> {
+    <span class="propiedad">position</span>: <span class="valor">absolute</span>;
+    <span class="propiedad">top</span>: <span class="valor">10px</span>;
+    <span class="propiedad">right</span>: <span class="valor">10px</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Características:</h3>
+                <ul>
+                    <li>Se <strong>remueve del flujo</strong> normal</li>
+                    <li>El ancesto debe tener <code>position: relative|absolute|fixed</code></li>
+                    <li>Si no hay ancesto, se posiciona respecto al body</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Position: Fixed</h2>
+            <p>El elemento se posiciona respecto a la <strong>ventana del navegador</strong>:</p>
+
+            <div class="tarjeta">
+                <h3>Ejemplo común: Menú fijo</h3>
+                <pre><code><span class="selector">header</span> {
+    <span class="propiedad">position</span>: <span class="valor">fixed</span>;
+    <span class="propiedad">top</span>: <span class="valor">0</span>;
+    <span class="propiedad">left</span>: <span class="valor">0</span>;
+    <span class="propiedad">width</span>: <span class="valor">100%</span>;
+    <span class="propiedad">z-index</span>: <span class="valor">1000</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li>Se mantiene visible al hacer scroll</li>
+                    <li>No importa el ancesto</li>
+                    <li>También se remove del flujo</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Z-Index: Control de Capas</h2>
+            <p>z-index controla qué elemento aparece <strong>encima</strong>:</p>
+
+            <div class="tarjeta">
+                <h3>Ejemplo</h3>
+                <pre><code><span class="selector">.caja-1</span> {
+    <span class="propiedad">position</span>: <span class="valor">absolute</span>;
+    <span class="propiedad">z-index</span>: <span class="valor">1</span>;
+}
+
+<span class="selector">.caja-2</span> {
+    <span class="propiedad">position</span>: <span class="valor">absolute</span>;
+    <span class="propiedad">z-index</span>: <span class="valor">2</span>;
+}</code></pre>
+                <div style="background: #f0f0f0; padding: 30px; height: 80px; position: relative;">
+                    <div style="position: absolute; top: 20px; left: 20px; background: #DC143C; color: white; padding: 10px 20px; z-index: 1;">z-index: 1</div>
+                    <div style="position: absolute; top: 35px; left: 50px; background: #8B0000; color: white; padding: 10px 20px; z-index: 2;">z-index: 2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li>Mayor z-index = aparece encima</li>
+                    <li>Solo funciona con position != static</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Overflow</h2>
+            <p>Controla qué sucede cuando el contenido <strong>sobrepasa</strong> su contenedor:</p>
+
+            <div class="tarjeta">
+                <h3>overflow: visible (default)</h3>
+                <div style="width: 150px; height: 60px; overflow: visible; border: 2px solid #8B0000; background: #f0f0f0; margin-bottom: 15px;">
+                    Este contenido es muy largo y se desborda fuera del contenedor.
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>overflow: hidden</h3>
+                <div style="width: 150px; height: 60px; overflow: hidden; border: 2px solid #8B0000; background: #f0f0f0; margin-bottom: 15px;">
+                    Este contenido es muy largo y se recorta.
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>overflow: auto</h3>
+                <div style="width: 150px; height: 60px; overflow: auto; border: 2px solid #8B0000; background: #f0f0f0; margin-bottom: 15px;">
+                    Este contenido es muy largo y tiene scroll.
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Float: Layouts Legacy</h2>
+            <p>Float hace que el elemento flote a un lado, permitiendo que el texto fluya alrededor:</p>
+
+            <div class="tarjeta">
+                <h3>float: left</h3>
+                <div style="background: #f0f0f0; padding: 10px;">
+                    <img src="images/logo_umax.png" alt="Logo" style="float: left; width: 60px; margin-right: 10px;">
+                    El logo flota a la izquierda y el texto fluye alrededor.
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Sintaxis</h3>
+                <pre><code><span class="propiedad">float</span>: <span class="valor">left</span>;
+<span class="propiedad">float</span>: <span class="valor">right</span>;
+<span class="propiedad">float</span>: <span class="valor">none</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Nota:</strong> Float fue el método principal de layouts antes de Flexbox y Grid. Hoy se usa principalmente para imágenes dentro de texto.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Clearfix: Problema y Solución</h2>
+            <p>Float remove el elemento del flujo, causando problemas con contenedores:</p>
+
+            <div class="tarjeta">
+                <h3>Problema</h3>
+                <pre><code><span class="selector">.contenedor</span> { <span class="propiedad">border</span>: <span class="valor">1px solid black</span>; }
+
+<span class="selector">.imagen</span> { <span class="propiedad">float</span>: <span class="valor">left</span>; }
+<span class="comentario">/* El contenedor se colapsa */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Solución: Clearfix</h3>
+                <pre><code><span class="selector">.contenedor::after</span> {
+    <span class="propiedad">content</span>: <span class="valor">""</span>;
+    <span class="propiedad">display</span>: <span class="valor">block</span>;
+    <span class="propiedad">clear</span>: <span class="valor">both</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Ejemplo Práctico: Tarjeta con Badge</h2>
+            <p>Vamos a crear una tarjeta con una insignia posicionada:</p>
+
+            <div class="tarjeta" style="position: relative; padding: 30px; text-align: left;">
+                <div style="position: absolute; top: -10px; right: -10px; background: #DC143C; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem;">Oferta</div>
+                <h3 style="color: #8B0000; margin-bottom: 10px;">Producto Destacado</h3>
+                <p style="color: #333; line-height: 1.6;">Descripción del producto con características relevantes.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>HTML</h3>
+<pre><code><span class="etiqueta">&lt;article</span> <span class="atributo">class</span>=<span class="valor">"tarjeta"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;span</span> <span class="atributo">class</span>=<span class="valor">"badge"</span><span class="etiqueta">&gt;</span>Oferta<span class="etiqueta">&lt;/span&gt;</span>
+    <span class="etiqueta">&lt;h3&gt;</span>Producto<span class="etiqueta">&lt;/h3&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Descripción<span class="etiqueta">&lt;/p&gt;</span>
+<span class="etiqueta">&lt;/article&gt;</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>CSS</h3>
+<pre><code><span class="selector">.tarjeta</span> { <span class="propiedad">position</span>: <span class="valor">relative</span>; }
+
+<span class="selector">.badge</span> {
+    <span class="propiedad">position</span>: <span class="valor">absolute</span>;
+    <span class="propiedad">top</span>: <span class="valor">-10px</span>;
+    <span class="propiedad">right</span>: <span class="valor">-10px</span>;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Buenas Prácticas</h2>
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar <code>box-sizing: border-box</code> global</li>
+                    <li>Usar position: relative en el contenedor padre</li>
+                    <li>Usar z-index para control de capas</li>
+                    <li>Aplicar overflow: auto a contenedores con contenido dinámico</li>
+                    <li>Usar float solo para imágenes</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>Olvidar box-sizing: border-box</li>
+                    <li>Usar z-index sin position</li>
+                    <li>position: absolute para todo el layout</li>
+                    <li>float para layouts completos (usar Flexbox/Grid)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Aplicar box-sizing a una página completa</li>
+                    <li>Crear tarjetas con badges posicionados</li>
+                    <li>Crear un header fijo con z-index</li>
+                    <li>Manejar overflow en contenedores</li>
+                    <li>Usar float para imágenes en texto</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>box-sizing</strong>: border-box vs content-box</li>
+                <li><strong>display</strong>: block, inline, inline-block, none</li>
+                <li><strong>position</strong>: static, relative, absolute, fixed</li>
+                <li><strong>top/right/bottom/left</strong>: desplazamientos</li>
+                <li><strong>z-index</strong>: control de capas</li>
+                <li><strong>overflow</strong>: visible, hidden, auto, scroll</li>
+                <li><strong>float</strong>: left, right, clearfix</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Próxima sesión:</h3>
+                <ul>
+                    <li>CSS III: Flexbox y Grid</li>
+                    <li>Layouts modernos y responsivos</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-19">
+            <h2>Próxima Clase</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 7: CSS III: Flexbox y Grid</p>
+            
+            <div class="tarjeta">
+                <h3>Temas que cubriremos:</h3>
+                <ul>
+                    <li>Introducción a Flexbox</li>
+                    <li>Propiedades del contenedor y elementos</li>
+                    <li>Introducción a CSS Grid</li>
+                    <li>Rejillas responsivas</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

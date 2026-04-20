@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución 3: Header Fijo - Sesión 6</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tarjeta {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .tarjeta h2 {
+            color: #8B0000;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #DC143C;
+            padding-bottom: 10px;
+        }
+        header.ejemplo {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .demo-main {
+            margin-top: 80px;
+            padding: 20px;
+            min-height: 400px;
+        }
+        .seccion {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .contenedor-overflow {
+            background: white;
+            border: 2px solid #8B0000;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .overflow-auto {
+            height: 100px;
+            overflow: auto;
+        }
+        .overflow-hidden {
+            height: 100px;
+            overflow: hidden;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .explicacion {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .explicacion h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+        .demo-container {
+            position: relative;
+            border: 2px dashed #ccc;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Solución: Ejercicio 3 - Header Fijo y Overflow</h1>
+
+        <div class="explicacion">
+            <h3>CSS: Header Fijo</h3>
+            <pre>* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    color: white;
+    padding: 15px 20px;
+}
+
+main {
+    margin-top: 80px;
+    padding: 20px;
+}</pre>
+        </div>
+
+        <div class="explicacion">
+            <h3>HTML</h3>
+            <pre>&lt;header&gt;
+    &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a href="#"&gt;Inicio&lt;/a&gt;
+        &lt;a href="#"&gt;Acerca&lt;/a&gt;
+        &lt;a href="#"&gt;Contacto&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;...&lt;/section&gt;
+&lt;/main&gt;</pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Overflow</h2>
+            <p>Controla cómo se muestra el contenido que se desborda:</p>
+            
+            <h3>overflow: auto</h3>
+            <div class="contenedor-overflow overflow-auto">
+                <p>Este contenido es muy largo y necesita scroll para verse completo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+
+            <h3>overflow: hidden</h3>
+            <div class="contenedor-overflow overflow-hidden">
+                <p>Este contenido está oculto y no se puede ver completamente. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="explicacion">
+            <h3>Bonus: Float con Clearfix</h3>
+            <pre>.contenedor::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.imagen-flotante {
+    float: left;
+    margin-right: 15px;
+}</pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Demo Visual: Header Fijo</h2>
+            <div class="demo-container">
+                <header class="ejemplo">
+                    <strong>Header Fijo</strong> - Se mantiene al hacer scroll
+                </header>
+                <div class="demo-main">
+                    <div class="seccion">
+                        <h3>Sección 1</h3>
+                        <p>Contenido de ejemplo que demuestra el espacio que ocupa el header fijo.</p>
+                    </div>
+                    <div class="seccion">
+                        <h3>Sección 2</h3>
+                        <p>El margen superior (margin-top) evita que el contenido quede oculto detrás del header.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explicacion">
+            <h3>Puntos Clave</h3>
+            <ul>
+                <li><strong>position: fixed</strong> posiciona respecto a la ventana del navegador</li>
+                <li><strong>z-index</strong> asegura que el header esté siempre visible</li>
+                <li><strong>margin-top en main</strong> compensa la altura del header</li>
+                <li><strong>overflow: auto</strong> añade scroll solo cuando es necesario</li>
+                <li><strong>overflow: hidden</strong> recorta el contenido que sobresale</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución 1: Box-Sizing - Sesión 6</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .ejemplo {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .ejemplo h2 {
+            color: #8B0000;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #DC143C;
+            padding-bottom: 10px;
+        }
+        .cajas-demo {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .caja {
+            width: 150px;
+            padding: 20px;
+            background: #DC143C;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            border: 5px solid #8B0000;
+        }
+        .content-box {
+            box-sizing: content-box;
+        }
+        .border-box {
+            box-sizing: border-box;
+        }
+        .explicacion {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .explicacion h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Solución: Ejercicio 1 - Box-Sizing</h1>
+
+        <div class="ejemplo">
+            <h2>Comparación de Box-Sizing</h2>
+            <p>Ambas cajas tienen: width: 150px, padding: 20px, border: 5px</p>
+            
+            <div class="cajas-demo">
+                <div class="caja content-box">
+                    content-box
+                    <br>→ 200px total
+                </div>
+                <div class="caja border-box">
+                    border-box
+                    <br>→ 150px total
+                </div>
+            </div>
+        </div>
+
+        <div class="explicacion">
+            <h3> Código Completo</h3>
+            <pre>/* CSS - Archivo externo */
+* {
+    box-sizing: border-box;
+}
+
+.caja {
+    width: 150px;
+    padding: 20px;
+    border: 5px solid #8B0000;
+}
+
+.content-box {
+    box-sizing: content-box; /* Por defecto */
+}
+
+.border-box {
+    box-sizing: border-box; /* Recomendado */
+}</pre>
+        </div>
+
+        <div class="explicacion">
+            <h3>Explicación</h3>
+            <ul>
+                <li><strong>content-box:</strong> El width (150px) solo incluye el contenido. El padding y border se suman: 150 + 40 + 10 = <strong>200px</strong></li>
+                <li><strong>border-box:</strong> El width (150px) incluye contenido + padding + border. El elemento siempre mide <strong>150px</strong></li>
+            </ul>
+        </div>
+
+        <div class="ejemplo">
+            <h2>Resultado Visual</h2>
+            <div class="cajas-demo">
+                <div class="caja content-box">
+                    content-box
+                    <br>Ancho real: 200px
+                </div>
+                <div class="caja border-box">
+                    border-box
+                    <br>Ancho real: 150px
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: #8B0000;">
+                <strong>💡 border-box facilita los cálculos y es el estándar recomendado</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

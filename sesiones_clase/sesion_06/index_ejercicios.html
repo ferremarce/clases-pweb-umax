@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 6 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 6: CSS II: Modelo de Cajas y Layouts</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás el modelo de caja avanzado, posicionamiento y layouts básicos. Cada ejercicio aumenta en complejidad.</p>
+                <p><strong>Duración:</strong> 2 horas</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Modelo de Caja y Box-Sizing</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Aplica box-sizing: border-box a toda la página y crea tarjetas con padding, margin y border correctamente.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Posicionamiento Relative y Absolute</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea tarjetas con badges posicionados absolutamente usando position: relative en el contenedor.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>Header Fijo y Overflow</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Mejora tu página personal con header fijo, control de overflow y layouts con float.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/box-sizing" target="_blank">MDN - box-sizing</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/position" target="_blank">MDN - position</a></li>
+                    <li><a href="https://www.w3schools.com/css/css_boxmodel.asp" target="_blank">W3Schools - Box Model</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Header Fijo - Sesión 6</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tarjeta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        .ejemplo-header-fijo {
+            position: relative;
+            height: 200px;
+            border: 2px dashed #DC143C;
+            background: #fff9e6;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .header-ejemplo {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .contenido-scroll {
+            padding: 20px;
+            margin-top: 60px;
+            height: 150px;
+            overflow-y: auto;
+        }
+        .caja-overflow {
+            background: white;
+            border: 2px solid #8B0000;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .overflow-auto {
+            height: 80px;
+            overflow: auto;
+        }
+        .overflow-hidden {
+            height: 80px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 3: Header Fijo y Overflow</h1>
+        
+        <div class="tarjeta">
+            <h2>Enunciado</h2>
+            <p>Mejora tu página personal añadiendo un header fijo y controlando el overflow de contenedores.</p>
+            
+            <h3>Parte 1: Header Fijo</h3>
+            <ul>
+                <li>Crea un header con <code>position: fixed</code></li>
+                <li>Usa <code>top: 0</code> y <code>width: 100%</code></li>
+                <li>Aplica <code>z-index: 1000</code> para que esté siempre arriba</li>
+                <li>Agrega <code>margin-top</code> al body o contenedor principal para compensar</li>
+            </ul>
+
+            <h3>Parte 2: Overflow</h3>
+            <ul>
+                <li>Usa <code>overflow: auto</code> en contenedores con mucho contenido</li>
+                <li>Usa <code>overflow: hidden</code> para recortar contenido excesivo</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS: Header Fijo</h2>
+<pre><code>header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    color: white;
+    padding: 15px 20px;
+}
+
+main {
+    margin-top: 80px;
+}</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS: Overflow</h2>
+<pre><code>.contenedor-scroll {
+    height: 200px;
+    overflow: auto;
+}
+
+.recortar {
+    height: 100px;
+    overflow: hidden;
+}</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Ejemplo Visual: Overflow</h2>
+            
+            <h3>overflow: auto (con scroll)</h3>
+            <div class="caja-overflow overflow-auto">
+                <p>Este contenido es muy largo y necesita scroll para verse completo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <h3>overflow: hidden (recortado)</h3>
+            <div class="caja-overflow overflow-hidden">
+                <p>Este contenido está oculto y no se puede ver. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Bonus: Clearfix con Float</h2>
+<pre><code>.contenedor::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.imagen-flotante {
+    float: left;
+    margin-right: 15px;
+}</code></pre>
+        </div>
+    </div>
+</body>
+</html>

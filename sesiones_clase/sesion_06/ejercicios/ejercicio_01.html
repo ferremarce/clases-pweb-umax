@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1: Modelo de Caja - Sesión 6</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        .contenedor {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tarjeta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .resultado {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 8px;
+        }
+        .resultado h3 {
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        .medidas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .medida-caja {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #8B0000;
+        }
+        .medida-caja.sin-boxsizing {
+            box-sizing: content-box;
+        }
+        .medida-caja.con-boxsizing {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 1: Modelo de Caja y Box-Sizing</h1>
+        
+        <div class="tarjeta">
+            <h2>Enunciado</h2>
+            <p>Crea una página que demuestre la diferencia entre <code>box-sizing: content-box</code> (por defecto) y <code>box-sizing: border-box</code>.</p>
+            
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>Aplicabox-sizing: border-box global con el selector universal (*)</li>
+                <li>Crea 4 cajas con las mismas medidas: width: 150px, padding: 20px, border: 5px</li>
+                <li>Observa cómo el ancho total varía según el box-sizing</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <h2>HTML Sugerido</h2>
+<pre><code>&lt;div class="medidas"&gt;
+    &lt;div class="medida-caja sin-boxsizing"&gt;
+        &lt;strong&gt;content-box&lt;/strong&gt;
+        &lt;p&gt;width: 150px&lt;/p&gt;
+        &lt;p&gt;padding: 20px&lt;/p&gt;
+        &lt;p&gt;border: 5px&lt;/p&gt;
+        &lt;p&gt;Total: 200px&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="medida-caja con-boxsizing"&gt;
+        &lt;strong&gt;border-box&lt;/strong&gt;
+        &lt;p&gt;width: 150px&lt;/p&gt;
+        &lt;p&gt;padding: 20px&lt;/p&gt;
+        &lt;p&gt;border: 5px&lt;/p&gt;
+        &lt;p&gt;Total: 150px&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS Sugerido</h2>
+<pre><code>.medida-caja {
+    width: 150px;
+    padding: 20px;
+    border: 5px solid #8B0000;
+}
+
+.sin-boxsizing {
+    box-sizing: content-box;
+}
+
+.con-boxsizing {
+    box-sizing: border-box;
+}</code></pre>
+        </div>
+
+        <div class="resultado">
+            <h3>Resultado Esperado</h3>
+            <p>Dos cajas, una con content-box (ancho 200px visual) y otra con border-box (ancho 150px visual).</p>
+            <div class="medidas">
+                <div class="medida-caja sin-boxsizing">
+                    <strong>content-box</strong>
+                    <p>width: 150px</p>
+                    <p>padding: 20px</p>
+                    <p>border: 5px</p>
+                    <p><strong>Total: 200px</strong></p>
+                </div>
+                <div class="medida-caja con-boxsizing">
+                    <strong>border-box</strong>
+                    <p>width: 150px</p>
+                    <p>padding: 20px</p>
+                    <p>border: 5px</p>
+                    <p><strong>Total: 150px</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
