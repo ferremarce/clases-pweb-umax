@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 10: JavaScript II - Condicionales e Iteraciones - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 10: JavaScript II</h1>
+            <div class="subtitulo">Condicionales e Iteraciones | Unidad IV</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>JavaScript II</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Condicionales e Iteraciones</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad IV - Fundamentos de JavaScript</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Repaso: Variables y Tipos</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Variables:</strong> <code>let</code> y <code>const</code> (evitar <code>var</code>)</li>
+                    <li><strong>Tipos:</strong> string, number, boolean, null, undefined</li>
+                    <li><strong>Operadores:</strong> aritméticos (+, -, *, /, %, **)</li>
+                    <li><strong>Comparación:</strong> usar === y !== siempre</li>
+                    <li><strong>Entrada/Salida:</strong> prompt(), alert(), console.log()</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>🎯 Objetivo:</strong> Hoy aprenderemos a tomar decisiones y repetir acciones con código.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Condicionales: if / else</h2>
+            <div class="tarjeta">
+                <p>Los condicionales permiten ejecutar código según una condición.</p>
+                <br>
+                <pre><code>if (condición) {
+    // código si es verdadero
+} else {
+    // código si es falso
+}</code></pre>
+            </div>
+            <div class="ejemplo">
+                <strong>Ejemplo:</strong>
+                <pre><code>let edad = 18;
+
+if (edad >= 18) {
+    alert("Eres mayor de edad");
+} else {
+    alert("Eres menor de edad");
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Condicionales: else if</h2>
+            <div class="tarjeta">
+                <p>Para múltiples condiciones, usar <code>else if</code>.</p>
+                <br>
+                <pre><code>let nota = 85;
+
+if (nota >= 90) {
+    alert("Excelente");
+} else if (nota >= 70) {
+    alert("Aprobado");
+} else if (nota >= 50) {
+    alert("Reprobado");
+} else {
+    alert("Repetición obligatoria");
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Operador Ternario</h2>
+            <div class="tarjeta">
+                <p>Sintaxis reducida para condiciones simples:</p>
+                <br>
+                <pre><code>condición ? valorSiVerdadero : valorSiFalso</code></pre>
+                <br>
+                <h3>Ejemplo:</h3>
+                <pre><code>let edad = 20;
+let mensaje = edad >= 18 ? "Adulto" : "Menor";
+alert(mensaje); // "Adulto"
+
+// Equivalente con if/else:
+let mensaje2;
+if (edad >= 18) {
+    mensaje2 = "Adulto";
+} else {
+    mensaje2 = "Menor";
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Switch: Estructura</h2>
+            <div class="tarjeta">
+                <p>Para comparar una variable contra múltiples valores.</p>
+                <br>
+                <pre><code>switch (variable) {
+    case valor1:
+        // código si variable === valor1
+        break;
+    case valor2:
+        // código si variable === valor2
+        break;
+    default:
+        // código si no coincide ningún caso
+}</code></pre>
+            </div>
+            <div class="nota">
+                <strong>⚠️ Importante:</strong> El <code>break</code> es necesario para salir del switch. Sin él, se ejecutan los casos siguientes.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Switch: Ejemplo</h2>
+            <div class="tarjeta">
+                <pre><code>let dia = prompt("Ingresa un día (1-7):");
+
+switch (dia) {
+    case "1":
+        alert("Domingo");
+        break;
+    case "2":
+        alert("Lunes");
+        break;
+    case "3":
+        alert("Martes");
+        break;
+    case "4":
+        alert("Miércoles");
+        break;
+    case "5":
+        alert("Jueves");
+        break;
+    case "6":
+        alert("Viernes");
+        break;
+    case "7":
+        alert("Sábado");
+        break;
+    default:
+        alert("Día inválido");
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Bucles: while</h2>
+            <div class="tarjeta">
+                <p>Repite código mientras la condición sea verdadera.</p>
+                <br>
+                <pre><code>while (condición) {
+    // código a repetir
+}</code></pre>
+                <br>
+                <h3>Ejemplo - Contar hasta 5:</h3>
+                <pre><code>let contador = 1;
+
+while (contador <= 5) {
+    console.log(contador);
+    contador++;
+}
+// Resultado: 1, 2, 3, 4, 5</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Bucles: do-while</h2>
+            <div class="tarjeta">
+                <p>Ejecuta el código al menos una vez, luego verifica la condición.</p>
+                <br>
+                <pre><code>do {
+    // código a repetir
+} while (condición);</code></pre>
+                <br>
+                <h3>Ejemplo:</h3>
+                <pre><code>let numero;
+
+do {
+    numero = prompt("Ingresa un número mayor a 10:");
+} while (numero <= 10);
+
+alert("¡Gracias!");</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡 Diferencia:</strong> while verifica antes, do-while verifica después (siempre ejecuta al menos una vez).
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Bucles: for</h2>
+            <div class="tarjeta">
+                <p>Bucle con contador, ideal para repeticiones conocidas.</p>
+                <br>
+                <pre><code>for (inicialización; condición; incremento) {
+    // código a repetir
+}</code></pre>
+                <br>
+                <h3>Ejemplo - Contar hasta 5:</h3>
+                <pre><code>for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}
+// Resultado: 1, 2, 3, 4, 5</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Break y Continue</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Palabra</th>
+                        <th>Función</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td><code>break</code></td>
+                        <td>Sale del bucle completamente</td>
+                        <td><pre>for (...) {
+    if (error) break;
+}</pre></td>
+                    </tr>
+                    <tr>
+                        <td><code>continue</code></td>
+                        <td>Salta a la siguiente iteración</td>
+                        <td><pre>for (...) {
+    if (par) continue;
+}</pre></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Ejemplo: Tabla de Multiplicar</h2>
+            <div class="tarjeta">
+                <pre><code>// Tabla del 5 usando for
+for (let i = 1; i <= 10; i++) {
+    console.log("5 x " + i + " = " + (5 * i));
+}
+
+// Resultado:
+// 5 x 1 = 5
+// 5 x 2 = 10
+// ...
+// 5 x 10 = 50</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Ejemplo: Validación de Contraseña</h2>
+            <div class="tarjeta">
+                <pre><code>let intentos = 0;
+const MAX_INTENTOS = 3;
+let contraseñaCorrecta = "secreto123";
+
+while (intentos < MAX_INTENTOS) {
+    let intento = prompt("Ingresa la contraseña:");
+    
+    if (intento === contraseñaCorrecta) {
+        alert("¡Acceso concedido!");
+        break;
+    } else {
+        intentos++;
+        alert("Contraseña incorrecta. Intentos: " + intentos);
+    }
+}
+
+if (intentos === MAX_INTENTOS) {
+    alert("Usuario bloqueado");
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Iterar Arrays con for</h2>
+            <div class="tarjeta">
+                <pre><code>// Array de nombres
+let nombres = ["Ana", "Juan", "Pedro", "María"];
+
+// Recorrer con for clásico
+for (let i = 0; i < nombres.length; i++) {
+    console.log("Hola, " + nombres[i]);
+}
+
+// Resultado:
+// Hola, Ana
+// Hola, Juan
+// Hola, Pedro
+// Hola, María</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡Nota:</strong> .length devuelve la cantidad de elementos del array.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Condicionales:</strong> if, else if, else</li>
+                    <li><strong>Operador ternario:</strong> condición ? true : false</li>
+                    <li><strong>Switch:</strong> múltiples valores, usar break</li>
+                    <li><strong>While:</strong> bucle con condición al inicio</li>
+                    <li><strong>Do-while:</strong> bucle con condición al final</li>
+                    <li><strong>For:</strong> bucle con contador</li>
+                    <li><strong>Break/Continue:</strong> controlar el flujo</li>
+                    <li><strong>Arrays:</strong> usar for para recorrer</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 11: JavaScript III</h3>
+                <ul class="lista-grande">
+                    <li>Funciones: declaración, expresión, arrow functions</li>
+                    <li>Parámetros y retorno</li>
+                    <li>Introducción al DOM</li>
+                    <li>Eventos: click, mouseover, submit</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Lectura:</strong> MDN JavaScript Guide - Control flow y Loops
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio 1 (Básico):</h3>
+                <p>Calculadora con menú usando if/else</p>
+                <br>
+                <h3>Ejercicio 2 (Intermedio):</h3>
+                <p>Juego de adivinanza con while</p>
+                <br>
+                <h3>Ejercicio 3 (Avanzado):</h3>
+                <p>Simulación de notas con switch + for</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

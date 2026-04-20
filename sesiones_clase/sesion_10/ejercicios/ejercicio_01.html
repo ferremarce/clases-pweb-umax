@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Calculadora con Menú - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 1: Calculadora con Menú</h1>
+            <p>Sesión 10 - JavaScript II</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una calculadora interactiva con menú usando estructuras condicionales if/else. El programa debe:</p>
+                <ol>
+                    <li>Mostrar un menú con las siguientes opciones:
+                        <ul>
+                            <li>1 = Sumar dos números</li>
+                            <li>2 = Restar dos números</li>
+                            <li>3 = Multiplicar dos números</li>
+                            <li>4 = Determinar el mayor de dos números</li>
+                            <li>5 = Verificar si un número es par o impar</li>
+                        </ul>
+                    </li>
+                    <li>Según la opción seleccionada, pedir los números necesarios</li>
+                    <li>Realizar la operación correspondiente</li>
+                    <li>Mostrar el resultado con alert()</li>
+                    <li>Manejar opciones inválidas</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar if/else para las decisiones</li>
+                    <li>Convertir inputs a número con Number()</li>
+                    <li>Validar que los números sean válidos</li>
+                    <li>Manejar división por cero en la resta (opcional)</li>
+                    <li>Mensaje claro para opción inválida</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Usa prompt() para el menú y los números</li>
+                        <li>Para par/impar: <code>numero % 2 === 0</code> es par</li>
+                        <li>Para el mayor: usa operador ternario o if</li>
+                        <li>Usa else if para las diferentes opciones</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Menú: "Elige operación: 1-Sumar, 2-Restar, 3-Multiplicar, 4-Mayor, 5-Par/Impar"<br>
+                    // Ingresamos: 1<br><br>
+                    // Prompt: "Primer número:" > 10<br>
+                    // Prompt: "Segundo número:" > 5<br><br>
+                    // Alert: "Resultado: 15"
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

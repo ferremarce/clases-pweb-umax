@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 3 - Simulación de Notas - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - Simulación de Notas</h1>
+            <p>Sesión 10 - JavaScript II</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">// Ejercicio 3: Simulación de Notas</span>
+<span class="comentario">// Array de notas de estudiantes</span>
+<span class="etiqueta">const</span> <span class="variable">notas</span> = [75, 92, 45, 88, 70];
+<span class="etiqueta">const</span> <span class="variable">nombres</span> = [<span class="string">"Ana"</span>, <span class="string">"Juan"</span>, <span class="string">"Pedro"</span>, <span class="string">"María"</span>, <span class="string">"Luis"</span>];
+<span class="etiqueta">let</span> <span class="variable">suma</span> = 0;
+<span class="etiqueta">let</span> <span class="variable">mensaje</span> = <span class="string">"Resultados:\n\n"</span>;
+
+<span class="comentario">// Iterar con for</span>
+<span class="etiqueta">for</span> (<span class="etiqueta">let</span> <span class="variable">i</span> = 0; <span class="variable">i</span> < <span class="variable">notas</span>.length; <span class="variable">i</span>++) {
+    <span class="etiqueta">let</span> <span class="variable">nota</span> = <span class="variable">notas</span>[<span class="variable">i</span>];
+    <span class="etiqueta">let</span> <span class="variable">nombre</span> = <span class="variable">nombres</span>[<span class="variable">i</span>];
+    <span class="etiqueta">let</span> <span class="variable">calificacion</span>, <span class="variable">descripcion</span>;
+    
+    <span class="comentario">// Determinar calificación con switch</span>
+    <span class="etiqueta">switch</span> (<span class="variable">nota</span>) {
+        <span class="comentario">// 90-100: A</span>
+        <span class="etiqueta">case</span> 90: <span class="etiqueta">case</span> 91: <span class="etiqueta">case</span> 92: <span class="etiqueta">case</span> 93: <span class="etiqueta">case</span> 94: <span class="etiqueta">case</span> 95:
+        <span class="etiqueta">case</span> 96: <span class="etiqueta">case</span> 97: <span class="etiqueta">case</span> 98: <span class="etiqueta">case</span> 99: <span class="etiqueta">case</span> 100:
+            <span class="variable">calificacion</span> = <span class="string">"A"</span>;
+            <span class="variable">descripcion</span> = <span class="string">"Excelente"</span>;
+            <span class="etiqueta">break</span>;
+        <span class="comentario">// 80-89: B</span>
+        <span class="etiqueta">case</span> 80: <span class="etiqueta">case</span> 81: <span class="etiqueta">case</span> 82: <span class="etiqueta">case</span> 83: <span class="etiqueta">case</span> 84:
+        <span class="etiqueta">case</span> 85: <span class="etiqueta">case</span> 86: <span class="etiqueta">case</span> 87: <span class="etiqueta">case</span> 88: <span class="etiqueta">case</span> 89:
+            <span class="variable">calificacion</span> = <span class="string">"B"</span>;
+            <span class="variable">descripcion</span> = <span class="string">"Muy Bueno"</span>;
+            <span class="etiqueta">break</span>;
+        <span class="comentario">// 70-79: C</span>
+        <span class="etiqueta">case</span> 70: <span class="etiqueta">case</span> 71: <span class="etiqueta">case</span> 72: <span class="etiqueta">case</span> 73: <span class="etiqueta">case</span> 74:
+        <span class="etiqueta">case</span> 75: <span class="etiqueta">case</span> 76: <span class="etiqueta">case</span> 77: <span class="etiqueta">case</span> 78: <span class="etiqueta">case</span> 79:
+            <span class="variable">calificacion</span> = <span class="string">"C"</span>;
+            <span class="variable">descripcion</span> = <span class="string">"Bueno"</span>;
+            <span class="etiqueta">break</span>;
+        <span class="comentario">// 60-69: D</span>
+        <span class="etiqueta">case</span> 60: <span class="etiqueta">case</span> 61: <span class="etiqueta">case</span> 62: <span class="etiqueta">case</span> 63: <span class="etiqueta">case</span> 64:
+        <span class="etiqueta">case</span> 65: <span class="etiqueta">case</span> 66: <span class="etiqueta">case</span> 67: <span class="etiqueta">case</span> 68: <span class="etiqueta">case</span> 69:
+            <span class="variable">calificacion</span> = <span class="string">"D"</span>;
+            <span class="variable">descripcion</span> = <span class="string">"Suficiente"</span>;
+            <span class="etiqueta">break</span>;
+        <span class="comentario">// 0-59: F</span>
+        <span class="etiqueta">default</span>:
+            <span class="variable">calificacion</span> = <span class="string">"F"</span>;
+            <span class="variable">descripcion</span> = <span class="string">"Reprobado"</span>;
+    }
+    
+    <span class="comentario">// Agregar al mensaje</span>
+    <span class="variable">mensaje</span> += <span class="variable">nombre</span> + <span class="string">": Nota "</span> + <span class="variable">nota</span> + 
+               <span class="string">" = "</span> + <span class="variable">calificacion</span> + <span class="string">" ("</span> + <span class="variable">descripcion</span> + <span class="string">")\n"</span>;
+    
+    <span class="comment">// Sumar para promedio</span>
+    <span class="variable">suma</span> += <span class="variable">nota</span>;
+}
+
+<span class="comentario">// Calcular promedio</span>
+<span class="etiqueta">let</span> <span class="variable">promedio</span> = <span class="variable">suma</span> / <span class="variable">notas</span>.length;
+
+<span class="comentario">// Mostrar resultados</span>
+<span class="funcion">alert</span>(<span class="variable">mensaje</span> + <span class="string">"\nPromedio general: "</span> + <span class="variable">promedio</span>.<span class="funcion">toFixed</span>(2));
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa for para iterar y switch con rangos para determinar la calificación. El promedio se calcula sumando todas las notas y dividiendo por la cantidad.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: #f5f5f5; padding: 20px; border-radius: 8px; font-family: monospace;">
+                <strong>Alert con resultados:</strong>
+                <div style="background: white; border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 4px;">
+                    Ana: Nota 75 = C (Bueno)<br>
+                    Juan: Nota 92 = A (Excelente)<br>
+                    Pedro: Nota 45 = F (Reprobado)<br>
+                    María: Nota 88 = B (Muy Bueno)<br>
+                    Luis: Nota 70 = C (Bueno)<br><br>
+                    Promedio general: 74.00
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 10 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 10: JavaScript II - Condicionales e Iteraciones</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás estructuras condicionales (if/else, switch) y bucles (for, while, do-while) en JavaScript.</p>
+                <p><strong>Duración:</strong> 2.5 horas</p>
+                <p><strong>Nota:</strong> Usa prompt() para recibir datos del usuario y alert() o console.log() para mostrar resultados.</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Calculadora con Menú</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Crea una calculadora que presente un menú de operaciones al usuario y ejecute la acción seleccionada usando condicionales if/else.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Juego de Adivinanza</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea un juego donde el usuario debe adivinar un número aleatorio en un número limitado de intentos usando un bucle while.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>Simulación de Notas</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Crea un sistema que permita procesar las notas de varios estudiantes usando switch para la calificación y for para iterar.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" target="_blank">MDN - Control flow</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration" target="_blank">MDN - Loops</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_if_else.asp" target="_blank">W3Schools - If/Else</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">W3Schools - For Loop</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>

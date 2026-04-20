@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Juego de Adivinanza - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 2: Juego de Adivinanza</h1>
+            <p>Sesión 10 - JavaScript II</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un juego de adivinanza de número usando un bucle while. El juego debe:</p>
+                <ol>
+                    <li>Generar un número aleatorio entre 1 y 100 (usa <code>Math.floor(Math.random() * 100) + 1</code>)</li>
+                    <li>Dar al usuario un máximo de 5 intentos</li>
+                    <li>En cada intento, pedir un número usando prompt()</li>
+                    <li>Indicar si el número secreto es mayor o menor al ingresado</li>
+                    <li>Mostrar mensaje de victoria si adivina, o de derrota si se agotan los intentos</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar bucle while para los intentos</li>
+                    <li>Contador de intentos</li>
+                    <li>Comparación con if/else para dar pistas</li>
+                    <li>Usar break para salir al adivinar</li>
+                    <li>Mensaje final con el número secreto</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Math.random() genera 0-0.999..., multiplica por 100 y suma 1 para 1-100</li>
+                        <li>Usa un contador que aumente en cada intento</li>
+                        <li>Para comparar: <code>intento < numeroSecreto</code> = "Es mayor"</li>
+                        <li>Si adivina, usa break para salir del while</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Genera número aleatorio: 42<br><br>
+                    // Prompt: "Adivina el número (1-100). Intentos: 5"<br>
+                    // Input: 50<br>
+                    // Alert: "Es menor, intenta de nuevo"<br><br>
+                    // Prompt: "Adivina el número (1-100). Intentos: 4"<br>
+                    // Input: 42<br>
+                    // Alert: "¡Felicidades! Adivinaste en X intentos"
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

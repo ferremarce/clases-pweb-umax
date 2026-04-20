@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Simulación de Notas - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: Simulación de Notas</h1>
+            <p>Sesión 10 - JavaScript II</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un sistema de gestión de notas usando switch y for. El sistema debe:</p>
+                <ol>
+                    <li>Un array con las notas de 5 estudiantes: [75, 92, 45, 88, 70]</li>
+                    <li>Usar un bucle for para iterar por cada estudiante</li>
+                    <li>Usar switch para determinar la calificación:
+                        <ul>
+                            <li>90-100: A (Excelente)</li>
+                            <li>80-89: B (Muy Bueno)</li>
+                            <li>70-79: C (Bueno)</li>
+                            <li>60-69: D (Suficiente)</li>
+                            <li>0-59: F (Reprobado)</li>
+                        </ul>
+                    </li>
+                    <li>Mostrar mensaje por cada estudiante</li>
+                    <li>Al final, mostrar el promedio general</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar array de notas</li>
+                    <li>Usar for para iterar</li>
+                    <li>Usar switch con rangos</li>
+                    <li>Calcular promedio</li>
+                    <li>Mostrar resultado por estudiante y promedio</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Para rangos en switch, verifica rango primero: case 90: case 91: ... case 100:</li>
+                        <li>O usa múltiples casos juntos: case "90": case "91": ...</li>
+                        <li>Para el promedio: suma todas las notas y divide por el array.length</li>
+                        <li>Usa toFixed(2) para mostrar el promedio con 2 decimales</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Estudiante 1: Nota 75 = C (Bueno)<br>
+                    // Estudiante 2: Nota 92 = A (Excelente)<br>
+                    // Estudiante 3: Nota 45 = F (Reprobado)<br>
+                    // Estudiante 4: Nota 88 = B (Muy Bueno)<br>
+                    // Estudiante 5: Nota 70 = C (Bueno)<br><br>
+                    // Promedio general: 74.00
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
