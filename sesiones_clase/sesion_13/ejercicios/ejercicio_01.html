@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Layout Básico con Grid - INI04</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .box { background: #e9ecef; padding: 20px; text-align: center; border: 1px solid #dee2e6; }
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container">
+            <h1>Ejercicio 1: Layout Básico con Grid</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un layout básico usando el sistema de Grid de Bootstrap. La página debe mostrar:</p>
+                <ol>
+                    <li>Un header con título</li>
+                    <li>Una fila con 2 columnas iguales (6+6)</li>
+                    <li>Una fila con 3 columnas iguales (4+4+4)</li>
+                    <li>Una fila con 4 columnas iguales (3+3+3+3)</li>
+                </ol>
+            </section>
+
+            <section class="requisitos mt-4">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar solo clases de Bootstrap (sin CSS personalizado)</li>
+                    <li>Usar .container-centered</li>
+                    <li>Usar .row y .col-*</li>
+                    <li>Cada columna debe tener contenido visible</li>
+                    <li>Diseño funcional en cualquier tamaño</li>
+                </ul>
+            </section>
+
+            <section class="pistas mt-4">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>&lt;div class="container"&gt; para el contenedor</li>
+                        <li>&lt;div class="row"&gt; para las filas</li>
+                        <li>&lt;div class="col-6"&gt; para 2 columnas</li>
+                        <li>&lt;div class="col-4"&gt; para 3 columnas</li>
+                        <li>&lt;div class="col-3"&gt; para 4 columnas</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado mt-4">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Fila 1: 2 columnas de igual ancho</li>
+                    <li>Fila 2: 3 columnas de igual ancho</li>
+                    <li>Fila 3: 4 columnas de igual ancho</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

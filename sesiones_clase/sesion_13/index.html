@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 13: Bootstrap I - Fundamentos y Grid System - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 13: Bootstrap I</h1>
+            <div class="subtitulo">Fundamentos y Grid System | Unidad V</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>Bootstrap I</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Fundamentos y Grid System</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad V - Framework CSS</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>¿Qué es Bootstrap?</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Framework CSS</strong> de código abierto</li>
+                    <li>Desarrollado por Twitter</li>
+                    <li>Componentes <strong>responsive</strong> ya listos</li>
+                    <li>Sistema de <strong>Grid</strong> de 12 columnas</li>
+                    <li>Componentes: Navbar, Cards, Modales, etc.</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>🎯 Ventaja:</strong> Prototipado rápido y diseño consistente.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Ventajas de Bootstrap</h2>
+            <div class="tarjeta">
+                <div class="dos-columnas">
+                    <div class="columna">
+                        <h3>✅ Ventajas</h3>
+                        <ul>
+                            <li>Diseño responsivo automático</li>
+                            <li>Componentes pre-diseñados</li>
+                            <li>Gran comunidad y documentación</li>
+                            <li>Ahorra tiempo de desarrollo</li>
+                            <li>Consistencia en el código</li>
+                        </ul>
+                    </div>
+                    <div class="columna">
+                        <h3>⚠️ Desventajas</h3>
+                        <ul>
+                            <li>Todos los sitios se ven similares</li>
+                            <li>Peso del archivo CSS</li>
+                            <li>Curva de aprendizaje</li>
+                            <li>Personalización limitada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>CDN vs Descarga Local</h2>
+            <div class="tarjeta">
+                <h3>CDN (推荐)</h3>
+                <pre><code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+                <br>
+                <h3>Descarga Local</h3>
+                <pre><code>&lt;link href="css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡 CDN:</strong> Más rápido, no requiere descarga. <strong>Local:</strong> Funciona sin internet.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Configuración Básica</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido --&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Contenedores</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Clase</th>
+                        <th>Ancho</th>
+                        <th>Uso</th>
+                    </tr>
+                    <tr>
+                        <td><code>.container</code></td>
+                        <td>Fijo (responsive)</td>
+                        <td>Diseño estándar</td>
+                    </tr>
+                    <tr>
+                        <td><code>.container-fluid</code></td>
+                        <td>100% siempre</td>
+                        <td>Diseño completo</td>
+                    </tr>
+                </table>
+                <br>
+                <pre><code>&lt;div class="container"&gt;
+    &lt;!-- Contenido centrado --&gt;
+&lt;/div&gt;
+
+&lt;div class="container-fluid"&gt;
+    &lt;!-- Contenido completo --&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Sistema de Grid</h2>
+            <div class="tarjeta">
+                <p>Bootstrap usa un sistema de <strong>12 columnas</strong>.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li><code>.row</code> - Crea una fila</li>
+                    <li><code>.col-*</code> - Columnas (1-12)</li>
+                    <li>Las columnas suman 12</li>
+                    <li>Se adaptan automáticamente</li>
+                </ul>
+                <br>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-6"&gt;Mitad&lt;/div&gt;
+    &lt;div class="col-6"&gt;Mitad&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Breakpoints</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Breakpoint</th>
+                        <th>Ancho mínimo</th>
+                        <th>Clase</th>
+                    </tr>
+                    <tr>
+                        <td>Extra small</td>
+                        <td>-</td>
+                        <td><code>.col-</code></td>
+                    </tr>
+                    <tr>
+                        <td>Small</td>
+                        <td>576px</td>
+                        <td><code>.col-sm-</code></td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>768px</td>
+                        <td><code>.col-md-</code></td>
+                    </tr>
+                    <tr>
+                        <td>Large</td>
+                        <td>992px</td>
+                        <td><code>.col-lg-</code></td>
+                    </tr>
+                    <tr>
+                        <td>Extra large</td>
+                        <td>1200px</td>
+                        <td><code>.col-xl-</code></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Ejemplos de Grid</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- 3 columnas iguales --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-4"&gt;Columna 1&lt;/div&gt;
+    &lt;div class="col-4"&gt;Columna 2&lt;/div&gt;
+    &lt;div class="col-4"&gt;Columna 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Responsive: 1 col móvil, 3 cols desktop --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-12 col-md-4"&gt;...&lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;...&lt;/div&gt;
+    &lt;div class="col-12 col-md-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Offset (Espaciado)</h2>
+            <div class="tarjeta">
+                <p>Los offsets crean espacio entre columnas.</p>
+                <br>
+                <pre><code>&lt;!-- Offset de 4 columnas --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;...&lt;/div&gt;
+    &lt;div class="col-md-4 offset-md-4"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Centrar columna --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6 offset-md-3"&gt;Centrado&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Ordenamiento (Order)</h2>
+            <div class="tarjeta">
+                <p>Controla el orden visual de las columnas.</p>
+                <br>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;1&lt;/div&gt;
+    &lt;div class="col order-3"&gt;2 (tercero)&lt;/div&gt;
+    &lt;div class="col order-1"&gt;3 (primero)&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- order-first y order-last --&gt;
+&lt;div class="col order-last"&gt;Último&lt;/div&gt;
+&lt;div class="col order-first"&gt;Primero&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Utilidades de Espaciado</h2>
+            <div class="tarjeta">
+                <p>Clases de utilidad para margin y padding.</p>
+                <br>
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Dirección</th>
+                        <th>Valor</th>
+                    </tr>
+                    <tr>
+                        <td>m (margin)</td>
+                        <td>t, b, l, r, x, y</td>
+                        <td>0-5, auto</td>
+                    </tr>
+                    <tr>
+                        <td>p (padding)</td>
+                        <td>t, b, l, r, x, y</td>
+                        <td>0-5</td>
+                    </tr>
+                </table>
+                <br>
+                <pre><code>mt-3 = margin-top: 1rem
+mb-2 = margin-bottom: 0.5rem
+p-4 = padding: 1.5rem
+mx-auto = margin-left:auto; margin-right:auto</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Utilidades de Texto</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Alineación --&gt;
+text-start / text-center / text-end
+
+&lt;!-- Tamaño --&gt;
+fs-1 / fs-2 / fs-3 / fs-4 / fs-5 / fs-6
+
+&lt;!-- Peso --&gt;
+fw-bold / fw-bolder / fw-normal / fw-light
+
+&lt;!-- Color --&gt;
+text-primary / text-danger / text-success
+
+&lt;!-- Mayúsculas --&gt;
+text-uppercase / text-lowercase / text-capitalize</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Utilidades de Colores</h2>
+            <div class="tarjeta">
+                <p>Colores de fondo y texto.</p>
+                <br>
+                <pre><code>&lt;!-- Fondo --&gt;
+bg-primary / bg-secondary / bg-success
+bg-danger / bg-warning / bg-info / bg-light / bg-dark
+
+&lt;!-- Texto --&gt;
+text-white / text-dark / text-muted
+text-primary / text-success / text-danger</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Bootstrap:</strong> Framework CSS popular</li>
+                    <li><strong>CDN:</strong> Incluir desde servidor externo</li>
+                    <li><strong>Contenedores:</strong> .container, .container-fluid</li>
+                    <li><strong>Grid:</strong> Sistema de 12 columnas</li>
+                    <li><strong>Breakpoints:</strong> sm, md, lg, xl</li>
+                    <li><strong>Offset:</strong> .offset-* para espaciado</li>
+                    <li><strong>Order:</strong> .order-* para ordenar</li>
+                    <li><strong>Utilidades:</strong> spacing, texto, colores</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 14: Bootstrap II</h3>
+                <ul class="lista-grande">
+                    <li>Componentes: Navbar, Cards</li>
+                    <li>Modal, Carrusel, Acordeón</li>
+                    <li>Formularios con Bootstrap</li>
+                    <li>Validación visual</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Preparación:</strong> Revisar documentación de componentes Bootstrap.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio 1 (Básico):</h3>
+                <p>Layout básico con Grid</p>
+                <br>
+                <h3>Ejercicio 2 (Intermedio):</h3>
+                <p>Página responsiva con Grid</p>
+                <br>
+                <h3>Ejercicio 3 (Avanzado):</h3>
+                <p>Dashboard con Grid</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
