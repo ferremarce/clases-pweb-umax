@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Portafolio Personal Responsivo - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: Portafolio Personal Responsivo</h1>
+            <p>Sesión 8 - CSS IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una página de portafolio personal completa con diseño responsivo. La página debe incluir:</p>
+                <ol>
+                    <li>Header con nombre y navegación</li>
+                    <li>Sección "Sobre mí"</li>
+                    <li>Galería de proyectos (grid de tarjetas)</li>
+                    <li>Formulario de contacto</li>
+                    <li>Footer</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Meta viewport tag incluido</li>
+                    <li>Menú de navegación: flexbox columna en móvil, fila en desktop</li>
+                    <li>Galería de proyectos: 1 columna móvil, 2 tablet, 3 desktop (Grid)</li>
+                    <li>Formulario de contacto estilizado (ejercicio 1)</li>
+                    <li>Footer con información de contacto</li>
+                    <li>Al menos 2 breakpoints (móvil/tablet/desktop)</li>
+                    <li>Imágenes con max-width: 100%</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Grid para galería: grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))</li>
+                        <li>Breakpoints: 576px, 768px, 992px</li>
+                        <li>Nav con flex-direction: column (móvil), row (desktop)</li>
+                        <li>Container con max-width y margin: auto</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>En móvil: todo apilado verticalmente</li>
+                    <li>En tablet: 2 columnas de proyectos</li>
+                    <li>En desktop: 3 columnas de proyectos, menú horizontal</li>
+                    <li>Formulario de contacto funcional y estilizado</li>
+                    <li>Imágenes que no exceden su contenedor</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

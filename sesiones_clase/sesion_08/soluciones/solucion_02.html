@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 2 - Tabla de Datos Responsiva - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 2 - Tabla de Datos Responsiva</h1>
+            <p>Sesión 8 - CSS IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">/* Contenedor con scroll horizontal */</span>
+<span class="etiqueta">.tabla</span>-contenedor {
+    <span class="propiedad">overflow-x</span>: <span class="valor">auto</span>;
+}
+
+<span class="comentario">/* Estilos base de tabla */</span>
+<span class="etiqueta">table</span> {
+    <span class="propiedad">width</span>: <span class="valor">100%</span>;
+    <span class="propiedad">border-collapse</span>: <span class="valor">collapse</span>;
+    <span class="propiedad">min-width</span>: <span class="valor">600px</span>;
+}
+
+<span class="comentario">/* Encabezado */</span>
+<span class="etiqueta">th</span> {
+    <span class="propiedad">background</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">color</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">12px</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">left</span>;
+}
+
+<span class="comentario">/* Celdas */</span>
+<span class="etiqueta">td</span> {
+    <span class="propiedad">padding</span>: <span class="valor">12px</span>;
+    <span class="propiedad">border-bottom</span>: <span class="valor">1px solid #ddd</span>;
+}
+
+<span class="comentario">/* Zebra striping - filas pares */</span>
+<span class="etiqueta">tr:nth</span>-child(<span class="valor">even</span>) {
+    <span class="propiedad">background-color</span>: <span class="valor">#f2f2f2</span>;
+}
+
+<span class="comentario">/* Hover en filas */</span>
+<span class="etiqueta">tr:hover</span> {
+    <span class="propiedad">background-color</span>: <span class="valor">#ddd</span>;
+}
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> El contenedor con overflow-x: auto permite que en dispositivos móviles la tabla tenga scroll horizontal sin romper el layout. min-width asegura que las columnas no se compriman demasiado.
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: #f5f5f5; padding: 20px; border-radius: 8px; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; min-width: 500px;">
+                    <tr style="background: #8B0000; color: white;">
+                        <th style="padding: 12px; text-align: left;">Nombre</th>
+                        <th style="padding: 12px; text-align: left;">Cargo</th>
+                        <th style="padding: 12px; text-align: left;">Departamento</th>
+                        <th style="padding: 12px; text-align: left;">Salario</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px;">Ana García</td>
+                        <td style="padding: 12px;">Gerente</td>
+                        <td style="padding: 12px;">Dirección</td>
+                        <td style="padding: 12px;">$5,000</td>
+                    </tr>
+                    <tr style="background: #f2f2f2; border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px;">Juan López</td>
+                        <td style="padding: 12px;">Desarrollador</td>
+                        <td style="padding: 12px;">TI</td>
+                        <td style="padding: 12px;">$3,500</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px;">María Rodríguez</td>
+                        <td style="padding: 12px;">Diseñadora</td>
+                        <td style="padding: 12px;">Marketing</td>
+                        <td style="padding: 12px;">$2,800</td>
+                    </tr>
+                    <tr style="background: #f2f2f2; border-bottom: 1px solid #ddd;">
+                        <td style="padding: 12px;">Pedro Sánchez</td>
+                        <td style="padding: 12px;">Analista</td>
+                        <td style="padding: 12px;">Finanzas</td>
+                        <td style="padding: 12px;">$2,500</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

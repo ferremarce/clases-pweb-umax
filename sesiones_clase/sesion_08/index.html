@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 8: CSS IV - Formularios, Tablas y Diseño Responsivo - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 8: CSS IV</h1>
+            <div class="subtitulo">Formularios, Tablas y Diseño Responsivo | Unidad III</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>CSS IV</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Formularios, Tablas y Diseño Responsivo</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad III - Hojas de Estilo en Cascada</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Repaso: CSS III - Flexbox y Grid</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Flexbox:</strong> layout unidimensional (fila o columna)</li>
+                    <li><strong>Propiedades:</strong> justify-content, align-items, flex-direction, flex-wrap</li>
+                    <li><strong>Grid:</strong> layout bidimensional (filas y columnas)</li>
+                    <li><strong>Propiedades:</strong> grid-template-columns, grid-template-rows, gap</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>🎯 Objetivo de hoy:</strong> Aplicar estos conocimientos para crear diseños responsivos.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Estilización de Formularios</h2>
+            <div class="tarjeta">
+                <p>Los formularios requieren estilos específicos para mejorar la experiencia del usuario.</p>
+                <br>
+                <pre><code>input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Estados de Formulario</h2>
+            <div class="tarjeta">
+                <p>Los inputs tienen estados que pueden estilizarse:</p>
+                <br>
+                <pre><code>/* Input normal */
+input { border: 1px solid #ccc; }
+
+/* Input con foco */
+input:focus {
+    border-color: #DC143C;
+    outline: none;
+    box-shadow: 0 0 5px rgba(220,20,60,0.3);
+}
+
+/* Input inválido */
+input:invalid {
+    border-color: red;
+}
+
+/* Input válido */
+input:valid {
+    border-color: green;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Botones Personalizados</h2>
+            <div class="tarjeta">
+                <pre><code>.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    background: #8B0000;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #DC143C;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Estilización de Tablas</h2>
+            <div class="tarjeta">
+                <pre><code>table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zebra striping */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover */
+tr:hover {
+    background-color: #ddd;
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>¿Qué es Diseño Responsivo?</h2>
+            <div class="tarjeta">
+                <p>El <strong>diseño responsivo</strong> permite que un sitio web se adapte a diferentes tamaños de pantalla.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>📱 <strong>Móvil:</strong> phones (< 576px)</li>
+                    <li>📲 <strong>Tablet:</strong> tablets (576px - 992px)</li>
+                    <li>💻 <strong>Escritorio:</strong> desktop (> 992px)</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>💡 Clave:</strong> Un solo código HTML/CSS para todos los dispositivos.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Meta Viewport Tag</h2>
+            <div class="tarjeta">
+                <p>Etiqueta esencial para que funcione el diseño responsivo:</p>
+                <br>
+                <pre><code>&lt;meta name="viewport" 
+      content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+                <br>
+                <ul>
+                    <li><code>width=device-width</code>: ancho igual al dispositivo</li>
+                    <li><code>initial-scale=1.0</code>: zoom inicial 100%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Media Queries</h2>
+            <div class="tarjeta">
+                <p>Las media queries aplican estilos según características del dispositivo:</p>
+                <br>
+                <pre><code>/* Estilos para móvil (por defecto) */
+body { font-size: 14px; }
+
+/* Estilos para tablet */
+@media (min-width: 576px) {
+    body { font-size: 16px; }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 992px) {
+    body { font-size: 18px; }
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Breakpoints Comunes</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Dispositivo</th>
+                        <th>Ancho</th>
+                        <th>Breakpoint</th>
+                    </tr>
+                    <tr>
+                        <td>Móvil</td>
+                        <td>< 576px</td>
+                        <td>default</td>
+                    </tr>
+                    <tr>
+                        <td>Tablet</td>
+                        <td>≥ 576px</td>
+                        <td>min-width: 576px</td>
+                    </tr>
+                    <tr>
+                        <td>Escritorio</td>
+                        <td>≥ 992px</td>
+                        <td>min-width: 992px</td>
+                    </tr>
+                    <tr>
+                        <td>Grande</td>
+                        <td>≥ 1200px</td>
+                        <td>min-width: 1200px</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Mobile-First Design</h2>
+            <div class="tarjeta">
+                <p>El enfoque <strong>mobile-first</strong> consiste en:</p>
+                <br>
+                <ol>
+                    <li>Diseñar primero para móvil</li>
+                    <li>Usar <code>min-width</code> para añadir características</li>
+                    <li>Progressive enhancement</li>
+                </ol>
+                <br>
+                <pre><code>/* Mobile-first: estilos base */
+.container { width: 100%; }
+
+/* Tablet */
+@media (min-width: 576px) {
+    .container { width: 540px; }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .container { width: 960px; }
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Flexbox Responsivo</h2>
+            <div class="tarjeta">
+                <pre><code>.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* En tablet/desktop: fila */
+@media (min-width: 768px) {
+    .menu {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}</code></pre>
+                <br>
+                <ul>
+                    <li><code>flex-direction: column</code>: apilar vertical</li>
+                    <li><code>flex-direction: row</code>: alinear horizontal</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Grid Responsivo</h2>
+            <div class="tarjeta">
+                <pre><code>.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna móvil */
+    gap: 20px;
+}
+
+@media (min-width: 576px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+}
+
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Imágenes Flexibles</h2>
+            <div class="tarjeta">
+                <p>Las imágenes deben adaptarse al contenedor:</p>
+                <br>
+                <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+                <br>
+                <ul>
+                    <li><code>max-width: 100%</code>: nunca exceder el contenedor</li>
+                    <li><code>height: auto</code>: mantener proporción</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Ejemplo Completo Responsivo</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;div class="layout"&gt;
+    &lt;header class="header"&gt;...&lt;/header&gt;
+    &lt;nav class="nav"&gt;...&lt;/nav&gt;
+    &lt;main class="content"&gt;...&lt;/main&gt;
+    &lt;aside class="sidebar"&gt;...&lt;/aside&gt;
+    &lt;footer class="footer"&gt;...&lt;/footer&gt;
+&lt;/div&gt;
+
+/* Mobile: todo apilado */
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Desktop: grid */
+@media (min-width: 992px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 200px 1fr 250px;
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Formularios:</strong> Estilización de inputs, botones, estados</li>
+                    <li><strong>Tablas:</strong> Zebra striping, hover, bordes</li>
+                    <li><strong>Responsivo:</strong> Adaptar a móvil, tablet, desktop</li>
+                    <li><strong>Viewport:</strong> Meta tag esencial</li>
+                    <li><strong>Media queries:</strong> min-width para breakpoints</li>
+                    <li><strong>Mobile-first:</strong> Diseñar desde móvil hacia arriba</li>
+                    <li><strong>Flexbox/Grid:</strong> Layouts responsivos</li>
+                    <li><strong>Imágenes:</strong> max-width: 100%</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 9: JavaScript I</h3>
+                <ul class="lista-grande">
+                    <li>Introducción a JavaScript</li>
+                    <li>Variables: let, const</li>
+                    <li>Tipos de datos primitivos</li>
+                    <li>Operadores y prompt/alert</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Preparación:</strong> Revisar conceptos básicos de programación si es necesario.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

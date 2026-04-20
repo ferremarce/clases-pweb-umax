@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 3 - Portafolio Personal Responsivo - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - Portafolio Personal Responsivo</h1>
+            <p>Sesión 8 - CSS IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">/* Variables CSS */</span>
+<span class="etiqueta">:root</span> {
+    <span class="propiedad">--color</span>-primario: <span class="valor">#8B0000</span>;
+    <span class="propiedad">--color</span>-secundario: <span class="valor">#DC143C</span>;
+    <span class="propiedad">--bg</span>-claro: <span class="valor">#f5f5f5</span>;
+}
+
+<span class="comentario">/* Reset básico */</span>
+<span class="etiqueta">*</span> {
+    <span class="propiedad">box-sizing</span>: <span class="valor">border-box</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0</span>;
+    <span class="propiedad">padding</span>: <span class="valor">0</span>;
+}
+
+<span class="comentario">/* Container */</span>
+<span class="etiqueta">.container</span> {
+    <span class="propiedad">max-width</span>: <span class="valor">1200px</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0 auto</span>;
+    <span class="propiedad">padding</span>: <span class="valor">0 20px</span>;
+}
+
+<span class="comentario">/* Header */</span>
+<span class="etiqueta">header</span> {
+    <span class="propiedad">background</span>: <span class="valor">var(--color-primario)</span>;
+    <span class="propiedad">color</span>: <span class="valor">white</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px 0</span>;
+}
+
+<span class="comentario">/* Navegación - Mobile first */</span>
+<span class="etiqueta">nav ul</span> {
+    <span class="propiedad">list-style</span>: <span class="valor">none</span>;
+    <span class="propiedad">display</span>: <span class="valor">flex</span>;
+    <span class="propiedad">flex-direction</span>: <span class="valor">column</span>;
+    <span class="propiedad">gap</span>: <span class="valor">10px</span>;
+}
+
+<span class="comentario">/* Navegación - Desktop */</span>
+<span class="etiqueta">@media</span> (<span class="valor">min-width: 768px</span>) {
+    <span class="etiqueta">nav ul</span> {
+        <span class="propiedad">flex-direction</span>: <span class="valor">row</span>;
+        <span class="propiedad">justify-content</span>: <span class="valor">flex-end</span>;
+    }
+}
+
+<span class="comentario">/* Galería - Grid responsivo */</span>
+<span class="etiqueta">.galeria</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">1fr</span>;
+    <span class="propiedad">gap</span>: <span class="valor">20px</span>;
+}
+
+<span class="comentario">/* Galería - Tablet */</span>
+<span class="etiqueta">@media</span> (<span class="valor">min-width: 576px</span>) {
+    <span class="etiqueta">.galeria</span> {
+        <span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(2, 1fr)</span>;
+    }
+}
+
+<span class="comentario">/* Galería - Desktop */</span>
+<span class="etiqueta">@media</span> (<span class="valor">min-width: 992px</span>) {
+    <span class="etiqueta">.galeria</span> {
+        <span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(3, 1fr)</span>;
+    }
+}
+
+<span class="comentario">/* Tarjeta de proyecto */</span>
+<span class="etiqueta">.proyecto</span> {
+    <span class="propiedad">background</span>: <span class="valor">white</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">8px</span>;
+    <span class="propiedad">box-shadow</span>: <span class="valor">0 2px 8px rgba(0,0,0,0.1)</span>;
+    <span class="propiedad">overflow</span>: <span class="valor">hidden</span>;
+}
+
+<span class="comentario">/* Imagen */</span>
+<span class="etiqueta">.proyecto img</span> {
+    <span class="propiedad">width</span>: <span class="valor">100%</span>;
+    <span class="propiedad">height</span>: <span class="valor">auto</span>;
+    <span class="propiedad">object-fit</span>: <span class="valor">cover</span>;
+}
+
+<span class="comentario">/* Footer */</span>
+<span class="etiqueta">footer</span> {
+    <span class="propiedad">background</span>: <span class="valor">#333</span>;
+    <span class="propiedad">color</span>: <span class="valor">white</span>;
+    <span class="propiedad">text-align</span>: <span class="valor">center</span>;
+    <span class="propiedad">padding</span>: <span class="valor">20px</span>;
+    <span class="propiedad">margin-top</span>: <span class="valor">40px</span>;
+}
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> El diseño usa mobile-first: los estilos base son para móvil, y los media queries agregan características para tablet (min-width: 576px) y desktop (min-width: 992px).
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
+                <div style="background: #8B0000; color: white; padding: 15px; text-align: center;">
+                    <strong>Juan Pérez - Portafolio</strong>
+                </div>
+                <div style="padding: 20px; background: #fafafa;">
+                    <h3 style="color: #8B0000;">Proyectos</h3>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 15px;">
+                        <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="background: #ddd; height: 100px; border-radius: 4px; margin-bottom: 10px;"></div>
+                            <strong>Proyecto 1</strong>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="background: #ddd; height: 100px; border-radius: 4px; margin-bottom: 10px;"></div>
+                            <strong>Proyecto 2</strong>
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                            <div style="background: #ddd; height: 100px; border-radius: 4px; margin-bottom: 10px;"></div>
+                            <strong>Proyecto 3</strong>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #333; color: white; padding: 15px; text-align: center;">
+                    © 2024 Juan Pérez
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
