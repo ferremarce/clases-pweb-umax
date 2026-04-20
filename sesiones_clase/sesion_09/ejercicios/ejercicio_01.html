@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Calculadora Básica - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 1: Calculadora Básica</h1>
+            <p>Sesión 9 - JavaScript I</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un programa en JavaScript que funcione como una calculadora básica. El programa debe:</p>
+                <ol>
+                    <li>Pedir al usuario que ingrese el primer número usando <code>prompt()</code></li>
+                    <li>Pedir al usuario que ingrese el segundo número usando <code>prompt()</code></li>
+                    <li>Realizar las cuatro operaciones aritméticas básicas:
+                        <ul>
+                            <li>Suma (+)</li>
+                            <li>Resta (-)</li>
+                            <li>Multiplicación (*)</li>
+                            <li>División (/)</li>
+                        </ul>
+                    </li>
+                    <li>Mostrar los cuatro resultados usando <code>alert()</code></li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>使用 <code>prompt()</code> para solicitar los números</li>
+                    <li>Usar <code>Number()</code> para convertir strings a números</li>
+                    <li>Realizar las 4 operaciones</li>
+                    <li>Mostrar resultados con <code>alert()</code></li>
+                    <li>Manejar división por cero (mostrar mensaje "No se puede dividir por cero")</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Usa <code>Number(valor)</code> para convertir el string que retorna prompt a número</li>
+                        <li>Para la división por cero, verifica si el divisor es 0 antes de dividir</li>
+                        <li>Puedes usar concatenación de strings para construir el mensaje: "Texto " + variable</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <p>Al ejecutar el programa, debería aparecer algo similar a:</p>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Primer prompt: "Ingresa el primer número:"
+                    // Ingresamos: 10
+                    <br><br>
+                    // Segundo prompt: "Ingresa el segundo número:"
+                    // Ingresamos: 5
+                    <br><br>
+                    // Alert con resultados:
+                    // Suma: 15
+                    // Resta: 5
+                    // Multiplicación: 50
+                    // División: 2
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

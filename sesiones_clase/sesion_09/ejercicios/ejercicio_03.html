@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Calculadora con Validación - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: Calculadora con Validación</h1>
+            <p>Sesión 9 - JavaScript I</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una calculadora robusta con validación de entrada y múltiples operaciones hasta que el usuario decida salir. El programa debe:</p>
+                <ol>
+                    <li>Mostrar un menú de opciones al usuario:
+                        <ul>
+                            <li>1 = Sumar</li>
+                            <li>2 = Restar</li>
+                            <li>3 = Multiplicar</li>
+                            <li>4 = Dividir</li>
+                            <li>5 = Salir</li>
+                        </ul>
+                    </li>
+                    <li>Según la opción, pedir los números necesarios</li>
+                    <li>Validar que los ingresos sean números válidos</li>
+                    <li>Si es división, validar que el divisor no sea cero</li>
+                    <li>After showing result, ask if they want to continue</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar <code>isNaN()</code> para validar que el input sea un número</li>
+                    <li>Usar <code>Number()</code> para convertir valores</li>
+                    <li>Bucle que continúe hasta que el usuario elija 5</li>
+                    <li>Mensaje claro de error para entradas inválidas</li>
+                    <li>Mostrar mensaje de despedida al salir</li>
+                    <li>Usar comparación estricta (===)</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Usa un bucle while que continúe mientras no sea 5</li>
+                        <li>Para validar número: <code>isNaN(Number(valor))</code> o <code>valor === ""</code></li>
+                        <li>Para validar división: verificar divisor antes de dividir</li>
+                        <li>Usa prompt anidados o consecutivos según la operación</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Ejemplo</h2>
+                <p>Ejemplo de ejecución:</p>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Menú: "1) Sumar, 2) Restar, 3) Multiplicar, 4) Dividir, 5) Salir"
+                    // Ingresamos: 1
+                    <br>
+                    // Prompt: "Primer número:"
+                    // Ingresamos: 10
+                    <br>
+                    // Prompt: "Segundo número:"
+                    // Ingresamos: 5
+                    <br>
+                    // Alert: "Resultado: 15"
+                    <br>
+                    // Prompt: "¿Continuar? (s/n)"
+                    // Ingresamos: s
+                    <br>
+                    // ... (repite hasta que pongamos n o 5)
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

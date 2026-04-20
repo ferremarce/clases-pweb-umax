@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 9: JavaScript I - Variables, Tipos y Operadores - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 9: JavaScript I</h1>
+            <div class="subtitulo">Variables, Tipos y Operadores | Unidad IV</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>JavaScript I</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Variables, Tipos de Datos y Operadores</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad IV - Fundamentos de JavaScript</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>¿Qué es JavaScript?</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Lenguaje de programación</strong> interpretado de alto nivel</li>
+                    <li><strong>Multiplataforma:</strong> funciona en navegador, servidores, móviles</li>
+                    <li><strong>Lenguaje dinámico:</strong> no necesita declarar tipos</li>
+                    <li><strong>Esencial para la web:</strong> interactividad en páginas</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>⚡ Dato:</strong> JS es uno de los lenguajes más populares del mundo. Junto con HTML y CSS forma la base de la web.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>¿Dónde se Ejecuta JavaScript?</h2>
+            <div class="tarjeta">
+                <div class="dos-columnas">
+                    <div class="columna">
+                        <h3>🌐 Navegador</h3>
+                        <ul>
+                            <li>Chrome (V8)</li>
+                            <li>Firefox (SpiderMonkey)</li>
+                            <li>Edge (Chakra)</li>
+                            <li>Safari (JavaScriptCore)</li>
+                        </ul>
+                    </div>
+                    <div class="columna">
+                        <h3>🖥️ Servidor</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Deno</li>
+                            <li>Bun</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Insertar JavaScript en HTML</h2>
+            <div class="tarjeta">
+                <h3>1. Script inline (no recomendado)</h3>
+                <pre><code>&lt;button onclick="alert('Hola!')"&gt;Click&lt;/button&gt;</code></pre>
+
+                <h3>2. Script interno</h3>
+                <pre><code>&lt;script&gt;
+    console.log("Hola mundo");
+&lt;/script&gt;</code></pre>
+
+                <h3>3. Script externo (recomendado)</h3>
+                <pre><code>&lt;script src="js/script.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Variables en JavaScript</h2>
+            <div class="tarjeta">
+                <p>Las <strong>variables</strong> son contenedores para almacenar datos.</p>
+                <br>
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Palabra</th>
+                        <th>Ámbito</th>
+                        <th>Reasignable</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td><code>var</code></td>
+                        <td>Función</td>
+                        <td>✅ Sí</td>
+                        <td><code>var nombre = "Ana";</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>let</code></td>
+                        <td>Bloque</td>
+                        <td>✅ Sí</td>
+                        <td><code>let edad = 25;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>const</code></td>
+                        <td>Bloque</td>
+                        <td>❌ No</td>
+                        <td><code>const PI = 3.14;</code></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="nota">
+                <strong>💡 Recomendación:</strong> Usar <code>const</code> por defecto y <code>let</code> solo cuando necesites reasignar. Evitar <code>var</code>.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Ejemplo: Declarar Variables</h2>
+            <div class="tarjeta">
+                <pre><code>// Usando var (evitar)
+var nombre = "Juan";
+
+// Usando let (para valores que cambian)
+let edad = 30;
+edad = 31; // ✅ Se puede reasignar
+
+// Usando const (para valores fijos)
+const PI = 3.14159;
+// PI = 3.15; // ❌ Error: no se puede reasignar
+
+// Constante con objeto (el contenido puede cambiar)
+const usuario = { nombre: "Ana", edad: 25 };
+usuario.edad = 26; // ✅ Esto sí funciona
+// usuario = {}; // ❌ Error: no se puede reasignar</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Tipos de Datos Primitivos</h2>
+            <div class="tarjeta">
+                <div class="tres-columnas">
+                    <div class="columna">
+                        <h3>String</h3>
+                        <pre><code>let nombre = "Juan";
+let saludo = 'Hola';</code></pre>
+                    </div>
+                    <div class="columna">
+                        <h3>Number</h3>
+                        <pre><code>let edad = 25;
+let precio = 19.99;</code></pre>
+                    </div>
+                    <div class="columna">
+                        <h3>Boolean</h3>
+                        <pre><code>let activo = true;
+let mayor = false;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Tipos de Datos: null y undefined</h2>
+            <div class="tarjeta">
+                <h3>null vs undefined</h3>
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Significado</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td><code>undefined</code></td>
+                        <td>Variable declarada pero sin valor</td>
+                        <td><code>let x;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>null</code></td>
+                        <td>Valor "vacío" asignado intencionalmente</td>
+                        <td><code>let x = null;</code></td>
+                    </tr>
+                </table>
+                <br>
+                <pre><code>let nombre;        // undefined - no tiene valor
+let apellido = null; // null - intencionalmente vacío</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Operadores Aritméticos</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Operador</th>
+                        <th>Nombre</th>
+                        <th>Ejemplo</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td><code>+</code></td>
+                        <td>Suma</td>
+                        <td><code>5 + 3</code></td>
+                        <td><code>8</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>-</code></td>
+                        <td>Resta</td>
+                        <td><code>10 - 4</code></td>
+                        <td><code>6</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Multiplicación</td>
+                        <td><code>4 * 3</code></td>
+                        <td><code>12</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/</code></td>
+                        <td>División</td>
+                        <td><code>15 / 3</code></td>
+                        <td><code>5</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>%</code></td>
+                        <td>Módulo (resto)</td>
+                        <td><code>17 % 5</code></td>
+                        <td><code>2</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>**</code></td>
+                        <td>Exponenciación</td>
+                        <td><code>2 ** 3</code></td>
+                        <td><code>8</code></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Operadores de Asignación</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Operador</th>
+                        <th>Ejemplo</th>
+                        <th>Equivalente a</th>
+                    </tr>
+                    <tr>
+                        <td><code>=</code></td>
+                        <td><code>x = 5</code></td>
+                        <td><code>x = 5</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>+=</code></td>
+                        <td><code>x += 3</code></td>
+                        <td><code>x = x + 3</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>-=</code></td>
+                        <td><code>x -= 2</code></td>
+                        <td><code>x = x - 2</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*=</code></td>
+                        <td><code>x *= 4</code></td>
+                        <td><code>x = x * 4</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/=</code></td>
+                        <td><code>x /= 2</code></td>
+                        <td><code>x = x / 2</code></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Operadores de Comparación</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Operador</th>
+                        <th>Nombre</th>
+                        <th>Ejemplo</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td><code>==</code></td>
+                        <td>Igual (valor)</td>
+                        <td><code>5 == "5"</code></td>
+                        <td><code>true</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>===</code></td>
+                        <td>Estrictamente igual</td>
+                        <td><code>5 === "5"</code></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>!=</code></td>
+                        <td>Diferente (valor)</td>
+                        <td><code>5 != "5"</code></td>
+                        <td><code>false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>!==</code></td>
+                        <td>Estrictamente diferente</td>
+                        <td><code>5 !== "5"</code></td>
+                        <td><code>true</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>Mayor que</td>
+                        <td><code>10 > 5</code></td>
+                        <td><code>true</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;</code></td>
+                        <td>Menor que</td>
+                        <td><code>3 < 1</code></td>
+                        <td><code>false</code></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="nota">
+                <strong>⚠️ Importante:</strong> Siempre usar <code>===</code> y <code>!==</code> para evitar errores de coerción de tipos.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Interactuar con el Usuario</h2>
+            <div class="tarjeta">
+                <h3>alert() - Mostrar mensaje</h3>
+                <pre><code>alert("¡Hola, bienvenido!");</code></pre>
+
+                <h3>prompt() - Pedir datos al usuario</h3>
+                <pre><code>let nombre = prompt("¿Cuál es tu nombre?");
+console.log("El nombre es: " + nombre);</code></pre>
+
+                <h3>console.log() - Mensaje en consola</h3>
+                <pre><code>console.log("Este mensaje aparece en la consola del navegador");</code></pre>
+            </div>
+            <div class="ejemplo">
+                <strong>🎯 Pruébalo:</strong> Abre la consola (F12) y escribe: <code>alert("¡Hola!")</code>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>La Consola del Navegador</h2>
+            <div class="tarjeta">
+                <h3>¿Cómo abrir la consola?</h3>
+                <ul class="lista-grande">
+                    <li><strong>F12</strong> → Pestaña "Console"</li>
+                    <li><strong>Ctrl+Shift+I</strong> (Windows/Linux)</li>
+                    <li><strong>Cmd+Option+I</strong> (Mac)</li>
+                </ul>
+                <br>
+                <h3>Métodos útiles de console:</h3>
+                <pre><code>console.log("Mensaje normal");
+console.warn("Advertencia");
+console.error("Error");
+console.info("Información");</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Conversión de Tipos (Coerción)</h2>
+            <div class="tarjeta">
+                <h3>Conversión Implícita (automática)</h3>
+                <pre><code>// String + Number = String
+"5" + 3    // "53"
+
+// Number + String = Number
+5 + "3"    // 8
+
+// Comparaciones con strings
+"5" == 5   // true (convierte a número)
+"5" === 5  // false (tipos diferentes)</code></pre>
+
+                <h3>Conversión Explícita (manual)</h3>
+                <pre><code>// Convertir a número
+Number("5")      // 5
+parseInt("5")    // 5
+parseFloat("5.5")// 5.5
+
+// Convertir a string
+String(5)        // "5"
+(5).toString()  // "5"
+
+Boolean(1)       // true
+Boolean(0)       // false</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Ejemplo Completo</h2>
+            <div class="tarjeta">
+                <pre><code>// Programa: Calculadora simple
+let num1 = prompt("Ingresa el primer número:");
+let num2 = prompt("Ingresa el segundo número:");
+
+// Convertir a número
+num1 = Number(num1);
+num2 = Number(num2);
+
+// Realizar operaciones
+let suma = num1 + num2;
+let resta = num1 - num2;
+let producto = num1 * num2;
+let division = num1 / num2;
+
+// Mostrar resultados
+alert("Resultados:\n" +
+      "Suma: " + suma + "\n" +
+      "Resta: " + resta + "\n" +
+      "Producto: " + producto + "\n" +
+      "División: " + division);</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>JavaScript:</strong> Lenguaje de programación para la web</li>
+                    <li><strong>Variables:</strong> var, let, const (usar const/let)</li>
+                    <li><strong>Tipos primitivos:</strong> string, number, boolean, null, undefined</li>
+                    <li><strong>Operadores:</strong> aritméticos, asignación, comparación</li>
+                    <li><strong>Comparación:</strong> usar === y !== siempre</li>
+                    <li><strong>Interacción:</strong> alert(), prompt(), console.log()</li>
+                    <li><strong>Conversión:</strong> Number(), String(), Boolean()</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 10: JavaScript II</h3>
+                <ul class="lista-grande">
+                    <li>Condicionales: if/else, switch</li>
+                    <li>Operador ternario</li>
+                    <li>Bucles: for, while, do-while</li>
+                    <li>Ejercicios de lógica</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Lectura recomendada:</strong> MDN JavaScript Guide - JavaScript first steps
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 1 - Calculadora Básica - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 1 - Calculadora Básica</h1>
+            <p>Sesión 9 - JavaScript I</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">// Ejercicio 1: Calculadora Básica</span>
+<span class="comentario">// Solicitar dos números al usuario</span>
+<span class="etiqueta">let</span> <span class="variable">num1</span> = <span class="funcion">prompt</span>(<span class="string">"Ingresa el primer número:"</span>);
+<span class="etiqueta">let</span> <span class="variable">num2</span> = <span class="funcion">prompt</span>(<span class="string">"Ingresa el segundo número:"</span>);
+
+<span class="comentario">// Convertir strings a números</span>
+<span class="variable">num1</span> = <span class="funcion">Number</span>(<span class="variable">num1</span>);
+<span class="variable">num2</span> = <span class="funcion">Number</span>(<span class="variable">num2</span>);
+
+<span class="comentario">// Realizar operaciones</span>
+<span class="etiqueta">let</span> <span class="variable">suma</span> = <span class="variable">num1</span> + <span class="variable">num2</span>;
+<span class="etiqueta">let</span> <span class="variable">resta</span> = <span class="variable">num1</span> - <span class="variable">num2</span>;
+<span class="etiqueta">let</span> <span class="variable">multiplicacion</span> = <span class="variable">num1</span> * <span class="variable">num2</span>;
+
+<span class="comentario">// División (verificar que no sea cero)</span>
+<span class="etiqueta">let</span> <span class="variable">division</span>;
+<span class="etiqueta">if</span> (<span class="variable">num2</span> === 0) {
+    <span class="variable">division</span> = <span class="string">"No se puede dividir por cero"</span>;
+} <span class="etiqueta">else</span> {
+    <span class="variable">division</span> = <span class="variable">num1</span> / <span class="variable">num2</span>;
+}
+
+<span class="comentario">// MostrarResultados</span>
+<span class="funcion">alert</span>(<span class="string">"Resultados:\n"</span> +
+      <span class="string">"Suma: "</span> + <span class="variable">suma</span> + <span class="string">"\n"</span> +
+      <span class="string">"Resta: "</span> + <span class="variable">resta</span> + <span class="string">"\n"</span> +
+      <span class="string">"Multiplicación: "</span> + <span class="variable">multiplicacion</span> + <span class="string">"\n"</span> +
+      <span class="string">"División: "</span> + <span class="variable">division</span>);
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Existen múltiples formas de implementar este ejercicio. Por ejemplo, podría usar una función para mostrar los resultados o validar los inputs usando isNaN().
+            </div>
+
+            <h2>Resultado Visual</h2>
+            <div class="vista-previa" style="background: #f5f5f5; padding: 20px; border-radius: 8px; font-family: monospace;">
+                <strong>Primera ventana prompt:</strong><br>
+                [input] Ingresa el primer número: 10<br><br>
+                <strong>Segunda ventana prompt:</strong><br>
+                [input] Ingresa el segundo número: 5<br><br>
+                <strong>Alert con resultados:</strong>
+                <div style="background: white; border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 4px;">
+                    Resultados:<br>
+                    Suma: 15<br>
+                    Resta: 5<br>
+                    Multiplicación: 50<br>
+                    División: 2
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

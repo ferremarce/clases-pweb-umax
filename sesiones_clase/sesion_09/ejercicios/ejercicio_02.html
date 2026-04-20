@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Conversor de Temperatura - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 2: Conversor de Temperatura</h1>
+            <p>Sesión 9 - JavaScript I</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un programa conversor de temperaturas que permita al usuario elegir la dirección de conversión. El programa debe:</p>
+                <ol>
+                    <li>Preguntar al usuario qué quiere hacer:
+                        <ul>
+                            <li>1 = Celsius a Fahrenheit</li>
+                            <li>2 = Fahrenheit a Celsius</li>
+                        </ul>
+                    </li>
+                    <li>Si elige 1: pedir temperatura en Celsius y convertir a Fahrenheit</li>
+                    <li>Si elige 2: pedir temperatura en Fahrenheit y convertir a Celsius</li>
+                    <li>Mostrar el resultado con <code>alert()</code></li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar <code>prompt()</code> para la opción y la temperatura</li>
+                    <li>Usar <code>Number()</code> para convertir valores</li>
+                    <li>Fórmulas de conversión:
+                        <ul>
+                            <li>°F = (°C × 9/5) + 32</li>
+                            <li>°C = (°F - 32) × 5/9</li>
+                        </ul>
+                    </li>
+                    <li>Mostrar resultado con 2 decimales usando <code>toFixed(2)</code></li>
+                    <li>Manejar opción inválida con mensaje de error</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Usa estructura if/else para decidir qué conversión hacer</li>
+                        <li>Para mostrar 2 decimales: <code>resultado.toFixed(2)</code></li>
+                        <li>Comparación: <code>opcion === "1"</code> (usar string comparisons)</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <p>Al ejecutar el programa:</p>
+                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    // Prompt: "¿Qué conversión? (1) C→F, (2) F→C"
+                    // Ingresamos: 1
+                    <br><br>
+                    // Prompt: "Temperatura en Celsius:"
+                    // Ingresamos: 25
+                    <br><br>
+                    // Alert:
+                    // 25°C = 77.00°F
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
