@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 14: Bootstrap II - Componentes y Formularios - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 14: Bootstrap II</h1>
+            <div class="subtitulo">Componentes y Formularios | Unidad V</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>Bootstrap II</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Componentes y Formularios</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad V - Framework CSS</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Repaso: Bootstrap I</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Grid:</strong> Sistema de 12 columnas</li>
+                    <li><strong>Contenedores:</strong> .container, .container-fluid</li>
+                    <li><strong>Breakpoints:</strong> sm, md, lg, xl</li>
+                    <li><strong>Utilidades:</strong> spacing, texto, colores</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>🎯 Objetivo de hoy:</strong> Aprender componentes interactivos.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Navbar (Barra de Navegación)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Logo&lt;/a&gt;
+    &lt;button class="navbar-toggler"&gt;...&lt;/button&gt;
+    &lt;div class="collapse navbar-collapse"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Cards (Tarjetas)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="imagen.jpg" class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Descripción&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Botón&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Modal (Ventana Emergente)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Trigger --&gt;
+&lt;button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal"&gt;Abrir&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="miModal" tabindex="-1"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title"&gt;Título&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;Contenido&lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button class="btn btn-secondary" data-bs-dismiss="modal"&gt;Cerrar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Carrusel (Galería)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;div id="miCarrusel" class="carousel slide"&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button data-bs-target="#miCarrusel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+    &lt;button data-bs-target="#miCarrusel" data-bs-slide-to="1"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="imagen1.jpg" class="d-block w-100"&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="imagen2.jpg" class="d-block w-100"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="carousel-control-prev" data-bs-target="#miCarrusel" data-bs-slide="prev"&gt;&lt;/button&gt;
+  &lt;button class="carousel-control-next" data-bs-target="#miCarrusel" data-bs-slide="next"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Accordion (Acordeón)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;div class="accordion" id="miAcordeon"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header"&gt;
+      &lt;button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#colapsable1"&gt;
+        Título 1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="colapsable1" class="accordion-collapse collapse show" data-bs-parent="#miAcordeon"&gt;
+      &lt;div class="accordion-body"&gt;Contenido&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Formularios</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;form&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="email" class="form-label"&gt;Email&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="email"&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="password" class="form-label"&gt;Contraseña&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="password"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-check"&gt;
+    &lt;input type="checkbox" class="form-check-input" id="remember"&gt;
+    &lt;label class="form-check-label" for="remember"&gt;Recordarme&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Validación Visual</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;form class="was-validated"&gt;
+  &lt;input class="form-control is-valid" required&gt;
+  &lt;div class="invalid-feedback"&gt;
+    Por favor ingresa un valor válido.
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+                <br>
+                <ul>
+                    <li><code>.is-valid</code> - válido</li>
+                    <li><code>.is-invalid</code> - inválido</li>
+                    <li><code>.valid-feedback</code> - mensaje éxito</li>
+                    <li><code>.invalid-feedback</code> - mensaje error</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Iconos (Bootstrap Icons)</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- En el head --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"&gt;
+
+&lt;!-- Uso --&gt;
+&lt;i class="bi bi-house"&gt;&lt;/i&gt;
+&lt;i class="bi bi-person-circle"&gt;&lt;/i&gt;
+&lt;i class="bi bi-envelope"&gt;&lt;/i&gt;
+&lt;i class="bi bi-facebook"&gt;&lt;/i&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Botones y Grupos</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Botones --&gt;
+&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+
+&lt;!-- Grupo de botones --&gt;
+&lt;div class="btn-group" role="group"&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;1&lt;/button&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;2&lt;/button&gt;
+  &lt;button class="btn btn-outline-secondary"&gt;3&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Badges y Alertas</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Badges --&gt;
+&lt;span class="badge bg-primary"&gt;Nuevo&lt;/span&gt;
+&lt;span class="badge bg-success"&gt;Éxito&lt;/span&gt;
+
+&lt;!-- Alertas --&gt;
+&lt;div class="alert alert-success"&gt;
+  Operación exitosa.
+&lt;/div&gt;
+&lt;div class="alert alert-warning"&gt;
+  Advertencia.
+&lt;/div&gt;
+&lt;div class="alert alert-danger"&gt;
+  Error.
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Personalización</h2>
+            <div class="tarjeta">
+                <p>Personalizar Bootstrap con CSS adicional:</p>
+                <pre><code>/* Custom CSS */
+.navbar {
+    background-color: #8B0000 !important;
+}
+
+.btn-primary {
+    background-color: #DC143C;
+    border-color: #DC143C;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Navbar:</strong> Barra de navegación responsiva</li>
+                    <li><strong>Cards:</strong> Tarjetas de contenido</li>
+                    <li><strong>Modal:</strong> Ventanas emergentes</li>
+                    <li><strong>Carrusel:</strong> Galería de imágenes</li>
+                    <li><strong>Accordion:</strong> Contenido colapsable</li>
+                    <li><strong>Formularios:</strong> Inputs y labels stylados</li>
+                    <li><strong>Validación:</strong> .is-valid, .is-invalid</li>
+                    <li><strong>Iconos:</strong> Bootstrap Icons</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 15: Proyecto Final</h3>
+                <ul class="lista-grande">
+                    <li>Planificación del proyecto</li>
+                    <li>Formación de grupos</li>
+                    <li>Selección de proyecto</li>
+                    <li>Repositorio Git</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Preparación:</strong> Traer ideas de proyecto para la próxima sesión.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio 1 (Básico):</h3>
+                <p>Página con Navbar y Cards</p>
+                <br>
+                <h3>Ejercicio 2 (Intermedio):</h3>
+                <p>Portafolio con Modal y Formulario</p>
+                <br>
+                <h3>Ejercicio 3 (Avanzado):</h3>
+                <p>Landing Page completa</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
