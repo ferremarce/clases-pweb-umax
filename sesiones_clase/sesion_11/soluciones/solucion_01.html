@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 1 - Calculadora con Funciones - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 1 - Calculadora con Funciones</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- HTML --&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"calculadora"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Calculadora<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"num1"</span> <span class="propiedad">type</span>=<span class="valor">"number"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Número 1"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"num2"</span> <span class="propiedad">type</span>=<span class="valor">"number"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Número 2"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"botones"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnSumar"</span><span class="etiqueta">&gt;</span>+<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnRestar"</span><span class="etiqueta">&gt;</span>-<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnMultiplicar"</span><span class="etiqueta">&gt;</span>×<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnDividir"</span><span class="etiqueta">&gt;</span>÷<span class="etiqueta">&lt;/button&gt;</span>
+    <span class="etiqueta">&lt;/div&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">id</span>=<span class="valor">"resultado"</span><span class="etiqueta">&gt;</span>Resultado: -<span class="etiqueta">&lt;/div&gt;</span>
+<span class="etiqueta">&lt;/div&gt;</span>
+
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Funciones para operaciones</span>
+<span class="etiqueta">function</span> <span class="funcion">sumar</span>(a, b) { <span class="etiqueta">return</span> a + b; }
+<span class="etiqueta">function</span> <span class="funcion">restar</span>(a, b) { <span class="etiqueta">return</span> a - b; }
+<span class="etiqueta">function</span> <span class="funcion">multiplicar</span>(a, b) { <span class="etiqueta">return</span> a * b; }
+<span class="etiqueta">function</span> <span class="funcion">dividir</span>(a, b) {
+    <span class="etiqueta">if</span> (b === 0) <span class="etiqueta">return</span> <span class="string">"Error: no se puede dividir por cero"</span>;
+    <span class="etiqueta">return</span> a / b;
+}
+
+<span class="comentario">// Obtener elementos</span>
+<span class="etiqueta">let</span> num1Input = document.<span class="funcion">getElementById</span>(<span class="string">"num1"</span>);
+<span class="etiqueta">let</span> num2Input = document.<span class="funcion">getElementById</span>(<span class="string">"num2"</span>);
+<span class="etiqueta">let</span> resultadoDiv = document.<span class="funcion">getElementById</span>(<span class="string">"resultado"</span>);
+
+<span class="comentario">// Función para calcular y mostrar</span>
+<span class="etiqueta">function</span> <span class="funcion">calcular</span>(<span class="variable">operacion</span>) {
+    <span class="etiqueta">let</span> n1 = <span class="funcion">Number</span>(num1Input.<span class="variable">value</span>);
+    <span class="etiqueta">let</span> n2 = <span class="funcion">Number</span>(num2Input.<span class="variable">value</span>);
+    <span class="etiqueta">let</span> resultado;
+
+    <span class="etiqueta">switch</span>(<span class="variable">operacion</span>) {
+        <span class="etiqueta">case</span> <span class="string">"sumar"</span>: resultado = <span class="funcion">sumar</span>(n1, n2); <span class="etiqueta">break</span>;
+        <span class="etiqueta">case</span> <span class="string">"restar"</span>: resultado = <span class="funcion">restar</span>(n1, n2); <span class="etiqueta">break</span>;
+        <span class="etiqueta">case</span> <span class="string">"multiplicar"</span>: resultado = <span class="funcion">multiplicar</span>(n1, n2); <span class="etiqueta">break</span>;
+        <span class="etiqueta">case</span> <span class="string">"dividir"</span>: resultado = <span class="funcion">dividir</span>(n1, n2); <span class="etiqueta">break</span>;
+    }
+
+    resultadoDiv.<span class="variable">textContent</span> = <span class="string">"Resultado: "</span> + resultado;
+}
+
+<span class="comentario">// Agregar eventos a los botones</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"btnSumar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(<span class="string">"sumar"</span>));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnRestar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(<span class="string">"restar"</span>));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnMultiplicar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(<span class="string">"multiplicar"</span>));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnDividir"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(<span class="string">"dividir"</span>));
+<span class="etiqueta">&lt;/script&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Se usan funciones separadas para cada operación y una función calcular() que las invoca. Los eventos click se agregan con addEventListener.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

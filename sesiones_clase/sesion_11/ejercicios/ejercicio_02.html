@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Galería de Imágenes con Eventos - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 2: Galería de Imágenes con Eventos</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una galería de imágenes interactiva con eventos del DOM. La galería debe:</p>
+                <ol>
+                    <li>Mostrar una imagen grande principal</li>
+                    <li>Mostrar miniaturas debajo</li>
+                    <li>Al hacer click en una miniatura, cambiar la imagen grande</li>
+                    <li>Al pasar el mouse sobre una miniatura, resaltar visualmente</li>
+                    <li>Usar placeholder images (ej. via.placeholder.com o similar)</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar querySelectorAll para las miniaturas</li>
+                    <li>Usar addEventListener para click</li>
+                    <li>Usar eventos mouseover/mouseout para efecto hover</li>
+                    <li>Cambiar el atributo src de la imagen principal</li>
+                    <li>Al menos 4 imágenes en la galería</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>imagenGrande.src = this.src para cambiar imagen</li>
+                        <li>this.classList.add("activa") para destacar</li>
+                        <li>Usa imágenes de placeholder como: https://via.placeholder.com/600x400</li>
+                        <li>Miniaturas: https://via.placeholder.com/150x100</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Imagen principal grande arriba</li>
+                    <li>4 miniaturas debajo</li>
+                    <li>Al hacer click en miniatura, cambia la imagen grande</li>
+                    <li>Las miniaturas tienen efecto visual al pasar el mouse</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

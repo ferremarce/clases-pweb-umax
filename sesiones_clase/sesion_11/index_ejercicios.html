@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 11 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 11: JavaScript III - Funciones y Eventos del DOM</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás la creación de funciones en JavaScript y la manipulación de eventos del DOM para crear interactividad en páginas web.</p>
+                <p><strong>Duración:</strong> 2.5 horas</p>
+                <p><strong>Nota:</strong> Usa funciones para organizar el código y eventos para responder a las acciones del usuario.</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Calculadora con Funciones</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Crea una calculadora que use funciones para cada operación aritmética. Los botones deben responder a eventos click.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Galería de Imágenes con Eventos</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea una galería de imágenes donde al hacer click en cada miniatura se muestre en tamaño grande, con eventos mouseover y mouseout.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>To-Do List Interactiva</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Crea una lista de tareas donde puedes agregar, marcar como completada y eliminar tareas usando funciones y eventos del DOM.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Functions" target="_blank">MDN - Funciones</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/API/Document" target="_blank">MDN - Document Object Model</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener" target="_blank">MDN - addEventListener</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">W3Schools - JavaScript Functions</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 11: JavaScript III - Funciones y Eventos del DOM - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 11: JavaScript III</h1>
+            <div class="subtitulo">Funciones y Eventos del DOM | Unidad IV</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <h2>JavaScript III</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Funciones y Eventos del DOM</p>
+            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad IV - Fundamentos de JavaScript</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Repaso: JavaScript I-II</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Variables:</strong> let, const</li>
+                    <li><strong>Tipos:</strong> string, number, boolean</li>
+                    <li><strong>Operadores:</strong> aritméticos, comparación</li>
+                    <li><strong>Condicionales:</strong> if/else, switch</li>
+                    <li><strong>Bucles:</strong> for, while</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>🎯 Objetivo de hoy:</strong> Aprender a crear interactividad en páginas web.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>¿Qué son las Funciones?</h2>
+            <div class="tarjeta">
+                <p>Las <strong>funciones</strong> son bloques de código reutilizables que realizan una tarea específica.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>Evitan código repetido</li>
+                    <li>Facilitan el mantenimiento</li>
+                    <li>Permiten modularizar</li>
+                    <li>Pueden recibir parámetros</li>
+                    <li>Pueden retornar valores</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Declaración de Funciones</h2>
+            <div class="tarjeta">
+                <pre><code>// Función tradicional (declaración)
+function saludar(nombre) {
+    return "Hola, " + nombre;
+}
+
+// Llamar a la función
+let mensaje = saludar("Juan");
+alert(mensaje); // "Hola, Juan"</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Expresión de Función</h2>
+            <div class="tarjeta">
+                <pre><code>// Expresión de función
+let saludar = function(nombre) {
+    return "Hola, " + nombre;
+};
+
+// Arrow function (más moderno)
+let saludar = (nombre) => "Hola, " + nombre;
+
+// Arrow function con cuerpo
+let saludar = (nombre) => {
+    return "Hola, " + nombre;
+};</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡 Ventaja de arrow functions:</strong> Sintaxis más corta y contexto léxico de <code>this</code>.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Parámetros y Retorno</h2>
+            <div class="tarjeta">
+                <pre><code>// Función con múltiples parámetros
+function sumar(a, b) {
+    return a + b;
+}
+
+// Función con valor por defecto
+function saludar(nombre = "Usuario") {
+    return "Hola, " + nombre;
+}
+
+// Función sin retorno
+function mostrarMensaje(msg) {
+    alert(msg);
+}</code></pre>
+                <br>
+                <ul>
+                    <li><code>return</code> devuelve un valor</li>
+                    <li>Parámetros pueden tener valores por defecto</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>El DOM (Document Object Model)</h2>
+            <div class="tarjeta">
+                <p>El <strong>DOM</strong> es la representación en memoria del documento HTML como objetos JavaScript.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li><strong>document</strong>: objeto principal</li>
+                    <li>Cada etiqueta HTML es un elemento</li>
+                    <li>JavaScript puede modificarlo</li>
+                    <li>Árbol jerárquico</li>
+                </ul>
+            </div>
+            <div class="ejemplo">
+                <strong>🎯 Pruébalo:</strong> Abre la consola y escribe: <code>document.body</code>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Seleccionar Elementos</h2>
+            <div class="tarjeta">
+                <pre><code>// Por ID (más rápido)
+let elemento = document.getElementById("miId");
+
+// Por selector CSS (más flexible)
+let elemento = document.querySelector(".miClase");
+let elementos = document.querySelectorAll(".miClase");
+
+// Por tag
+let elementos = document.getElementsByTagName("p");</code></pre>
+            </div>
+            <div class="nota">
+                <strong>⚠️ Importante:</strong> Si el elemento no existe, <code>getElementById</code> retorna <code>null</code>.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Eventos del DOM</h2>
+            <div class="tarjeta">
+                <p>Los <strong>eventos</strong> son acciones que ocurren en la página.</p>
+                <br>
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Evento</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td><code>click</code></td>
+                        <td>Cuando se hace click</td>
+                    </tr>
+                    <tr>
+                        <td><code>mouseover</code></td>
+                        <td>Cuando el mouse entra</td>
+                    </tr>
+                    <tr>
+                        <td><code>mouseout</code></td>
+                        <td>Cuando el mouse sale</td>
+                    </tr>
+                    <tr>
+                        <td><code>submit</code></td>
+                        <td>Al enviar formulario</td>
+                    </tr>
+                    <tr>
+                        <td><code>input</code></td>
+                        <td>Al escribir en input</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>addEventListener</h2>
+            <div class="tarjeta">
+                <pre><code>// Seleccionar elemento
+let boton = document.getElementById("miBoton");
+
+// Agregar evento
+boton.addEventListener("click", function() {
+    alert("¡Hiciste click!");
+});
+
+// Con arrow function
+boton.addEventListener("click", () => {
+    alert("¡Hiciste click!");
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Modificar Contenido</h2>
+            <div class="tarjeta">
+                <pre><code>//Cambiar texto interno
+elemento.textContent = "Nuevo texto";
+elemento.innerHTML = "&lt;strong&gt;Negrilla&lt;/strong&gt;";
+
+// Obtener valor de input
+let valor = inputElement.value;
+
+// Establecer valor
+inputElement.value = "Nuevo valor";</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Modificar Estilos</h2>
+            <div class="tarjeta">
+                <pre><code>// Cambiar estilo directamente
+elemento.style.color = "red";
+elemento.style.backgroundColor = "yellow";
+elemento.style.display = "none";
+
+// Cambiar clase
+elemento.classList.add("activa");
+elemento.classList.remove("oculta");
+elemento.classList.toggle("visible");</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Ejemplo: Cambiar Color</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;button id="cambiarColor"&gt;Cambiar Color&lt;/button&gt;
+&lt;p id="texto"&gt;Este texto cambiará de color&lt;/p&gt;
+
+&lt;script&gt;
+let boton = document.getElementById("cambiarColor");
+let texto = document.getElementById("texto");
+
+boton.addEventListener("click", () => {
+    // Color aleatorio
+    let color = "#" + Math.floor(Math.random()*16777215).toString(16);
+    texto.style.color = color;
+});
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Ejemplo: Mostrar/Ocultar</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;button id="toggle"&gt;Mostrar/Ocultar&lt;/button&gt;
+&lt;div id="contenido" class="oculto"&gt;Contenido&lt;/div&gt;
+
+&lt;script&gt;
+let boton = document.getElementById("toggle");
+let contenido = document.getElementById("contenido");
+
+boton.addEventListener("click", () => {
+    contenido.classList.toggle("oculto");
+});
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Funciones:</strong> bloques reutilizables de código</li>
+                    <li><strong>Declaración:</strong> function nombre() {}</li>
+                    <li><strong>Arrow functions:</strong> () => {}</li>
+                    <li><strong>Parámetros y retorno:</strong> función con datos</li>
+                    <li><strong>DOM:</strong> representación del documento</li>
+                    <li><strong>Seleccionar:</strong> getElementById, querySelector</li>
+                    <li><strong>Eventos:</strong> click, mouseover, submit</li>
+                    <li><strong>addEventListener:</strong> escuchar eventos</li>
+                    <li><strong>Modificar:</strong> textContent, style, classList</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 12: JavaScript IV</h3>
+                <ul class="lista-grande">
+                    <li>Manipulación avanzada del DOM</li>
+                    <li>createElement, appendChild</li>
+                    <li>localStorage y sessionStorage</li>
+                    <li>Proyecto: To-Do List</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>📚 Preparación:</strong> Revisar conceptos de funciones y eventos de hoy.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio 1 (Básico):</h3>
+                <p>Calculadora con funciones</p>
+                <br>
+                <h3>Ejercicio 2 (Intermedio):</h3>
+                <p>Galería de imágenes con eventos</p>
+                <br>
+                <h3>Ejercicio 3 (Avanzado):</h3>
+                <p>To-Do List interactiva</p>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

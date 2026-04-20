@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 3 - To-Do List Interactiva - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - To-Do List Interactiva</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- HTML --&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"todo-app"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Lista de Tareas<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"input-group"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"nuevaTarea"</span> <span class="propiedad">type</span>=<span class="valor">"text"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Nueva tarea..."</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnAgregar"</span><span class="etiqueta">&gt;</span>Agregar<span class="etiqueta">&lt;/button&gt;</span>
+    <span class="etiqueta">&lt;/div&gt;</span>
+    <span class="etiqueta">&lt;ul</span> <span class="propiedad">id</span>=<span class="valor">"listaTareas"</span><span class="etiqueta">&gt;</span><span class="etiqueta">&lt;/ul&gt;</span>
+<span class="etiqueta">&lt;/div&gt;</span>
+
+<span class="comentario">&lt;!-- CSS --&gt;</span>
+<span class="etiqueta">.todo-app</span> { <span class="propiedad">max-width</span>: <span class="valor">500px</span>; <span class="propiedad">margin</span>: <span class="valor">0 auto</span>; }
+<span class="etiqueta">.input-group</span> { <span class="propiedad">display</span>: <span class="valor">flex</span>; <span class="propiedad">gap</span>: <span class="valor">10px</span>; <span class="propiedad">margin-bottom</span>: <span class="valor">20px</span>; }
+<span class="etiqueta">#nuevaTarea</span> { <span class="propiedad">flex</span>: <span class="valor">1</span>; <span class="propiedad">padding</span>: <span class="valor">10px</span>; }
+<span class="etiqueta">#btnAgregar</span> { <span class="propiedad">background</span>: <span class="valor">#8B0000</span>; <span class="propiedad">color</span>: <span class="valor">white</span>;}
+<span class="etiqueta">#listaTareas</span> { <span class="propiedad">list-style</span>: <span class="valor">none</span>; <span class="propiedad">padding</span>: <span class="valor">0</span>; }
+<span class="etiqueta">.tarea</span> { <span class="propiedad">display</span>: <span class="valor">flex</span>; <span class="propiedad">justify-content</span>: <span class="valor">space-between</span>;
+    <span class="propiedad">align-items</span>: <span class="valor">center</span>; <span class="propiedad">padding</span>: <span class="valor">10px</span>;
+    <span class="propiedad">border-bottom</span>: <span class="valor">1px solid #ddd</span>;
+}
+<span class="etiqueta">.tarea.completada .texto</span> { <span class="propiedad">text-decoration</span>: <span class="valor">line-through</span>; <span class="propiedad">color</span>: <span class="valor">#888</span>; }
+<span class="etiqueta">.btnEliminar</span> { <span class="propiedad">background</span>: <span class="valor">#dc3545</span>; <span class="propiedad">color</span>: <span class="valor">white</span>; <span class="propiedad">border</span>: <span class="valor">none</span>;
+    <span class="propiedad">padding</span>: <span class="valor">5px 10px</span>; <span class="propiedad">border-radius</span>: <span class="valor">4px</span>; <span class="propiedad">cursor</span>: <span class="valor">pointer</span>; }
+
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Función agregar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">agregarTarea</span>() {
+    <span class="etiqueta">let</span> input = document.<span class="funcion">getElementById</span>(<span class="string">"nuevaTarea"</span>);
+    <span class="etiqueta">let</span> texto = input.<span class="variable">value</span>.<span class="funcion">trim</span>();
+    
+    <span class="etiqueta">if</span> (texto === <span class="string">""</span>) {
+        alert(<span class="string">"Escribe una tarea"</span>);
+        <span class="etiqueta">return</span>;
+    }
+    
+    <span class="comentario">// Crear elemento li</span>
+    <span class="etiqueta">let</span> li = document.<span class="funcion">createElement</span>(<span class="string">"li"</span>);
+    li.<span class="variable">className</span> = <span class="string">"tarea"</span>;
+    
+    <span class="comentario">// Span para el texto</span>
+    <span class="etiqueta">let</span> span = document.<span class="funcion">createElement</span>(<span class="string">"span"</span>);
+    span.<span class="variable">className</span> = <span class="string">"texto"</span>;
+    span.<span class="variable">textContent</span> = texto;
+    span.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">marcarCompletada</span>(li));
+    
+    <span class="comentario">// Botón eliminar</span>
+    <span class="etiqueta">let</span> btn = document.<span class="funcion">createElement</span>(<span class="string">"button"</span>);
+    btn.<span class="variable">className</span> = <span class="string">"btnEliminar"</span>;
+    btn.<span class="variable">textContent</span> = <span class="string">"X"</span>;
+    btn.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">eliminarTarea</span>(li));
+    
+    <span class="comentario">// Agregar elementos al li</span>
+    li.<span class="funcion">appendChild</span>(span);
+    li.<span class="funcion">appendChild</span>(btn);
+    
+    <span class="comentario">// Agregar a la lista</span>
+    document.<span class="funcion">getElementById</span>(<span class="string">"listaTareas"</span>).<span class="funcion">appendChild</span>(li);
+    
+    input.<span class="variable">value</span> = <span class="string">""</span>;
+    input.<span class="funcion">focus</span>();
+}
+
+<span class="comentario">// Función marcar completada</span>
+<span class="etiqueta">function</span> <span class="funcion">marcarCompletada</span>(<span class="variable">elemento</span>) {
+    elemento.<span class="variable">classList</span>.<span class="funcion">toggle</span>(<span class="string">"completada"</span>);
+}
+
+<span class="comentario">// Función eliminar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">eliminarTarea</span>(<span class="variable">elemento</span>) {
+    elemento.<span class="funcion">remove</span>();
+}
+
+<span class="comentario">// Evento click del botón agregar</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"btnAgregar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, agregarTarea);
+
+<span class="comentario">// Evento Enter en el input</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"nuevaTarea"</span>).<span class="funcion">addEventListener</span>(<span class="string">"keypress"</span>, (<span class="variable">e</span>) => {
+    <span class="etiqueta">if</span> (<span class="variable">e</span>.key === <span class="string">"Enter"</span>) agregarTarea();
+});
+<span class="etiqueta">&lt;/script&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Se usan funciones separadas para cada acción. createElement crea nuevos elementos, appendChild los agrega al DOM, y classList.toggle alterna el estado de completada.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

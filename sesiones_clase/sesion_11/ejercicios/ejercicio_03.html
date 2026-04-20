@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - To-Do List Interactiva - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: To-Do List Interactiva</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una lista de tareas interactiva (To-Do List) usando funciones y eventos del DOM. La aplicación debe:</p>
+                <ol>
+                    <li>Campo de texto para escribir una tarea</li>
+                    <li>Botón para agregar la tarea</li>
+                    <li>Lista que muestre las tareas agregadas</li>
+                    <li>Opción para marcar tarea como completada (click)</li>
+                    <li>Opción para eliminar una tarea</li>
+                    <li>Funciones separadas para cada acción</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Función agregarTarea(texto)</li>
+                    <li>Función marcarCompletada(elemento)</li>
+                    <li>Función eliminarTarea(elemento)</li>
+                    <li>Usar addEventListener para los eventos</li>
+                    <li>Crear elementos dinámicamente con createElement</li>
+                    <li>AppendChild para agregar a la lista</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>let li = document.createElement("li") para crear elemento</li>
+                        <li>li.textContent = texto para el contenido</li>
+                        <li>lista.appendChild(li) para agregar</li>
+                        <li>elemento.classList.toggle("completada") para completar</li>
+                        <li>elemento.remove() para eliminar</li>
+                        <li>input.value = "" para limpiar input</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Input para escribir tarea + botón "Agregar"</li>
+                    <li>Al agregar, aparece en la lista</li>
+                    <li>Click en tarea la marca como completada (tachado)</li>
+                    <li>Botón "X" para eliminar cada tarea</li>
+                    <li>Diseño visual claro y organizado</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 2 - Galería de Imágenes con Eventos - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 2 - Galería de Imágenes con Eventos</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- HTML --&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"galeria"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;img</span> <span class="propiedad">id</span>=<span class="valor">"imagenGrande"</span> <span class="propiedad">src</span>=<span class="valor">"https://via.placeholder.com/600x400/8B0000/ffffff?text=Imagen+1"</span> <span class="propiedad">alt</span>=<span class="valor">"Imagen principal"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"miniaturas"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;img</span> <span class="propiedad">class</span>=<span class="valor">"miniatura"</span> <span class="propiedad">src</span>=<span class="valor">"https://via.placeholder.com/150x100/8B0000/ffffff?text=1"</span> <span class="propiedad">data</span>=<span class="valor">"https://via.placeholder.com/600x400/8B0000/ffffff?text=Imagen+1"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;img</span> <span class="propiedad">class</span>=<span class="valor">"miniatura"</span> <span class="propiedad">src</span>=<span class="valor">"https://via.placeholder.com/150x100/DC143C/ffffff?text=2"</span> <span class="propiedad">data</span>=<span class="valor">"https://via.placeholder.com/600x400/DC143C/ffffff?text=Imagen+2"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;img</span> <span class="propiedad">class</span>=<span class="valor">"miniatura"</span> <span class="propiedad">src</span>=<span class="valor">"https://via.placeholder.com/150x100/333333/ffffff?text=3"</span> <span class="propiedad">data</span>=<span class="valor">"https://via.placeholder.com/600x400/333333/ffffff?text=Imagen+3"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;img</span> <span class="propiedad">class</span>=<span class="valor">"miniatura"</span> <span class="propiedad">src</span>=<span class="valor">"https://via.placeholder.com/150x100/666666/ffffff?text=4"</span> <span class="propiedad">data</span>=<span class="valor">"https://via.placeholder.com/600x400/666666/ffffff?text=Imagen+4"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;/div&gt;</span>
+<span class="etiqueta">&lt;/div&gt;</span>
+
+<span class="comentario">&lt;!-- CSS --&gt;</span>
+<span class="etiqueta">.galeria</span> { <span class="propiedad">text-align</span>: <span class="valor">center</span>; }
+<span class="etiqueta">#imagenGrande</span> { <span class="propiedad">max-width</span>: <span class="valor">100%</span>; <span class="propiedad">max-height</span>: <span class="valor">400px</span>; <span class="propiedad">border-radius</span>: <span class="valor">8px</span>; }
+<span class="etiqueta">.miniaturas</span> { <span class="propiedad">margin-top</span>: <span class="valor">15px</span>; }
+<span class="etiqueta">.miniatura</span> {
+    <span class="propiedad">width</span>: <span class="valor">100px</span>; <span class="propiedad">margin</span>: <span class="valor">5px</span>; <span class="propiedad">cursor</span>: <span class="valor">pointer</span>;
+    <span class="propiedad">border</span>: <span class="valor">3px solid transparent</span>;
+    <span class="propiedad">transition</span>: <span class="valor">transform 0.3s, border-color 0.3s</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">4px</span>;
+}
+<span class="etiqueta">.miniatura:hover</span>, <span class="etiqueta">.miniatura.activa</span> {
+    <span class="propiedad">border-color</span>: <span class="valor">#8B0000</span>;
+    <span class="propiedad">transform</span>: <span class="valor">scale(1.05)</span>;
+}
+
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Obtener elementos</span>
+<span class="etiqueta">let</span> imagenGrande = document.<span class="funcion">getElementById</span>(<span class="string">"imagenGrande"</span>);
+<span class="etiqueta">let</span> miniaturas = document.<span class="funcion">querySelectorAll</span>(<span class="string">".miniatura"</span>);
+
+<span class="comentario">// Función para cambiar imagen grande</span>
+<span class="etiqueta">function</span> <span class="funcion">cambiarImagen</span>(<span class="variable">e</span>) {
+    <span class="comentario">// Obtener el src de la miniatura clickeada</span>
+    <span class="etiqueta">let</span> nuevaSrc = <span class="variable">e</span>.target.<span class="variable">dataset</span>.src || <span class="variable">e</span>.target.<span class="variable">src</span>;
+    
+    <span class="comentario">// Cambiar imagen grande</span>
+    imagenGrande.<span class="variable">src</span> = nuevaSrc.replace(<span class="string">"150x100"</span>, <span class="string">"600x400"</span>);
+    
+    <span class="comentario">// Quitar clase activa de todas</span>
+    miniaturas.<span class="funcion">forEach</span>(min => min.<span class="variable">classList</span>.<span class="funcion">remove</span>(<span class="string">"activa"</span>));
+    
+    <span class="comentario">// Agregar clase activa a la clickeada</span>
+    <span class="variable">e</span>.target.<span class="variable">classList</span>.<span class="funcion">add</span>(<span class="string">"activa"</span>);
+}
+
+<span class="comentario">// Agregar eventos click</span>
+miniaturas.<span class="funcion">forEach</span>(min => {
+    min.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, cambiarImagen);
+    
+    <span class="comentario">// Efecto mouseover/mouseout</span>
+    min.<span class="funcion">addEventListener</span>(<span class="string">"mouseover"</span>, (<span class="variable">e</span>) => {
+        <span class="variable">e</span>.target.<span class="variable">style</span>.<span class="propiedad">transform</span> = <span class="string">"scale(1.1)"</span>;
+    });
+    
+    min.<span class="funcion">addEventListener</span>(<span class="string">"mouseout"</span>, (<span class="variable">e</span>) => {
+        <span class="variable">e</span>.target.<span class="variable">style</span>.<span class="propiedad">transform</span> = <span class="string">"scale(1)"</span>;
+    });
+});
+<span class="etiqueta">&lt;/script&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Se usa querySelectorAll para obtener todas las miniaturas y forEach para agregar eventos. El atributo data-src guarda la URL de la imagen grande.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

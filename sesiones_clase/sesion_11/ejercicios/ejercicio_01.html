@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Calculadora con Funciones - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 1: Calculadora con Funciones</h1>
+            <p>Sesión 11 - JavaScript III</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una calculadora que use funciones para realizar las operaciones. Los botones deben responder a eventos click y mostrar el resultado en la página.</p>
+                <ol>
+                    <li>Dos campos de entrada (input type="number") para los operandos</li>
+                    <li>4 botones para las operaciones: Sumar, Restar, Multiplicar, Dividir</li>
+                    <li>Un área para mostrar el resultado</li>
+                    <li>Cada operación debe implementarse como una función</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar funciones con parámetros para cada operación</li>
+                    <li>Usar addEventListener para los botones</li>
+                    <li>Mostrar resultado en un elemento HTML (no alert)</li>
+                    <li>Manejar división por cero</li>
+                    <li>Diseño visual atractivo con CSS</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>function sumar(a, b) { return a + b; }</li>
+                        <li>document.getElementById("boton").addEventListener("click", funcion)</li>
+                        <li>Number(document.getElementById("input").value)</li>
+                        <li>resultadoDiv.textContent = "Resultado: " + resultado</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Interfaz con dos inputs y 4 botones</li>
+                    <li>Al hacer click en "Sumar", muestra la suma</li>
+                    <li>Al hacer click en "Dividir" con 0, muestra mensaje de error</li>
+                    <li>El resultado aparece en la página sin recargar</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
