@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Galería con Grid - Sesión 7</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        .tarjeta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .galeria-ejemplo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .galeria-item {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 2: Galería con CSS Grid</h1>
+        
+        <div class="tarjeta">
+            <h2>Enunciado</h2>
+            <p>Crea una galería de imágenes responsiva usando CSS Grid.</p>
+            
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>Contenedor con <code>display: grid</code></li>
+                <li><code>grid-template-columns</code> con repeat()</li>
+                <li><code>gap</code> para espaciado</li>
+                <li>Diseño responsivo con media queries (opcional)</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <h2>HTML Sugerido</h2>
+<pre><code>&lt;div class="galeria"&gt;
+    &lt;div class="item"&gt;Imagen 1&lt;/div&gt;
+    &lt;div class="item"&gt;Imagen 2&lt;/div&gt;
+    &lt;div class="item"&gt;Imagen 3&lt;/div&gt;
+    &lt;div class="item"&gt;Imagen 4&lt;/div&gt;
+    &lt;div class="item"&gt;Imagen 5&lt;/div&gt;
+    &lt;div class="item"&gt;Imagen 6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS Sugerido</h2>
+<pre><code>.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.item {
+    background: #DC143C;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+}</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS Avanzado: Responsivo</h2>
+<pre><code>.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}</code></pre>
+            <p><code>auto-fit</code> ajusta automáticamente las columnas según el espacio disponible.</p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Resultado Esperado</h2>
+            <div class="galeria-ejemplo">
+                <div class="galeria-item">Imagen 1</div>
+                <div class="galeria-item">Imagen 2</div>
+                <div class="galeria-item">Imagen 3</div>
+                <div class="galeria-item">Imagen 4</div>
+                <div class="galeria-item">Imagen 5</div>
+                <div class="galeria-item">Imagen 6</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

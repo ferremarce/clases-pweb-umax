@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución 3: Layout Completo - Sesión 7</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .layout {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: "header header" "sidebar main" "footer footer";
+            min-height: 400px;
+        }
+        .layout header {
+            grid-area: header;
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .layout aside {
+            grid-area: sidebar;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        .layout main {
+            grid-area: main;
+            background: white;
+            padding: 20px;
+        }
+        .layout footer {
+            grid-area: footer;
+            background: #333;
+            color: white;
+            padding: 20px;
+        }
+        .ejemplo {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .ejemplo h2 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .explicacion {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .explicacion h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Solución: Ejercicio 3 - Layout Completo</h1>
+
+        <div class="layout">
+            <header>
+                <strong>Mi Sitio</strong>
+                <nav style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Inicio</a>
+                    <a href="#" style="color: white; text-decoration: none;">Acerca</a>
+                </nav>
+            </header>
+            <aside>
+                <h3>Enlaces</h3>
+                <ul style="list-style: none;">
+                    <li>Enlace 1</li>
+                    <li>Enlace 2</li>
+                    <li>Enlace 3</li>
+                </ul>
+            </aside>
+            <main>
+                <h2>Contenido Principal</h2>
+                <p>Este es el contenido principal de la página. Puede contener artículos, productos, o cualquier información relevante.</p>
+            </main>
+            <footer>
+                <p style="text-align: center;">&copy; 2024 Mi Sitio Web</p>
+            </footer>
+        </div>
+
+        <div class="ejemplo">
+            <h2>Código Completo</h2>
+            
+            <div class="explicacion">
+                <h3>HTML</h3>
+                <pre>&lt;div class="layout"&gt;
+    &lt;header&gt;
+        &lt;div class="logo"&gt;Mi Sitio&lt;/div&gt;
+        &lt;nav&gt;...&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+    &lt;main&gt;...&lt;/main&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/div&gt;</pre>
+            </div>
+
+            <div class="explicacion">
+                <h3>CSS - Grid</h3>
+                <pre>.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+header { grid-area: header; }
+aside   { grid-area: sidebar; }
+main    { grid-area: main; }
+footer { grid-area: footer; }</pre>
+            </div>
+
+            <div class="explicacion">
+                <h3>CSS - Flexbox (header)</h3>
+                <pre>header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}</pre>
+            </div>
+
+            <div class="explicacion">
+                <h3>CSS - Responsivo</h3>
+                <pre>@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+    aside { display: none; }
+}</pre>
+            </div>
+        </div>
+
+        <div class="explicacion">
+            <h3>Explicación</h3>
+            <ul>
+                <li><strong>Grid</strong> para el layout general de la página</li>
+                <li><strong>grid-template-areas</strong> define la estructura visual</li>
+                <li><strong>Flexbox</strong> para componentes (header, footer)</li>
+                <li><strong>Media queries</strong> adapts a móvil</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

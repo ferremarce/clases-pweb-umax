@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 7: CSS III: Flexbox y Grid - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 7: CSS III: Flexbox y Grid</h1>
+            <div class="subtitulo">INI04 - Introducción al Desarrollo Web | Unidad III</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>CSS III: Flexbox y Grid</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Unidad III - Layouts Modernos</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Comprender el modelo de Flexbox y sus propiedades</li>
+                <li>Crear layouts flexibles con justify-content y align-items</li>
+                <li>Utilizar CSS Grid para layouts bidimensionales</li>
+                <li>Definir áreas de plantilla con grid-template-areas</li>
+                <li>Decidir cuándo usar Flexbox vs Grid</li>
+                <li>Crear diseños responsivos con unidades fr</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>📌 Repaso:</strong> En sesiones anteriores usamos position y float para layouts.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>¿Por qué Flexbox y Grid?</h2>
+            <p>Los métodos tradicionales (float, position) tienen limitaciones:</p>
+
+            <div class="tarjeta">
+                <h3>Métodos Antiguos</h3>
+                <ul>
+                    <li><strong>Float:</strong> Requiere clearfix, comportamiento impredecible</li>
+                    <li><strong>Position:</strong> Absoluto sale del flujo, difícil de mantener</li>
+                    <li><strong>Table:</strong> No es semántico, mala accesibilidad</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>Flexbox + Grid</h3>
+                <ul>
+                    <li><strong>Flexbox:</strong> Layout unidimensional (fila o columna)</li>
+                    <li><strong>Grid:</strong> Layout bidimensional (filas y columnas)</li>
+                    <li><strong>Juntos:</strong> Solución completa para cualquier diseño</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Conceptos de Flexbox</h2>
+            <p>Flexbox trabaja con dos ejes:</p>
+
+            <div class="tarjeta" style="text-align: center; padding: 30px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; height: 150px; border: 2px dashed #8B0000; padding: 10px;">
+                    <div style="background: #DC143C; color: white; padding: 15px 25px; border-radius: 8px;">
+                        <strong>Main Axis</strong><br>
+                        <small>(eje principal)</small>
+                    </div>
+                    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; border-left: 2px dashed #8B0000; padding-left: 10px;">
+                        <span style="background: #8B0000; color: white; padding: 8px 15px; border-radius: 8px;">Cross Axis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>Main Axis:</strong> Eje principal (horizontal por defecto)</li>
+                    <li><strong>Cross Axis:</strong> Eje perpendicular (vertical por defecto)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>display: flex</h2>
+            <p>El primer paso para usar Flexbox:</p>
+
+            <div class="tarjeta">
+                <h3>Contenedor Flex</h3>
+                <pre><code><span class="selector">.contenedor</span> {
+    <span class="propiedad">display</span>: <span class="valor">flex</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Antes (block)</h3>
+                <div style="background: #f0f0f0; padding: 10px; display: flex; gap: 10px;">
+                    <div style="background: #DC143C; color: white; padding: 10px;">Caja 1</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">Caja 2</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">Caja 3</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Importante:</strong> Los elementos hijos se convierten en "flex items" automáticamente.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>flex-direction</h2>
+            <p>Define la dirección del main axis:</p>
+
+            <div class="tarjeta">
+                <h3>row (default)</h3>
+                <pre><code><span class="propiedad">flex-direction</span>: <span class="valor">row</span>;</code></pre>
+                <div style="display: flex; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 10px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">3</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>column</h3>
+                <pre><code><span class="propiedad">flex-direction</span>: <span class="valor">column</span>;</code></pre>
+                <div style="display: flex; flex-direction: column; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 10px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 10px;">3</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>justify-content</h2>
+            <p>Alinea los elementos en el main axis:</p>
+
+            <div class="tarjeta">
+                <h3>flex-start</h3>
+                <pre><code><span class="propiedad">justify-content</span>: <span class="valor">flex-start</span>;</code></pre>
+                <div style="display: flex; justify-content: flex-start; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>center</h3>
+                <pre><code><span class="propiedad">justify-content</span>: <span class="valor">center</span>;</code></pre>
+                <div style="display: flex; justify-content: center; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>space-between</h3>
+                <pre><code><span class="propiedad">justify-content</span>: <span class="valor">space-between</span>;</code></pre>
+                <div style="display: flex; justify-content: space-between; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">2</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>align-items</h2>
+            <p>Alinea los elementos en el cross axis:</p>
+
+            <div class="tarjeta">
+                <h3>flex-start</h3>
+                <pre><code><span class="propiedad">align-items</span>: <span class="valor">flex-start</span>;</code></pre>
+                <div style="display: flex; align-items: flex-start; gap: 5px; padding: 10px; background: #f0f0f0; height: 80px;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 20px 15px;">2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>center</h3>
+                <pre><code><span class="propiedad">align-items</span>: <span class="valor">center</span>;</code></pre>
+                <div style="display: flex; align-items: center; gap: 5px; padding: 10px; background: #f0f0f0; height: 80px;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 20px 15px;">2</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>stretch</h3>
+                <pre><code><span class="propiedad">align-items</span>: <span class="valor">stretch</span>;</code></pre>
+                <div style="display: flex; align-items: stretch; gap: 5px; padding: 10px; background: #f0f0f0; height: 80px;">
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 8px 15px;">2</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>flex-wrap</h2>
+            <p>Controla si los elementos pasan a la siguiente línea:</p>
+
+            <div class="tarjeta">
+                <h3>nowrap (default)</h3>
+                <pre><code><span class="propiedad">flex-wrap</span>: <span class="valor">nowrap</span>;</code></pre>
+                <div style="display: flex; flex-wrap: nowrap; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">3</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">4</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>wrap</h3>
+                <pre><code><span class="propiedad">flex-wrap</span>: <span class="valor">wrap</span>;</code></pre>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">3</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; width: 120px; text-align: center;">4</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Propiedades de Items</h2>
+            <p>Propiedades que puedes aplicar a cada elemento hijo:</p>
+
+            <div class="tarjeta">
+                <h3>order</h3>
+                <pre><code><span class="propiedad">order</span>: <span class="valor">1</span>;  <span class="comentario">/* Por defecto es 0 */</span></code></pre>
+                <div style="display: flex; gap: 5px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 10px; order: 3;">1 (order:3)</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; order: 1;">2 (order:1)</div>
+                    <div style="background: #DC143C; color: white; padding: 10px; order: 2;">3 (order:2)</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <h3>flex-grow</h3>
+                <pre><code><span class="propiedad">flex-grow</span>: <span class="valor">1</span>;  <span class="comentario">/* Crece para llenar espacio */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>flex-shrink</h3>
+                <pre><code><span class="propiedad">flex-shrink</span>: <span class="valor">0</span>;  <span class="comentario">/* No se encoge */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Atajo: flex</h2>
+            <p>Propiedad combinada:</p>
+
+            <div class="tarjeta">
+                <h3>Sintaxis</h3>
+                <pre><code><span class="propiedad">flex</span>: <span class="valor">flex-grow flex-shrink flex-basis</span>;</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Ejemplos</h3>
+                <pre><code><span class="propiedad">flex</span>: <span class="valor">1 0 auto</span>;    <span class="comentario">/* grow, shrink, basis */</span>
+<span class="propiedad">flex</span>: <span class="valor">1 1 0</span>;     <span class="comentario">/* Equivale a flex: 1 */</span>
+<span class="propiedad">flex</span>: <span class="valor">0 0 auto</span>;     <span class="comentario">/* Equivale a fixed */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Introducción a CSS Grid</h2>
+            <p>Grid permite crear layouts bidimensionales:</p>
+
+            <div class="tarjeta">
+                <h3>Contenedor Grid</h3>
+                <pre><code><span class="selector">.grid</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">1fr 1fr 1fr</span>;
+    <span class="propiedad">gap</span>: <span class="valor">20px</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 10px; background: #f0f0f0;">
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">3</div>
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">4</div>
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">5</div>
+                    <div style="background: #DC143C; color: white; padding: 15px; text-align: center;">6</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Unidades de Grid</h2>
+            <p>Unidades específicas para grids:</p>
+
+            <div class="tarjeta">
+                <h3>fr (fracción)</h3>
+                <pre><code><span class="propiedad">grid-template-columns</span>: <span class="valor">1fr 2fr 1fr</span>;
+<span class="comentario">/* 25% 50% 25% */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>auto</h3>
+                <pre><code><span class="propiedad">grid-template-columns</span>: <span class="valor">auto 1fr auto</span>;
+<span class="comentario">/* Ajusta al contenido, resto */</span></code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>repeat()</h3>
+                <pre><code><span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(3, 1fr)</span>;
+<span class="comentario">/* Equivale a 1fr 1fr 1fr */</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>gap</h2>
+            <p>Espacio entre celdas:</p>
+
+            <div class="tarjeta">
+                <pre><code><span class="propiedad">gap</span>: <span class="valor">20px</span>;
+<span class="propiedad">row-gap</span>: <span class="valor">10px</span>;
+<span class="propiedad">column-gap</span>: <span class="valor">30px</span>;</code></pre>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 10px; background: #f0f0f0; margin-top: 15px;">
+                    <div style="background: #DC143C; color: white; padding: 20px; text-align: center;">1</div>
+                    <div style="background: #DC143C; color: white; padding: 20px; text-align: center;">2</div>
+                    <div style="background: #DC143C; color: white; padding: 20px; text-align: center;">3</div>
+                    <div style="background: #DC143C; color: white; padding: 20px; text-align: center;">4</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>grid-template-areas</h2>
+            <p>Define áreas con nombres:</p>
+
+            <div class="tarjeta">
+                <h3>CSS</h3>
+                <pre><code><span class="selector">.layout</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-areas</span>: <span class="valor">"header header" "sidebar main" "footer footer"</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">200px 1fr</span>;
+    <span class="propiedad">grid-template-rows</span>: <span class="valor">auto 1fr auto</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <h3>HTML</h3>
+                <pre><code><span class="etiqueta">&lt;div</span> <span class="atributo">style</span>=<span class="valor">"grid-area: header"</span><span class="etiqueta">&gt;</span>Header<span class="etiqueta">&lt;/div&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="atributo">style</span>=<span class="valor">"grid-area: sidebar"</span><span class="etiqueta">&gt;</span>Sidebar<span class="etiqueta">&lt;/div&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="atributo">style</span>=<span class="valor">"grid-area: main"</span><span class="etiqueta">&gt;</span>Main<span class="etiqueta">&lt;/div&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Comparativa: Flexbox vs Grid</h2>
+
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h4>Flexbox</h4>
+                    <p>Una dimensión</p>
+                    <ul>
+                        <li>fila O columna</li>
+                        <li>Navbars</li>
+                        <li>Items de tarjetas</li>
+                        <li>Centrado</li>
+                    </ul>
+                </div>
+                <div class="comparacion-item">
+                    <h4>Grid</h4>
+                    <p>Dos dimensiones</p>
+                    <ul>
+                        <li>filas Y columnas</li>
+                        <li>Galería</li>
+                        <li>Layouts complejos</li>
+                        <li>Páginas completas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <strong>💡 Consejo:</strong> Usa ambos juntos. Grid para el layout general, Flexbox para componentes.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Diseño Responsivo</h2>
+            <p>Grid facilita el diseño responsivo:</p>
+
+            <div class="tarjeta">
+                <h3>Grid Responsivo</h3>
+                <pre><code><span class="selector">.galeria</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(auto-fit, minmax(250px, 1fr))</span>;
+    <span class="propiedad">gap</span>: <span class="valor">20px</span>;
+}</code></pre>
+            </div>
+
+            <div class="tarjeta">
+                <ul>
+                    <li><strong>auto-fit:</strong> Ajusta el número de columnas</li>
+                    <li><strong>minmax(250px, 1fr):</strong> Mínimo 250px, máximo fracción</li>
+                    <li><strong>Sin media queries:</strong> Se adapta automáticamente</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <h2>Ejemplo Práctico: Layout Completo</h2>
+
+            <div class="tarjeta">
+                <h3>Estructura</h3>
+                <pre><code><span class="selector">.contenedor</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">250px 1fr</span>;
+    <span class="propiedad">grid-template-rows</span>: <span class="valor">auto 1fr auto</span>;
+    <span class="propiedad">grid-template-areas</span>: <span class="valor">"header header" "sidebar main" "footer footer"</span>;
+    <span class="propiedad">min-height</span>: <span class="valor">100vh</span>;
+}
+
+<span class="selector">header</span> { <span class="propiedad">grid-area</span>: <span class="valor">header</span>; }
+<span class="selector">aside</span>  { <span class="propiedad">grid-area</span>: <span class="valor">sidebar</span>; }
+<span class="selector">main</span>   { <span class="propiedad">grid-area</span>: <span class="valor">main</span>; }
+<span class="selector">footer</span> { <span class="propiedad">grid-area</span>: <span class="valor">footer</span>; }</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-19">
+            <h2>Buenas Prácticas</h2>
+            <div class="tarjeta">
+                <h3>✅ Hacer:</h3>
+                <ul>
+                    <li>Usar Flexbox para componentes unidimensionales</li>
+                    <li>Usar Grid para layouts de página</li>
+                    <li>Combinar ambos en el mismo proyecto</li>
+                    <li>Usar unidades fr y auto-fit para responsivo</li>
+                    <li>Usar gap para espaciado</li>
+                </ul>
+            </div>
+
+            <div class="tarjeta tarjeta-importante">
+                <h3>❌ Evitar:</h3>
+                <ul>
+                    <li>Float para layouts principales</li>
+                    <li>position: absolute para layout general</li>
+                    <li>Usar solo Flexbox para grids complejos</li>
+                    <li>Olvidar gap (usar margin)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-20">
+            <h2>Actividad Práctica</h2>
+            
+            <p>Accede a los ejercicios de esta sesión:</p>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver Ejercicios</a>
+            
+            <div class="tarjeta" style="margin-top: 20px;">
+                <h3>💡 En esta sesión practicarás:</h3>
+                <ol class="pasos">
+                    <li>Crear navbar con Flexbox</li>
+                    <li>Crear galería con Grid</li>
+                    <li>Diseñar layout responsivo</li>
+                    <li>Combinar Flexbox y Grid</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-21">
+            <h2>Resumen de la Sesión</h2>
+            
+            <h3>Conceptos aprendidos:</h3>
+            <ul>
+                <li><strong>Flexbox:</strong> display: flex, flex-direction</li>
+                <li><strong>justify-content:</strong> center, space-between, flex-start</li>
+                <li><strong>align-items:</strong> center, flex-start, stretch</li>
+                <li><strong>flex-wrap:</strong> wrap, nowrap</li>
+                <li><strong>order, flex-grow:</strong> propiedades de items</li>
+                <li><strong>Grid:</strong> display: grid</li>
+                <li><strong>grid-template-columns/rows:</strong> repeat(), fr</li>
+                <li><strong>gap:</strong> espacio entre celdas</li>
+                <li><strong>grid-template-areas:</strong> plantillas</li>
+                <li><strong>auto-fit + minmax():</strong> responsivo</li>
+            </ul>
+
+            <div class="tarjeta">
+                <h3>Próxima sesión:</h3>
+                <ul>
+                    <li>CSS IV: Listas, Tablas, Formularios y Diseño Responsivo</li>
+                    <li>Media queries</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-22">
+            <h2>Próxima Clase</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 8: CSS IV: Listas, Tablas, Formularios y Responsive</p>
+            
+            <div class="tarjeta">
+                <h3>Temas que cubriremos:</h3>
+                <ul>
+                    <li>Estilización de listas</li>
+                    <li>Estilización de tablas</li>
+                    <li>Estilización de formularios</li>
+                    <li>Media queries</li>
+                    <li>Diseño mobile-first</li>
+                </ul>
+            </div>
+
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

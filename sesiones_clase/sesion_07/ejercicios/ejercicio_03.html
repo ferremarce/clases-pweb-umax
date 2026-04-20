@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Layout Completo - Sesión 7</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        .tarjeta {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .layout-ejemplo {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: "header header" "sidebar main" "footer footer";
+            min-height: 300px;
+        }
+        .area-header {
+            grid-area: header;
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 15px;
+        }
+        .area-sidebar {
+            grid-area: sidebar;
+            background: #f0f0f0;
+            padding: 15px;
+        }
+        .area-main {
+            grid-area: main;
+            background: white;
+            padding: 15px;
+        }
+        .area-footer {
+            grid-area: footer;
+            background: #333;
+            color: white;
+            padding: 15px;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ejercicio 3: Layout Completo</h1>
+        
+        <div class="tarjeta">
+            <h2>Enunciado</h2>
+            <p>Combina Flexbox y Grid para crear un layout completo de página web.</p>
+            
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>Grid para el layout principal (header, sidebar, main, footer)</li>
+                <li>grid-template-areas para nombrar secciones</li>
+                <li>Flexbox para el menú de navegación</li>
+                <li>Footer con elementos alineados con Flexbox</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <h2>HTML</h2>
+<pre><code>&lt;div class="layout"&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+    &lt;main&gt;...&lt;/main&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS - Grid</h2>
+<pre><code>.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+header { grid-area: header; }
+aside   { grid-area: sidebar; }
+main    { grid-area: main; }
+footer { grid-area: footer; }</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS - Flexbox para componentes</h2>
+<pre><code>/* Menú del header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}</code></pre>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Resultado Esperado</h2>
+            <div class="layout-ejemplo">
+                <div class="area-header">
+                    <strong>Header</strong>
+                </div>
+                <div class="area-sidebar">
+                    <strong>Sidebar</strong>
+                </div>
+                <div class="area-main">
+                    <strong>Main</strong>
+                    <p>Contenido principal</p>
+                </div>
+                <div class="area-footer">
+                    <strong>Footer</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Bonus: Diseño Responsivo</h2>
+<pre><code>@media (max-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+    aside { display: none; }
+}</code></pre>
+        </div>
+    </div>
+</body>
+</html>

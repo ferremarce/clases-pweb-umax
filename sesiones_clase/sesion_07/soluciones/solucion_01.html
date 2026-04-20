@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución 1: Navbar con Flexbox - Sesión 7</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fb;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #8B0000;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            padding: 15px 30px;
+        }
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .ejemplo {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .ejemplo h2 {
+            color: #8B0000;
+            margin-bottom: 20px;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .explicacion {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .explicacion h3 {
+            color: #8B0000;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Solución: Ejercicio 1 - Navbar con Flexbox</h1>
+
+        <nav class="navbar">
+            <div class="logo">Mi Sitio Web</div>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="ejemplo">
+            <h2>Código Completo</h2>
+            
+            <div class="explicacion">
+                <h3>HTML</h3>
+                <pre>&lt;nav class="navbar"&gt;
+    &lt;div class="logo"&gt;Mi Sitio Web&lt;/div&gt;
+    &lt;ul class="menu"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Productos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</pre>
+            </div>
+
+            <div class="explicacion">
+                <h3>CSS</h3>
+                <pre>.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    padding: 15px 30px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.2);
+}</pre>
+            </div>
+        </div>
+
+        <div class="explicacion">
+            <h3>Explicación</h3>
+            <ul>
+                <li><strong>display: flex</strong> convierte el contenedor en flex container</li>
+                <li><strong>justify-content: space-between</strong> separa el logo (izquierda) del menú (derecha)</li>
+                <li><strong>align-items: center</strong> centra verticalmente</li>
+                <li><strong>gap: 20px</strong> espacio entre elementos del menú</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
