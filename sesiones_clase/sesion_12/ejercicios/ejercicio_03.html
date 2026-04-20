@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - To-Do List Completa con Persistencia - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 3: To-Do List Completa con Persistencia</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una lista de tareas completa con todas las funcionalidades y persistencia en localStorage.</p>
+                <ol>
+                    <li>Input para escribir tarea + botón agregar</li>
+                    <li>Lista que muestre las tareas</li>
+                    <li>Click para marcar completada/tachado</li>
+                    <li>Botón para eliminar cada tarea</li>
+                    <li>Todas las acciones deben persistir</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar localStorage con JSON</li>
+                    <li>Estructura de datos: { texto, completada }</li>
+                    <li>Función agregarTarea(texto)</li>
+                    <li>Función marcarCompletada(index)</li>
+                    <li>Función eliminarTarea(index)</li>
+                    <li>Función guardarTareas()</li>
+                    <li>Función cargarTareas()</li>
+                    <li>Renderizar tareas al iniciar</li>
+                    <li>Tecla Enter para agregar</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>Array de objetos: [{ texto: "tarea1", completada: false }]</li>
+                        <li>JSON.stringify() para guardar, JSON.parse() para recuperar</li>
+                        <li>tareas.push() para agregar, tareas.splice() para eliminar</li>
+                        <li>Renderizar en un loop: forEach o for</li>
+                        <li>classList.toggle("completada") para tachar</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Agregar tarea -> aparece en lista (persiste)</li>
+                    <li>Click tarea -> tachado (persiste)</li>
+                    <li>Eliminar X ->.remove() (persiste)</li>
+                    <li>Recargar -> todas las acciones persisten</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

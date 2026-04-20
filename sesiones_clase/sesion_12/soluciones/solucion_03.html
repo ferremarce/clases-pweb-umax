@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 3 - To-Do List Completa - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 3 - To-Do List Completa</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Array de tareas [{ texto, completada }]</span>
+<span class="etiqueta">let</span> tareas = [];
+
+<span class="comentario">// Cargar tareas desde localStorage</span>
+<span class="etiqueta">function</span> <span class="funcion">cargarTareas</span>() {
+    <span class="etiqueta">let</span> guardadas = localStorage.<span class="funcion">getItem</span>(<span class="string">"tareas"</span>);
+    <span class="etiqueta">if</span> (guardadas) {
+        tareas = JSON.<span class="funcion">parse</span>(guardadas);
+    }
+    <span class="funcion">renderizar</span>();
+}
+
+<span class="comentario">// Guardar tareas en localStorage</span>
+<span class="etiqueta">function</span> <span class="funcion">guardarTareas</span>() {
+    localStorage.<span class="funcion">setItem</span>(<span class="string">"tareas"</span>, JSON.<span class="funcion">stringify</span>(tareas));
+}
+
+<span class="comentario">// Renderizar la lista</span>
+<span class="etiqueta">function</span> <span class="funcion">renderizar</span>() {
+    <span class="etiqueta">let</span> lista = document.<span class="funcion">getElementById</span>(<span class="string">"listaTareas"</span>);
+    lista.<span class="variable">innerHTML</span> = <span class="string">""</span>;
+    
+    tareas.<span class="funcion">forEach</span>((tarea, indice) => {
+        <span class="etiqueta">let</span> li = document.<span class="funcion">createElement</span>(<span class="string">"li"</span>);
+        li.<span class="variable">className</span> = tarea.completada ? <span class="string">"completada"</span> : <span class="string">""</span>;
+        
+        <span class="comentario">// Span con texto</span>
+        <span class="etiqueta">let</span> span = document.<span class="funcion">createElement</span>(<span class="string">"span"</span>);
+        span.<span class="variable">textContent</span> = tarea.texto;
+        span.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">marcarCompletada</span>(indice));
+        li.<span class="funcion">appendChild</span>(span);
+        
+        <span class="comentario">// Botón eliminar</span>
+        <span class="etiqueta">let</span> btn = document.<span class="funcion">createElement</span>(<span class="string">"button"</span>);
+        btn.<span class="variable">textContent</span> = <span class="string">"X"</span>;
+        btn.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">eliminarTarea</span>(indice));
+        li.<span class="funcion">appendChild</span>(btn);
+        
+        lista.<span class="funcion">appendChild</span>(li);
+    });
+}
+
+<span class="comentario">// Agregar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">agregarTarea</span>() {
+    <span class="etiqueta">let</span> input = document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>);
+    <span class="etiqueta">let</span> texto = input.<span class="variable">value</span>.<span class="funcion">trim</span>();
+    
+    <span class="etiqueta">if</span> (texto) {
+        tareas.<span class="funcion">push</span>({ texto: texto, completada: <span class="string">false</span> });
+        <span class="funcion">guardarTareas</span>();
+        <span class="funcion">renderizar</span>();
+        input.<span class="variable">value</span> = <span class="string">""</span>;
+    }
+}
+
+<span class="comentario">// Marcar tarea completada</span>
+<span class="etiqueta">function</span> <span class="funcion">marcarCompletada</span>(indice) {
+    tareas[indice].completada = !tareas[indice].completada;
+    <span class="funcion">guardarTareas</span>();
+    <span class="funcion">renderizar</span>();
+}
+
+<span class="comentario">// Eliminar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">eliminarTarea</span>(indice) {
+    tareas.<span class="funcion">splice</span>(indice, 1);
+    <span class="funcion">guardarTareas</span>();
+    <span class="funcion">renderizar</span>();
+}
+
+<span class="comentario">// Eventos</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"agregarBtn"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, agregarTarea);
+document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>).<span class="funcion">addEventListener</span>(<span class="string">"keyup"</span>, (<span class="variable">e</span>) => {
+    <span class="etiqueta">if</span> (<span class="variable">e</span>.key === <span class="string">"Enter"</span>) agregarTarea();
+});
+
+<span class="comentario">// Iniciar</span>
+<span class="funcion">cargarTareas</span>();
+<span class="etiqueta">&lt;/script&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Se usa un array de objetos con la estructura { texto, completada }. JSON.stringify() convierte el array a string para localStorage, y JSON.parse() lo convierte de vuelta a array.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

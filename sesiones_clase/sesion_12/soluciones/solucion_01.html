@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 1 - Lista de Tareas Simple - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 1 - Lista de Tareas Simple</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- HTML --&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"app"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Lista de Tareas<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"tareaInput"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Nueva tarea..."</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"agregarBtn"</span><span class="etiqueta">&gt;</span>Agregar<span class="etiqueta">&lt;/button&gt;</span>
+    <span class="etiqueta">&lt;ul</span> <span class="propiedad">id</span>=<span class="valor">"lista"</span><span class="etiqueta">&gt;</span><span class="etiqueta">&lt;/ul&gt;</span>
+<span class="etiqueta">&lt;/div&gt;</span>
+
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Array de tareas</span>
+<span class="etiqueta">let</span> tareas = [];
+
+<span class="comentario">// Cargar tareas al iniciar</span>
+<span class="etiqueta">function</span> <span class="funcion">cargarTareas</span>() {
+    <span class="etiqueta">let</span> guardadas = localStorage.<span class="funcion">getItem</span>(<span class="string">"misTareas"</span>);
+    <span class="etiqueta">if</span> (guardadas) {
+        tareas = JSON.<span class="funcion">parse</span>(guardadas);
+    }
+    <span class="funcion">renderizar</span>();
+}
+
+<span class="comentario">// Guardar en localStorage</span>
+<span class="etiqueta">function</span> <span class="funcion">guardarTareas</span>() {
+    localStorage.<span class="funcion">setItem</span>(<span class="string">"misTareas"</span>, JSON.<span class="funcion">stringify</span>(tareas));
+}
+
+<span class="comentario">// Renderizar la lista</span>
+<span class="etiqueta">function</span> <span class="funcion">renderizar</span>() {
+    <span class="etiqueta">let</span> lista = document.<span class="funcion">getElementById</span>(<span class="string">"lista"</span>);
+    lista.<span class="variable">innerHTML</span> = <span class="string">""</span>;
+    
+    tareas.<span class="funcion">forEach</span>((tarea, indice) => {
+        <span class="etiqueta">let</span> li = document.<span class="funcion">createElement</span>(<span class="string">"li"</span>);
+        li.<span class="variable">textContent</span> = tarea;
+        lista.<span class="funcion">appendChild</span>(li);
+    });
+}
+
+<span class="comentario">// Agregar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">agregarTarea</span>() {
+    <span class="etiqueta">let</span> input = document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>);
+    <span class="etiqueta">let</span> texto = input.<span class="variable">value</span>.<span class="funcion">trim</span>();
+    
+    <span class="etiqueta">if</span> (texto) {
+        tareas.<span class="funcion">push</span>(texto);
+        <span class="funcion">guardarTareas</span>();
+        <span class="funcion">renderizar</span>();
+        input.<span class="variable">value</span> = <span class="string">""</span>;
+    }
+}
+
+<span class="comentario">// Evento click</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"agregarBtn"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, agregarTarea);
+
+<span class="comentario">// Evento Enter</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>).<span class="funcion">addEventListener</span>(<span class="string">"keyup"</span>, (<span class="variable">e</span>) => {
+    <span class="etiqueta">if</span> (<span class="variable">e</span>.key === <span class="string">"Enter"</span>) agregarTarea();
+});
+
+<span class="comentario">// Iniciar</span>
+<span class="funcion">cargarTareas</span>();
+<span class="etiqueta">&lt;/script&gt;</span>
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> Se usa localStorage para persistir. Las tareas se guardan como JSON string y se recuperan parseando el JSON.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

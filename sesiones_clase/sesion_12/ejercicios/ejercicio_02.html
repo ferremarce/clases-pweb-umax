@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Contador de Visitas con sessionStorage - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 2: Contador de Visitas con sessionStorage</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea un contador de visitas que use sessionStorage para contar las visitas en la sesión actual.</p>
+                <ol>
+                    <li>Mostrar un contador de visitas</li>
+                    <li>Incrementar el contador cada vez que se cargue la página</li>
+                    <li>Mostrar "Visitas en esta sesión: X"</li>
+                    <li>El contador debe reiniciarse al cerrar la pestaña</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar sessionStorage (no localStorage)</li>
+                    <li>sessionStorage.getItem() para obtener valor</li>
+                    <li>sessionStorage.setItem() para guardar</li>
+                    <li>Incrementar el contador en 1 cada visita</li>
+                    <li>Manejar el caso de primera visita (null)</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>let visitas = parseInt(sessionStorage.getItem("visitas")) || 0</li>
+                        <li>visitas++</li>
+                        <li>sessionStorage.setItem("visitas", visitas)</li>
+                        <li>La diferencia con localStorage es que sessionStorage se borra al cerrar</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Primera visita: "Visitas en esta sesión: 1"</li>
+                    <li>Recargar página: "Visitas en esta sesión: 2"</li>
+                    <li>Cerrar pestaña y abrir nueva: "Visitas en esta sesión: 1"</li>
+                    <li>Abrir otra pestaña nueva: "Visitas en esta sesión: 1"</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

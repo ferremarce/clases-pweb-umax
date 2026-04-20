@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución Ejercicio 2 - Contador de Visitas - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Solución: Ejercicio 2 - Contador de Visitas</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="solucion">
+            <h2>Código de la Solución</h2>
+            
+            <div class="codigo">
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Obtener visitas actuales (o 0 si no existe)</span>
+<span class="etiqueta">let</span> visitas = <span class="funcion">parseInt</span>(sessionStorage.<span class="funcion">getItem</span>(<span class="string">"visitas"</span>)) || 0;
+
+<span class="comentario">// Incrementar</span>
+visitas++;
+
+<span class="comentario">// Guardar</span>
+sessionStorage.<span class="funcion">setItem</span>(<span class="string">"visitas"</span>, visitas);
+
+<span class="comentario">// Mostrar en página</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"contador"</span>).<span class="variable">textContent</span> = visitas;
+<span class="etiqueta">&lt;/script&gt;</span>
+
+<span class="comentario">&lt;!-- HTML --&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"contador-app"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Contador de Visitas<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;p&gt;</span>Visitas en esta sesión: <span class="etiqueta">&lt;span</span> <span class="propiedad">id</span>=<span class="valor">"contador"</span><span class="etiqueta">&gt;</span>0<span class="etiqueta">&lt;/span&gt;</span><span class="etiqueta">&lt;/p&gt;</span>
+    <span class="etiqueta">&lt;button</span> <span class="propiedad">onclick</span>=<span class="valor">"reiniciar()"</span><span class="etiqueta">&gt;</span>Reiniciar<span class="etiqueta">&lt;/button&gt;</span>
+<span class="etiqueta">&lt;/div&gt;</span>
+
+<span class="comentario">// Función para reiniciar</span>
+<span class="etiqueta">function</span> <span class="funcion">reiniciar</span>() {
+    sessionStorage.<span class="funcion">removeItem</span>(<span class="string">"visitas"</span>);
+    location.<span class="funcion">reload</span>();
+}
+            </div>
+
+            <div class="nota">
+                <strong>💡 Nota:</strong> La diferencia clave es que sessionStorage se borra al cerrar la pestaña, mientras que localStorage persiste.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

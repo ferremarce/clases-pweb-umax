@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Lista de Tareas Simple con localStorage - INI04</title>
+    <link rel="stylesheet" href="../css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="../images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Ejercicio 1: Lista de Tareas Simple con localStorage</h1>
+            <p>Sesión 12 - JavaScript IV</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+            <section class="requisitos">
+                <h2>📝 Enunciado</h2>
+                <p>Crea una lista de tareas simple que guarde las tareas en localStorage para que persistan al recargar la página.</p>
+                <ol>
+                    <li>Input para escribir una tarea</li>
+                    <li>Botón "Agregar" para añadir la tarea</li>
+                    <li>Lista que muestre las tareas agregadas</li>
+                    <li>Al recargar la página, las tareas deben seguir ahí</li>
+                </ol>
+            </section>
+
+            <section class="requisitos">
+                <h2>✅ Requisitos</h2>
+                <ul>
+                    <li>Usar localStorage.setItem() para guardar</li>
+                    <li>Usar localStorage.getItem() para recuperar</li>
+                    <li>Guardar las tareas como array JSON</li>
+                    <li>Al cargar la página, renderizar las tareas guardadas</li>
+                    <li>Al agregar tarea, guardar en localStorage</li>
+                </ul>
+            </section>
+
+            <section class="pistas">
+                <h2>💡 Pistas</h2>
+                <details>
+                    <summary>Ver pistas</summary>
+                    <ul>
+                        <li>let tareas = JSON.parse(localStorage.getItem("tareas")) || []</li>
+                        <li>localStorage.setItem("tareas", JSON.stringify(tareas))</li>
+                        <li>Al iniciar, verificar si hay tareas guardadas</li>
+                        <li>Crear una función renderizarTareas()</li>
+                    </ul>
+                </details>
+            </section>
+
+            <section class="resultado-esperado">
+                <h2>🎯 Resultado Esperado</h2>
+                <ul>
+                    <li>Agregar tarea -> aparece en la lista</li>
+                    <li>Recargar página -> las tareas siguen ahí</li>
+                    <li>Cerrar navegador y volver -> las tareas siguen ahí</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

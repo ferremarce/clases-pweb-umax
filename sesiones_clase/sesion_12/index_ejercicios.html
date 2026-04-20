@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 12 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 12: JavaScript IV - Manipulación del DOM y Almacenamiento</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión practicarás la manipulación avanzada del DOM y el almacenamiento de datos en el navegador usando localStorage y sessionStorage.</p>
+                <p><strong>Duración:</strong> 2.5 horas</p>
+                <p><strong>Nota:</strong> Los datos guardados en localStorage persisten entre sesiones del navegador.</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+            
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Lista de Tareas Simple con localStorage</h3>
+                    <span class="badge-dificultad">Básico</span>
+                    <p>Crea una lista de tareas que guarde las tareas en localStorage para que persistan al recargar la página.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Contador de Visitas con sessionStorage</h3>
+                    <span class="badge-dificultad">Intermedio</span>
+                    <p>Crea un contador que use sessionStorage para contar las visitas en la sesión actual.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">03</div>
+                <div class="ejercicio-contenido">
+                    <h3>To-Do List Completa con Persistencia</h3>
+                    <span class="badge-dificultad">Avanzado</span>
+                    <p>Crea una lista de tareas completa con localStorage, JSON, agregar, completar, eliminar y edición de tareas.</p>
+                    <a href="ejercicios/ejercicio_03.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_03.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/API/Storage" target="_blank">MDN - Storage</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank">MDN - localStorage</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank">MDN - JSON</a></li>
+                    <li><a href="https://www.w3schools.com/js/js_json.asp" target="_blank">W3Schools - JSON</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+            
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>
