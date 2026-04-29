@@ -233,6 +233,35 @@ header.presentacion-header.mini .profesor {
     font-size: 1.2rem;
 }
 
+.input-ejemplo {
+    margin-top: 15px;
+    padding: 12px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-ejemplo input,
+.input-ejemplo select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.input-ejemplo input[type="text"] { width: 180px; }
+.input-ejemplo input[type="email"] { width: 180px; }
+.input-ejemplo input[type="password"] { width: 180px; }
+.input-ejemplo input[type="number"] { width: 100px; }
+.input-ejemplo input[type="date"] { width: 150px; }
+.input-ejemplo input[type="url"] { width: 180px; }
+.input-ejemplo input[type="tel"] { width: 150px; }
+
 .pasos {
     counter-reset: paso;
     list-style: none;
