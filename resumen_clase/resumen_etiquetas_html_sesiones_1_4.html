@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Etiquetas HTML - Sesiones 1 a 4</title>
+    <style>
+        :root {
+            --color-primario: #8B0000;
+            --color-secundario: #DC143C;
+            --color-fondo: #f5f5f5;
+            --color-texto: #333;
+            --color-texto-claro: #666;
+            --sombra: 0 4px 12px rgba(0,0,0,0.15);
+            --radio: 12px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .contenedor { max-width: 1000px; margin: 0 auto; }
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radio);
+            box-shadow: var(--sombra);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        header img { width: 200px; margin-bottom: 15px; }
+        h1 { color: var(--color-primario); font-size: 2rem; margin-bottom: 10px; }
+        .subtitulo { color: var(--color-texto-claro); font-size: 1.1rem; }
+        h2 {
+            color: var(--color-primario);
+            border-bottom: 3px solid var(--color-secundario);
+            padding-bottom: 10px;
+            margin: 30px 0 20px 0;
+        }
+        h3 { color: var(--color-secundario); margin: 20px 0 10px 0; }
+        .etiqueta {
+            background: white;
+            padding: 20px;
+            border-radius: var(--radio);
+            box-shadow: var(--sombra);
+            margin-bottom: 20px;
+        }
+        .etiqueta-nombre {
+            font-family: 'Courier New', monospace;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .codigo {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        .visualizacion {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        .visualizacion-titulo {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        th { background: var(--color-primario); color: white; }
+        .sesion { background: var(--color-secundario); color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 15px; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 3px; font-family: 'Courier New', monospace; }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <img src="../../img/logo_umax.png" alt="Logo UMAX">
+            <h1>Resumen de Etiquetas HTML</h1>
+            <p class="subtitulo">INI04 - Introducción al Desarrollo Web | Sesiones 1 a 4</p>
+        </header>
+
+        <h2> SESIÓN 1: Fundamentos de la Web y Entorno de Trabajo</h2>
+
+        <div class="etiqueta">
+            <span class="sesion">Estructura del documento</span>
+            <div class="etiqueta-nombre">&lt;!DOCTYPE html&gt;</div>
+            <p>Declara el tipo de documento (HTML5)</p>
+            <div class="codigo">&lt;!DOCTYPE html&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                No se muestra. Indica al navegador que renderice en modo estándar.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;html&gt;</div>
+            <p>Elemento raíz del documento</p>
+            <div class="codigo">&lt;html lang="es"&gt;...&lt;/html&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Contenedor invisible de toda la página.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;head&gt;</div>
+            <p>Metadatos del documento (no visible)</p>
+            <div class="codigo">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                No se muestra. Configura el documento.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;meta&gt;</div>
+            <p>Metadatos (charset, viewport, descripción, autor)</p>
+            <div class="codigo">&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="Descripción para SEO"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                No visible. charset permite mostrar ñ y acentos; viewport habilita diseño responsive.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;title&gt;</div>
+            <p>Título de la pestaña del navegador</p>
+            <div class="codigo">&lt;title&gt;Mi Primera Página&lt;/title&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Texto en la pestaña del navegador y en resultados de Google.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;link&gt;</div>
+            <p>Enlace a recursos externos (CSS, favicon)</p>
+            <div class="codigo">&lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;link rel="icon" href="images/favicon.png"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Aplica estilos CSS y muestra el icono en la pestaña.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;body&gt;</div>
+            <p>Contenido visible de la página</p>
+            <div class="codigo">&lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+&lt;/body&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Todo lo que el usuario ve está dentro de &lt;body&gt;.
+            </div>
+        </div>
+
+        <h3>Etiquetas de Texto</h3>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;h1&gt; a &lt;h6&gt;</div>
+            <p>Encabezados (jerarquía)</p>
+            <div class="codigo">&lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Subsección&lt;/h3&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <h1 style="margin:0;display:block;">Encabezado Principal</h1>
+                <h2 style="margin:0;display:block;">Subtítulo</h2>
+                <h3 style="margin:0;display:block;">Subsección</h3>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;p&gt;</div>
+            <p>Párrafo</p>
+            <div class="codigo">&lt;p&gt;Este es un párrafo de texto.&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <p style="margin:0;">Este es un párrafo de texto.</p>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;strong&gt;</div>
+            <p>Texto importante (negrita semántica)</p>
+            <div class="codigo">&lt;p&gt;Esto es &lt;strong&gt;muy importante&lt;/strong&gt;&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Esto es <strong>muy importante</strong>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;em&gt;</div>
+            <p>Énfasis (cursiva semántica)</p>
+            <div class="codigo">&lt;p&gt;Esto es &lt;em&gt;enfatizado&lt;/em&gt;&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Esto es <em>enfatizado</em>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;br&gt;</div>
+            <p>Salto de línea</p>
+            <div class="codigo">&lt;p&gt;Línea 1&lt;br&gt;Línea 2&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Línea 1<br>Línea 2
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;hr&gt;</div>
+            <p>Línea horizontal</p>
+            <div class="codigo">&lt;p&gt;Texto arriba&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Texto abajo&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <p style="margin:0;">Texto arriba</p>
+                <hr>
+                <p style="margin:0;">Texto abajo</p>
+            </div>
+        </div>
+
+        <h3>Etiquetas Semánticas</h3>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;header&gt;</div>
+            <p>Encabezado de página o sección</p>
+            <div class="codigo">&lt;header&gt;
+    &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+&lt;/header&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Zona superior de la página (requiere CSS para verse).
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;main&gt;</div>
+            <p>Contenido principal</p>
+            <div class="codigo">&lt;main&gt;
+    &lt;p&gt;Contenido principal único.&lt;/p&gt;
+&lt;/main&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Área central de contenido (requiere CSS).
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;section&gt;</div>
+            <p>Sección temática</p>
+            <div class="codigo">&lt;section&gt;
+    &lt;h2&gt;Sobre Mí&lt;/h2&gt;
+    &lt;p&gt;Soy estudiante...&lt;/p&gt;
+&lt;/section&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Bloque agrupado temáticamente (requiere CSS).
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;nav&gt;</div>
+            <p>Navegación</p>
+            <div class="codigo">&lt;nav&gt;
+    &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+    &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <nav style="background:#eee;padding:10px;">
+                    <a href="#">Inicio</a> | <a href="#">Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;figure&gt; y &lt;figcaption&gt;</div>
+            <p>Contenido ilustrativo con leyenda</p>
+            <div class="codigo">&lt;figure&gt;
+    &lt;img src="imagen.jpg" alt="Diagrama"&gt;
+    &lt;figcaption&gt;Descripción&lt;/figcaption&gt;
+&lt;/figure&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <figure style="display:inline-block;text-align:center;">
+                    <div style="background:#ddd;width:100px;height:60px;display:flex;align-items:center;justify-content:center;">[Imagen]</div>
+                    <figcaption style="font-size:0.9rem;margin-top:5px;">Descripción</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <h3>Listas</h3>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;ul&gt;</div>
+            <p>Lista desordenada</p>
+            <div class="codigo">&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <ul style="margin:10px 0;"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;ol&gt;</div>
+            <p>Lista ordenada</p>
+            <div class="codigo">&lt;ol&gt;
+    &lt;li&gt;Abrir VS Code&lt;/li&gt;
+    &lt;li&gt;Crear archivo HTML&lt;/li&gt;
+    &lt;li&gt;Abrir con Live Server&lt;/li&gt;
+&lt;/ol&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <ol style="margin:10px 0;"><li>Abrir VS Code</li><li>Crear archivo HTML</li><li>Abrir con Live Server</li></ol>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;li&gt;</div>
+            <p>Elemento de lista</p>
+            <div class="codigo">&lt;li&gt;Elemento individual&lt;/li&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Un ítem con viñeta o número según el padre.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;img&gt;</div>
+            <p>Imagen</p>
+            <div class="codigo">&lt;img src="imagen.jpg" alt="Descripción" width="200"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <img src="https://via.placeholder.com/200x100?text=Imagen" alt="Ejemplo" style="max-width:100%;">
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;a&gt;</div>
+            <p>Enlace / hipervínculo</p>
+            <div class="codigo">&lt;a href="pagina.html" target="_blank"&gt;Enlace&lt;/a&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <a href="#">Enlace</a> (azul y subrayado)
+            </div>
+        </div>
+
+        <h2> SESIÓN 2: HTML I — Estructura, Texto y Listas</h2>
+
+        <div class="etiqueta">
+            <span class="sesion">Semánticas adicionales</span>
+            <div class="etiqueta-nombre">&lt;article&gt;</div>
+            <p>Contenido independiente</p>
+            <div class="codigo">&lt;article&gt;
+    &lt;h2&gt;Título del artículo&lt;/h2&gt;
+    &lt;p&gt;Contenido...&lt;/p&gt;
+&lt;/article&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Bloque de contenido autocontenido (ej: post de blog).
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;aside&gt;</div>
+            <p>Contenido relacionado lateral</p>
+            <div class="codigo">&lt;aside&gt;
+    &lt;h3&gt;Relacionados&lt;/h3&gt;
+    &lt;ul&gt;&lt;li&gt;Artículo 1&lt;/li&gt;&lt;/ul&gt;
+&lt;/aside&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Barra lateral con contenido complementario.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;footer&gt;</div>
+            <p>Pie de página</p>
+            <div class="codigo">&lt;footer&gt;
+    &lt;p&gt;&copy; 2024 Mi Sitio Web&lt;/p&gt;
+&lt;/footer&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Zona inferior de la página.
+            </div>
+        </div>
+
+        <h3>Formato de Texto</h3>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;u&gt;</div>
+            <p>Subrayado</p>
+            <div class="codigo">&lt;p&gt;Texto &lt;u&gt;subrayado&lt;/u&gt;&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Texto <u>subrayado</u>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;s&gt;</div>
+            <p>Tachado</p>
+            <div class="codigo">&lt;p&gt;Texto &lt;s&gt;tachado&lt;/s&gt;&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <s>Texto tachado</s>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;mark&gt;</div>
+            <p>Texto resaltado</p>
+            <div class="codigo">&lt;p&gt;Texto &lt;mark&gt;resaltado&lt;/mark&gt;&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Texto <mark>resaltado</mark> (fondo amarillo)
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;abbr&gt;</div>
+            <p>Abreviatura</p>
+            <div class="codigo">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <abbr title="HyperText Markup Language" style="border-bottom:1px dotted;">HTML</abbr> (pasa el mouse)
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;blockquote&gt;</div>
+            <p>Cita larga</p>
+            <div class="codigo">&lt;blockquote cite="fuente"&gt;
+    &lt;p&gt;Una cita importante.&lt;/p&gt;
+&lt;/blockquote&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <blockquote style="margin:10px 0;padding-left:20px;border-left:4px solid #ccc;">
+                    Una cita importante.
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;cite&gt;</div>
+            <p>Título de obra</p>
+            <div class="codigo">&lt;p&gt;El libro &lt;cite&gt;El Gran Gatsby&lt;/cite&gt;.&lt;/p&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                El libro <cite>El Gran Gatsby</cite> es un clásico.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;details&gt; y &lt;summary&gt;</div>
+            <p>Contenido colapsable</p>
+            <div class="codigo">&lt;details&gt;
+    &lt;summary&gt;Haz clic para ver más&lt;/summary&gt;
+    &lt;p&gt;Contenido oculto.&lt;/p&gt;
+&lt;/details&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <details>
+                    <summary>Haz clic para ver más</summary>
+                    <p>Contenido que aparece al hacer clic.</p>
+                </details>
+            </div>
+        </div>
+
+        <h2> SESIÓN 3: HTML II — Enlaces, Imágenes y Multimedia</h2>
+
+        <div class="etiqueta">
+            <span class="sesion">Multimedia</span>
+            <div class="etiqueta-nombre">&lt;audio&gt;</div>
+            <p>Reproductor de audio</p>
+            <div class="codigo">&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    Tu navegador no soporta audio.
+&lt;/audio&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Barra de reproducción con play/pausa, volumen.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;video&gt;</div>
+            <p>Reproductor de video</p>
+            <div class="codigo">&lt;video controls width="320"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Reproductor de video con controles.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;source&gt;</div>
+            <p>Fuente de multimedia</p>
+            <div class="codigo">&lt;source src="video.mp4" type="video/mp4"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                No visible por sí mismo. El navegador elige el formato compatible.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;iframe&gt;</div>
+            <p>Contenido embebido externo (YouTube, Maps)</p>
+            <div class="codigo">&lt;iframe width="300" height="150" 
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Ventana incrustada mostrando contenido externo.
+            </div>
+        </div>
+
+        <h2> SESIÓN 4: HTML III — Tablas y Formularios</h2>
+
+        <div class="etiqueta">
+            <span class="sesion">Tablas</span>
+            <div class="etiqueta-nombre">&lt;table&gt;</div>
+            <p>Contenedor de tabla</p>
+            <div class="codigo">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;&lt;th&gt;Producto&lt;/th&gt;&lt;th&gt;Precio&lt;/th&gt;&lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;Laptop&lt;/td&gt;&lt;td&gt;$999&lt;/td&gt;&lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <table style="width:100%;border-collapse:collapse;">
+                    <thead><tr><th style="border:1px solid #ddd;padding:8px;">Producto</th><th style="border:1px solid #ddd;padding:8px;">Precio</th></tr></thead>
+                    <tbody><tr><td style="border:1px solid #ddd;padding:8px;">Laptop</td><td style="border:1px solid #ddd;padding:8px;">$999</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</div>
+            <p>Secciones de la tabla</p>
+            <div class="codigo">&lt;thead&gt;Encabezado&lt;/thead&gt;
+&lt;tbody&gt;Cuerpo de datos&lt;/tbody&gt;
+&lt;tfoot&gt;Pie/Totales&lt;/tfoot&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                thead: negrita con fondo oscuro | tbody: datos | tfoot: resumen final
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;tr&gt;</div>
+            <p>Fila de tabla</p>
+            <div class="codigo">&lt;tr&gt;
+    &lt;td&gt;Dato 1&lt;/td&gt;
+    &lt;td&gt;Dato 2&lt;/td&gt;
+&lt;/tr&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Una fila horizontal de celdas.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;th&gt;</div>
+            <p>Celda de encabezado</p>
+            <div class="codigo">&lt;th scope="col"&gt;Producto&lt;/th&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <strong>Producto</strong> (negrita y centrado)
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;td&gt;</div>
+            <p>Celda de datos</p>
+            <div class="codigo">&lt;td&gt;Laptop&lt;/td&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Laptop (texto normal de celda)
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">colspan / rowspan</div>
+            <p>Combinar celdas</p>
+            <div class="codigo">&lt;td colspan="2"&gt;Ocupa 2 columnas&lt;/td&gt;
+&lt;td rowspan="2"&gt;Ocupa 2 filas&lt;/td&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Celda que se extiende horizontal o verticalmente.
+            </div>
+        </div>
+
+        <h3>Formularios</h3>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;form&gt;</div>
+            <p>Contenedor de formulario</p>
+            <div class="codigo">&lt;form action="procesar.php" method="POST"&gt;
+    &lt;!-- campos --&gt;
+&lt;/form&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                Contenedor invisible. Envía datos vía GET o POST.
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;label&gt;</div>
+            <p>Etiqueta de campo</p>
+            <div class="codigo">&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <label for="ejemplo1">Email:</label> <input id="ejemplo1" type="text" style="padding:5px;">
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;input&gt;</div>
+            <p>Campo de entrada (múltiples tipos)</p>
+            <div class="codigo">&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+&lt;input type="checkbox"&gt;
+&lt;input type="radio"&gt;
+&lt;input type="date"&gt;
+&lt;input type="number"&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <input type="text" placeholder="text" style="margin:5px;"> <br>
+                <input type="email" placeholder="email" style="margin:5px;"> <br>
+                <input type="password" placeholder="password" style="margin:5px;"> <br>
+                <input type="checkbox"> checkbox 
+                <input type="radio" name="ej"> radio <br>
+                <input type="date" style="margin:5px;"> 
+                <input type="number" placeholder="number" style="margin:5px;">
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;textarea&gt;</div>
+            <p>Área de texto multilínea</p>
+            <div class="codigo">&lt;textarea name="comentario" rows="4" cols="30"&gt;&lt;/textarea&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <textarea rows="3" cols="30" style="padding:5px;">Texto de ejemplo...</textarea>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;select&gt; y &lt;option&gt;</div>
+            <p>Lista desplegable</p>
+            <div class="codigo">&lt;select name="pais"&gt;
+    &lt;option value="py"&gt;Paraguay&lt;/option&gt;
+    &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <select style="padding:5px;">
+                    <option>Paraguay</option>
+                    <option>Argentina</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;button&gt;</div>
+            <p>Botón</p>
+            <div class="codigo">&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpiar&lt;/button&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <button type="button">Enviar</button>
+                <button type="button">Limpiar</button>
+            </div>
+        </div>
+
+        <div class="etiqueta">
+            <div class="etiqueta-nombre">&lt;fieldset&gt; y &lt;legend&gt;</div>
+            <p>Agrupación de campos</p>
+            <div class="codigo">&lt;fieldset&gt;
+    &lt;legend&gt;Información Personal&lt;/legend&gt;
+    &lt;label&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text"&gt;
+&lt;/fieldset&gt;</div>
+            <div class="visualizacion">
+                <div class="visualizacion-titulo">▶ Visualización:</div>
+                <fieldset style="padding:15px;">
+                    <legend>Información Personal</legend>
+                    <label>Nombre:</label> <input type="text" style="margin-left:5px;padding:5px;">
+                </fieldset>
+            </div>
+        </div>
+
+        <h2>📊 Resumen por Sesión</h2>
+
+        <table>
+            <tr>
+                <th>Sesión</th>
+                <th>Etiquetas Principales</th>
+            </tr>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;meta&gt;, &lt;title&gt;, &lt;link&gt;, &lt;body&gt;, &lt;h1&gt;-&lt;h6&gt;, &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;br&gt;, &lt;hr&gt;, &lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;nav&gt;, &lt;figure&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;img&gt;, &lt;a&gt;</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>&lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;u&gt;, &lt;s&gt;, &lt;mark&gt;, &lt;abbr&gt;, &lt;blockquote&gt;, &lt;cite&gt;, &lt;details&gt;, &lt;summary&gt;</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>&lt;audio&gt;, &lt;video&gt;, &lt;source&gt;, &lt;iframe&gt; (atributos avanzados de &lt;a&gt;, &lt;img&gt;)</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>&lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;, &lt;form&gt;, &lt;label&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;, &lt;button&gt;, &lt;fieldset&gt;, &lt;legend&gt;</td>
+            </tr>
+        </table>
+
+        <p style="text-align:center;margin:40px 0;color:#666;">
+            <strong>Total: ~50 etiquetas HTML</strong> cubiertas en las primeras 4 sesiones
+        </p>
+
+    </div>
+</body>
+</html>
