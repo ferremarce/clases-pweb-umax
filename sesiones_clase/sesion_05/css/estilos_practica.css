@@ -54,7 +54,7 @@ body {
 }
 
 .contenedor {
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 40px 30px;
 }
@@ -218,7 +218,15 @@ body.ejercicio-body {
     background: white;
     border-radius: 12px;
     padding: 30px;
-    max-width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.enunciado {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -303,7 +311,7 @@ header.ejercicio-header p {
     border-radius: 12px;
     padding: 25px;
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .detalles-ejercicio h3 {
@@ -357,7 +365,7 @@ summary:hover {
     background: white;
     border-radius: 12px;
     padding: 30px;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -372,6 +380,7 @@ summary:hover {
     border-radius: 8px;
     padding: 20px;
     margin: 20px 0;
+    width: 100%;
 }
 
 .codigo-fuente {
@@ -426,7 +435,7 @@ body.solucion-body {
     background: white;
     border-radius: 12px;
     padding: 30px;
-    max-width: 900px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -488,6 +497,7 @@ body.solucion-body {
     padding: 20px;
     background: white;
     min-height: 300px;
+    width: 100%;
 }
 
 /* Elementos específicos de soluciones */
