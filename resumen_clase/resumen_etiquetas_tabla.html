@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Etiquetas HTML - Sesiones 1 a 4</title>
+    <style>
+        :root {
+            --color-primario: #8B0000;
+            --color-secundario: #DC143C;
+            --color-fondo: #f5f5f5;
+            --color-texto: #333;
+            --color-texto-claro: #666;
+            --sombra: 0 4px 12px rgba(0,0,0,0.15);
+            --radio: 12px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .contenedor { max-width: 100%; margin: 0; padding: 20px; }
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radio);
+            box-shadow: var(--sombra);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        header img { width: 200px; margin-bottom: 15px; }
+        h1 { color: var(--color-primario); font-size: 2rem; margin-bottom: 10px; }
+        .subtitulo { color: var(--color-texto-claro); font-size: 1.1rem; }
+        .tabla-responsive {
+            overflow-x: auto;
+            background: white;
+            border-radius: var(--radio);
+            box-shadow: var(--sombra);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        th {
+            background: var(--color-primario);
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        .sesion-header {
+            background: var(--color-secundario);
+            color: white;
+            font-weight: bold;
+        }
+        .fila-par { background: #fafafa; }
+        .fila-impar { background: white; }
+        .etiqueta-codigo {
+            font-family: 'Courier New', monospace;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .codigo-ejemplo {
+            font-family: 'Courier New', monospace;
+            background: #f4f4f4;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: pre-wrap;
+            max-width: 300px;
+            overflow-x: auto;
+        }
+        .visualizacion-celda {
+            background: #fff3cd;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            max-width: 180px;
+        }
+        .definicion { font-size: 0.9rem; color: var(--color-texto-claro); }
+        .numero-sesion {
+            background: var(--color-secundario);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .etiqueta-html { font-family: 'Courier New', monospace; color: var(--color-primario); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <img src="../img/logo_umax.png" alt="Logo UMAX">
+            <h1>Resumen de Etiquetas HTML</h1>
+            <p class="subtitulo">INI04 - Introducción al Desarrollo Web | Sesiones 1 a 4</p>
+        </header>
+
+        <div class="tabla-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">Sesión</th>
+                        <th style="width: 140px;">Etiqueta</th>
+                        <th style="width: 160px;">Definición</th>
+                        <th style="width: 320px;">Ejemplo de uso</th>
+                        <th>Visualización</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="sesion-header">
+                        <td colspan="5">SESIÓN 1: Fundamentos de la Web y Entorno de Trabajo</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;!DOCTYPE html&gt;</span></td>
+                        <td class="definicion">Declara el tipo de documento (HTML5)</td>
+                        <td><div class="codigo-ejemplo">&lt;!DOCTYPE html&gt;</div></td>
+                        <td class="visualizacion-celda">No se muestra. Indica al navegador que renderice en modo estándar.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;html&gt;</span></td>
+                        <td class="definicion">Elemento raíz del documento</td>
+                        <td><div class="codigo-ejemplo">&lt;html lang="es"&gt;...&lt;/html&gt;</div></td>
+                        <td class="visualizacion-celda">Contenedor invisible de toda la página.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;head&gt;</span></td>
+                        <td class="definicion">Metadatos del documento (no visible)</td>
+                        <td><div class="codigo-ejemplo">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi Página&lt;/title&gt;
+&lt;/head&gt;</div></td>
+                        <td class="visualizacion-celda">No se muestra. Configura el documento.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;meta&gt;</span></td>
+                        <td class="definicion">Metadatos (charset, viewport, descripción)</td>
+                        <td><div class="codigo-ejemplo">&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div></td>
+                        <td class="visualizacion-celda">No visible. charset permite mostrar ñ y acentos; viewport habilita diseño responsive.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;title&gt;</span></td>
+                        <td class="definición">Título de la pestaña del navegador</td>
+                        <td><div class="codigo-ejemplo">&lt;title&gt;Mi Primera Página&lt;/title&gt;</div></td>
+                        <td class="visualizacion-celda">Texto en la pestaña del navegador y en resultados de Google.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;link&gt;</span></td>
+                        <td class="definicion">Enlace a recursos externos (CSS, favicon)</td>
+                        <td><div class="codigo-ejemplo">&lt;link rel="stylesheet" href="css/style.css"&gt;</div></td>
+                        <td class="visualizacion-celda">Aplica estilos CSS y muestra el icono en la pestaña.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;body&gt;</span></td>
+                        <td class="definicion">Contenido visible de la página</td>
+                        <td><div class="codigo-ejemplo">&lt;body&gt;
+    &lt;h1&gt;¡Hola Mundo!&lt;/h1&gt;
+&lt;/body&gt;</div></td>
+                        <td class="visualizacion-celda">Todo lo que el usuario ve está dentro de &lt;body&gt;.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;h1&gt; a &lt;h6&gt;</span></td>
+                        <td class="definicion">Encabezados (jerarquía)</td>
+                        <td><div class="codigo-ejemplo">&lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;</div></td>
+                        <td class="visualizacion-celda"><h1 style="margin:0;font-size:1.2rem;">Encabezado Principal</h1><h2 style="margin:0;font-size:1.1rem;">Subtítulo</h2></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;p&gt;</span></td>
+                        <td class="definicion">Párrafo</td>
+                        <td><div class="codigo-ejemplo">&lt;p&gt;Este es un párrafo.&lt;/p&gt;</div></td>
+                        <td class="visualizacion-celda">Este es un párrafo.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;strong&gt;</span></td>
+                        <td class="definicion">Texto importante (negrita semántica)</td>
+                        <td><div class="codigo-ejemplo">&lt;strong&gt;importante&lt;/strong&gt;</div></td>
+                        <td class="visualizacion-celda"><strong>importante</strong></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;em&gt;</span></td>
+                        <td class="definicion">Énfasis (cursiva semántica)</td>
+                        <td><div class="codigo-ejemplo">&lt;em&gt;enfatizado&lt;/em&gt;</div></td>
+                        <td class="visualizacion-celda"><em>enfatizado</em></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;br&gt;</span></td>
+                        <td class="definicion">Salto de línea</td>
+                        <td><div class="codigo-ejemplo">&lt;p&gt;Línea 1&lt;br&gt;Línea 2&lt;/p&gt;</div></td>
+                        <td class="visualizacion-celda">Línea 1<br>Línea 2</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;hr&gt;</span></td>
+                        <td class="definicion">Línea horizontal</td>
+                        <td><div class="codigo-ejemplo">&lt;hr&gt;</div></td>
+                        <td class="visualizacion-celda"><hr style="margin:5px 0;"></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;header&gt;</span></td>
+                        <td class="definicion">Encabezado de página o sección</td>
+                        <td><div class="codigo-ejemplo">&lt;header&gt;...&lt;/header&gt;</div></td>
+                        <td class="visualizacion-celda">Zona superior de la página (requiere CSS).</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;main&gt;</span></td>
+                        <td class="definicion">Contenido principal</td>
+                        <td><div class="codigo-ejemplo">&lt;main&gt;...&lt;/main&gt;</div></td>
+                        <td class="visualizacion-celda">Área central de contenido (requiere CSS).</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;section&gt;</span></td>
+                        <td class="definicion">Sección temática</td>
+                        <td><div class="codigo-ejemplo">&lt;section&gt;...&lt;/section&gt;</div></td>
+                        <td class="visualizacion-celda">Bloque agrupado temáticamente (requiere CSS).</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;nav&gt;</span></td>
+                        <td class="definicion">Navegación</td>
+                        <td><div class="codigo-ejemplo">&lt;nav&gt;
+    &lt;a href="#"&gt;Inicio&lt;/a&gt;
+&lt;/nav&gt;</div></td>
+                        <td class="visualizacion-celda"><nav style="background:#eee;padding:5px;"><a href="#">Inicio</a></nav></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;figure&gt;</span></td>
+                        <td class="definicion">Contenido ilustrativo con leyenda</td>
+                        <td><div class="codigo-ejemplo">&lt;figure&gt;...&lt;figcaption&gt;...&lt;/figure&gt;</div></td>
+                        <td class="visualizacion-celda">Imagen con descripción abajo.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;ul&gt;</span></td>
+                        <td class="definicion">Lista desordenada</td>
+                        <td><div class="codigo-ejemplo">&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;</div></td>
+                        <td class="visualizacion-celda"><ul style="margin:5px 0;padding-left:20px;"><li>HTML</li><li>CSS</li></ul></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;ol&gt;</span></td>
+                        <td class="definicion">Lista ordenada</td>
+                        <td><div class="codigo-ejemplo">&lt;ol&gt;
+    &lt;li&gt;Primero&lt;/li&gt;
+    &lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;</div></td>
+                        <td class="visualizacion-celda"><ol style="margin:5px 0;padding-left:20px;"><li>Primero</li><li>Segundo</li></ol></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;li&gt;</span></td>
+                        <td class="definicion">Elemento de lista</td>
+                        <td><div class="codigo-ejemplo">&lt;li&gt;Elemento&lt;/li&gt;</div></td>
+                        <td class="visualizacion-celda">Un ítem con viñeta o número.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;img&gt;</span></td>
+                        <td class="definicion">Imagen</td>
+                        <td><div class="codigo-ejemplo">&lt;img src="imagen.jpg" alt="Descripción" width="100"&gt;</div></td>
+                        <td class="visualizacion-celda"><img src="https://via.placeholder.com/100x50?text=Imagen" alt="Ejemplo" style="max-width:100%;"></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">1</span></td>
+                        <td><span class="etiqueta-html">&lt;a&gt;</span></td>
+                        <td class="definicion">Enlace / hipervínculo</td>
+                        <td><div class="codigo-ejemplo">&lt;a href="pagina.html"&gt;Enlace&lt;/a&gt;</div></td>
+                        <td class="visualizacion-celda"><a href="#">Enlace</a> (azul y subrayado)</td>
+                    </tr>
+
+                    <tr class="sesion-header">
+                        <td colspan="5">SESIÓN 2: HTML I — Estructura, Texto y Listas</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;article&gt;</span></td>
+                        <td class="definicion">Contenido independiente</td>
+                        <td><div class="codigo-ejemplo">&lt;article&gt;...&lt;/article&gt;</div></td>
+                        <td class="visualizacion-celda">Bloque autocontenido (ej: post de blog).</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;aside&gt;</span></td>
+                        <td class="definicion">Contenido relacionado lateral</td>
+                        <td><div class="codigo-ejemplo">&lt;aside&gt;...&lt;/aside&gt;</div></td>
+                        <td class="visualizacion-celda">Barra lateral con contenido complementario.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;footer&gt;</span></td>
+                        <td class="definicion">Pie de página</td>
+                        <td><div class="codigo-ejemplo">&lt;footer&gt;...&lt;/footer&gt;</div></td>
+                        <td class="visualizacion-celda">Zona inferior de la página.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;u&gt;</span></td>
+                        <td class="definicion">Subrayado</td>
+                        <td><div class="codigo-ejemplo">&lt;u&gt;subrayado&lt;/u&gt;</div></td>
+                        <td class="visualizacion-celda"><u>subrayado</u></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;s&gt;</span></td>
+                        <td class="definicion">Tachado</td>
+                        <td><div class="codigo-ejemplo">&lt;s&gt;tachado&lt;/s&gt;</div></td>
+                        <td class="visualizacion-celda"><s>tachado</s></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;mark&gt;</span></td>
+                        <td class="definicion">Texto resaltado</td>
+                        <td><div class="codigo-ejemplo">&lt;mark&gt;resaltado&lt;/mark&gt;</div></td>
+                        <td class="visualizacion-celda"><mark>resaltado</mark> (fondo amarillo)</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;abbr&gt;</span></td>
+                        <td class="definicion">Abreviatura</td>
+                        <td><div class="codigo-ejemplo">&lt;abbr title="HyperText"&gt;HTML&lt;/abbr&gt;</div></td>
+                        <td class="visualizacion-celda"><abbr title="HyperText Markup Language" style="border-bottom:1px dotted;">HTML</abbr> (pasa el mouse)</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;blockquote&gt;</span></td>
+                        <td class="definicion">Cita larga</td>
+                        <td><div class="codigo-ejemplo">&lt;blockquote&gt;...&lt;/blockquote&gt;</div></td>
+                        <td class="visualizacion-celda"><blockquote style="margin:5px 0;padding-left:15px;border-left:3px solid #ccc;">Cita importante.</blockquote></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;cite&gt;</span></td>
+                        <td class="definicion">Título de obra</td>
+                        <td><div class="codigo-ejemplo">&lt;cite&gt;Título&lt;/cite&gt;</div></td>
+                        <td class="visualizacion-celda"><cite>El Gran Gatsby</cite></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">2</span></td>
+                        <td><span class="etiqueta-html">&lt;details&gt;</span></td>
+                        <td class="definicion">Contenido colapsable</td>
+                        <td><div class="codigo-ejemplo">&lt;details&gt;
+    &lt;summary&gt;Título&lt;/summary&gt;
+    &lt;p&gt;Contenido&lt;/p&gt;
+&lt;/details&gt;</div></td>
+                        <td class="visualizacion-celda"><details><summary style="cursor:pointer;">Título</summary><p>Contenido oculto.</p></details></td>
+                    </tr>
+
+                    <tr class="sesion-header">
+                        <td colspan="5">SESIÓN 3: HTML II — Enlaces, Imágenes y Multimedia</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">3</span></td>
+                        <td><span class="etiqueta-html">&lt;audio&gt;</span></td>
+                        <td class="definicion">Reproductor de audio</td>
+                        <td><div class="codigo-ejemplo">&lt;audio controls&gt;
+    &lt;source src="audio.mp3"&gt;
+&lt;/audio&gt;</div></td>
+                        <td class="visualizacion-celda">Barra de reproducción con play/pausa, volumen.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">3</span></td>
+                        <td><span class="etiqueta-html">&lt;video&gt;</span></td>
+                        <td class="definicion">Reproductor de video</td>
+                        <td><div class="codigo-ejemplo">&lt;video controls width="320"&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;</div></td>
+                        <td class="visualizacion-celda">Reproductor de video con controles.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">3</span></td>
+                        <td><span class="etiqueta-html">&lt;source&gt;</span></td>
+                        <td class="definicion">Fuente de multimedia</td>
+                        <td><div class="codigo-ejemplo">&lt;source src="video.mp4" type="video/mp4"&gt;</div></td>
+                        <td class="visualizacion-celda">No visible por sí mismo. El navegador elige el formato.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">3</span></td>
+                        <td><span class="etiqueta-html">&lt;iframe&gt;</span></td>
+                        <td class="definicion">Contenido embebido externo</td>
+                        <td><div class="codigo-ejemplo">&lt;iframe src="youtube.com/..."&gt;&lt;/iframe&gt;</div></td>
+                        <td class="visualizacion-celda">Ventana incrustada mostrando contenido externo.</td>
+                    </tr>
+
+                    <tr class="sesion-header">
+                        <td colspan="5">SESIÓN 4: HTML III — Tablas y Formularios</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;table&gt;</span></td>
+                        <td class="definicion">Contenedor de tabla</td>
+                        <td><div class="codigo-ejemplo">&lt;table&gt;...&lt;/table&gt;</div></td>
+                        <td class="visualizacion-celda"><table style="width:100%;border-collapse:collapse;font-size:0.8rem;"><tr><th style="border:1px solid #ddd;padding:4px;">A</th><th style="border:1px solid #ddd;padding:4px;">B</th></tr><tr><td style="border:1px solid #ddd;padding:4px;">1</td><td style="border:1px solid #ddd;padding:4px;">2</td></tr></table></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;thead&gt;</span></td>
+                        <td class="definicion">Sección de encabezado</td>
+                        <td><div class="codigo-ejemplo">&lt;thead&gt;...&lt;/thead&gt;</div></td>
+                        <td class="visualizacion-celda">Fila de encabezado (negrita con fondo oscuro).</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;tbody&gt;</span></td>
+                        <td class="definicion">Cuerpo de datos</td>
+                        <td><div class="codigo-ejemplo">&lt;tbody&gt;...&lt;/tbody&gt;</div></td>
+                        <td class="visualizacion-celda">Filas con los datos de la tabla.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;tfoot&gt;</span></td>
+                        <td class="definicion">Pie de tabla</td>
+                        <td><div class="codigo-ejemplo">&lt;tfoot&gt;...&lt;/tfoot&gt;</div></td>
+                        <td class="visualizacion-celda">Resumen final o totales.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;tr&gt;</span></td>
+                        <td class="definicion">Fila de tabla</td>
+                        <td><div class="codigo-ejemplo">&lt;tr&gt;...&lt;/tr&gt;</div></td>
+                        <td class="visualizacion-celda">Una fila horizontal de celdas.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;th&gt;</span></td>
+                        <td class="definicion">Celda de encabezado</td>
+                        <td><div class="codigo-ejemplo">&lt;th&gt;Título&lt;/th&gt;</div></td>
+                        <td class="visualizacion-celda"><strong>Título</strong> (negrita y centrado)</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;td&gt;</span></td>
+                        <td class="definicion">Celda de datos</td>
+                        <td><div class="codigo-ejemplo">&lt;td&gt;Datos&lt;/td&gt;</div></td>
+                        <td class="visualizacion-celda">Datos (texto normal de celda)</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">colspan</span></td>
+                        <td class="definicion">Combinar columnas</td>
+                        <td><div class="codigo-ejemplo">&lt;td colspan="2"&gt;...&lt;/td&gt;</div></td>
+                        <td class="visualizacion-celda">Celda que ocupa 2 columnas.</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">rowspan</span></td>
+                        <td class="definicion">Combinar filas</td>
+                        <td><div class="codigo-ejemplo">&lt;td rowspan="2"&gt;...&lt;/td&gt;</div></td>
+                        <td class="visualizacion-celda">Celda que ocupa 2 filas.</td>
+                    </tr>
+                    <tr class="sesion-header">
+                        <td colspan="5">FORMULARIOS</td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;form&gt;</span></td>
+                        <td class="definicion">Contenedor de formulario</td>
+                        <td><div class="codigo-ejemplo">&lt;form action="..." method="POST"&gt;...&lt;/form&gt;</div></td>
+                        <td class="visualizacion-celda">Contenedor invisible. Envía datos vía GET o POST.</td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;label&gt;</span></td>
+                        <td class="definicion">Etiqueta de campo</td>
+                        <td><div class="codigo-ejemplo">&lt;label for="id"&gt;Nombre:&lt;/label&gt;</div></td>
+                        <td class="visualizacion-celda"><label>Nombre:</label></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;input&gt;</span></td>
+                        <td class="definicion">Campo de entrada (múltiples tipos)</td>
+                        <td><div class="codigo-ejemplo">&lt;input type="text"&gt;
+&lt;input type="email"&gt;
+&lt;input type="checkbox"&gt;</div></td>
+                        <td class="visualizacion-celda"><input type="text" placeholder="text" size="10"> <input type="checkbox"> <input type="radio"></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;textarea&gt;</span></td>
+                        <td class="definicion">Área de texto multilínea</td>
+                        <td><div class="codigo-ejemplo">&lt;textarea rows="4"&gt;&lt;/textarea&gt;</div></td>
+                        <td class="visualizacion-celda"><textarea rows="2" cols="15" style="padding:5px;">Texto...</textarea></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;select&gt;</span></td>
+                        <td class="definicion">Lista desplegable</td>
+                        <td><div class="codigo-ejemplo">&lt;select&gt;
+    &lt;option&gt;Opción 1&lt;/option&gt;
+    &lt;option&gt;Opción 2&lt;/option&gt;
+&lt;/select&gt;</div></td>
+                        <td class="visualizacion-celda"><select style="padding:5px;"><option>Opción 1</option><option>Opción 2</option></select></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;button&gt;</span></td>
+                        <td class="definicion">Botón</td>
+                        <td><div class="codigo-ejemplo">&lt;button&gt;Enviar&lt;/button&gt;</div></td>
+                        <td class="visualizacion-celda"><button type="button">Enviar</button></td>
+                    </tr>
+                    <tr class="fila-par">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;fieldset&gt;</span></td>
+                        <td class="definicion">Agrupación de campos</td>
+                        <td><div class="codigo-ejemplo">&lt;fieldset&gt;...&lt;/fieldset&gt;</div></td>
+                        <td class="visualizacion-celda"><fieldset style="padding:10px;margin:5px 0;"><legend style="font-size:0.9rem;">Grupo</legend>Campos...</fieldset></td>
+                    </tr>
+                    <tr class="fila-impar">
+                        <td><span class="numero-sesion">4</span></td>
+                        <td><span class="etiqueta-html">&lt;legend&gt;</span></td>
+                        <td class="definicion">Título de fieldset</td>
+                        <td><div class="codigo-ejemplo">&lt;legend&gt;Título&lt;/legend&gt;</div></td>
+                        <td class="visualizacion-celda">Título visible en el borde del fieldset.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="text-align:center;margin:40px 0;color:#666;font-size:1.1rem;">
+            <strong>Total: 47 etiquetas/atributos HTML</strong> cubiertos en las primeras 4 sesiones
+        </p>
+    </div>
+</body>
+</html>
