@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución: Ejercicio 3 - Estilos para Página Personal</title>
+    <title>Solución: Ejercicio 3 - Estilizar Página Personal - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 3 - Estilos para Página Personal</h1>
+            <h1>Solución: Estilizar Página Personal con CSS</h1>
             <p>Sesión 5 - CSS I: Fundamentos, Color y Texto</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -19,9 +19,9 @@
     <main class="contenedor">
         <div class="solucion">
             <h2>Código de la Solución</h2>
-            <p>Este ejemplo muestra cómo estilizar una <strong>página personal completa</strong> (basada en la estructura de S2-S4) con CSS externo.</p>
+            <p>Este ejemplo muestra cómo estilizar la <strong>página personal</strong> creada en la Sesión 3 (Ejercicio 3) con CSS externo.</p>
             
-            <h3>HTML (index.html - página personal)</h3>
+            <h3>HTML (index.html - página personal de S3)</h3>
             <div class="codigo">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -33,28 +33,49 @@
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header class="encabezado"&gt;
-        &lt;h1&gt;Juan Pérez&lt;/h1&gt;
+        &lt;h1&gt;Mi Nombre&lt;/h1&gt;
         &lt;nav class="navegacion"&gt;
-            &lt;a href="#sobre-mi"&gt;Sobre Mí&lt;/a&gt;
-            &lt;a href="#proyectos"&gt;Proyectos&lt;/a&gt;
-            &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
+            &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#galeria"&gt;Galería&lt;/a&gt;
+            &lt;a href="#video"&gt;Video&lt;/a&gt;
+            &lt;a href="acerca.html"&gt;Acerca de&lt;/a&gt;
         &lt;/nav&gt;
     &lt;/header&gt;
     
     &lt;main&gt;
-        &lt;section id="sobre-mi" class="tarjeta"&gt;
-            &lt;h2&gt;Sobre Mí&lt;/h2&gt;
-            &lt;p&gt;Soy estudiante de Ingeniería en Sistemas...&lt;/p&gt;
+        &lt;section id="inicio" class="tarjeta"&gt;
+            &lt;h2&gt;Bienvenido a mi web personal&lt;/h2&gt;
+            &lt;p&gt;¡Hola! Bienvenido a mi página personal. Soy estudiante de Ingeniería en Sistemas y me apasiona la tecnología.&lt;/p&gt;
+            &lt;h3&gt;Mis Hobbies&lt;/h3&gt;
+            &lt;ul class="hobbies"&gt;
+                &lt;li&gt;Programar y explorar nuevas tecnologías&lt;/li&gt;
+                &lt;li&gt;Ver series y películas de ciencia ficción&lt;/li&gt;
+                &lt;li&gt;Jugar videojuegos&lt;/li&gt;
+                &lt;li&gt;Hacer ejercicio y deportes&lt;/li&gt;
+                &lt;li&gt;Leer libros de desarrollo personal&lt;/li&gt;
+            &lt;/ul&gt;
         &lt;/section&gt;
         
-        &lt;section id="proyectos" class="tarjeta"&gt;
-            &lt;h2&gt;Mis Proyectos&lt;/h2&gt;
-            &lt;p&gt;Aquí destaco mis trabajos...&lt;/p&gt;
+        &lt;section id="galeria" class="tarjeta"&gt;
+            &lt;h2&gt;Mi Galería&lt;/h2&gt;
+            &lt;div class="galeria"&gt;
+                &lt;img src="https://picsum.photos/400/300?random=1" alt="Imagen 1"&gt;
+                &lt;img src="https://picsum.photos/400/300?random=2" alt="Imagen 2"&gt;
+                &lt;img src="https://picsum.photos/400/300?random=3" alt="Imagen 3"&gt;
+                &lt;img src="https://picsum.photos/400/300?random=4" alt="Imagen 4"&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;section id="video" class="tarjeta"&gt;
+            &lt;h2&gt;Mi Video&lt;/h2&gt;
+            &lt;div class="contenedor-video"&gt;
+                &lt;iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen&gt;&lt;/iframe&gt;
+            &lt;/div&gt;
         &lt;/section&gt;
     &lt;/main&gt;
     
     &lt;footer class="pie"&gt;
-        &lt;p&gt;&copy; 2024 Juan Pérez&lt;/p&gt;
+        &lt;p&gt;&copy; 2024 Mi Nombre&lt;/p&gt;
     &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;</div>
@@ -67,11 +88,16 @@
     <span class="propiedad">--color-fondo</span>: <span class="valor">#f5f7fb</span>;
     <span class="propiedad">--color-texto</span>: <span class="valor">#1a1a1a</span>;
     <span class="propiedad">--color-texto-claro</span>: <span class="valor">#666</span>;
+    <span class="propiedad">--color-fondo-tarjeta</span>: <span class="valor">#ffffff</span>;
     <span class="propiedad">--sombra</span>: <span class="valor">0 4px 12px rgba(0,0,0,0.15)</span>;
     <span class="propiedad">--radio</span>: <span class="valor">12px</span>;
 }
 
 <span class="comentario">/* Estilos generales */</span>
+<span class="selector">*</span> {
+    <span class="propiedad">box-sizing</span>: <span class="valor">border-box</span>;
+}
+
 <span class="selector">body</span> {
     <span class="propiedad">font-family</span>: <span class="valor">'Poppins', sans-serif</span>;
     <span class="propiedad">background</span>: <span class="valor">var(--color-fondo)</span>;
@@ -81,7 +107,7 @@
     <span class="propiedad">padding</span>: <span class="valor">0</span>;
 }
 
-<span class="comentario">/* Encabezado */</span>
+<span class="comentario">/* Encabezado con gradiente */</span>
 <span class="selector">.encabezado</span> {
     <span class="propiedad">background</span>: <span class="valor">linear-gradient(135deg, var(--color-primario), var(--color-secundario))</span>;
     <span class="propiedad">color</span>: <span class="valor">white</span>;
@@ -90,8 +116,8 @@
 }
 
 <span class="selector">.encabezado h1</span> {
-    <span class="propiedad">font-size</span>: <span class="valor">2rem</span>;
-    <span class="propiedad">margin-bottom</span>: <span class="valor">1rem</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">2.5rem</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">0.5rem</span>;
 }
 
 <span class="comentario">/* Navegación */</span>
@@ -102,24 +128,28 @@
 <span class="selector">.navegacion a</span> {
     <span class="propiedad">color</span>: <span class="valor">white</span>;
     <span class="propiedad">text-decoration</span>: <span class="valor">none</span>;
-    <span class="propiedad">margin</span>: <span class="valor">0 10px</span>;
+    <span class="propiedad">margin</span>: <span class="valor">0 15px</span>;
     <span class="propiedad">font-weight</span>: <span class="valor">600</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">1rem</span>;
+    <span class="propiedad">padding</span>: <span class="valor">0.5rem 1rem</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">20px</span>;
+    <span class="propiedad">transition</span>: <span class="valor">background 0.3s;</span>;
 }
 
 <span class="selector">.navegacion a:hover</span> {
-    <span class="propiedad">text-decoration</span>: <span class="valor">underline</span>;
+    <span class="propiedad">background</span>: <span class="valor">rgba(255,255,255,0.2)</span>;
 }
 
 <span class="comentario">/* Main y secciones */</span>
 <span class="selector">main</span> {
-    <span class="propiedad">max-width</span>: <span class="valor">800px</span>;
+    <span class="propiedad">max-width</span>: <span class="valor">900px</span>;
     <span class="propiedad">margin</span>: <span class="valor">2rem auto</span>;
     <span class="propiedad">padding</span>: <span class="valor">0 1rem</span>;
 }
 
 <span class="comentario">/* Tarjetas */</span>
 <span class="selector">.tarjeta</span> {
-    <span class="propiedad">background</span>: <span class="valor">white</span>;
+    <span class="propiedad">background</span>: <span class="valor">var(--color-fondo-tarjeta)</span>;
     <span class="propiedad">padding</span>: <span class="valor">1.5rem</span>;
     <span class="propiedad">border-radius</span>: <span class="valor">var(--radio)</span>;
     <span class="propiedad">box-shadow</span>: <span class="valor">var(--sombra)</span>;
@@ -129,7 +159,58 @@
 <span class="selector">.tarjeta h2</span> {
     <span class="propiedad">color</span>: <span class="valor">var(--color-primario)</span>;
     <span class="propiedad">font-size</span>: <span class="valor">1.5rem</span>;
+    <span class="propiedad">margin-bottom</span>: <span class="valor">1rem</span>;
+}
+
+<span class="selector">.tarjeta h3</span> {
+    <span class="propiedad">color</span>: <span class="valor">var(--color-primario)</span>;
+    <span class="propiedad">font-size</span>: <span class="valor">1.2rem</span>;
+    <span class="propiedad">margin-top</span>: <span class="valor">1rem</span>;
     <span class="propiedad">margin-bottom</span>: <span class="valor">0.5rem</span>;
+}
+
+<span class="selector">.tarjeta ul</span> {
+    <span class="propiedad">list-style</span>: <span class="valor">disc</span>;
+    <span class="propiedad">padding-left</span>: <span class="valor">20px</span>;
+    <span class="propiedad">line-height</span>: <span class="valor">1.8</span>;
+}
+
+<span class="comentario">/* Galería */</span>
+<span class="selector">.galeria</span> {
+    <span class="propiedad">display</span>: <span class="valor">grid</span>;
+    <span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(auto-fit, minmax(200px, 1fr))</span>;
+    <span class="propiedad">gap</span>: <span class="valor">1rem</span>;
+}
+
+<span class="selector">.galeria img</span> {
+    <span class="propiedad">width</span>: <span class="valor">100%</span>;
+    <span class="propiedad">height</span>: <span class="valor">150px</span>;
+    <span class="propiedad">object-fit</span>: <span class="valor">cover</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">8px</span>;
+    <span class="propiedad">transition</span>: <span class="valor">transform 0.3s;</span>;
+}
+
+<span class="selector">.galeria img:hover</span> {
+    <span class="propiedad">transform</span>: <span class="valor">scale(1.05)</span>;
+}
+
+<span class="comentario">/* Contenedor de video */</span>
+<span class="selector">.contenedor-video</span> {
+    <span class="propiedad">position</span>: <span class="valor">relative</span>;
+    <span class="propiedad">padding-bottom</span>: <span class="valor">56.25%</span>;
+    <span class="propiedad">height</span>: <span class="valor">0</span>;
+    <span class="propiedad">overflow</span>: <span class="valor">hidden</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">var(--radio)</span>;
+}
+
+<span class="selector">.contenedor-video iframe</span> {
+    <span class="propiedad">position</span>: <span class="valor">absolute</span>;
+    <span class="propiedad">top</span>: <span class="valor">0</span>;
+    <span class="propiedad">left</span>: <span class="valor">0</span>;
+    <span class="propiedad">width</span>: <span class="valor">100%</span>;
+    <span class="propiedad">height</span>: <span class="valor">100%</span>;
+    <span class="propiedad">border</span>: <span class="valor">none</span>;
+    <span class="propiedad">border-radius</span>: <span class="valor">var(--radio)</span>;
 }
 
 <span class="comentario">/* Footer */</span>
@@ -137,39 +218,60 @@
     <span class="propiedad">background</span>: <span class="valor">var(--color-texto)</span>;
     <span class="propiedad">color</span>: <span class="valor">white</span>;
     <span class="propiedad">text-align</span>: <span class="valor">center</span>;
-    <span class="propiedad">padding</span>: <span class="valor">1rem</span>;
+    <span class="propiedad">padding</span>: <span class="valor">1.5rem</span>;
     <span class="propiedad">margin-top</span>: <span class="valor">2rem</span>;
 }</div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa la página personal creada en S2-S4 como base, y se le aplica CSS externo con variables, modelo de caja, colores UMAX y tipografía. Este ejercicio <strong>conecta todas las sesiones anteriores</strong>: HTML (contenido) + CSS (estilo) = página web completa.
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se estiliza la página personal creada en S3 (Ejercicio 3) con CSS externo, usando las secciones existentes (nav, galería, video, footer) como estructura base. Este ejercicio <strong>conecta todas las sesiones anteriores</strong>: HTML (contenido de S2-S4) + CSS (estilo de S5) = página web completa.
             </div>
 
             <h2>Resultado Visual</h2>
             <div class="vista-previa" style="background: #f5f7fb; padding: 30px; border: 1px solid #ddd; border-radius: 8px;">
                 <header style="background: linear-gradient(135deg, #8B0000, #DC143C); color: white; padding: 2rem; text-align: center; border-radius: 12px 12px 0 0;">
-                    <h1 style="font-size: 2rem; margin-bottom: 1rem;">Juan Pérez</h1>
+                    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Mi Nombre</h1>
                     <nav style="margin-top: 1rem;">
-                        <a href="#" style="color: white; text-decoration: none; margin: 0 10px; font-weight: 600;">Sobre Mí</a>
-                        <a href="#" style="color: white; text-decoration: none; margin: 0 10px; font-weight: 600;">Proyectos</a>
-                        <a href="#" style="color: white; text-decoration: none; margin: 0 10px; font-weight: 600;">Contacto</a>
+                        <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px;">Inicio</a>
+                        <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px;">Galería</a>
+                        <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px;">Video</a>
+                        <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px;">Acerca de</a>
                     </nav>
                 </header>
                 
-                <main style="max-width: 800px; margin: 0 auto; padding: 20px;">
+                <main style="max-width: 900px; margin: 0 auto; padding: 20px;">
                     <section style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
-                        <h2 style="color: #8B0000; font-size: 1.5rem; margin-bottom: 0.5rem;">Sobre Mí</h2>
-                        <p style="line-height: 1.8;">Soy estudiante de Ingeniería en Sistemas...</p>
+                        <h2 style="color: #8B0000; font-size: 1.5rem; margin-bottom: 1rem;">Bienvenido a mi web personal</h2>
+                        <p style="line-height: 1.8; margin-bottom: 1rem;">¡Hola! Bienvenido a mi página personal. Soy estudiante de Ingeniería en Sistemas y me apasiona la tecnología.</p>
+                        <h3 style="color: #8B0000; font-size: 1.2rem; margin-bottom: 0.5rem;">Mis Hobbies</h3>
+                        <ul style="list-style: disc; padding-left: 20px; line-height: 1.8;">
+                            <li>Programar y explorar nuevas tecnologías</li>
+                            <li>Ver series y películas de ciencia ficción</li>
+                            <li>Jugar videojuegos</li>
+                            <li>Hacer ejercicio y deportes</li>
+                            <li>Leer libros de desarrollo personal</li>
+                        </ul>
                     </section>
                     
                     <section style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
-                        <h2 style="color: #8B0000; font-size: 1.5rem; margin-bottom: 0.5rem;">Mis Proyectos</h2>
-                        <p style="line-height: 1.8;">Aquí destaco mis trabajos...</p>
+                        <h2 style="color: #8B0000; font-size: 1.5rem; margin-bottom: 1rem;">Mi Galería</h2>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px;">
+                            <img src="https://picsum.photos/200/150?random=1" alt="Imagen 1" style="width:100%;height:80px;object-fit:cover;border-radius:8px;">
+                            <img src="https://picsum.photos/200/150?random=2" alt="Imagen 2" style="width:100%;height:80px;object-fit:cover;border-radius:8px;">
+                            <img src="https://picsum.photos/200/150?random=3" alt="Imagen 3" style="width:100%;height:80px;object-fit:cover;border-radius:8px;">
+                            <img src="https://picsum.photos/200/150?random=4" alt="Imagen 4" style="width:100%;height:80px;object-fit:cover;border-radius:8px;">
+                        </div>
+                    </section>
+                    
+                    <section style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin-bottom: 1.5rem;">
+                        <h2 style="color: #8B0000; font-size: 1.5rem; margin-bottom: 1rem;">Mi Video</h2>
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+                            <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 12px;"></iframe>
+                        </div>
                     </section>
                 </main>
                 
-                <footer style="background: #1a1a1a; color: white; text-align: center; padding: 1rem; border-radius: 0 0 12px 12px;">
-                    <p style="margin: 0;">© 2024 Juan Pérez</p>
+                <footer style="background: #1a1a1a; color: white; text-align: center; padding: 1.5rem; border-radius: 0 0 12px 12px;">
+                    <p style="margin: 0;">© 2024 Mi Nombre</p>
                 </footer>
             </div>
         </div>
