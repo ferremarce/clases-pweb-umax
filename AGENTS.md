@@ -127,9 +127,7 @@ main → producción
 ### Reglas
 - Un cambio por commit
 - Mensajes en español, imperativo presente
-- **NUNCA hacer commit ni push sin autorización explícita del usuario**
-- El usuario debe pedir explícitamente "haz commit" o "haz commit y push"
-- Push por separado
+- Usar el comando `@commit-all` para realizar commits y push cuando el usuario lo solicite
 
 ---
 
