@@ -64,7 +64,14 @@
             border: 2px solid #8B0000;
             border-radius: 8px;
             padding: 15px;
-            margin: 20px 0;
+            flex: 1;
+            min-width: 200px;
+        }
+        .contenedor-overflow-flex {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 15px 0;
         }
         .overflow-auto {
             height: 80px;
@@ -73,6 +80,23 @@
         .overflow-hidden {
             height: 80px;
             overflow: hidden;
+        }
+        .overflow-visible {
+            height: 80px;
+            overflow: visible;
+        }
+        .footer-ejemplo {
+            background: linear-gradient(135deg, #8B0000, #DC143C);
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .demo-footer-fijo {
+            padding-bottom: 60px;
         }
     </style>
 </head>
@@ -92,10 +116,23 @@
                 <li>Agrega <code>margin-top</code> al body o contenedor principal para compensar</li>
             </ul>
 
-            <h3>Parte 2: Overflow</h3>
+            <h3>Parte 2: Overflow con Flex</h3>
+            <p>Crea <strong>3 contenedores en la misma línea</strong> que demuestren los diferentes valores de overflow:</p>
             <ul>
-                <li>Usa <code>overflow: auto</code> en contenedores con mucho contenido</li>
-                <li>Usa <code>overflow: hidden</code> para recortar contenido excesivo</li>
+                <li>Usa <code>display: flex</code> o <code>display: inline-flex</code> en el contenedor padre</li>
+                <li><code>overflow: auto</code> - Añade scroll solo cuando el contenido desborda</li>
+                <li><code>overflow: hidden</code> - Recorta el contenido que sobresale</li>
+                <li><code>overflow: visible</code> - Comportamiento por defecto, el contenido se desborda</li>
+            </ul>
+            <p>Usa una altura fija (ej: 80px) para cada contenedor y contenido largo para ver el efecto.</p>
+
+            <h3>Parte 3: Footer Fijo</h3>
+            <p>Ahora añade un footer que permanezca fijo en la parte inferior de la pantalla:</p>
+            <ul>
+                <li>Crea un <code>&lt;footer&gt;</code> con <code>position: fixed</code></li>
+                <li>Usa <code>bottom: 0</code> para posicionarlo en la parte inferior</li>
+                <li>Aplica <code>width: 100%</code> y <code>z-index: 1000</code></li>
+                <li>Agrega <code>padding-bottom</code> al body o contenedor principal para evitar que el contenido quede oculto</li>
             </ul>
         </div>
 
@@ -117,31 +154,72 @@ main {
 }</code></pre>
         </div>
 
-        <div class="tarjeta">
-            <h2>CSS: Overflow</h2>
-<pre><code>.contenedor-scroll {
-    height: 200px;
+<div class="tarjeta">
+            <h2>CSS: Overflow (3 contenedores en línea)</h2>
+<pre><code>.contenedor-overflow {
+    display: flex;
+    gap: 20px;
+}
+
+.caja-overflow {
+    flex: 1;
+    min-width: 200px;
+    height: 100px;
+    border: 2px solid #8B0000;
+}
+
+/* Scroll automático cuando es necesario */
+.contenedor-scroll {
     overflow: auto;
 }
 
-.recortar {
-    height: 100px;
+/* Recorta el contenido que sobresale */
+.recortar-contenido {
     overflow: hidden;
+}
+
+/* Comportamiento por defecto */
+.desbordar {
+    overflow: visible;
 }</code></pre>
         </div>
 
         <div class="tarjeta">
             <h2>Ejemplo Visual: Overflow</h2>
-            
-            <h3>overflow: auto (con scroll)</h3>
-            <div class="caja-overflow overflow-auto">
-                <p>Este contenido es muy largo y necesita scroll para verse completo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+            <div class="contenedor-overflow-flex">
+                <div class="caja-overflow overflow-auto">
+                    <h4>overflow: auto</h4>
+                    <p>Este contenido tiene scroll. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
 
-            <h3>overflow: hidden (recortado)</h3>
-            <div class="caja-overflow overflow-hidden">
-                <p>Este contenido está oculto y no se puede ver. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="caja-overflow overflow-hidden">
+                    <h4>overflow: hidden</h4>
+                    <p>Este contenido está recortado. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <div class="caja-overflow overflow-visible">
+                    <h4>overflow: visible</h4>
+                    <p>Este contenido se desborda. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
             </div>
+        </div>
+
+        <div class="tarjeta">
+            <h2>CSS: Footer Fijo</h2>
+<pre><code>footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    color: white;
+    padding: 15px 20px;
+}
+
+body {
+    padding-bottom: 70px;
+}</code></pre>
         </div>
 
         <div class="tarjeta">
