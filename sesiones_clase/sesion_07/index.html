@@ -393,48 +393,6 @@
         </section>
 
         <section class="diapositiva" id="slide-17">
-            <h2>Diseño Responsivo</h2>
-            <p>Grid facilita el diseño responsivo:</p>
-
-            <div class="tarjeta">
-                <h3>Grid Responsivo</h3>
-                <pre><code><span class="selector">.galeria</span> {
-    <span class="propiedad">display</span>: <span class="valor">grid</span>;
-    <span class="propiedad">grid-template-columns</span>: <span class="valor">repeat(auto-fit, minmax(250px, 1fr))</span>;
-    <span class="propiedad">gap</span>: <span class="valor">20px</span>;
-}</code></pre>
-            </div>
-
-            <div class="tarjeta">
-                <ul>
-                    <li><strong>auto-fit:</strong> Ajusta el número de columnas</li>
-                    <li><strong>minmax(250px, 1fr):</strong> Mínimo 250px, máximo fracción</li>
-                    <li><strong>Sin media queries:</strong> Se adapta automáticamente</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-18">
-            <h2>Ejemplo Práctico: Layout Completo</h2>
-
-            <div class="tarjeta">
-                <h3>Estructura</h3>
-                <pre><code><span class="selector">.contenedor</span> {
-    <span class="propiedad">display</span>: <span class="valor">grid</span>;
-    <span class="propiedad">grid-template-columns</span>: <span class="valor">250px 1fr</span>;
-    <span class="propiedad">grid-template-rows</span>: <span class="valor">auto 1fr auto</span>;
-    <span class="propiedad">grid-template-areas</span>: <span class="valor">"header header" "sidebar main" "footer footer"</span>;
-    <span class="propiedad">min-height</span>: <span class="valor">100vh</span>;
-}
-
-<span class="selector">header</span> { <span class="propiedad">grid-area</span>: <span class="valor">header</span>; }
-<span class="selector">aside</span>  { <span class="propiedad">grid-area</span>: <span class="valor">sidebar</span>; }
-<span class="selector">main</span>   { <span class="propiedad">grid-area</span>: <span class="valor">main</span>; }
-<span class="selector">footer</span> { <span class="propiedad">grid-area</span>: <span class="valor">footer</span>; }</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-19">
             <h2>Buenas Prácticas</h2>
             <div class="tarjeta">
                 <h3>✅ Hacer:</h3>
@@ -458,7 +416,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-20">
+        <section class="diapositiva" id="slide-18">
             <h2>Actividad Práctica</h2>
             
             <p>Accede a los ejercicios de esta sesión:</p>
@@ -469,13 +427,13 @@
                 <ol class="pasos">
                     <li>Crear navbar con Flexbox</li>
                     <li>Crear galería con Grid</li>
-                    <li>Diseñar layout responsivo</li>
+                    <li>Crear layout con grid-template-areas</li>
                     <li>Combinar Flexbox y Grid</li>
                 </ol>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-21">
+        <section class="diapositiva" id="slide-19">
             <h2>Resumen de la Sesión</h2>
             
             <h3>Conceptos aprendidos:</h3>
@@ -489,7 +447,6 @@
                 <li><strong>grid-template-columns/rows:</strong> repeat(), fr</li>
                 <li><strong>gap:</strong> espacio entre celdas</li>
                 <li><strong>grid-template-areas:</strong> plantillas</li>
-                <li><strong>auto-fit + minmax():</strong> responsivo</li>
             </ul>
 
             <div class="tarjeta">
@@ -501,7 +458,7 @@
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-22">
+        <section class="diapositiva" id="slide-20">
             <h2>Próxima Clase</h2>
             <p style="font-size: 1.3rem; margin: 20px 0;">Sesión 8: CSS IV: Listas, Tablas, Formularios y Responsive</p>
             
