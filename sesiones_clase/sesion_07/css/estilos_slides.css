@@ -222,7 +222,7 @@ header.presentacion-header.mini .profesor {
 
 .comparacion-item {
     background: #f8f9fa;
-    padding: 25px;
+    padding: 15px;
     border-radius: var(--borde-radio);
     text-align: center;
 }
@@ -231,6 +231,16 @@ header.presentacion-header.mini .profesor {
     color: var(--color-primario);
     margin-bottom: 15px;
     font-size: 1.2rem;
+}
+
+.comparacion-item ul {
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.comparacion-item li {
+    margin-bottom: 3px;
+    font-size: 0.85rem;
 }
 
 .pasos {
