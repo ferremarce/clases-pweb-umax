@@ -26,14 +26,15 @@
                 <a href="#imagenes">Mis imágenes</a>
                 <a href="#videos">Mis videos</a>
                 <a href="#contacto">Contáctate</a>
-                
+
             </nav>
         </aside>
         <div>
-           <h2>Presentacion</h2>
+            <h2>Presentacion</h2>
             <section>
                 <article class="contenedor-presentacion">
-                    <img class="foto" src="https://picsum.photos/id/473/5000/3333" alt="Foto de presentación" width="250">
+                    <img class="foto" src="https://picsum.photos/id/473/5000/3333" alt="Foto de presentación"
+                        width="250">
                     <p>
                         Hola, mi nombre es Juan. Soy estudiante universitario y me interesa
                         aprender desarrollo web, programación y nuevas tecnologías.
@@ -46,10 +47,8 @@
                     </p>
                 </article>
             </section>
-        </div>
-        <div style="display: none;">
             <h2>Mis hobbies</h2>
-            <section>
+            <section id="hobbies">
                 <article>
                     <ul>
                         <li>Leer libros sobre tecnología</li>
@@ -61,56 +60,53 @@
                     </ul>
                 </article>
             </section>
-
-            <section>
-                <h3>Mis contenidos multimedia</h3>
-
-                <article>
-                    <h4>Imagen favorita</h4>
-
+            <h2>Mis Imágenes</h2>
+            <section id="imagenes">
                     <img src="https://picsum.photos/id/1/5000/3333" alt="Trabajando en mi laptop" width="400">
                     <img src="https://picsum.photos/id/9/5000/3269"
                         alt="Mis elementos de trabajo, laptop, anotaciones, telefono celular" width="400">
                     <img src="https://picsum.photos/id/30/1280/901" alt="Mi taza favorita" width="400">
+                    <img src="https://picsum.photos/id/15/5000/3333" alt="Paisaje natural" width="400">
+                    <img src="https://picsum.photos/id/21/5000/3333" alt="Escritorio con libros" width="400">
+                    <img src="https://picsum.photos/id/36/5000/3333" alt="Calle con fondo desenfocado" width="400">
 
-                </article>
+               
             </section>
-            <section>
-                <h3>Mis contenidos multimedia</h3>
+            <h2>Mis videos</h2>
+            <section id="videos">
 
-                <article>
-                    <h4>Video de presentación 1</h4>
-
+               
                     <video width="400" controls>
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
 
                         Tu navegador no soporta videos.
                     </video>
-
-                    <p>
-                        Video de demostración sobre contenido multimedia HTML5.
-                    </p>
-                </article>
-
-
-                <article>
-                    <h4>Video de presentación 2</h4>
-
                     <video width="400" controls>
                         <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
 
                         Tu navegador no soporta videos.
                     </video>
+                
+            </section>
+            <h2>Contáctate</h2>
+            <section id="contacto">
 
-                    <p>
-                        Segundo ejemplo de video utilizando la etiqueta
-                        <code>&lt;video&gt;</code>.
-                    </p>
-                </article>
+                <form class="contenedor-contacto">
 
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..."
+                        required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
             </section>
         </div>
-
     </main>
 
     <footer>
