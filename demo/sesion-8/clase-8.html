@@ -13,18 +13,86 @@
 
     </header>
     <main>
+        <h1>Formulario</h1>
         <form action="#" method="get">
-            <label>
-                Nombres:
-                <input type="text">
-            </label>
-            <label>
-                Nombres:
-                <textarea/>
-            </label>
+            <div class="contenedor-grid">
+                <label for="nombre">Nombres</label>
+                <input id="nombre" type="email">
+                <label for="area">Descripcion</label>
+                <textarea id="area" rows="4" cols="50"></textarea>
+                <label for="sexo">Sexo</label>
+                <select id="sexo">
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
 
+            </div>
+            <button class="btn" type="submit">Enviar</button>
+            <button class="btn" type="reset">Limpiar</button>
         </form>
-
+        <p></p>
+        <table>
+            <thead>
+                <tr>
+                    <th class="tablaHead" colspan="3">
+                        Encabezado de la tabla
+                    </th>
+                    </tr>
+                <tr>
+                    <th>
+                        Cédula
+                    </th>
+                    <th>
+                        Nombres
+                    </th>
+                    <th>
+                        Apellidos
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        2222222
+                    </td>
+                    <td>
+                        Juan
+                    </td>
+                    <td>
+                        Ferreira
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        33333
+                    </td>
+                    <td>
+                        José
+                    </td>
+                    <td>
+                        Romero
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        1111
+                    </td>
+                    <td>
+                        Lucía
+                    </td>
+                    <td>
+                        Aquino
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="tablaHead" colspan="3">
+                        Pie de tabla
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
     </main>
     <footer>
 
