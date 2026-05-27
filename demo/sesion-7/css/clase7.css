@@ -188,7 +188,7 @@ main {
     border-radius: 0.6rem;
     font-family: var(--fuente-principal);
     font-size: 1rem;
-    background-color: var(--color-fondo);
+    
     color: var(--color-primario);
     outline: none;
     transition: border-color 0.3s;
@@ -200,7 +200,7 @@ main {
 }
 
 .contenedor-contacto #email:invalid {
-    border-color: red;
+    background-color: var(--color-fondo);
 }
 
 .contenedor-contacto button {
@@ -218,6 +218,27 @@ main {
 
 .contenedor-contacto button:hover {
     background-color: var(--color-secundario);
+}
+
+.btn-tema {
+    cursor: pointer;
+    color: var(--color-superficie);
+    background-color: var(--color-secundario);
+    padding: 8px 12px;
+    border-radius: 0.6rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-tema:hover {
+    transform: scale(1.05);
+}
+
+body:has(#theme-toggle:checked) {
+    --color-primario: #8E3B46;
+    --color-secundario: #D66853;
+    --color-fondo: #F4D6D2;
+    --color-superficie: #FFF8F6;
 }
 
 @media screen and (max-width: 768px) {
