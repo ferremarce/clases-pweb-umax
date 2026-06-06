@@ -29,14 +29,13 @@ clases-pweb-umax/
     └── sesion_01/
         ├── index.html              (presentación)
         ├── index_ejercicios.html  (enunciados)
+        ├── guia_slides_sesion-01.md  (guía docente)
         ├── ejercicios/
         │   ├── ejercicio_01.html
-        │   ├── ejercicio_02.html
-        │   └── ejercicio_03.html
+        │   └── ejercicio_02.html
         ├── soluciones/
         │   ├── solucion_01.html
-        │   ├── solucion_02.html
-        │   └── solucion_03.html
+        │   └── solucion_02.html
         ├── css/
         │   ├── estilos_slides.css
         │   └── estilos_practica.css
@@ -108,7 +107,68 @@ const validarCampo = (id) => {
 
 ---
 
-## 7. Git
+## 7. Guías Docentes
+
+Cada sesión debe incluir una guía docente en Markdown que sirva como libreto para el profesor: `guia_slides_sesion-XX.md`.
+
+### Formato (basado en `sesiones_clase/sesion_09/guia_slides_sesion-09.md`)
+
+```markdown
+# Guía Docente — Sesión X: Título
+
+> **Duración estimada:** ~X h de teoría
+> **Objetivo:** Descripción del objetivo de la sesión.
+> **Estilo:** Explicación como si estuvieras frente a la clase, con ejemplos, preguntas y transiciones.
+
+---
+
+## Slide 1 — Nombre
+
+**Título:** Título del slide
+
+**Explicación al alumno:**
+> "Discurso textual del docente..."
+
+**Nota docente:** Instrucción interna para el profesor.
+
+---
+
+## Slide N — Nombre
+
+**Explicación al alumno:**
+> "..."
+
+**Analogía:** "Comparación didáctica."
+
+**Pregunta a la clase:** "Pregunta para interactuar."
+
+**Demo en vivo:** Acción para mostrar en directo.
+
+**Transición:** "Frase que conecta con el siguiente slide."
+
+---
+
+## Slide Final — Nombre
+
+...
+
+**Cierre:** "Mensaje motivacional para cerrar la sesión."
+```
+
+### Reglas
+- Un bloque `## Slide N — Nombre` por cada slide de la presentación
+- Separar slides con `---`
+- Incluir obligatoriamente: **Explicación al alumno** (discurso textual) y **Transición**
+- Incluir opcionalmente: **Analogía**, **Pregunta a la clase**, **Pregunta trampa**, **Demo en vivo**, **Actividad rápida**, **Nota docente**
+- El último slide debe contener un **Cierre** motivacional
+- Ubicación: `sesiones_clase/sesion_XX/guia_slides_sesion-XX.md`
+- Usar `guia_slides_sesion-09.md` como referencia de estilo y profundidad
+
+---
+
+## 8. Git
+
+- **Nota:** Sesiones 1-8 usan 3 ejercicios. Desde sesión 9 en adelante: **2 ejercicios** por sesión (Básico + Intermedio).
 
 ### Commits
 ```
@@ -131,7 +191,7 @@ main → producción
 
 ---
 
-## 8. Checklist
+## 9. Checklist
 
 - [ ] HTML semántico correcto
 - [ ] Logo UMAX en presentaciones
@@ -140,4 +200,5 @@ main → producción
 - [ ] Atributos `alt` en imágenes
 - [ ] Diseño responsive
 - [ ] Archivos organizados
+- [ ] Guía docente (`guia_slides_sesion-XX.md`) generada
 - [ ] Commits descriptivos en español
