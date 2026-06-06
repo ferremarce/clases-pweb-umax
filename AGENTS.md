@@ -188,6 +188,7 @@ main → producción
 - Un cambio por commit
 - Mensajes en español, imperativo presente
 - Usar el comando `@commit-all` para realizar commits y push cuando el usuario lo solicite
+- **Nunca incluir la carpeta `examenes/` en ningún commit** (está en `.gitignore`)
 
 ---
 
