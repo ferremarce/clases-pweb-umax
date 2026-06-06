@@ -49,14 +49,14 @@ El curso está estructurado en 18 sesiones de 4 horas cada una, organizadas en 6
 | 8 | Unidad III | CSS IV: Diseño Responsivo | Media queries, diseño mobile-first, estilización de formularios y tablas. |
 | 9 | Unidad IV | JavaScript I: Variables y Operadores | Declaración de variables, tipos primitivos, operadores aritméticos y lógicos, consola. |
 | 10 | Unidad IV | JavaScript II: Condicionales e Iteraciones | if/else, switch, bucles for/while, ejercicios de lógica. |
-| 11 | Unidad IV | JavaScript III: Funciones y Eventos | Funciones, parámetros, eventos del DOM (click, submit, mouseover). |
-| 12 | Unidad IV | JavaScript IV: DOM y Cookies | Seleccionar elementos, modificar contenido/estilos, localStorage, lista de tareas. |
-| 13 | Unidad V | Bootstrap I: Fundamentos y Grid | CDN, sistema de rejilla, contenedores, filas y columnas responsivas. |
-| 14 | Unidad V | Bootstrap II: Componentes y Formularios | Navbar, cards, modales, carrusel, formularios estilizados. |
-| 15 | Unidad VI | Proyecto Final: Planificación | Formación de grupos, selección de proyecto, repositorio Git, estructura de carpetas. |
-| 16 | Unidad VI | Desarrollo I: HTML y CSS | Implementación de estructura semántica, estilos con CSS puro o Bootstrap. |
-| 17 | Unidad VI | Desarrollo II: JavaScript | Validación de formularios, interactividad, localStorage, funcionalidades dinámicas. |
-| 18 | Unidad VI | Publicación y Evaluación Final | GitHub Pages, presentaciones grupales, feedback y cierre del proyecto. |
+| 11 | Unidad IV | JavaScript III: Funciones | Declaración, expresión, arrow functions, parámetros, scope, callbacks. |
+| 12 | Unidad IV | JavaScript IV: DOM y Almacenamiento | Seleccionar elementos, eventos, modificar DOM, createElement, localStorage, validación. |
+| 13 | Unidad V | Bootstrap I: Grid System y Utilidades | CDN, sistema de grid, contenedores, filas, columnas, breakpoints, utilidades. |
+| 14 | Unidad V | Bootstrap II: Componentes | Navbar, cards, modal, formularios, botones, badges, iconos, personalización. |
+| 15 | Unidad VI | Proyecto Final I: Planificación y Maquetación | Wireframes, Git, repositorio GitHub, maquetación HTML + Bootstrap Grid. |
+| 16 | Unidad VI | Proyecto Final II: Interactividad y Publicación | JS interactivo, localStorage, validación, GitHub Pages, presentación. |
+| 17 | Unidad VI | Examen Final Ordinario | Evaluación teórico-práctica de todos los contenidos del curso. |
+| 18 | Unidad VI | Examen Final Extraordinario | Recuperación para estudiantes que no aprobaron el ordinario. |
 
 ---
 
