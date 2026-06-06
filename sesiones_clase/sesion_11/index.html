@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión 11: JavaScript III - Funciones y Eventos del DOM - INI04</title>
+    <title>Sesión 11: JavaScript III - Funciones - INI04</title>
     <link rel="stylesheet" href="css/estilos_slides.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
         <div class="titulos">
             <h1>Sesión 11: JavaScript III</h1>
-            <div class="subtitulo">Funciones y Eventos del DOM | Unidad IV</div>
+            <div class="subtitulo">Funciones | Unidad IV</div>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira
             <div class="enlaces-plan">
@@ -23,29 +23,28 @@
 
     <main class="contenedor">
         <section class="diapositiva" id="slide-01">
-            <img src="images/logo_umax.png" alt="Logo" class="logo-grande">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
             <h2>JavaScript III</h2>
-            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Funciones y Eventos del DOM</p>
-            <p style="margin-top: 20px; color: var(--color-secundario);">Unidad IV - Fundamentos de JavaScript</p>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Funciones</p>
         </section>
 
         <section class="diapositiva" id="slide-02">
             <h2>Objetivos de la Sesión</h2>
             <p>Al finalizar esta sesión, serás capaz de:</p>
             <ul class="objetivos-lista">
-                <li>Declarar funciones como expresión, declaración y arrow functions</li>
-                <li>Utilizar parámetros y retorno de valores</li>
-                <li>Seleccionar elementos del DOM con getElementById y querySelector</li>
-                <li>Manejar eventos del DOM (click, submit, mouseover) con addEventListener</li>
-                <li>Modificar contenido y estilos desde JavaScript</li>
+                <li>Declarar funciones como declaración, expresión y arrow functions</li>
+                <li>Utilizar parámetros con valores por defecto y retorno de valores</li>
+                <li>Comprender el ámbito de variables (scope global y local)</li>
+                <li>Pasar funciones como argumentos (callbacks)</li>
+                <li>Aplicar funciones para organizar y reutilizar código</li>
             </ul>
             <div class="tarjeta">
-                <strong>📌 Repaso:</strong> En sesiones anteriores aprendimos variables, tipos, condicionales y bucles en JavaScript.
+                <strong>Repaso:</strong> En las sesiones anteriores aprendimos variables, tipos, condicionales y bucles en JavaScript.
             </div>
         </section>
 
         <section class="diapositiva" id="slide-03">
-            <h2>¿Qué son las Funciones?</h2>
+            <h2>Qué son las Funciones</h2>
             <div class="tarjeta">
                 <p>Las <strong>funciones</strong> son bloques de código reutilizables que realizan una tarea específica.</p>
                 <br>
@@ -71,255 +70,156 @@ function saludar(nombre) {
 let mensaje = saludar("Juan");
 alert(mensaje); // "Hola, Juan"</code></pre>
             </div>
+            <div class="nota">
+                <strong>Hoisting:</strong> Las funciones declaradas con <code>function</code> pueden llamarse antes de su declaración.
+            </div>
         </section>
 
         <section class="diapositiva" id="slide-05">
-            <h2>Expresión de Función</h2>
+            <h2>Expresión de Función y Arrow</h2>
             <div class="tarjeta">
                 <pre><code>// Expresión de función
 let saludar = function(nombre) {
     return "Hola, " + nombre;
 };
 
-// Arrow function (más moderno)
+// Arrow function (sintaxis moderna)
 let saludar = (nombre) => "Hola, " + nombre;
 
-// Arrow function con cuerpo
+// Arrow con cuerpo
 let saludar = (nombre) => {
     return "Hola, " + nombre;
 };</code></pre>
             </div>
             <div class="nota">
-                <strong>💡 Ventaja de arrow functions:</strong> Sintaxis más corta y contexto léxico de <code>this</code>.
+                <strong>Arrow functions:</strong> Sintaxis más corta. Si tienen una sola línea, omiten <code>return</code> y llaves.
             </div>
         </section>
 
         <section class="diapositiva" id="slide-06">
             <h2>Parámetros y Retorno</h2>
             <div class="tarjeta">
-                <pre><code>// Función con múltiples parámetros
+                <pre><code>// Múltiples parámetros
 function sumar(a, b) {
     return a + b;
 }
 
-// Función con valor por defecto
+// Valor por defecto (ES6)
 function saludar(nombre = "Usuario") {
     return "Hola, " + nombre;
 }
 
-// Función sin retorno
+// Sin retorno (undefined)
 function mostrarMensaje(msg) {
     alert(msg);
 }</code></pre>
                 <br>
                 <ul>
-                    <li><code>return</code> devuelve un valor</li>
+                    <li><code>return</code> devuelve un valor y termina la función</li>
                     <li>Parámetros pueden tener valores por defecto</li>
                 </ul>
             </div>
         </section>
 
         <section class="diapositiva" id="slide-07">
-            <h2>El DOM (Document Object Model)</h2>
+            <h2>Ámbito de Variables (Scope)</h2>
             <div class="tarjeta">
-                <p>El <strong>DOM</strong> es la representación en memoria del documento HTML como objetos JavaScript.</p>
-                <br>
-                <ul class="lista-grande">
-                    <li><strong>document</strong>: objeto principal</li>
-                    <li>Cada etiqueta HTML es un elemento</li>
-                    <li>JavaScript puede modificarlo</li>
-                    <li>Árbol jerárquico</li>
-                </ul>
+                <pre><code>let global = "Accesible en todas partes";
+
+function mostrar() {
+    let local = "Solo dentro de la función";
+    console.log(global); // correcto
+    console.log(local);  // correcto
+}
+
+console.log(global); // correcto
+console.log(local);  // ERROR: no está definida</code></pre>
             </div>
-            <div class="ejemplo">
-                <strong>🎯 Pruébalo:</strong> Abre la consola y escribe: <code>document.body</code>
+            <div class="nota">
+                <strong>Regla:</strong> Las variables declaradas dentro de una función solo existen dentro de ella. <code>let</code> y <code>const</code> tienen ámbito de bloque.
             </div>
         </section>
 
         <section class="diapositiva" id="slide-08">
-            <h2>Seleccionar Elementos</h2>
+            <h2>Callbacks: Funciones como Argumento</h2>
             <div class="tarjeta">
-                <pre><code>// Por ID (más rápido)
-let elemento = document.getElementById("miId");
+                <pre><code>// Función que recibe otra función
+function procesar(dato, callback) {
+    let resultado = dato * 2;
+    callback(resultado);
+}
 
-// Por selector CSS (más flexible)
-let elemento = document.querySelector(".miClase");
-let elementos = document.querySelectorAll(".miClase");
+// Llamada con arrow function
+procesar(5, (valor) => {
+    console.log("Resultado: " + valor);
+});
 
-// Por tag
-let elementos = document.getElementsByTagName("p");</code></pre>
-            </div>
-            <div class="nota">
-                <strong>⚠️ Importante:</strong> Si el elemento no existe, <code>getElementById</code> retorna <code>null</code>.
+// También con función nombrada
+function mostrarResultado(valor) {
+    alert("El doble es: " + valor);
+}
+procesar(5, mostrarResultado);</code></pre>
             </div>
         </section>
 
         <section class="diapositiva" id="slide-09">
-            <h2>Eventos del DOM</h2>
+            <h2>Buenas Prácticas con Funciones</h2>
             <div class="tarjeta">
-                <p>Los <strong>eventos</strong> son acciones que ocurren en la página.</p>
-                <br>
-                <table class="tabla-codigo">
-                    <tr>
-                        <th>Evento</th>
-                        <th>Descripción</th>
-                    </tr>
-                    <tr>
-                        <td><code>click</code></td>
-                        <td>Cuando se hace click</td>
-                    </tr>
-                    <tr>
-                        <td><code>mouseover</code></td>
-                        <td>Cuando el mouse entra</td>
-                    </tr>
-                    <tr>
-                        <td><code>mouseout</code></td>
-                        <td>Cuando el mouse sale</td>
-                    </tr>
-                    <tr>
-                        <td><code>submit</code></td>
-                        <td>Al enviar formulario</td>
-                    </tr>
-                    <tr>
-                        <td><code>input</code></td>
-                        <td>Al escribir en input</td>
-                    </tr>
-                </table>
+                <ul class="lista-grande">
+                    <li><strong>Responsabilidad única:</strong> cada función hace una sola cosa</li>
+                    <li><strong>Nombres descriptivos:</strong> <code>calcularPromedio()</code>, no <code>calc()</code></li>
+                    <li><strong>Evitar efectos secundarios:</strong> no modificar variables globales</li>
+                    <li><strong>Validar parámetros:</strong> verificar que los datos sean correctos</li>
+                    <li><strong>Usar <code>const</code></strong> para funciones expresadas</li>
+                </ul>
             </div>
         </section>
 
         <section class="diapositiva" id="slide-10">
-            <h2>addEventListener</h2>
-            <div class="tarjeta">
-                <pre><code>// Seleccionar elemento
-let boton = document.getElementById("miBoton");
-
-// Agregar evento
-boton.addEventListener("click", function() {
-    alert("¡Hiciste click!");
-});
-
-// Con arrow function
-boton.addEventListener("click", () => {
-    alert("¡Hiciste click!");
-});</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-11">
-            <h2>Modificar Contenido</h2>
-            <div class="tarjeta">
-                <pre><code>//Cambiar texto interno
-elemento.textContent = "Nuevo texto";
-elemento.innerHTML = "&lt;strong&gt;Negrilla&lt;/strong&gt;";
-
-// Obtener valor de input
-let valor = inputElement.value;
-
-// Establecer valor
-inputElement.value = "Nuevo valor";</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-12">
-            <h2>Modificar Estilos</h2>
-            <div class="tarjeta">
-                <pre><code>// Cambiar estilo directamente
-elemento.style.color = "red";
-elemento.style.backgroundColor = "yellow";
-elemento.style.display = "none";
-
-// Cambiar clase
-elemento.classList.add("activa");
-elemento.classList.remove("oculta");
-elemento.classList.toggle("visible");</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-13">
-            <h2>Ejemplo: Cambiar Color</h2>
-            <div class="tarjeta">
-                <pre><code>&lt;button id="cambiarColor"&gt;Cambiar Color&lt;/button&gt;
-&lt;p id="texto"&gt;Este texto cambiará de color&lt;/p&gt;
-
-&lt;script&gt;
-let boton = document.getElementById("cambiarColor");
-let texto = document.getElementById("texto");
-
-boton.addEventListener("click", () => {
-    // Color aleatorio
-    let color = "#" + Math.floor(Math.random()*16777215).toString(16);
-    texto.style.color = color;
-});
-&lt;/script&gt;</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-14">
-            <h2>Ejemplo: Mostrar/Ocultar</h2>
-            <div class="tarjeta">
-                <pre><code>&lt;button id="toggle"&gt;Mostrar/Ocultar&lt;/button&gt;
-&lt;div id="contenido" class="oculto"&gt;Contenido&lt;/div&gt;
-
-&lt;script&gt;
-let boton = document.getElementById("toggle");
-let contenido = document.getElementById("contenido");
-
-boton.addEventListener("click", () => {
-    contenido.classList.toggle("oculto");
-});
-&lt;/script&gt;</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-15">
             <h2>Resumen de la Sesión</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
                     <li><strong>Funciones:</strong> bloques reutilizables de código</li>
-                    <li><strong>Declaración:</strong> function nombre() {}</li>
-                    <li><strong>Arrow functions:</strong> () => {}</li>
-                    <li><strong>Parámetros y retorno:</strong> función con datos</li>
-                    <li><strong>DOM:</strong> representación del documento</li>
-                    <li><strong>Seleccionar:</strong> getElementById, querySelector</li>
-                    <li><strong>Eventos:</strong> click, mouseover, submit</li>
-                    <li><strong>addEventListener:</strong> escuchar eventos</li>
-                    <li><strong>Modificar:</strong> textContent, style, classList</li>
+                    <li><strong>Declaración:</strong> <code>function nombre() {}</code></li>
+                    <li><strong>Expresión:</strong> asignar función a variable</li>
+                    <li><strong>Arrow functions:</strong> <code>() => {}</code></li>
+                    <li><strong>Parámetros:</strong> valores de entrada, con defaults</li>
+                    <li><strong>Scope:</strong> ámbito global y local</li>
+                    <li><strong>Callbacks:</strong> funciones como argumentos</li>
                 </ul>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-16">
+        <section class="diapositiva" id="slide-11">
             <h2>Temas Próximos</h2>
             <div class="tarjeta">
-                <h3>Sesión 12: JavaScript IV</h3>
+                <h3>Sesión 12: JavaScript IV - DOM y Almacenamiento</h3>
                 <ul class="lista-grande">
-                    <li>Manipulación avanzada del DOM</li>
-                    <li>createElement, appendChild</li>
-                    <li>localStorage y sessionStorage</li>
-                    <li>Proyecto: To-Do List</li>
+                    <li>El DOM: seleccionar y modificar elementos</li>
+                    <li>Eventos: click, mouseover, submit</li>
+                    <li>Crear y eliminar elementos dinámicamente</li>
+                    <li>localStorage y persistencia de datos</li>
+                    <li>Validación de formularios</li>
                 </ul>
             </div>
             <div class="nota">
-                <strong>📚 Preparación:</strong> Revisar conceptos de funciones y eventos de hoy.
+                <strong>Preparación:</strong> Repasar conceptos de funciones para la próxima sesión.
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-17">
+        <section class="diapositiva" id="slide-12">
             <h2>Ejercicios de Práctica</h2>
             <div class="tarjeta">
-                <h3>Ejercicio 1 (Básico):</h3>
-                <p>Calculadora con funciones</p>
+                <h3>Ejercicio en Clase:</h3>
+                <p>Calculadora con funciones separadas (sumar, restar, multiplicar, dividir) usando arrow functions.</p>
                 <br>
-                <h3>Ejercicio 2 (Intermedio):</h3>
-                <p>Galería de imágenes con eventos</p>
-                <br>
-                <h3>Ejercicio 3 (Avanzado):</h3>
-                <p>To-Do List interactiva</p>
+                <h3>Ejercicio Desafío (Entregar):</h3>
+                <p>Sistema de notas con funciones: agregar, eliminar, calcular promedio y mostrar resultado con callbacks.</p>
             </div>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
         </section>
 
-        <section class="diapositiva" id="slide-18">
+        <section class="diapositiva" id="slide-13">
             <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
     </main>
