@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución Ejercicio 2 - Conversor de Temperatura - INI04</title>
+    <title>Solución Ejercicio 2 - Repartidor de Cuenta - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 2 - Conversor de Temperatura</h1>
+            <h1>Solución: Ejercicio 2 - Repartidor de Cuenta</h1>
             <p>Sesión 9 - JavaScript I</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -19,55 +19,46 @@
     <main class="contenedor">
         <div class="solucion">
             <h2>Código de la Solución</h2>
-            
+
             <div class="codigo">
-<span class="comentario">// Ejercicio 2: Conversor de Temperatura</span>
-<span class="comentario">// Pedir opción de conversión</span>
-<span class="etiqueta">let</span> <span class="variable">opcion</span> = <span class="funcion">prompt</span>(<span class="string">"¿Qué conversión deseas?\n"</span> +
-                           <span class="string">"1 = Celsius a Fahrenheit\n"</span> +
-                           <span class="string">"2 = Fahrenheit a Celsius"</span>);
+<span class="comentario">// Ejercicio 2: Repartidor de Cuenta</span>
+<span class="comentario">// Solicitar datos al usuario</span>
+<span class="etiqueta">let</span> <span class="variable">totalCuenta</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Total de la cuenta:"</span>));
+<span class="etiqueta">let</span> <span class="variable">porcentajePropina</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Porcentaje de propina:"</span>));
+<span class="etiqueta">let</span> <span class="variable">numPersonas</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Número de personas:"</span>));
 
-<span class="comentario">// Variables para temperatura y resultado</span>
-<span class="etiqueta">let</span> <span class="variable">temperatura</span>, <span class="variable">resultado</span>;
+<span class="comentario">// Calcular propina y totales</span>
+<span class="etiqueta">let</span> <span class="variable">propina</span> = <span class="variable">totalCuenta</span> * (<span class="variable">porcentajePropina</span> / 100);
+<span class="etiqueta">let</span> <span class="variable">totalConPropina</span> = <span class="variable">totalCuenta</span> + <span class="variable">propina</span>;
+<span class="etiqueta">let</span> <span class="variable">porPersona</span> = <span class="variable">totalConPropina</span> / <span class="variable">numPersonas</span>;
 
-<span class="comentario">// Procesar según opción</span>
-<span class="etiqueta">if</span> (<span class="variable">opcion</span> === <span class="string">"1"</span>) {
-    <span class="comentario">// Celsius a Fahrenheit</span>
-    <span class="variable">temperatura</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Temperatura en Celsius:"</span>));
-    <span class="variable">resultado</span> = (<span class="variable">temperatura</span> * 9/5) + 32;
-    <span class="funcion">alert</span>(<span class="variable">temperatura</span> + <span class="string">"°C = "</span> + 
-          <span class="variable">resultado</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"°F"</span>);
-    
-} <span class="etiqueta">else if</span> (<span class="variable">opcion</span> === <span class="string">"2"</span>) {
-    <span class="comentario">// Fahrenheit a Celsius</span>
-    <span class="variable">temperatura</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Temperatura en Fahrenheit:"</span>));
-    <span class="variable">resultado</span> = (<span class="variable">temperatura</span> - 32) * 5/9;
-    <span class="funcion">alert</span>(<span class="variable">temperatura</span> + <span class="string">"°F = "</span> + 
-          <span class="variable">resultado</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"°C"</span>);
-    
-} <span class="etiqueta">else</span> {
-    <span class="comentario">// Opción inválida</span>
-    <span class="funcion">alert</span>(<span class="string">"Opción inválida. Debes elegir 1 o 2."</span>);
-}
+<span class="comentario">// Mostrar resultados</span>
+<span class="funcion">alert</span>(<span class="string">"Resumen de la cuenta:\n"</span> +
+      <span class="string">"Cuenta: $"</span> + <span class="variable">totalCuenta</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
+      <span class="string">"Propina ("</span> + <span class="variable">porcentajePropina</span> + <span class="string">"%): $"</span> + <span class="variable">propina</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
+      <span class="string">"Total: $"</span> + <span class="variable">totalConPropina</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
+      <span class="string">"Por persona: $"</span> + <span class="variable">porPersona</span>.<span class="funcion">toFixed</span>(2));
             </div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa toFixed(2) para mostrar solo 2 decimales. Nota que comparamos opcion con strings ("1", "2") porque prompt() retorna strings.
+                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa toFixed(2) para mostrar solo 2 decimales. Observa cómo se usa concatenación con \n para crear saltos de línea.
             </div>
 
             <h2>Resultado Visual</h2>
-            <div class="vista-previa" style="background: #f5f5f5; padding: 20px; border-radius: 8px; font-family: monospace;">
+            <div class="vista-previa">
                 <strong>Primer prompt:</strong><br>
-                [input] ¿Qué conversión deseas?<br>
-                1 = Celsius a Fahrenheit<br>
-                2 = Fahrenheit a Celsius<br>
-                > 1<br><br>
+                [input] Total de la cuenta: 100<br><br>
                 <strong>Segundo prompt:</strong><br>
-                [input] Temperatura en Celsius:<br>
-                > 25<br><br>
-                <strong>Alert con resultado:</strong>
-                <div style="background: white; border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 4px;">
-                    25°C = 77.00°F
+                [input] Porcentaje de propina: 15<br><br>
+                <strong>Tercer prompt:</strong><br>
+                [input] Número de personas: 4<br><br>
+                <strong>Alert con resultados:</strong>
+                <div class="caja-alert">
+                    Resumen de la cuenta:<br>
+                    Cuenta: $100.00<br>
+                    Propina (15%): $15.00<br>
+                    Total: $115.00<br>
+                    Por persona: $28.75
                 </div>
             </div>
         </div>

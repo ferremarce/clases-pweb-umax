@@ -280,6 +280,47 @@ code {
     font-size: 18px;
 }
 
+.tabla-codigo {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+.tabla-codigo th,
+.tabla-codigo td {
+    padding: 14px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+}
+.tabla-codigo th {
+    background: var(--color-primario);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.tabla-codigo tr:last-child td {
+    border-bottom: none;
+}
+.tabla-codigo td code {
+    font-size: 1rem;
+    background: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.tabla-codigo tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.tabla-codigo .grupo-separador td {
+    border-bottom: 2px solid var(--color-secundario);
+    padding: 4px 20px;
+    background: transparent;
+}
+.tabla-codigo .grupo-separador td span {
+    color: var(--color-secundario);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
 .etiqueta { color: #569cd6; }
 .atributo { color: #9cdcfe; }
 .valor { color: #ce9178; }

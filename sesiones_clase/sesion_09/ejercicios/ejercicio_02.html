@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 - Conversor de Temperatura - INI04</title>
+    <title>Ejercicio 2 - Repartidor de Cuenta - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Ejercicio 2: Conversor de Temperatura</h1>
+            <h1>Ejercicio 2: Repartidor de Cuenta</h1>
             <p>Sesión 9 - JavaScript I</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -20,33 +20,30 @@
         <div class="enunciado">
             <section class="requisitos">
                 <h2>📝 Enunciado</h2>
-                <p>Crea un programa conversor de temperaturas que permita al usuario elegir la dirección de conversión. El programa debe:</p>
+                <p>Crea un programa que calcule cuánto debe pagar cada persona al dividir una cuenta de restaurante, incluyendo la propina. El programa debe:</p>
                 <ol>
-                    <li>Preguntar al usuario qué quiere hacer:
+                    <li>Solicitar el total de la cuenta usando <code>prompt()</code></li>
+                    <li>Solicitar el porcentaje de propina (ej: 10, 15, 20)</li>
+                    <li>Solicitar el número de personas para dividir la cuenta</li>
+                    <li>Calcular:
                         <ul>
-                            <li>1 = Celsius a Fahrenheit</li>
-                            <li>2 = Fahrenheit a Celsius</li>
+                            <li>Monto de la propina</li>
+                            <li>Total con propina incluida</li>
+                            <li>Total por persona</li>
                         </ul>
                     </li>
-                    <li>Si elige 1: pedir temperatura en Celsius y convertir a Fahrenheit</li>
-                    <li>Si elige 2: pedir temperatura en Fahrenheit y convertir a Celsius</li>
-                    <li>Mostrar el resultado con <code>alert()</code></li>
+                    <li>Mostrar los resultados con <code>alert()</code></li>
                 </ol>
             </section>
 
             <section class="requisitos">
                 <h2>✅ Requisitos</h2>
                 <ul>
-                    <li>Usar <code>prompt()</code> para la opción y la temperatura</li>
-                    <li>Usar <code>Number()</code> para convertir valores</li>
-                    <li>Fórmulas de conversión:
-                        <ul>
-                            <li>°F = (°C × 9/5) + 32</li>
-                            <li>°C = (°F - 32) × 5/9</li>
-                        </ul>
-                    </li>
-                    <li>Mostrar resultado con 2 decimales usando <code>toFixed(2)</code></li>
-                    <li>Manejar opción inválida con mensaje de error</li>
+                    <li>Usar <code>prompt()</code> para solicitar los datos</li>
+                    <li>Usar <code>Number()</code> para convertir strings a números</li>
+                    <li>Usar operadores aritméticos (+, *, /)</li>
+                    <li>Mostrar resultados con 2 decimales usando <code>toFixed(2)</code></li>
+                    <li>Usar <code>alert()</code> para mostrar un resumen completo</li>
                 </ul>
             </section>
 
@@ -55,9 +52,10 @@
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>Usa estructura if/else para decidir qué conversión hacer</li>
+                        <li>Propina = totalCuenta * (porcentajePropina / 100)</li>
+                        <li>Total con propina = totalCuenta + propina</li>
+                        <li>Por persona = totalConPropina / numeroPersonas</li>
                         <li>Para mostrar 2 decimales: <code>resultado.toFixed(2)</code></li>
-                        <li>Comparación: <code>opcion === "1"</code> (usar string comparisons)</li>
                     </ul>
                 </details>
             </section>
@@ -65,15 +63,21 @@
             <section class="resultado-esperado">
                 <h2>🎯 Resultado Esperado</h2>
                 <p>Al ejecutar el programa:</p>
-                <div class="vista-previa" style="font-family: monospace; background: #f5f5f5; padding: 15px; border-radius: 8px;">
-                    // Prompt: "¿Qué conversión? (1) C→F, (2) F→C"
-                    // Ingresamos: 1
+                <div class="vista-previa">
+                    // Prompt: "Total de la cuenta:"
+                    // Ingresamos: 100
                     <br><br>
-                    // Prompt: "Temperatura en Celsius:"
-                    // Ingresamos: 25
+                    // Prompt: "Porcentaje de propina:"
+                    // Ingresamos: 15
+                    <br><br>
+                    // Prompt: "Número de personas:"
+                    // Ingresamos: 4
                     <br><br>
                     // Alert:
-                    // 25°C = 77.00°F
+                    // Cuenta: $100.00
+                    // Propina (15%): $15.00
+                    // Total: $115.00
+                    // Por persona: $28.75
                 </div>
             </section>
         </div>
