@@ -258,15 +258,14 @@
 sesion_XX/
 ├── index.html              (presentación de la sesión)
 ├── index_ejercicios.html   (índice de ejercicios)
+├── guia_slides_sesion-XX.md  (guía docente)
 ├── README.md
 ├── ejercicios/
 │   ├── ejercicio_01.html
-│   ├── ejercicio_02.html
-│   └── ejercicio_03.html
+│   └── ejercicio_02.html
 ├── soluciones/
 │   ├── solucion_01.html
-│   ├── solucion_02.html
-│   └── solucion_03.html
+│   └── solucion_02.html
 ├── css/
 │   ├── estilos_slides.css
 │   └── estilos_practica.css
@@ -290,6 +289,7 @@ sesion_XX/
 - Código: `<pre><code>` con colores para sintaxis
 - Imágenes: `images/` con nombres descriptivos
 - Responsive: Probar en 768px y 480px
+- Guía docente: generar `guia_slides_sesion-XX.md` siguiendo el formato definido en `AGENTS.md#7-guías-docentes` y usando `sesion_09/guia_slides_sesion-09.md` como referencia
 
 ### Ejercicios
 - Usar siempre `css/estilos_practica.css` (NO CSS inline)
@@ -320,13 +320,27 @@ sesion_XX/
 
 ## 8. Directrices de Ejercicios
 
-### Siempre 3 ejercicios por sesión
+### Número de ejercicios por sesión
+
+| Sesiones | Ejercicios | Niveles |
+|----------|------------|---------|
+| 1 — 8 | 3 ejercicios | Básico + Intermedio + Avanzado |
+| 9 en adelante | 2 ejercicios | Básico + Intermedio |
+
+### Sesiones 1-8 (3 ejercicios)
 
 | Ejercicio | Nivel | Descripción |
 |-----------|-------|-------------|
 | ejercicio_01.html | **Básico** | Conceptos fundamentales, introducción al tema |
 | ejercicio_02.html | **Intermedio** | Aplicación de conceptos, práctica guiada |
 | ejercicio_03.html | **Avanzado** | Integración, desafíos, uso de todos los conceptos |
+
+### Sesiones 9+ (2 ejercicios)
+
+| Ejercicio | Nivel | Descripción |
+|-----------|-------|-------------|
+| ejercicio_01.html | **Básico** | Conceptos fundamentales, introducción al tema |
+| ejercicio_02.html | **Intermedio** | Aplicación de conceptos, práctica guiada |
 
 ### Estructura de cada ejercicio
 - **Enunciado:** claro y conciso
@@ -340,8 +354,8 @@ sesion_XX/
 - Nota explicativa ("UNA posible solución")
 
 ### Notas importantes
-- Los niveles (Básico/Intermedio/Avanzado) se muestran como badges en la UI usando la clase `.badge-dificultad`
-- El subagente debe crear los 3 ejercicios en orden de dificultad progresiva
+- Los niveles (Básico/Intermedio) se muestran como badges en la UI usando la clase `.badge-dificultad`
+- El subagente debe crear los ejercicios en orden de dificultad progresiva
 - Los botones "Ver Solución" solo son visibles cuando se accede desde localhost o 127.0.0.1
 
 ---
