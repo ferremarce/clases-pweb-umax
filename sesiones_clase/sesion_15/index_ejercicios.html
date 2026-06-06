@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Sesión 15 - INI04</title>
+    <link rel="stylesheet" href="css/estilos_practica.css">
+</head>
+<body>
+    <header class="header-ejercicios">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Sesión 15: Proyecto Final I - Planificación y Maquetación</h1>
+            <p>Ejercicios de Práctica</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <section class="instrucciones">
+            <h2>Instrucciones Generales</h2>
+            <div class="tarjeta">
+                <p>En esta sesión iniciarás la planificación y maquetación de tu proyecto final. Trabajarás en equipo para definir la estructura, diseñar wireframes y comenzar la implementación con HTML semántico y Bootstrap Grid.</p>
+                <p><strong>Duración:</strong> 2.5 horas</p>
+                <p><strong>Nota:</strong> Todos los integrantes del grupo deben contribuir al repositorio Git.</p>
+            </div>
+        </section>
+
+        <section class="ejercicios-lista">
+            <h2>Ejercicios</h2>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">01</div>
+                <div class="ejercicio-contenido">
+                    <h3>Wireframe y Git Init</h3>
+                    <span class="badge-dificultad">En Clase</span>
+                    <p>Crea el wireframe de la página principal del proyecto, define la estructura de carpetas, inicializa el repositorio Git y realiza el primer commit grupal.</p>
+                    <a href="ejercicios/ejercicio_01.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_01.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+
+            <div class="tarjeta-ejercicio">
+                <div class="ejercicio-numero">02</div>
+                <div class="ejercicio-contenido">
+                    <h3>Maquetación con Bootstrap Grid</h3>
+                    <span class="badge-dificultad">Desafío</span>
+                    <p>Maqueta la página principal del proyecto usando HTML semántico y Bootstrap Grid completamente responsivo. Publica los cambios en GitHub.</p>
+                    <a href="ejercicios/ejercicio_02.html" class="btn-ejercicio">Ver Enunciado</a>
+                    <a href="soluciones/solucion_02.html" class="btn-ejercicio btn-secundario btn-solucion" style="display:none;">Ver Solución</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="recursos">
+            <h2>Recursos de Apoyo</h2>
+            <div class="tarjeta">
+                <h3>Documentación recomendada:</h3>
+                <ul>
+                    <li><a href="https://git-scm.com/doc" target="_blank">Git - Documentación oficial</a></li>
+                    <li><a href="https://getbootstrap.com/docs/5.3/layout/grid/" target="_blank">Bootstrap Docs - Grid</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure" target="_blank">MDN - Estructura de sitio web</a></li>
+                    <li><a href="https://docs.github.com/es/pages" target="_blank">GitHub Pages</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        (function() {
+            const allowedHosts = ['127.0.0.1', 'localhost', ''];
+            const currentHost = window.location.hostname;
+            const isLocal = allowedHosts.includes(currentHost) || window.location.protocol === 'file:';
+
+            if (isLocal) {
+                const buttons = document.querySelectorAll('.btn-solucion');
+                buttons.forEach(btn => btn.style.display = 'inline-block');
+            }
+        })();
+    </script>
+</body>
+</html>

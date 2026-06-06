@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 15: Proyecto Final I - Planificación y Maquetación - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 15: Proyecto Final I</h1>
+            <div class="subtitulo">Planificación y Maquetación | Unidad VI</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>Proyecto Final I</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Planificación y Maquetación</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Seleccionar un proyecto web viable para el curso</li>
+                <li>Crear wireframes y mapa de sitio del proyecto</li>
+                <li>Inicializar un repositorio Git y conectar con GitHub</li>
+                <li>Maquetar la estructura HTML semántica del proyecto</li>
+                <li>Aplicar Bootstrap Grid para el layout responsivo</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>Repaso:</strong> En sesiones anteriores aprendimos HTML semántico, CSS responsivo, JavaScript (variables, funciones, DOM, eventos, localStorage) y Bootstrap (Grid y componentes).
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Qué es un Proyecto Web</h2>
+            <div class="tarjeta">
+                <p>Un <strong>proyecto web</strong> integra todos los conocimientos del curso en un sitio funcional.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li><strong>HTML semántico:</strong> estructura clara y accesible</li>
+                    <li><strong>CSS + Bootstrap:</strong> diseño atractivo y responsivo</li>
+                    <li><strong>JavaScript:</strong> interactividad y funcionalidades dinámicas</li>
+                    <li><strong>Git/GitHub:</strong> control de versiones y publicación</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Opciones de Proyecto</h2>
+            <div class="tarjeta">
+                <div class="dos-columnas" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="columna">
+                        <h3>Portafolio Personal</h3>
+                        <p>Galería de proyectos, formulario de contacto, filtros con JS.</p>
+                        <br>
+                        <h3>Blog / Guía de Viajes</h3>
+                        <p>Tarjetas de destinos, tabla de precios, mapa interactivo.</p>
+                    </div>
+                    <div class="columna">
+                        <h3>Tienda / Catálogo</h3>
+                        <p>Productos, carrito con localStorage, checkout simulado.</p>
+                        <br>
+                        <h3>Comunidad / Club</h3>
+                        <p>Noticias, galería, registro con validación, modales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nota">
+                <strong>Importante:</strong> El proyecto se desarrolla en grupos de 3 a 5 integrantes. Todos deben contribuir al repositorio Git.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Metodología de Trabajo</h2>
+            <div class="tarjeta">
+                <ol class="lista-grande">
+                    <li><strong>Formar grupos</strong> (3-5 personas) y elegir proyecto</li>
+                    <li><strong>Diseñar</strong> wireframes y mapa de sitio</li>
+                    <li><strong>Maquetar</strong> estructura HTML + Bootstrap</li>
+                    <li><strong>Agregar interactividad</strong> con JavaScript (sesión 16)</li>
+                    <li><strong>Publicar</strong> en GitHub Pages</li>
+                    <li><strong>Presentar</strong> el proyecto final</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Wireframes</h2>
+            <div class="tarjeta">
+                <p>Un <strong>wireframe</strong> es un esquema visual de la estructura de una página web.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>Define la disposición de los elementos</li>
+                    <li>No incluye colores ni estilos</li>
+                    <li>Se enfoca en la funcionalidad y jerarquía</li>
+                    <li>Herramientas: papel y lápiz, Figma, Balsamiq, draw.io</li>
+                </ul>
+            </div>
+            <div class="ejemplo">
+                <strong>Actividad:</strong> Dibujar el wireframe de la página principal del proyecto en papel o herramienta digital.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>Mapa de Sitio</h2>
+            <div class="tarjeta">
+                <p>El <strong>mapa de sitio</strong> muestra la estructura de navegación del proyecto.</p>
+                <br>
+                <pre><code>mi-proyecto/
+├── index.html          (Inicio)
+├── acerca.html         (Acerca de)
+├── servicios.html      (Servicios / Productos)
+├── contacto.html       (Formulario de contacto)
+└── proyecto.html       (Detalle de proyecto)</code></pre>
+            </div>
+            <div class="nota">
+                <strong>Consejo:</strong> Limitar a 4-6 páginas para un proyecto realista en el tiempo disponible.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Estructura de Carpetas</h2>
+            <div class="tarjeta">
+                <pre><code>mi-proyecto/
+├── index.html
+├── pages/
+│   ├── acerca.html
+│   ├── servicios.html
+│   └── contacto.html
+├── css/
+│   ├── style.css
+│   └── bootstrap.min.css (o usar CDN)
+├── js/
+│   └── script.js
+└── images/
+    ├── logo.png
+    └── foto1.jpg</code></pre>
+            </div>
+            <div class="nota">
+                <strong>Organización:</strong> Mantener los archivos ordenados desde el inicio para facilitar el trabajo en equipo.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Introducción a Git</h2>
+            <div class="tarjeta">
+                <p><strong>Git</strong> es un sistema de control de versiones que permite:</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>Llevar un historial de cambios del código</li>
+                    <li>Trabajar en equipo sin conflictos</li>
+                    <li>Revertir cambios si algo falla</li>
+                    <li>Publicar el proyecto en GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Comandos Básicos de Git</h2>
+            <div class="tarjeta">
+                <pre><code># Configurar identidad
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+
+# Inicializar repositorio
+git init
+
+# Ver estado
+git status
+
+# Agregar archivos
+git add .
+git add index.html
+
+# Hacer commit
+git commit -m "feat: estructura inicial del proyecto"</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>GitHub: Crear Repositorio</h2>
+            <div class="tarjeta">
+                <ol class="lista-grande">
+                    <li>Crear cuenta en <a href="https://github.com" target="_blank">github.com</a></li>
+                    <li>Click en "New repository"</li>
+                    <li>Nombre del repo: <code>mi-proyecto-web</code></li>
+                    <li>No inicializar con README</li>
+                    <li>Conectar repositorio local con GitHub:</li>
+                </ol>
+                <br>
+                <pre><code>git remote add origin https://github.com/usuario/mi-proyecto-web.git
+git branch -M main
+git push -u origin main</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Maquetación con HTML Semántico</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi Proyecto&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;nav&gt;
+            &lt;!-- Barra de navegación --&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;!-- Contenido principal --&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;!-- Pie de página --&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Maquetación con Bootstrap Grid</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Layout típico de proyecto --&gt;
+&lt;div class="container"&gt;
+    &lt;!-- Hero / Banner principal --&gt;
+    &lt;div class="row py-5"&gt;
+        &lt;div class="col-lg-8"&gt;
+            &lt;h1&gt;Título Principal&lt;/h1&gt;
+            &lt;p&gt;Descripción del proyecto&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col-lg-4"&gt;
+            &lt;img src="images/hero.jpg" class="img-fluid" alt="Hero"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Cards de contenido --&gt;
+    &lt;div class="row row-cols-1 row-cols-md-3 g-4"&gt;
+        &lt;div class="col"&gt;
+            &lt;div class="card h-100"&gt;
+                &lt;div class="card-body"&gt;
+                    &lt;h5 class="card-title"&gt;Título&lt;/h5&gt;
+                    &lt;p class="card-text"&gt;Contenido...&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Buenas Prácticas de Maquetación</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Mobile-first:</strong> diseñar primero para móvil, luego ampliar</li>
+                    <li><strong>HTML semántico:</strong> header, nav, main, section, footer</li>
+                    <li><strong>Alt en imágenes:</strong> siempre descriptivo y accesible</li>
+                    <li><strong>CSS externo:</strong> separar estilos del HTML</li>
+                    <li><strong>Comentarios en equipo:</strong> coordinar cambios con Git</li>
+                    <li><strong>Commits frecuentes:</strong> un cambio lógico por commit</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Proyecto:</strong> integrar HTML, CSS, JS y Bootstrap</li>
+                    <li><strong>Wireframes:</strong> planificar la estructura visual</li>
+                    <li><strong>Git:</strong> control de versiones para trabajo en equipo</li>
+                    <li><strong>GitHub:</strong> repositorio remoto y colaboración</li>
+                    <li><strong>Maquetación:</strong> HTML semántico + Bootstrap Grid</li>
+                    <li><strong>Organización:</strong> estructura de carpetas clara</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Temas Próximos</h2>
+            <div class="tarjeta">
+                <h3>Sesión 16: Proyecto Final II - Interactividad y Publicación</h3>
+                <ul class="lista-grande">
+                    <li>Agregar interactividad con JavaScript</li>
+                    <li>localStorage y persistencia de datos</li>
+                    <li>Validación de formularios</li>
+                    <li>Publicación con GitHub Pages</li>
+                    <li>Presentación del proyecto final</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>Tarea:</strong> Avanzar la maquetación HTML + Bootstrap del proyecto. Tener wireframes aprobados por el docente.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio en Clase:</h3>
+                <p>Crear wireframe de la página principal, estructura de carpetas del proyecto e inicializar repositorio Git con primer commit.</p>
+                <br>
+                <h3>Ejercicio Desafío (Entregar):</h3>
+                <p>Maquetar la página principal del proyecto con HTML semántico y Bootstrap Grid completamente responsivo.</p>
+            </div>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
+        </section>
+
+        <section class="diapositiva" id="slide-18">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

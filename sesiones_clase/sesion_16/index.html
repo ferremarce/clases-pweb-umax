@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesión 16: Proyecto Final II - Interactividad y Publicación - INI04</title>
+    <link rel="stylesheet" href="css/estilos_slides.css">
+</head>
+<body>
+    <header class="presentacion-header">
+        <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
+        <div class="titulos">
+            <h1>Sesión 16: Proyecto Final II</h1>
+            <div class="subtitulo">Interactividad y Publicación | Unidad VI</div>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira
+            <div class="enlaces-plan">
+                <a href="../../plan_clase/plan_de_clase_general.html" target="_blank">Plan General</a>
+                <a href="../../plan_clase/plan_de_clase_detallado.html" target="_blank">Plan Detallado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="diapositiva" id="slide-01">
+            <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
+            <h2>Proyecto Final II</h2>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Interactividad y Publicación</p>
+        </section>
+
+        <section class="diapositiva" id="slide-02">
+            <h2>Objetivos de la Sesión</h2>
+            <p>Al finalizar esta sesión, serás capaz de:</p>
+            <ul class="objetivos-lista">
+                <li>Agregar interactividad al proyecto con JavaScript</li>
+                <li>Implementar localStorage para persistir datos del usuario</li>
+                <li>Validar formularios con JavaScript y Bootstrap</li>
+                <li>Publicar el proyecto en GitHub Pages</li>
+                <li>Preparar la presentación final del proyecto</li>
+            </ul>
+            <div class="tarjeta">
+                <strong>Repaso:</strong> En la sesión anterior definimos el proyecto, creamos wireframes, inicializamos Git y maquetamos con HTML + Bootstrap.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-03">
+            <h2>Revisión del Proyecto</h2>
+            <div class="tarjeta">
+                <p>Antes de agregar interactividad, verificar que la maquetación esté completa:</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>HTML semántico en todas las páginas</li>
+                    <li>Bootstrap Grid responsivo implementado</li>
+                    <li>Navegación funcional entre páginas</li>
+                    <li>Imágenes con alt descriptivo</li>
+                    <li>CSS personalizado para los colores institucionales</li>
+                    <li>Repositorio Git con commits de cada integrante</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Agregar Interactividad con JS</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Eventos:</strong> click, submit, mouseover, keyup</li>
+                    <li><strong>Manipulación del DOM:</strong> mostrar/ocultar, cambiar contenido</li>
+                    <li><strong>Validación:</strong> formularios de contacto y registro</li>
+                    <li><strong>Persistencia:</strong> guardar datos con localStorage</li>
+                    <li><strong>Filtros:</strong> buscar y filtrar contenido dinámicamente</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
+            <h2>Ejemplo: Menú Interactivo</h2>
+            <div class="tarjeta">
+                <pre><code>// Resaltar página activa en el navbar
+document.addEventListener("DOMContentLoaded", () => {
+    let currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-06">
+            <h2>Ejemplo: Modal de Confirmación</h2>
+            <div class="tarjeta">
+                <pre><code>&lt;!-- Botón para abrir modal --&gt;
+&lt;button class="btn btn-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#confirmarModal"&gt;
+    Eliminar
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="confirmarModal" tabindex="-1"&gt;
+    &lt;div class="modal-dialog"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;div class="modal-header"&gt;
+                &lt;h5 class="modal-title"&gt;Confirmar&lt;/h5&gt;
+                &lt;button type="button" class="btn-close"
+                        data-bs-dismiss="modal"&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="modal-body"&gt;
+                Estas seguro de eliminar este elemento?
+            &lt;/div&gt;
+            &lt;div class="modal-footer"&gt;
+                &lt;button class="btn btn-secondary"
+                        data-bs-dismiss="modal"&gt;Cancelar&lt;/button&gt;
+                &lt;button class="btn btn-danger"
+                        id="confirmarEliminar"&gt;Eliminar&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-07">
+            <h2>localStorage en el Proyecto</h2>
+            <div class="tarjeta">
+                <pre><code>// Guardar preferencias del usuario
+function guardarPreferencia(clave, valor) {
+    localStorage.setItem(clave, JSON.stringify(valor));
+}
+
+// Recuperar preferencias
+function obtenerPreferencia(clave) {
+    let dato = localStorage.getItem(clave);
+    return dato ? JSON.parse(dato) : null;
+}
+
+// Ejemplo: tema oscuro
+let temaOscuro = obtenerPreferencia("temaOscuro");
+if (temaOscuro) {
+    document.body.classList.add("modo-oscuro");
+}
+
+// Alternar tema
+document.getElementById("btnTema").addEventListener("click", () => {
+    document.body.classList.toggle("modo-oscuro");
+    let activo = document.body.classList.contains("modo-oscuro");
+    guardarPreferencia("temaOscuro", activo);
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-08">
+            <h2>Validación de Formularios</h2>
+            <div class="tarjeta">
+                <pre><code>// Validación personalizada
+let form = document.getElementById("formContacto");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let errores = [];
+
+    if (!nombre) {
+        errores.push("El nombre es obligatorio");
+    }
+
+    let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+        errores.push("Email inválido");
+    }
+
+    if (errores.length > 0) {
+        alert(errores.join("\n"));
+    } else {
+        // Guardar en localStorage
+        let contactos = JSON.parse(localStorage.getItem("contactos")) || [];
+        contactos.push({ nombre, email, fecha: new Date() });
+        localStorage.setItem("contactos", JSON.stringify(contactos));
+        alert("Mensaje enviado correctamente");
+        form.reset();
+    }
+});</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-09">
+            <h2>Publicación con GitHub Pages</h2>
+            <div class="tarjeta">
+                <p><strong>GitHub Pages</strong> permite publicar sitios web estáticos gratuitamente.</p>
+                <br>
+                <ul class="lista-grande">
+                    <li>Ideal para proyectos HTML/CSS/JS</li>
+                    <li>Se actualiza automáticamente al hacer push</li>
+                    <li>URL: <code>https://usuario.github.io/mi-proyecto</code></li>
+                    <li>Soporta dominio personalizado</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-10">
+            <h2>Configurar GitHub Pages</h2>
+            <div class="tarjeta">
+                <ol class="lista-grande">
+                    <li>Ir al repositorio en GitHub</li>
+                    <li>Settings → Pages</li>
+                    <li>Source: "Deploy from a branch"</li>
+                    <li>Branch: <code>main</code> / <code>(root)</code></li>
+                    <li>Click "Save"</li>
+                    <li>Esperar 1-2 minutos</li>
+                    <li>Visitar: <code>https://usuario.github.io/mi-proyecto</code></li>
+                </ol>
+            </div>
+            <div class="nota">
+                <strong>Importante:</strong> El archivo <code>index.html</code> debe estar en la raíz del repositorio. Las rutas deben ser relativas.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-11">
+            <h2>Verificar el Sitio Publicado</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li>Probar todas las páginas y enlaces</li>
+                    <li>Verificar que imágenes y CSS se carguen</li>
+                    <li>Comprobar funcionalidad en móvil y desktop</li>
+                    <li>Corregir rutas absolutas que no funcionen</li>
+                    <li>Actualizar el repositorio con <code>git push</code></li>
+                </ul>
+            </div>
+            <div class="ejemplo">
+                <strong>Recuerda:</strong> Usar rutas relativas para todos los recursos (../css/style.css en lugar de /css/style.css).
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-12">
+            <h2>Preparar la Presentación</h2>
+            <div class="tarjeta">
+                <p>Cada grupo presentará su proyecto (5-7 minutos).</p>
+                <br>
+                <ul class="lista-grande">
+                    <li><strong>Portada:</strong> nombre del proyecto e integrantes</li>
+                    <li><strong>Demostración:</strong> mostrar el sitio funcionando</li>
+                    <li><strong>Código:</strong> explicar una parte importante</li>
+                    <li><strong>Git:</strong> mostrar commits y contribuciones</li>
+                    <li><strong>Lecciones:</strong> qué aprendieron y dificultades</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-13">
+            <h2>Criterios de Evaluación</h2>
+            <div class="tarjeta">
+                <table class="tabla-codigo">
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Peso</th>
+                    </tr>
+                    <tr><td>HTML semántico y accesible</td><td>20%</td></tr>
+                    <tr><td>CSS + Bootstrap responsivo</td><td>20%</td></tr>
+                    <tr><td>JavaScript e interactividad</td><td>20%</td></tr>
+                    <tr><td>Uso de Git y GitHub</td><td>15%</td></tr>
+                    <tr><td>Publicación en GitHub Pages</td><td>10%</td></tr>
+                    <tr><td>Presentación y trabajo en equipo</td><td>15%</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
+            <h2>Resumen de la Sesión</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Interactividad:</strong> eventos, DOM, validación</li>
+                    <li><strong>localStorage:</strong> persistir preferencias y datos</li>
+                    <li><strong>GitHub Pages:</strong> publicar el sitio web</li>
+                    <li><strong>Presentación:</strong> demostrar el proyecto final</li>
+                    <li><strong>Evaluación:</strong> rúbrica con criterios claros</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-15">
+            <h2>Próximos Pasos</h2>
+            <div class="tarjeta">
+                <ul class="lista-grande">
+                    <li><strong>Completar</strong> todas las funcionalidades JS del proyecto</li>
+                    <li><strong>Publicar</strong> en GitHub Pages y verificar</li>
+                    <li><strong>Preparar</strong> presentación grupal (5-7 min)</li>
+                    <li><strong>Fecha de entrega:</strong> próxima sesión</li>
+                </ul>
+            </div>
+            <div class="nota">
+                <strong>Recordatorio:</strong> Todos los integrantes deben tener commits en el repositorio. El proyecto se evalúa en su conjunto.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-16">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio en Clase:</h3>
+                <p>Implementar 2 funcionalidades JS en el proyecto (eventos, DOM, localStorage) y publicar en GitHub Pages.</p>
+                <br>
+                <h3>Ejercicio Desafío (Entregar):</h3>
+                <p>Proyecto final completo y funcional con todas las páginas, interactividad JS, persistencia y presentación.</p>
+            </div>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
+            <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
