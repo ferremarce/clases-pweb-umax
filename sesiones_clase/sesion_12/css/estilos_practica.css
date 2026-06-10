@@ -490,6 +490,12 @@ body.solucion-body {
     min-height: 300px;
 }
 
+/* Clase para tareas completadas */
+.completada {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
 /* Elementos específicos de soluciones */
 .solucion .codigo-fuente {
     background: #1e1e1e;

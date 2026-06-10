@@ -11,7 +11,7 @@
         <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
         <div class="titulos">
             <h1>Sesión 12: JavaScript IV</h1>
-            <div class="subtitulo">DOM y Almacenamiento | Unidad IV</div>
+            <div class="subtitulo">Manipulación del DOM | Unidad IV</div>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira
             <div class="enlaces-plan">
@@ -36,8 +36,7 @@
                 <li>Manejar eventos del DOM con addEventListener</li>
                 <li>Modificar contenido, estilos y atributos desde JavaScript</li>
                 <li>Crear y eliminar elementos dinámicamente</li>
-                <li>Persistir datos con localStorage y sessionStorage</li>
-                <li>Validar formularios con JavaScript</li>
+                <li>Agregar y quitar clases CSS con classList</li>
             </ul>
             <div class="tarjeta">
                 <strong>Repaso:</strong> En la sesión anterior aprendimos funciones, parámetros, scope y callbacks.
@@ -258,141 +257,18 @@ elemento.dataset.info = "valor";</code></pre>
         </section>
 
         <section class="diapositiva" id="slide-13">
-            <h2>localStorage: Introducción</h2>
+            <h2>Ejercicios de Práctica</h2>
             <div class="tarjeta">
-                <p><strong>localStorage</strong> permite guardar datos en el navegador de forma persistente.</p>
+                <h3>Ejercicio en Clase:</h3>
+                <p>Calculadora Visual con DOM — inputs numéricos, botones de operación y resultado en pantalla usando addEventListener.</p>
                 <br>
-                <ul class="lista-grande">
-                    <li>Persiste entre sesiones (al cerrar y abrir el navegador)</li>
-                    <li>Hasta 5MB de datos por dominio</li>
-                    <li>Solo guarda strings</li>
-                    <li>Accesible desde cualquier pestaña del mismo dominio</li>
-                </ul>
+                <h3>Ejercicio Desafío (Entregar):</h3>
+                <p>Gestor de Tareas v4 — interfaz visual con input, lista dinámica y botones de completar/eliminar usando createElement y eventos.</p>
             </div>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
         </section>
 
         <section class="diapositiva" id="slide-14">
-            <h2>localStorage: Guardar y Recuperar</h2>
-            <div class="tarjeta">
-                <pre><code>// Guardar un valor
-localStorage.setItem("nombre", "Juan");
-
-// Guardar número (se convierte a string)
-localStorage.setItem("edad", "30");
-
-// Obtener valor
-let nombre = localStorage.getItem("nombre");
-
-// Verificar si existe
-if (localStorage.getItem("nombre")) {
-    console.log("El usuario es: " + nombre);
-}
-
-// Eliminar un ítem
-localStorage.removeItem("nombre");
-
-// Limpiar todo
-localStorage.clear();</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-15">
-            <h2>JSON en localStorage</h2>
-            <div class="tarjeta">
-                <p>localStorage solo guarda strings. Usa JSON para objetos y arrays.</p>
-                <br>
-                <pre><code>// Guardar objeto
-let usuario = { nombre: "Juan", edad: 30 };
-localStorage.setItem("usuario", JSON.stringify(usuario));
-
-// Recuperar objeto
-let usuarioGuardado = JSON.parse(
-    localStorage.getItem("usuario")
-);
-
-// Guardar array de tareas
-let tareas = ["Estudiar", "Trabajar"];
-localStorage.setItem("tareas", JSON.stringify(tareas));</code></pre>
-            </div>
-            <div class="nota">
-                <strong>Importante:</strong> Siempre usa <code>JSON.stringify()</code> al guardar y <code>JSON.parse()</code> al recuperar objetos o arrays.
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-16">
-            <h2>sessionStorage</h2>
-            <div class="tarjeta">
-                <p><strong>sessionStorage</strong> es similar a localStorage pero:</p>
-                <br>
-                <ul class="lista-grande">
-                    <li>Los datos se eliminan al cerrar la pestaña</li>
-                    <li>No se comparte entre pestañas</li>
-                    <li>Mismos métodos: setItem, getItem, removeItem, clear</li>
-                </ul>
-                <br>
-                <pre><code>// Guardar dato temporal
-sessionStorage.setItem("temporal", "dato");
-
-// Recuperar
-let dato = sessionStorage.getItem("temporal");</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-17">
-            <h2>Validación de Formularios</h2>
-            <div class="tarjeta">
-                <pre><code>// Validar email con expresión regular
-function validarEmail(email) {
-    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-// Validar campo requerido
-function validarRequerido(valor) {
-    return valor.trim() !== "";
-}
-
-// Validar longitud
-function validarLongitud(valor, min, max) {
-    return valor.length >= min && valor.length <= max;
-}
-
-// Usar en evento submit
-form.addEventListener("submit", (e) => {
-    if (!validarEmail(emailInput.value)) {
-        e.preventDefault();
-        alert("Email inválido");
-    }
-});</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-18">
-            <h2>Ejemplo: To-Do List con localStorage</h2>
-            <div class="tarjeta">
-                <pre><code>let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
-
-function agregarTarea(texto) {
-    tareas.push({ texto, completada: false });
-    localStorage.setItem("tareas", JSON.stringify(tareas));
-    renderizarTareas();
-}
-
-function eliminarTarea(indice) {
-    tareas.splice(indice, 1);
-    localStorage.setItem("tareas", JSON.stringify(tareas));
-    renderizarTareas();
-}
-
-function toggleTarea(indice) {
-    tareas[indice].completada = !tareas[indice].completada;
-    localStorage.setItem("tareas", JSON.stringify(tareas));
-    renderizarTareas();
-}</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-19">
             <h2>Resumen de la Sesión</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
@@ -401,14 +277,11 @@ function toggleTarea(indice) {
                     <li><strong>Eventos:</strong> addEventListener para interactividad</li>
                     <li><strong>Modificar:</strong> textContent, style, classList</li>
                     <li><strong>Crear/Eliminar:</strong> createElement, appendChild, remove</li>
-                    <li><strong>localStorage:</strong> persistencia de datos</li>
-                    <li><strong>JSON:</strong> stringify y parse para objetos</li>
-                    <li><strong>Validación:</strong> formularios con expresiones regulares</li>
                 </ul>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-20">
+        <section class="diapositiva" id="slide-15">
             <h2>Temas Próximos</h2>
             <div class="tarjeta">
                 <h3>Sesión 13: Bootstrap I - Fundamentos y Grid</h3>
@@ -421,23 +294,11 @@ function toggleTarea(indice) {
                 </ul>
             </div>
             <div class="nota">
-                <strong>Preparación:</strong> Repasar conceptos de DOM y localStorage.
+                <strong>Preparación:</strong> Repasar conceptos de DOM para la próxima sesión.
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-21">
-            <h2>Ejercicios de Práctica</h2>
-            <div class="tarjeta">
-                <h3>Ejercicio en Clase:</h3>
-                <p>Contador interactivo con botones de incremento, decremento y reinicio usando addEventListener.</p>
-                <br>
-                <h3>Ejercicio Desafío (Entregar):</h3>
-                <p>Lista de tareas con localStorage: agregar, eliminar, marcar como completada y persistir datos.</p>
-            </div>
-            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
-        </section>
-
-        <section class="diapositiva" id="slide-22">
+        <section class="diapositiva" id="slide-16">
             <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
     </main>

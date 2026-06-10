@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución Ejercicio 1 - Lista de Tareas Simple - INI04</title>
+    <title>Solución Ejercicio 1 - Calculadora Visual con DOM - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 1 - Lista de Tareas Simple</h1>
+            <h1>Solución: Ejercicio 1 - Calculadora Visual con DOM</h1>
             <p>Sesión 12 - JavaScript IV</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -22,72 +22,54 @@
             
             <div class="codigo">
 <span class="comentario">&lt;!-- HTML --&gt;</span>
-<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"app"</span><span class="etiqueta">&gt;</span>
-    <span class="etiqueta">&lt;h2&gt;</span>Lista de Tareas<span class="etiqueta">&lt;/h2&gt;</span>
-    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"tareaInput"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Nueva tarea..."</span><span class="etiqueta">&gt;</span>
-    <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"agregarBtn"</span><span class="etiqueta">&gt;</span>Agregar<span class="etiqueta">&lt;/button&gt;</span>
-    <span class="etiqueta">&lt;ul</span> <span class="propiedad">id</span>=<span class="valor">"lista"</span><span class="etiqueta">&gt;</span><span class="etiqueta">&lt;/ul&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"calculadora"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Calculadora<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"num1"</span> <span class="propiedad">type</span>=<span class="valor">"number"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Número 1"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"num2"</span> <span class="propiedad">type</span>=<span class="valor">"number"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Número 2"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"botones"</span><span class="etiqueta">&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnSumar"</span><span class="etiqueta">&gt;</span>+<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnRestar"</span><span class="etiqueta">&gt;</span>-<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnMultiplicar"</span><span class="etiqueta">&gt;</span>×<span class="etiqueta">&lt;/button&gt;</span>
+        <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"btnDividir"</span><span class="etiqueta">&gt;</span>÷<span class="etiqueta">&lt;/button&gt;</span>
+    <span class="etiqueta">&lt;/div&gt;</span>
+    <span class="etiqueta">&lt;div</span> <span class="propiedad">id</span>=<span class="valor">"resultado"</span><span class="etiqueta">&gt;</span>Resultado: -<span class="etiqueta">&lt;/div&gt;</span>
 <span class="etiqueta">&lt;/div&gt;</span>
 
 <span class="comentario">&lt;!-- JavaScript --&gt;</span>
 <span class="etiqueta">&lt;script&gt;</span>
-<span class="comentario">// Array de tareas</span>
-<span class="etiqueta">let</span> tareas = [];
+<span class="comentario">// Funciones de operación (reutilizadas de sesión 11)</span>
+<span class="etiqueta">const</span> sumar = (a, b) => a + b;
+<span class="etiqueta">const</span> restar = (a, b) => a - b;
+<span class="etiqueta">const</span> multiplicar = (a, b) => a * b;
 
-<span class="comentario">// Cargar tareas al iniciar</span>
-<span class="etiqueta">function</span> <span class="funcion">cargarTareas</span>() {
-    <span class="etiqueta">let</span> guardadas = localStorage.<span class="funcion">getItem</span>(<span class="string">"misTareas"</span>);
-    <span class="etiqueta">if</span> (guardadas) {
-        tareas = JSON.<span class="funcion">parse</span>(guardadas);
-    }
-    <span class="funcion">renderizar</span>();
+<span class="etiqueta">function</span> <span class="funcion">dividir</span>(a, b) {
+    <span class="etiqueta">if</span> (b === 0) <span class="etiqueta">return</span> <span class="string">"Error: división por cero"</span>;
+    <span class="etiqueta">return</span> a / b;
 }
 
-<span class="comentario">// Guardar en localStorage</span>
-<span class="etiqueta">function</span> <span class="funcion">guardarTareas</span>() {
-    localStorage.<span class="funcion">setItem</span>(<span class="string">"misTareas"</span>, JSON.<span class="funcion">stringify</span>(tareas));
+<span class="comentario">// Seleccionar elementos del DOM</span>
+<span class="etiqueta">let</span> num1Input = document.<span class="funcion">getElementById</span>(<span class="string">"num1"</span>);
+<span class="etiqueta">let</span> num2Input = document.<span class="funcion">getElementById</span>(<span class="string">"num2"</span>);
+<span class="etiqueta">let</span> resultadoDiv = document.<span class="funcion">getElementById</span>(<span class="string">"resultado"</span>);
+
+<span class="comentario">// Función que ejecuta una operación y muestra resultado</span>
+<span class="etiqueta">function</span> <span class="funcion">calcular</span>(<span class="variable">operacion</span>) {
+    <span class="etiqueta">let</span> n1 = <span class="funcion">Number</span>(num1Input.<span class="variable">value</span>);
+    <span class="etiqueta">let</span> n2 = <span class="funcion">Number</span>(num2Input.<span class="variable">value</span>);
+    <span class="etiqueta">let</span> resultado = <span class="funcion">operacion</span>(n1, n2);
+    resultadoDiv.<span class="variable">textContent</span> = <span class="string">"Resultado: "</span> + resultado;
 }
 
-<span class="comentario">// Renderizar la lista</span>
-<span class="etiqueta">function</span> <span class="funcion">renderizar</span>() {
-    <span class="etiqueta">let</span> lista = document.<span class="funcion">getElementById</span>(<span class="string">"lista"</span>);
-    lista.<span class="variable">innerHTML</span> = <span class="string">""</span>;
-    
-    tareas.<span class="funcion">forEach</span>((tarea, indice) => {
-        <span class="etiqueta">let</span> li = document.<span class="funcion">createElement</span>(<span class="string">"li"</span>);
-        li.<span class="variable">textContent</span> = tarea;
-        lista.<span class="funcion">appendChild</span>(li);
-    });
-}
-
-<span class="comentario">// Agregar tarea</span>
-<span class="etiqueta">function</span> <span class="funcion">agregarTarea</span>() {
-    <span class="etiqueta">let</span> input = document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>);
-    <span class="etiqueta">let</span> texto = input.<span class="variable">value</span>.<span class="funcion">trim</span>();
-    
-    <span class="etiqueta">if</span> (texto) {
-        tareas.<span class="funcion">push</span>(texto);
-        <span class="funcion">guardarTareas</span>();
-        <span class="funcion">renderizar</span>();
-        input.<span class="variable">value</span> = <span class="string">""</span>;
-    }
-}
-
-<span class="comentario">// Evento click</span>
-document.<span class="funcion">getElementById</span>(<span class="string">"agregarBtn"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, agregarTarea);
-
-<span class="comentario">// Evento Enter</span>
-document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>).<span class="funcion">addEventListener</span>(<span class="string">"keyup"</span>, (<span class="variable">e</span>) => {
-    <span class="etiqueta">if</span> (<span class="variable">e</span>.key === <span class="string">"Enter"</span>) agregarTarea();
-});
-
-<span class="comentario">// Iniciar</span>
-<span class="funcion">cargarTareas</span>();
+<span class="comentario">// Agregar eventos a los botones</span>
+document.<span class="funcion">getElementById</span>(<span class="string">"btnSumar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(sumar));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnRestar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(restar));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnMultiplicar"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(multiplicar));
+document.<span class="funcion">getElementById</span>(<span class="string">"btnDividir"</span>).<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => <span class="funcion">calcular</span>(dividir));
 <span class="etiqueta">&lt;/script&gt;</span>
             </div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> Se usa localStorage para persistir. Las tareas se guardan como JSON string y se recuperan parseando el JSON.
+                <strong>Nota:</strong> Se reutilizan las funciones de la sesión 11 (sumar, restar, multiplicar como arrow functions, dividir con validación). La función <code>calcular()</code> recibe la operación como callback. Los eventos se asignan con <code>addEventListener</code> y el resultado se muestra con <code>textContent</code>.
             </div>
         </div>
     </main>

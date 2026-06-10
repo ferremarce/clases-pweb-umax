@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1 - Lista de Tareas Simple con localStorage - INI04</title>
+    <title>Ejercicio 1 - Calculadora Visual con DOM - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Ejercicio 1: Lista de Tareas Simple con localStorage</h1>
+            <h1>Ejercicio 1: Calculadora Visual con DOM</h1>
             <p>Sesión 12 - JavaScript IV</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -19,46 +19,47 @@
     <main class="contenedor">
         <div class="enunciado">
             <section class="requisitos">
-                <h2>📝 Enunciado</h2>
-                <p>Crea una lista de tareas simple que guarde las tareas en localStorage para que persistan al recargar la página.</p>
+                <h2>Enunciado</h2>
+                <p>Crea una calculadora con interfaz visual usando HTML, CSS y JavaScript. Reutiliza las funciones de la sesión anterior pero ahora conectadas al DOM.</p>
                 <ol>
-                    <li>Input para escribir una tarea</li>
-                    <li>Botón "Agregar" para añadir la tarea</li>
-                    <li>Lista que muestre las tareas agregadas</li>
-                    <li>Al recargar la página, las tareas deben seguir ahí</li>
+                    <li>Dos campos <code>&lt;input type="number"&gt;</code> para los operandos</li>
+                    <li>Cuatro botones: Sumar, Restar, Multiplicar, Dividir</li>
+                    <li>Un <code>&lt;div&gt;</code> para mostrar el resultado</li>
+                    <li>Cada botón usa <code>addEventListener</code> para ejecutar la operación</li>
                 </ol>
             </section>
 
             <section class="requisitos">
-                <h2>✅ Requisitos</h2>
+                <h2>Requisitos</h2>
                 <ul>
-                    <li>Usar localStorage.setItem() para guardar</li>
-                    <li>Usar localStorage.getItem() para recuperar</li>
-                    <li>Guardar las tareas como array JSON</li>
-                    <li>Al cargar la página, renderizar las tareas guardadas</li>
-                    <li>Al agregar tarea, guardar en localStorage</li>
+                    <li>Usar <code>document.getElementById()</code> para seleccionar elementos</li>
+                    <li>Usar <code>addEventListener()</code> para los eventos de los botones</li>
+                    <li>Mostrar el resultado con <code>textContent</code> en el DOM</li>
+                    <li>Manejar división por cero mostrando mensaje de error</li>
+                    <li>Las funciones de operación deben estar separadas</li>
                 </ul>
             </section>
 
             <section class="pistas">
-                <h2>💡 Pistas</h2>
+                <h2>Pistas</h2>
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>let tareas = JSON.parse(localStorage.getItem("tareas")) || []</li>
-                        <li>localStorage.setItem("tareas", JSON.stringify(tareas))</li>
-                        <li>Al iniciar, verificar si hay tareas guardadas</li>
-                        <li>Crear una función renderizarTareas()</li>
+                        <li><code>let num1 = Number(document.getElementById("num1").value);</code></li>
+                        <li><code>document.getElementById("resultado").textContent = "Resultado: " + suma;</code></li>
+                        <li><code>document.getElementById("btnSumar").addEventListener("click", () => { ... });</code></li>
+                        <li>Reutiliza las funciones <code>sumar(a, b)</code>, <code>restar(a, b)</code>, etc. de la sesión 11</li>
                     </ul>
                 </details>
             </section>
 
             <section class="resultado-esperado">
-                <h2>🎯 Resultado Esperado</h2>
+                <h2>Resultado Esperado</h2>
                 <ul>
-                    <li>Agregar tarea -> aparece en la lista</li>
-                    <li>Recargar página -> las tareas siguen ahí</li>
-                    <li>Cerrar navegador y volver -> las tareas siguen ahí</li>
+                    <li>Interfaz con dos inputs y cuatro botones</li>
+                    <li>Al hacer clic en "Sumar" se muestra la suma en pantalla</li>
+                    <li>Al hacer clic en "Dividir" con 0, muestra mensaje de error</li>
+                    <li>El diseño es visualmente atractivo (usa el CSS de práctica)</li>
                 </ul>
             </section>
         </div>

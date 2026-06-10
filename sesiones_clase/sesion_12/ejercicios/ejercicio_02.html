@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 - Contador de Visitas con sessionStorage - INI04</title>
+    <title>Ejercicio 2 - Gestor de Tareas v4 con DOM - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Ejercicio 2: Contador de Visitas con sessionStorage</h1>
+            <h1>Ejercicio 2: Gestor de Tareas v4 con DOM</h1>
             <p>Sesión 12 - JavaScript IV</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -19,47 +19,50 @@
     <main class="contenedor">
         <div class="enunciado">
             <section class="requisitos">
-                <h2>📝 Enunciado</h2>
-                <p>Crea un contador de visitas que use sessionStorage para contar las visitas en la sesión actual.</p>
+                <h2>Enunciado</h2>
+                <p>Crea un gestor de tareas con interfaz visual. Los datos se guardan en un array en memoria (sin localStorage). Evoluciona el gestor de la sesión anterior usando manipulación del DOM.</p>
                 <ol>
-                    <li>Mostrar un contador de visitas</li>
-                    <li>Incrementar el contador cada vez que se cargue la página</li>
-                    <li>Mostrar "Visitas en esta sesión: X"</li>
-                    <li>El contador debe reiniciarse al cerrar la pestaña</li>
+                    <li>Un <code>&lt;input&gt;</code> para escribir la tarea y un botón "Agregar"</li>
+                    <li>Las tareas se muestran en una lista <code>&lt;ul&gt;</code> generada dinámicamente</li>
+                    <li>Cada tarea tiene botones "Completar" y "Eliminar"</li>
+                    <li>Al completar una tarea, se le agrega la clase CSS <code>completada</code> (tachado visual)</li>
+                    <li>Al eliminar, la tarea se borra del DOM y del array</li>
                 </ol>
             </section>
 
             <section class="requisitos">
-                <h2>✅ Requisitos</h2>
+                <h2>Requisitos</h2>
                 <ul>
-                    <li>Usar sessionStorage (no localStorage)</li>
-                    <li>sessionStorage.getItem() para obtener valor</li>
-                    <li>sessionStorage.setItem() para guardar</li>
-                    <li>Incrementar el contador en 1 cada visita</li>
-                    <li>Manejar el caso de primera visita (null)</li>
+                    <li>Usar <code>createElement()</code> y <code>appendChild()</code> para crear la lista</li>
+                    <li>Usar <code>classList.toggle()</code> o <code>classList.add()</code> para marcar completada</li>
+                    <li>Usar <code>remove()</code> o <code>removeChild()</code> para eliminar tareas</li>
+                    <li>Mantener un array interno con objetos <code>{ id, nombre, completada }</code></li>
+                    <li>Función <code>renderizarTareas()</code> que actualiza el DOM desde el array</li>
                 </ul>
             </section>
 
             <section class="pistas">
-                <h2>💡 Pistas</h2>
+                <h2>Pistas</h2>
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>let visitas = parseInt(sessionStorage.getItem("visitas")) || 0</li>
-                        <li>visitas++</li>
-                        <li>sessionStorage.setItem("visitas", visitas)</li>
-                        <li>La diferencia con localStorage es que sessionStorage se borra al cerrar</li>
+                        <li><code>let li = document.createElement("li");</code></li>
+                        <li><code>lista.appendChild(li);</code></li>
+                        <li><code>li.classList.toggle("completada");</code></li>
+                        <li><code>tareas.splice(indice, 1);</code> para eliminar del array</li>
+                        <li>Usa <code>forEach()</code> para recorrer tareas y generar el HTML</li>
                     </ul>
                 </details>
             </section>
 
             <section class="resultado-esperado">
-                <h2>🎯 Resultado Esperado</h2>
+                <h2>Resultado Esperado</h2>
                 <ul>
-                    <li>Primera visita: "Visitas en esta sesión: 1"</li>
-                    <li>Recargar página: "Visitas en esta sesión: 2"</li>
-                    <li>Cerrar pestaña y abrir nueva: "Visitas en esta sesión: 1"</li>
-                    <li>Abrir otra pestaña nueva: "Visitas en esta sesión: 1"</li>
+                    <li>Interfaz con input, botón Agregar y lista de tareas</li>
+                    <li>Al agregar, aparece una nueva tarea en la lista</li>
+                    <li>Al hacer clic en "Completar", la tarea se tacha visualmente</li>
+                    <li>Al hacer clic en "Eliminar", la tarea desaparece</li>
+                    <li>No se usa localStorage (los datos se pierden al recargar)</li>
                 </ul>
             </section>
         </div>

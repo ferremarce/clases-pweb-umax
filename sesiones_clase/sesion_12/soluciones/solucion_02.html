@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución Ejercicio 2 - Contador de Visitas - INI04</title>
+    <title>Solución Ejercicio 2 - Gestor de Tareas v4 con DOM - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 2 - Contador de Visitas</h1>
+            <h1>Solución: Ejercicio 2 - Gestor de Tareas v4 con DOM</h1>
             <p>Sesión 12 - JavaScript IV</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -21,37 +21,85 @@
             <h2>Código de la Solución</h2>
             
             <div class="codigo">
-<span class="comentario">&lt;!-- JavaScript --&gt;</span>
-<span class="etiqueta">&lt;script&gt;</span>
-<span class="comentario">// Obtener visitas actuales (o 0 si no existe)</span>
-<span class="etiqueta">let</span> visitas = <span class="funcion">parseInt</span>(sessionStorage.<span class="funcion">getItem</span>(<span class="string">"visitas"</span>)) || 0;
-
-<span class="comentario">// Incrementar</span>
-visitas++;
-
-<span class="comentario">// Guardar</span>
-sessionStorage.<span class="funcion">setItem</span>(<span class="string">"visitas"</span>, visitas);
-
-<span class="comentario">// Mostrar en página</span>
-document.<span class="funcion">getElementById</span>(<span class="string">"contador"</span>).<span class="variable">textContent</span> = visitas;
-<span class="etiqueta">&lt;/script&gt;</span>
-
 <span class="comentario">&lt;!-- HTML --&gt;</span>
-<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"contador-app"</span><span class="etiqueta">&gt;</span>
-    <span class="etiqueta">&lt;h2&gt;</span>Contador de Visitas<span class="etiqueta">&lt;/h2&gt;</span>
-    <span class="etiqueta">&lt;p&gt;</span>Visitas en esta sesión: <span class="etiqueta">&lt;span</span> <span class="propiedad">id</span>=<span class="valor">"contador"</span><span class="etiqueta">&gt;</span>0<span class="etiqueta">&lt;/span&gt;</span><span class="etiqueta">&lt;/p&gt;</span>
-    <span class="etiqueta">&lt;button</span> <span class="propiedad">onclick</span>=<span class="valor">"reiniciar()"</span><span class="etiqueta">&gt;</span>Reiniciar<span class="etiqueta">&lt;/button&gt;</span>
+<span class="etiqueta">&lt;div</span> <span class="propiedad">class</span>=<span class="valor">"gestor"</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;h2&gt;</span>Gestor de Tareas v4<span class="etiqueta">&lt;/h2&gt;</span>
+    <span class="etiqueta">&lt;input</span> <span class="propiedad">id</span>=<span class="valor">"tareaInput"</span> <span class="propiedad">placeholder</span>=<span class="valor">"Nueva tarea..."</span><span class="etiqueta">&gt;</span>
+    <span class="etiqueta">&lt;button</span> <span class="propiedad">id</span>=<span class="valor">"agregarBtn"</span><span class="etiqueta">&gt;</span>Agregar<span class="etiqueta">&lt;/button&gt;</span>
+    <span class="etiqueta">&lt;ul</span> <span class="propiedad">id</span>=<span class="valor">"listaTareas"</span><span class="etiqueta">&gt;</span><span class="etiqueta">&lt;/ul&gt;</span>
 <span class="etiqueta">&lt;/div&gt;</span>
 
-<span class="comentario">// Función para reiniciar</span>
-<span class="etiqueta">function</span> <span class="funcion">reiniciar</span>() {
-    sessionStorage.<span class="funcion">removeItem</span>(<span class="string">"visitas"</span>);
-    location.<span class="funcion">reload</span>();
+<span class="comentario">&lt;!-- JavaScript --&gt;</span>
+<span class="etiqueta">&lt;script&gt;</span>
+<span class="comentario">// Array de tareas en memoria</span>
+<span class="etiqueta">let</span> tareas = [];
+<span class="etiqueta">let</span> contadorId = 1;
+
+<span class="comentario">// Seleccionar elementos del DOM</span>
+<span class="etiqueta">let</span> inputTarea = document.<span class="funcion">getElementById</span>(<span class="string">"tareaInput"</span>);
+<span class="etiqueta">let</span> listaTareas = document.<span class="funcion">getElementById</span>(<span class="string">"listaTareas"</span>);
+<span class="etiqueta">let</span> agregarBtn = document.<span class="funcion">getElementById</span>(<span class="string">"agregarBtn"</span>);
+
+<span class="comentario">// Función para renderizar la lista desde el array</span>
+<span class="etiqueta">function</span> <span class="funcion">renderizarTareas</span>() {
+    <span class="comentario">// Limpiar lista actual</span>
+    listaTareas.<span class="variable">innerHTML</span> = <span class="string">""</span>;
+
+    tareas.<span class="funcion">forEach</span>((tarea, indice) => {
+        <span class="comentario">// Crear elemento li</span>
+        <span class="etiqueta">let</span> li = document.<span class="funcion">createElement</span>(<span class="string">"li"</span>);
+        li.<span class="variable">textContent</span> = tarea.nombre;
+
+        <span class="comentario">// Si está completada, agregar clase</span>
+        <span class="etiqueta">if</span> (tarea.completada) {
+            li.<span class="variable">classList</span>.<span class="funcion">add</span>(<span class="string">"completada"</span>);
+        }
+
+        <span class="comentario">// Botón Completar</span>
+        <span class="etiqueta">let</span> btnCompletar = document.<span class="funcion">createElement</span>(<span class="string">"button"</span>);
+        btnCompletar.<span class="variable">textContent</span> = tarea.completada ? <span class="string">"Deshacer"</span> : <span class="string">"Completar"</span>;
+        btnCompletar.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => {
+            tareas[indice].completada = !tareas[indice].completada;
+            <span class="funcion">renderizarTareas</span>();
+        });
+
+        <span class="comentario">// Botón Eliminar</span>
+        <span class="etiqueta">let</span> btnEliminar = document.<span class="funcion">createElement</span>(<span class="string">"button"</span>);
+        btnEliminar.<span class="variable">textContent</span> = <span class="string">"Eliminar"</span>;
+        btnEliminar.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, () => {
+            tareas.<span class="funcion">splice</span>(indice, 1);
+            <span class="funcion">renderizarTareas</span>();
+        });
+
+        li.<span class="funcion">appendChild</span>(btnCompletar);
+        li.<span class="funcion">appendChild</span>(btnEliminar);
+        listaTareas.<span class="funcion">appendChild</span>(li);
+    });
 }
+
+<span class="comentario">// Agregar tarea</span>
+<span class="etiqueta">function</span> <span class="funcion">agregarTarea</span>() {
+    <span class="etiqueta">let</span> texto = inputTarea.<span class="variable">value</span>.<span class="funcion">trim</span>();
+    <span class="etiqueta">if</span> (texto) {
+        tareas.<span class="funcion">push</span>({ id: contadorId++, nombre: texto, completada: <span class="etiqueta">false</span> });
+        inputTarea.<span class="variable">value</span> = <span class="string">""</span>;
+        <span class="funcion">renderizarTareas</span>();
+    }
+}
+
+<span class="comentario">// Eventos</span>
+agregarBtn.<span class="funcion">addEventListener</span>(<span class="string">"click"</span>, agregarTarea);
+inputTarea.<span class="funcion">addEventListener</span>(<span class="string">"keyup"</span>, (e) => {
+    <span class="etiqueta">if</span> (e.key === <span class="string">"Enter"</span>) agregarTarea();
+});
+
+<span class="comentario">// Render inicial (vacío)</span>
+<span class="funcion">renderizarTareas</span>();
+<span class="etiqueta">&lt;/script&gt;</span>
             </div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> La diferencia clave es que sessionStorage se borra al cerrar la pestaña, mientras que localStorage persiste.
+                <strong>Nota:</strong> El Gestor de Tareas v4 usa manipulación del DOM: <code>createElement</code>, <code>appendChild</code>, <code>classList.add</code>, y eventos dinámicos. Los datos viven en un array en memoria, sin localStorage. Cada tarea tiene botones Completar/Deshacer y Eliminar creados dinámicamente.
             </div>
         </div>
     </main>
