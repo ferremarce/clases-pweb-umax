@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 - Repartidor de Cuenta - INI04</title>
+    <title>Ejercicio 2 - Gestor de Tareas - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Ejercicio 2: Repartidor de Cuenta</h1>
+            <h1>Ejercicio 2: Gestor de Tareas</h1>
             <p>Sesión 9 - JavaScript I</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -20,19 +20,22 @@
         <div class="enunciado">
             <section class="requisitos">
                 <h2>📝 Enunciado</h2>
-                <p>Crea un programa que calcule cuánto debe pagar cada persona al dividir una cuenta de restaurante, incluyendo la propina. El programa debe:</p>
+                <p>Crea un programa que funcione como un gestor simple de tareas. El programa debe solicitar los datos de una tarea y mostrar un análisis completo usando operadores aritméticos, de comparación y lógicos.</p>
                 <ol>
-                    <li>Solicitar el total de la cuenta usando <code>prompt()</code></li>
-                    <li>Solicitar el porcentaje de propina (ej: 10, 15, 20)</li>
-                    <li>Solicitar el número de personas para dividir la cuenta</li>
-                    <li>Calcular:
+                    <li>Solicitar el nombre de la tarea usando <code>prompt()</code></li>
+                    <li>Solicitar las horas estimadas para completarla (número)</li>
+                    <li>Solicitar la prioridad del 1 al 10 (número)</li>
+                    <li>Solicitar el número de subtareas (número)</li>
+                    <li>Calcular y mostrar:
                         <ul>
-                            <li>Monto de la propina</li>
-                            <li>Total con propina incluida</li>
-                            <li>Total por persona</li>
+                            <li>Horas totales (estimadas + 10% de margen)</li>
+                            <li>Horas por subtarea (si hay subtareas)</li>
+                            <li>Si es tarea de alta prioridad (prioridad &gt; 7)</li>
+                            <li>Si es tarea larga (horas &gt; 4)</li>
+                            <li>Si es tarea crítica (alta prioridad Y larga)</li>
                         </ul>
                     </li>
-                    <li>Mostrar los resultados con <code>alert()</code></li>
+                    <li>Mostrar un resumen completo con <code>alert()</code></li>
                 </ol>
             </section>
 
@@ -41,9 +44,11 @@
                 <ul>
                     <li>Usar <code>prompt()</code> para solicitar los datos</li>
                     <li>Usar <code>Number()</code> para convertir strings a números</li>
-                    <li>Usar operadores aritméticos (+, *, /)</li>
-                    <li>Mostrar resultados con 2 decimales usando <code>toFixed(2)</code></li>
-                    <li>Usar <code>alert()</code> para mostrar un resumen completo</li>
+                    <li>Usar operadores aritméticos (+, *, /) para los cálculos</li>
+                    <li>Usar operadores de comparación (&gt;, &gt;=) para evaluar condiciones</li>
+                    <li>Usar operador lógico AND (&amp;&amp;) para determinar si es crítica</li>
+                    <li>Mostrar resultados con 1 decimal usando <code>toFixed(1)</code></li>
+                    <li>Usar <code>alert()</code> para mostrar el resumen</li>
                 </ul>
             </section>
 
@@ -52,10 +57,12 @@
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>Propina = totalCuenta * (porcentajePropina / 100)</li>
-                        <li>Total con propina = totalCuenta + propina</li>
-                        <li>Por persona = totalConPropina / numeroPersonas</li>
-                        <li>Para mostrar 2 decimales: <code>resultado.toFixed(2)</code></li>
+                        <li>Horas totales = horasEstimadas + (horasEstimadas * 0.10)</li>
+                        <li>Horas por subtarea = horasTotales / numeroSubtareas (solo si hay subtareas)</li>
+                        <li>altaPrioridad = prioridad &gt; 7 &amp;&amp; prioridad &lt;= 10</li>
+                        <li>esLarga = horasEstimadas &gt; 4</li>
+                        <li>esCritica = altaPrioridad &amp;&amp; esLarga</li>
+                        <li>Para mostrar booleanos en el alert, puedes usar template strings o concatenación</li>
                     </ul>
                 </details>
             </section>
@@ -64,20 +71,28 @@
                 <h2>🎯 Resultado Esperado</h2>
                 <p>Al ejecutar el programa:</p>
                 <div class="vista-previa">
-                    // Prompt: "Total de la cuenta:"
-                    // Ingresamos: 100
+                    // Prompt: "Nombre de la tarea:"
+                    // Ingresamos: "Proyecto Final"
                     <br><br>
-                    // Prompt: "Porcentaje de propina:"
-                    // Ingresamos: 15
+                    // Prompt: "Horas estimadas:"
+                    // Ingresamos: 10
                     <br><br>
-                    // Prompt: "Número de personas:"
-                    // Ingresamos: 4
+                    // Prompt: "Prioridad (1-10):"
+                    // Ingresamos: 8
+                    <br><br>
+                    // Prompt: "Número de subtareas:"
+                    // Ingresamos: 5
                     <br><br>
                     // Alert:
-                    // Cuenta: $100.00
-                    // Propina (15%): $15.00
-                    // Total: $115.00
-                    // Por persona: $28.75
+                    // === GESTOR DE TAREAS ===
+                    // Tarea: Proyecto Final
+                    // Horas estimadas: 10.0
+                    // Horas totales (+10%): 11.0
+                    // Horas por subtarea: 2.2
+                    // Prioridad: 8/10
+                    // ¿Alta prioridad? true
+                    // ¿Tarea larga? true
+                    // ¿Tarea crítica? true
                 </div>
             </section>
         </div>

@@ -27,7 +27,7 @@
 > 1. **Entender qué es JavaScript** y cómo encaja con HTML y CSS.
 > 2. **Declarar variables** con `let` y `const`, y entender por qué ya no usamos `var`.
 > 3. **Reconocer los tipos de datos** básicos: texto, números y booleanos.
-> 4. **Usar operadores aritméticos y de asignación** para hacer cálculos y acumular valores.
+> 4. **Usar operadores aritméticos, de asignación, comparación y lógicos** para hacer cálculos, comparar valores y combinar condiciones.
 > 5. **Interactuar con el usuario** usando `alert`, `prompt` y la consola.
 > 6. **Convertir tipos de datos** cuando sea necesario.
 > 7. **Escribir código limpio** con buenas prácticas desde el primer día.
@@ -152,34 +152,11 @@
 
 **Pregunta trampa:** "¿Qué pasa si hago `PI = 3.15`?" (Error: Assignment to constant variable.)
 
-**Transición:** "Y hablando de comentarios... ¿cómo se escriben y para qué sirven?"
+**Transición:** "Ahora pasemos a los tipos de datos que podemos guardar en las variables."
 
 ---
 
-## Slide 8 — Comentarios en JavaScript
-
-**Explicación al alumno:**
-
-> "Los comentarios son texto que JavaScript ignora por completo. Sirven para:
-> - Explicar qué hace un bloque de código
-> - Dejar notas para otros programadores (o para ti mismo en el futuro)
-> - **Desactivar temporalmente** líneas de código mientras depuras
->
-> Tenemos dos tipos:
-> - **Una línea**: `//` Todo lo que va después en esa línea es un comentario.
-> - **Varias líneas**: `/* ... */` Todo lo que está entre las marcas es un comentario.
->
-> Una buena práctica: comenten el **por qué** hacen algo, no el **qué**. El código ya dice qué hace. Por ejemplo:
-> - Mal: `// Sumar 5 + 3` (el código ya muestra que sumas)
-> - Bien: `// Usamos 5% de descuento por ser cliente nuevo` (explica la intención)"
-
-**Analogía:** "Los comentarios son como las notas adhesivas que ponen en un libro de texto. Les ayudan a recordar por qué algo es importante."
-
-**Transición:** "Perfecto. Pasemos a los tipos de datos que podemos guardar en las variables."
-
----
-
-## Slide 9 — Tipos de Datos Primitivos
+## Slide 8 — Tipos de Datos Primitivos
 
 **Explicación al alumno:**
 
@@ -199,7 +176,7 @@
 
 ---
 
-## Slide 10 — Tipos de Datos: null y undefined
+## Slide 9 — Tipos de Datos: null y undefined
 
 **Explicación al alumno:**
 
@@ -218,7 +195,7 @@
 
 ---
 
-## Slide 11 — Operadores Aritméticos
+## Slide 10 — Operadores Aritméticos
 
 **Explicación al alumno:**
 
@@ -241,7 +218,7 @@
 
 ---
 
-## Slide 12 — Operadores de Asignación
+## Slide 11 — Operadores de Asignación
 
 **Explicación al alumno:**
 
@@ -266,7 +243,74 @@
 
 ---
 
-## Slide 13 — Interactuar con el Usuario
+## Slide 12 — Operadores de Comparación
+
+**Explicación al alumno:**
+
+> "Los operadores de comparación nos permiten comparar dos valores y obtener un resultado booleano: `true` o `false`. Son la base de las decisiones en programación.
+>
+> Tenemos dos tipos de operadores de comparación importantes:
+>
+> **1. Igualdad y desigualdad**
+> - `==` igualdad débil: compara solo el valor, no el tipo. `"5" == 5` es `true` porque convierte el string a número.
+> - `===` igualdad estricta: compara valor Y tipo. `"5" === 5` es `false` porque string ≠ number.
+> - `!=` desigualdad débil: `"5" != 5` es `false`.
+> - `!==` desigualdad estricta: `"5" !== 5` es `true`.
+>
+> **2. Relacionales**
+> - `>` mayor que, `<` menor que, `>=` mayor o igual, `<=` menor o igual.
+>
+> La regla de oro: **usen siempre `===` y `!==`**. El doble igual (`==`) hace coerción automática y puede dar resultados inesperados. En este curso, siempre usaremos comparación estricta."
+
+**Pregunta:** "¿Qué creen que da `"10" == 10`?" (true — porque el débil convierte). "¿Y `"10" === 10`?" (false — tipos distintos).
+
+**Pregunta trampa:** "¿Qué pasa si comparo `0 == false`?" (true — porque 0 es falsy en coerción). "¿Y `0 === false`?" (false — son tipos diferentes).
+
+**Analogía:** "`==` es como preguntar '¿tienen el mismo valor?' sin importar el formato. `===` es como preguntar '¿son exactamente iguales, incluyendo el tipo?'."
+
+**Transición:** "Ahora que sabemos comparar valores, veamos cómo combinar varias condiciones con los operadores lógicos."
+
+---
+
+## Slide 13 — Operadores Lógicos
+
+**Explicación al alumno:**
+
+> "Los operadores lógicos nos permiten combinar condiciones booleanas. Son tres:
+>
+> **1. AND (`&&`)** — Devuelve `true` solo si TODAS las condiciones son `true`. Si una es falsa, todo es falso.
+> - `true && true` → `true`
+> - `true && false` → `false`
+> - Útil para validar que se cumplan múltiples requisitos.
+>
+> **2. OR (`||`)** — Devuelve `true` si AL MENOS UNA condición es `true`. Solo es `false` si todas son falsas.
+> - `true || false` → `true`
+> - `false || false` → `false`
+>
+> **3. NOT (`!`)** — Invierte el valor booleano.
+> - `!true` → `false`
+> - `!false` → `true`
+> - También sirve para convertir cualquier valor a booleano usando doble negación: `!!"texto"` → `true`.
+>
+> Con estos operadores podemos construir condiciones complejas. Por ejemplo:
+> `if (edad >= 18 && tieneLicencia) { ... }` — ambas deben cumplirse."
+
+**Demo en vivo:** Abre la consola y escribe:
+```javascript
+let edad = 20;
+let tieneLicencia = true;
+console.log(edad >= 18 && tieneLicencia); // true
+console.log(edad >= 18 || tieneLicencia); // true
+console.log(!tieneLicencia); // false
+```
+
+**Pregunta:** "¿Alguien me da un ejemplo de la vida real donde usamos AND?" (Ej: para comprar alcohol necesitas ser mayor de edad Y tener dinero. Ambas condiciones deben cumplirse.)
+
+**Transición:** "Perfecto. Pasemos ahora a cómo podemos interactuar con el usuario desde JavaScript."
+
+---
+
+## Slide 14 — Interactuar con el Usuario
 
 **Explicación al alumno:**
 
@@ -293,7 +337,7 @@ console.log("El alumno se llama:", nombre);
 
 ---
 
-## Slide 14 — Conversión de Tipos (Coerción)
+## Slide 15 — Conversión de Tipos (Coerción)
 
 **Explicación al alumno:**
 
@@ -317,11 +361,34 @@ console.log("El alumno se llama:", nombre);
 
 **Pregunta:** "¿Y `"10" - 5`?" (5 — porque el - solo tiene sentido matemático)
 
-**Transición:** "Ahora que tenemos todos los conceptos, veamos un par de buenas prácticas antes del ejemplo final."
+**Transición:** "Ahora que tenemos todos los conceptos, veamos cómo hacer comentarios en JavaScript para que nuestro código sea más legible."
 
 ---
 
-## Slide 15 — Buenas Prácticas y Nomenclatura
+## Slide 16 — Comentarios en JavaScript
+
+**Explicación al alumno:**
+
+> "Los comentarios son texto que JavaScript ignora por completo. Sirven para:
+> - Explicar qué hace un bloque de código
+> - Dejar notas para otros programadores (o para ti mismo en el futuro)
+> - **Desactivar temporalmente** líneas de código mientras depuras
+>
+> Tenemos dos tipos:
+> - **Una línea**: `//` Todo lo que va después en esa línea es un comentario.
+> - **Varias líneas**: `/* ... */` Todo lo que está entre las marcas es un comentario.
+>
+> Una buena práctica: comenten el **por qué** hacen algo, no el **qué**. El código ya dice qué hace. Por ejemplo:
+> - Mal: `// Sumar 5 + 3` (el código ya muestra que sumas)
+> - Bien: `// Usamos 5% de descuento por ser cliente nuevo` (explica la intención)"
+
+**Analogía:** "Los comentarios son como las notas adhesivas que ponen en un libro de texto. Les ayudan a recordar por qué algo es importante."
+
+**Transición:** "Ahora que sabemos cómo escribir comentarios, veamos las buenas prácticas y normas de estilo que seguiremos en este curso."
+
+---
+
+## Slide 17 — Buenas Prácticas y Nomenclatura
 
 **Explicación al alumno:**
 
@@ -339,7 +406,7 @@ console.log("El alumno se llama:", nombre);
 
 ---
 
-## Slide 16 — Ejemplo Completo
+## Slide 18 — Ejemplo Completo
 
 **Explicación al alumno:**
 
@@ -364,7 +431,7 @@ console.log("El alumno se llama:", nombre);
 
 ---
 
-## Slide 17 — Actividad Práctica
+## Slide 19 — Actividad Práctica
 
 **Explicación al alumno:**
 
@@ -372,17 +439,17 @@ console.log("El alumno se llama:", nombre);
 >
 > **Ejercicio 1 — Calculadora Básica** (Básico): Pedir dos números y mostrar el resultado de las 4 operaciones aritméticas. Usen `Number()` para convertir los valores y `alert()` para mostrar los resultados.
 >
-> **Ejercicio 2 — Repartidor de Cuenta** (Intermedio): Calcular cuánto debe pagar cada persona al dividir una cuenta de restaurante, incluyendo propina. Usen `toFixed(2)` para los decimales.
+> **Ejercicio 2 — Gestor de Tareas** (Intermedio): Crear un programa que analice una tarea usando operadores aritméticos (cálculo de horas con margen), de comparación (prioridad &gt; 7, horas &gt; 4) y lógicos (AND para determinar si es crítica). Usen `toFixed(1)` para los decimales.
 >
 > IMPORTANTE: Intenten resolverlos solos antes de mirar las soluciones. Los errores son parte del aprendizaje."
 
 **Instrucciones:** "Abran el enlace 'Ver Ejercicios' que les lleva al listado. Cada ejercicio tiene su enunciado y pistas si se atascan."
 
-**Transición:** Antes de que empiecen, repasa en 1 minuto el resumen de la sesión (slide 18).
+**Transición:** Antes de que empiecen, repasa en 1 minuto el resumen de la sesión (slide 20).
 
 ---
 
-## Slide 18 — Resumen de la Sesión
+## Slide 20 — Resumen de la Sesión
 
 **Explicación al alumno (recapitulación rápida):**
 
@@ -392,7 +459,7 @@ console.log("El alumno se llama:", nombre);
 > - **Tríada web**: HTML estructura + CSS presentación + JS comportamiento.
 > - **Variables**: `const` por defecto, `let` si se reasigna, `var` ni tocarlo.
 > - **Tipos primitivos**: string, number, boolean, null, undefined.
-> - **Operadores**: aritméticos (+, -, *, /, %, **) y de asignación (+=, -=...).
+> - **Operadores**: aritméticos (+, -, *, /, %, **), asignación (+=, -=...), comparación (===, !==, >, <, >=, <=) y lógicos (&&, ||, !).
 > - **Interacción**: alert(), prompt(), console.log().
 > - **Conversión**: Number(), String(), Boolean() — sean explícitos.
 > - **Buenas prácticas**: camelCase, nombres descriptivos, comentarios."
@@ -401,12 +468,11 @@ console.log("El alumno se llama:", nombre);
 
 ---
 
-## Slide 19 — Temas Próximos
+## Slide 21 — Temas Próximos
 
 **Explicación al alumno:**
 
 > "En la **Sesión 10** veremos:
-> - **Operadores de comparación y lógicos**: `===`, `!==`, `>`, `<`, `&&`, `||`, `!`.
 > - **Condicionales**: `if`, `else if`, `else` y `switch` para tomar decisiones.
 > - **Operador ternario**: una forma compacta de escribir if/else.
 > - **Bucles**: `for`, `while` y `do-while` para repetir acciones.

@@ -35,7 +35,7 @@
                 <li>Comprender qué es JavaScript y cómo se integra en HTML</li>
                 <li>Declarar variables con let y const, entendiendo su ámbito</li>
                 <li>Identificar y utilizar tipos primitivos (string, number, boolean, null, undefined)</li>
-                <li>Aplicar operadores aritméticos y de asignación</li>
+                <li>Aplicar operadores aritméticos, de asignación, comparación y lógicos</li>
                 <li>Utilizar alert, prompt y console.log para interacción básica</li>
                 <li>Realizar conversión de tipos (coerción)</li>
                 <li>Escribir código legible con comentarios y buenas prácticas</li>
@@ -164,28 +164,6 @@ usuario.edad = 26; // ✅ Esto sí funciona
         </section>
 
         <section class="diapositiva" id="slide-08">
-            <h2>Comentarios en JavaScript</h2>
-            <div class="tarjeta">
-                <p>Los <strong>comentarios</strong> son texto ignorado por el motor de JS. Sirven para explicar el código y depurar.</p>
-                <br>
-                <h3>Comentario de una línea</h3>
-                <pre><code>// Esto es un comentario de una línea
-let nombre = "Ana"; // También al final de una línea</code></pre>
-
-                <h3>Comentario de varias líneas</h3>
-                <pre><code>/*
-  Esto es un comentario
-  de varias líneas.
-  Útil para explicar bloques grandes.
-*/
-let precio = 100;</code></pre>
-            </div>
-            <div class="nota">
-                <strong>💡 Buen hábito:</strong> Comenta el <strong>por qué</strong> del código, no el <strong>qué</strong> (el código ya dice qué hace).
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-09">
             <h2>Tipos de Datos Primitivos</h2>
             <div class="tarjeta">
                 <div class="tres-columnas">
@@ -208,7 +186,7 @@ let mayor = false;</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-10">
+        <section class="diapositiva" id="slide-09">
             <h2>Tipos de Datos: null y undefined</h2>
             <div class="tarjeta">
                 <h3>null vs undefined</h3>
@@ -235,7 +213,7 @@ let apellido = null; // null - intencionalmente vacío</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-11">
+        <section class="diapositiva" id="slide-10">
             <h2>Operadores Aritméticos</h2>
             <div class="tarjeta">
                 <table class="tabla-codigo">
@@ -293,7 +271,7 @@ let apellido = null; // null - intencionalmente vacío</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-12">
+        <section class="diapositiva" id="slide-11">
             <h2>Operadores de Asignación</h2>
             <div class="tarjeta">
                 <table class="tabla-codigo">
@@ -335,9 +313,122 @@ let apellido = null; // null - intencionalmente vacío</code></pre>
             </div>
         </section>
 
-
+        <section class="diapositiva" id="slide-12">
+            <h2>Operadores de Comparación</h2>
+            <div class="tarjeta">
+                <p>Los operadores de comparación comparan dos valores y devuelven un booleano (<code>true</code> o <code>false</code>).</p>
+                <table class="tabla-codigo">
+                    <thead>
+                        <tr>
+                            <th>Operador</th>
+                            <th>Nombre</th>
+                            <th>Ejemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>==</code></td>
+                            <td>Igualdad (débil)</td>
+                            <td><code>"5" == 5</code></td>
+                            <td><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>===</code></td>
+                            <td>Igualdad estricta</td>
+                            <td><code>"5" === 5</code></td>
+                            <td><code>false</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>!=</code></td>
+                            <td>Desigualdad (débil)</td>
+                            <td><code>"5" != 5</code></td>
+                            <td><code>false</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>!==</code></td>
+                            <td>Desigualdad estricta</td>
+                            <td><code>"5" !== 5</code></td>
+                            <td><code>true</code></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td><code>&gt;</code></td>
+                            <td>Mayor que</td>
+                            <td><code>10 &gt; 5</code></td>
+                            <td><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;</code></td>
+                            <td>Menor que</td>
+                            <td><code>10 &lt; 5</code></td>
+                            <td><code>false</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&gt;=</code></td>
+                            <td>Mayor o igual</td>
+                            <td><code>5 &gt;= 5</code></td>
+                            <td><code>true</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>&lt;=</code></td>
+                            <td>Menor o igual</td>
+                            <td><code>5 &lt;= 3</code></td>
+                            <td><code>false</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="nota">
+                <strong>💡 Regla de oro:</strong> Usar <strong>siempre</strong> <code>===</code> y <code>!==</code> (comparación estricta) para evitar comportamientos inesperados por coerción automática.
+            </div>
+        </section>
 
         <section class="diapositiva" id="slide-13">
+            <h2>Operadores Lógicos</h2>
+            <div class="tarjeta">
+                <p>Los operadores lógicos se usan para combinar condiciones y trabajar con valores booleanos.</p>
+                <br>
+                <h3>AND (<code>&&</code>) — Todas las condiciones deben cumplirse</h3>
+                <table class="tabla-codigo">
+                    <thead>
+                        <tr><th>Expresión</th><th>Resultado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>true && true</code></td><td><code>true</code></td></tr>
+                        <tr><td><code>true && false</code></td><td><code>false</code></td></tr>
+                        <tr><td><code>false && true</code></td><td><code>false</code></td></tr>
+                        <tr><td><code>false && false</code></td><td><code>false</code></td></tr>
+                    </tbody>
+                </table>
+                <br>
+                <h3>OR (<code>||</code>) — Al menos una condición debe cumplirse</h3>
+                <table class="tabla-codigo">
+                    <thead>
+                        <tr><th>Expresión</th><th>Resultado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>true || true</code></td><td><code>true</code></td></tr>
+                        <tr><td><code>true || false</code></td><td><code>true</code></td></tr>
+                        <tr><td><code>false || true</code></td><td><code>true</code></td></tr>
+                        <tr><td><code>false || false</code></td><td><code>false</code></td></tr>
+                    </tbody>
+                </table>
+                <br>
+                <h3>NOT (<code>!</code>) — Invierte el valor booleano</h3>
+                <pre><code>let activo = true;
+console.log(!activo);  // false
+
+let esMayor = (10 &gt; 5);
+console.log(!esMayor); // false
+
+// Doble negación (convierte a booleano)
+console.log(!!"texto"); // true</code></pre>
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
             <h2>Interactuar con el Usuario</h2>
             <div class="tarjeta">
                 <h3>alert() - Mostrar mensaje</h3>
@@ -358,7 +449,7 @@ console.info("Información");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-14">
+        <section class="diapositiva" id="slide-15">
             <h2>Conversión de Tipos (Coerción)</h2>
             <div class="tarjeta">
                 <h3>Conversión Implícita (automática)</h3>
@@ -387,7 +478,29 @@ Boolean(0)       // false</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-15">
+        <section class="diapositiva" id="slide-16">
+            <h2>Comentarios en JavaScript</h2>
+            <div class="tarjeta">
+                <p>Los <strong>comentarios</strong> son texto ignorado por el motor de JS. Sirven para explicar el código y depurar.</p>
+                <br>
+                <h3>Comentario de una línea</h3>
+                <pre><code>// Esto es un comentario de una línea
+let nombre = "Ana"; // También al final de una línea</code></pre>
+
+                <h3>Comentario de varias líneas</h3>
+                <pre><code>/*
+  Esto es un comentario
+  de varias líneas.
+  Útil para explicar bloques grandes.
+*/
+let precio = 100;</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡 Buen hábito:</strong> Comenta el <strong>por qué</strong> del código, no el <strong>qué</strong> (el código ya dice qué hace).
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-17">
             <h2>Buenas Prácticas y Nomenclatura</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
@@ -401,7 +514,7 @@ Boolean(0)       // false</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-16">
+        <section class="diapositiva" id="slide-18">
             <h2>Ejemplo Completo</h2>
             <div class="tarjeta">
                 <pre><code>// Programa: Calculadora simple
@@ -431,19 +544,19 @@ alert("Resultados:
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-17">
+        <section class="diapositiva" id="slide-19">
             <h2>Ejercicios de Práctica</h2>
             <div class="tarjeta">
                 <h3>Ejercicio en Clase:</h3>
                 <p>Calculadora básica con prompt/alert usando variables y operadores aritméticos.</p>
                 <br>
                 <h3>Ejercicio Desafío (Entregar):</h3>
-                <p>Repartidor de Cuenta — calcula cuánto paga cada persona dividiendo una cuenta con propina.</p>
+                <p>Gestor de Tareas — analiza una tarea usando operadores aritméticos, de comparación y lógicos.</p>
             </div>
             <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
         </section>
 
-        <section class="diapositiva" id="slide-18">
+        <section class="diapositiva" id="slide-20">
             <h2>Resumen de la Sesión</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
@@ -451,7 +564,7 @@ alert("Resultados:
                     <li><strong>Tríada web:</strong> HTML estructura + CSS presentación + JS comportamiento</li>
                     <li><strong>Variables:</strong> const por defecto, let si se reasigna, evitar var</li>
                     <li><strong>Tipos primitivos:</strong> string, number, boolean, null, undefined</li>
-                    <li><strong>Operadores:</strong> aritméticos y de asignación</li>
+                    <li><strong>Operadores:</strong> aritméticos, asignación, comparación (<code>===</code>, <code>!==</code>) y lógicos (<code>&&</code>, <code>||</code>, <code>!</code>)</li>
                     <li><strong>Interacción:</strong> alert(), prompt(), console.log()</li>
                     <li><strong>Conversión:</strong> Number(), String(), Boolean()</li>
                     <li><strong>Buenas prácticas:</strong> camelCase, nombres descriptivos, comentarios</li>
@@ -459,12 +572,11 @@ alert("Resultados:
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-19">
+        <section class="diapositiva" id="slide-21">
             <h2>Temas Próximos</h2>
             <div class="tarjeta">
                 <h3>Sesión 10: JavaScript II</h3>
                 <ul class="lista-grande">
-                    <li>Operadores de comparación y lógicos</li>
                     <li>Condicionales: if/else, switch</li>
                     <li>Operador ternario</li>
                     <li>Bucles: for, while, do-while</li>

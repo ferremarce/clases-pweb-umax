@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solución Ejercicio 2 - Repartidor de Cuenta - INI04</title>
+    <title>Solución Ejercicio 2 - Gestor de Tareas - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Solución: Ejercicio 2 - Repartidor de Cuenta</h1>
+            <h1>Solución: Ejercicio 2 - Gestor de Tareas</h1>
             <p>Sesión 9 - JavaScript I</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -21,44 +21,61 @@
             <h2>Código de la Solución</h2>
 
             <div class="codigo">
-<span class="comentario">// Ejercicio 2: Repartidor de Cuenta</span>
+<span class="comentario">// Ejercicio 2: Gestor de Tareas</span>
 <span class="comentario">// Solicitar datos al usuario</span>
-<span class="etiqueta">let</span> <span class="variable">totalCuenta</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Total de la cuenta:"</span>));
-<span class="etiqueta">let</span> <span class="variable">porcentajePropina</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Porcentaje de propina:"</span>));
-<span class="etiqueta">let</span> <span class="variable">numPersonas</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Número de personas:"</span>));
+<span class="etiqueta">let</span> <span class="variable">nombreTarea</span> = <span class="funcion">prompt</span>(<span class="string">"Nombre de la tarea:"</span>);
+<span class="etiqueta">let</span> <span class="variable">horasEstimadas</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Horas estimadas:"</span>));
+<span class="etiqueta">let</span> <span class="variable">prioridad</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Prioridad (1-10):"</span>));
+<span class="etiqueta">let</span> <span class="variable">numSubtareas</span> = <span class="funcion">Number</span>(<span class="funcion">prompt</span>(<span class="string">"Número de subtareas:"</span>));
 
-<span class="comentario">// Calcular propina y totales</span>
-<span class="etiqueta">let</span> <span class="variable">propina</span> = <span class="variable">totalCuenta</span> * (<span class="variable">porcentajePropina</span> / 100);
-<span class="etiqueta">let</span> <span class="variable">totalConPropina</span> = <span class="variable">totalCuenta</span> + <span class="variable">propina</span>;
-<span class="etiqueta">let</span> <span class="variable">porPersona</span> = <span class="variable">totalConPropina</span> / <span class="variable">numPersonas</span>;
+<span class="comentario">// Calcular horas con margen del 10%</span>
+<span class="etiqueta">let</span> <span class="variable">horasTotales</span> = <span class="variable">horasEstimadas</span> + (<span class="variable">horasEstimadas</span> * 0.10);
 
-<span class="comentario">// Mostrar resultados</span>
-<span class="funcion">alert</span>(<span class="string">"Resumen de la cuenta:\n"</span> +
-      <span class="string">"Cuenta: $"</span> + <span class="variable">totalCuenta</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
-      <span class="string">"Propina ("</span> + <span class="variable">porcentajePropina</span> + <span class="string">"%): $"</span> + <span class="variable">propina</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
-      <span class="string">"Total: $"</span> + <span class="variable">totalConPropina</span>.<span class="funcion">toFixed</span>(2) + <span class="string">"\n"</span> +
-      <span class="string">"Por persona: $"</span> + <span class="variable">porPersona</span>.<span class="funcion">toFixed</span>(2));
+<span class="comentario">// Calcular horas por subtarea (evitar división entre 0)</span>
+<span class="etiqueta">let</span> <span class="variable">horasPorSubtarea</span> = <span class="variable">numSubtareas</span> &gt; 0 ? <span class="variable">horasTotales</span> / <span class="variable">numSubtareas</span> : 0;
+
+<span class="comentario">// Evaluar condiciones con operadores de comparación y lógicos</span>
+<span class="etiqueta">let</span> <span class="variable">altaPrioridad</span> = <span class="variable">prioridad</span> &gt; 7 &amp;&amp; <span class="variable">prioridad</span> &lt;= 10;
+<span class="etiqueta">let</span> <span class="variable">esLarga</span> = <span class="variable">horasEstimadas</span> &gt; 4;
+<span class="etiqueta">let</span> <span class="variable">esCritica</span> = <span class="variable">altaPrioridad</span> &amp;&amp; <span class="variable">esLarga</span>;
+
+<span class="comentario">// Mostrar resumen con alert</span>
+<span class="funcion">alert</span>(<span class="string">"=== GESTOR DE TAREAS ===\n"</span> +
+      <span class="string">"Tarea: "</span> + <span class="variable">nombreTarea</span> + <span class="string">"\n"</span> +
+      <span class="string">"Horas estimadas: "</span> + <span class="variable">horasEstimadas</span>.<span class="funcion">toFixed</span>(1) + <span class="string">"\n"</span> +
+      <span class="string">"Horas totales (+10%): "</span> + <span class="variable">horasTotales</span>.<span class="funcion">toFixed</span>(1) + <span class="string">"\n"</span> +
+      <span class="string">"Horas por subtarea: "</span> + <span class="variable">horasPorSubtarea</span>.<span class="funcion">toFixed</span>(1) + <span class="string">"\n"</span> +
+      <span class="string">"Prioridad: "</span> + <span class="variable">prioridad</span> + <span class="string">"/10\n"</span> +
+      <span class="string">"¿Alta prioridad? "</span> + <span class="variable">altaPrioridad</span> + <span class="string">"\n"</span> +
+      <span class="string">"¿Tarea larga? "</span> + <span class="variable">esLarga</span> + <span class="string">"\n"</span> +
+      <span class="string">"¿Tarea crítica? "</span> + <span class="variable">esCritica</span>);
             </div>
 
             <div class="nota">
-                <strong>💡 Nota:</strong> Esta es UNA posible solución. Se usa toFixed(2) para mostrar solo 2 decimales. Observa cómo se usa concatenación con \n para crear saltos de línea.
+                <strong>💡 Nota:</strong> Esta solución usa el operador ternario (<code>condición ? valorSiTrue : valorSiFalse</code>) para evitar la división entre 0. También se usan operadores de comparación (&gt;, &lt;=) y el operador lógico AND (&amp;&amp;) para evaluar las condiciones. Los valores booleanos <code>true</code>/<code>false</code> se muestran directamente en el alert gracias a la concatenación.
             </div>
 
             <h2>Resultado Visual</h2>
             <div class="vista-previa">
                 <strong>Primer prompt:</strong><br>
-                [input] Total de la cuenta: 100<br><br>
+                [input] Nombre de la tarea: "Proyecto Final"<br><br>
                 <strong>Segundo prompt:</strong><br>
-                [input] Porcentaje de propina: 15<br><br>
+                [input] Horas estimadas: 10<br><br>
                 <strong>Tercer prompt:</strong><br>
-                [input] Número de personas: 4<br><br>
+                [input] Prioridad (1-10): 8<br><br>
+                <strong>Cuarto prompt:</strong><br>
+                [input] Número de subtareas: 5<br><br>
                 <strong>Alert con resultados:</strong>
                 <div class="caja-alert">
-                    Resumen de la cuenta:<br>
-                    Cuenta: $100.00<br>
-                    Propina (15%): $15.00<br>
-                    Total: $115.00<br>
-                    Por persona: $28.75
+                    === GESTOR DE TAREAS ===<br>
+                    Tarea: Proyecto Final<br>
+                    Horas estimadas: 10.0<br>
+                    Horas totales (+10%): 11.0<br>
+                    Horas por subtarea: 2.2<br>
+                    Prioridad: 8/10<br>
+                    ¿Alta prioridad? true<br>
+                    ¿Tarea larga? true<br>
+                    ¿Tarea crítica? true
                 </div>
             </div>
         </div>
