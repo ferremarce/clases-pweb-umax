@@ -19,47 +19,49 @@
     <main class="contenedor">
         <div class="enunciado">
             <section class="requisitos">
-                <h2>📝 Enunciado</h2>
-                <p>Crea una calculadora que use funciones para realizar las operaciones. Los botones deben responder a eventos click y mostrar el resultado en la página.</p>
+                <h2>Enunciado</h2>
+                <p>Crea una calculadora que use funciones para cada operación aritmética. El menú se controla con <code>prompt()</code> y los resultados se muestran con <code>alert()</code>. <strong>No uses HTML ni eventos del DOM.</strong></p>
                 <ol>
-                    <li>Dos campos de entrada (input type="number") para los operandos</li>
-                    <li>4 botones para las operaciones: Sumar, Restar, Multiplicar, Dividir</li>
-                    <li>Un área para mostrar el resultado</li>
-                    <li>Cada operación debe implementarse como una función</li>
+                    <li>Función <code>sumar(a, b)</code> — devuelve a + b</li>
+                    <li>Función <code>restar(a, b)</code> — devuelve a - b</li>
+                    <li>Función <code>multiplicar(a, b)</code> — devuelve a * b</li>
+                    <li>Función <code>dividir(a, b)</code> — devuelve a / b (manejar división por cero)</li>
+                    <li>Función <code>calcular(operacion)</code> — pide dos números, ejecuta la operación recibida como <strong>callback</strong> y muestra el resultado</li>
+                    <li>Bucle <code>while</code> con menú para elegir operación o salir</li>
                 </ol>
             </section>
 
             <section class="requisitos">
-                <h2>✅ Requisitos</h2>
+                <h2>Requisitos</h2>
                 <ul>
-                    <li>Usar funciones con parámetros para cada operación</li>
-                    <li>Usar addEventListener para los botones</li>
-                    <li>Mostrar resultado en un elemento HTML (no alert)</li>
-                    <li>Manejar división por cero</li>
-                    <li>Diseño visual atractivo con CSS</li>
+                    <li>Declarar al menos una operación como <strong>arrow function</strong></li>
+                    <li>Usar <code>calcular(operacion)</code> donde la operación se pasa como callback</li>
+                    <li>Validar división por cero con retorno temprano</li>
+                    <li>Menú numérico con <code>prompt()</code> y <code>switch</code></li>
+                    <li>Todo el código en un solo archivo HTML dentro de <code>&lt;script&gt;</code></li>
                 </ul>
             </section>
 
             <section class="pistas">
-                <h2>💡 Pistas</h2>
+                <h2>Pistas</h2>
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>function sumar(a, b) { return a + b; }</li>
-                        <li>document.getElementById("boton").addEventListener("click", funcion)</li>
-                        <li>Number(document.getElementById("input").value)</li>
-                        <li>resultadoDiv.textContent = "Resultado: " + resultado</li>
+                        <li><code>const sumar = (a, b) => a + b;</code></li>
+                        <li><code>function calcular(callback) { ... callback(a, b) ... }</code></li>
+                        <li><code>if (b === 0) return "Error: división por cero";</code></li>
+                        <li><code>switch(opcion) { case "1": calcular(sumar); break; ... }</code></li>
                     </ul>
                 </details>
             </section>
 
             <section class="resultado-esperado">
-                <h2>🎯 Resultado Esperado</h2>
+                <h2>Resultado Esperado</h2>
                 <ul>
-                    <li>Interfaz con dos inputs y 4 botones</li>
-                    <li>Al hacer click en "Sumar", muestra la suma</li>
-                    <li>Al hacer click en "Dividir" con 0, muestra mensaje de error</li>
-                    <li>El resultado aparece en la página sin recargar</li>
+                    <li>Al cargar la página aparece el menú con prompt</li>
+                    <li>Seleccionar operación, ingresar números, ver resultado en alert</li>
+                    <li>Dividir por cero muestra mensaje de error</li>
+                    <li>El menú se repite hasta elegir "Salir"</li>
                 </ul>
             </section>
         </div>

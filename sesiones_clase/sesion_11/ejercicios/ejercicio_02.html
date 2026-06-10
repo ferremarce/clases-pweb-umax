@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2 - Galería de Imágenes con Eventos - INI04</title>
+    <title>Ejercicio 2 - Gestor de Tareas v3 - INI04</title>
     <link rel="stylesheet" href="../css/estilos_practica.css">
 </head>
 <body>
     <header class="header-ejercicios">
         <img src="../images/logo_umax.png" alt="Logo UMAX">
         <div class="header-texto">
-            <h1>Ejercicio 2: Galería de Imágenes con Eventos</h1>
+            <h1>Ejercicio 2: Gestor de Tareas v3</h1>
             <p>Sesión 11 - JavaScript III</p>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
@@ -19,48 +19,49 @@
     <main class="contenedor">
         <div class="enunciado">
             <section class="requisitos">
-                <h2>📝 Enunciado</h2>
-                <p>Crea una galería de imágenes interactiva con eventos del DOM. La galería debe:</p>
+                <h2>Enunciado</h2>
+                <p>Refactoriza el Gestor de Tareas de la sesión anterior organizando el código con <strong>funciones</strong>. El programa sigue usando <code>prompt()</code>, <code>alert()</code> y un bucle <code>while</code> con menú.</p>
                 <ol>
-                    <li>Mostrar una imagen grande principal</li>
-                    <li>Mostrar miniaturas debajo</li>
-                    <li>Al hacer click en una miniatura, cambiar la imagen grande</li>
-                    <li>Al pasar el mouse sobre una miniatura, resaltar visualmente</li>
-                    <li>Usar placeholder images (ej. via.placeholder.com o similar)</li>
+                    <li>Función <code>agregarTarea(tareas, nombre)</code> — agrega una tarea al array</li>
+                    <li>Función <code>listarTareas(tareas, callback)</code> — recorre el array y ejecuta un callback por cada tarea</li>
+                    <li>Función <code>completarTarea(tareas, indice, callback)</code> — marca como completada y ejecuta un callback de notificación</li>
+                    <li>Función <code>mostrarResumen(tareas)</code> — muestra total de tareas y cuántas están completadas</li>
+                    <li>Función <code>notificar(mensaje)</code> — callback que muestra un <code>alert()</code></li>
                 </ol>
             </section>
 
             <section class="requisitos">
-                <h2>✅ Requisitos</h2>
+                <h2>Requisitos</h2>
                 <ul>
-                    <li>Usar querySelectorAll para las miniaturas</li>
-                    <li>Usar addEventListener para click</li>
-                    <li>Usar eventos mouseover/mouseout para efecto hover</li>
-                    <li>Cambiar el atributo src de la imagen principal</li>
-                    <li>Al menos 4 imágenes en la galería</li>
+                    <li>Usar <strong>arrow functions</strong> para las funciones simples</li>
+                    <li>Usar <strong>callbacks</strong> para notificaciones y listado</li>
+                    <li>Mantener el bucle <code>while</code> con <code>switch</code> del menú</li>
+                    <li>Cada tarea debe ser un objeto: <code>{ id, nombre, completada }</code></li>
+                    <li>Validar que el nombre no esté vacío al agregar</li>
                 </ul>
             </section>
 
             <section class="pistas">
-                <h2>💡 Pistas</h2>
+                <h2>Pistas</h2>
                 <details>
                     <summary>Ver pistas</summary>
                     <ul>
-                        <li>imagenGrande.src = this.src para cambiar imagen</li>
-                        <li>this.classList.add("activa") para destacar</li>
-                        <li>Usa imágenes de placeholder como: https://via.placeholder.com/600x400</li>
-                        <li>Miniaturas: https://via.placeholder.com/150x100</li>
+                        <li><code>const agregarTarea = (tareas, nombre) => { ... }</code></li>
+                        <li><code>listarTareas(tareas, t => alert(t.nombre + " - " + (t.completada ? "Hecho" : "Pendiente")));</code></li>
+                        <li><code>completarTarea(tareas, i, notificar);</code></li>
+                        <li><code>tareas.length</code> para total, <code>.filter(t => t.completada).length</code> para completadas</li>
+                        <li>Revisa la solución de la sesión 10 como punto de partida</li>
                     </ul>
                 </details>
             </section>
 
             <section class="resultado-esperado">
-                <h2>🎯 Resultado Esperado</h2>
+                <h2>Resultado Esperado</h2>
                 <ul>
-                    <li>Imagen principal grande arriba</li>
-                    <li>4 miniaturas debajo</li>
-                    <li>Al hacer click en miniatura, cambia la imagen grande</li>
-                    <li>Las miniaturas tienen efecto visual al pasar el mouse</li>
+                    <li>Menú funcional con las mismas opciones que el v2</li>
+                    <li>El código está organizado en funciones claras y reutilizables</li>
+                    <li>Las notificaciones se manejan mediante callbacks</li>
+                    <li>Se usa arrow functions para al menos 2 funciones</li>
                 </ul>
             </section>
         </div>
