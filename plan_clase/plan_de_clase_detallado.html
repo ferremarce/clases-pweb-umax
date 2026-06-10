@@ -563,17 +563,17 @@
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>Introducción: qué es JS, inserción en HTML (interno/externo).</li>
+                            <li>Introducción: qué es JS, inserción en HTML (interno/externo), consola.</li>
                             <li>Declaración de variables: var, let, const, ámbito.</li>
                             <li>Tipos primitivos: string, number, boolean, null, undefined.</li>
-                            <li>Operadores aritméticos, asignación, comparación (== vs ===).</li>
+                            <li>Operadores: aritméticos, asignación, comparación (== vs ===, >, <, >=, <=), lógicos (&&, ||, !).</li>
                             <li>Interacción básica: alert, prompt, console.log.</li>
-                            <li>Conversión de tipos (coerción).</li>
+                            <li>Conversión de tipos (coerción) y comentarios en JS.</li>
                         </ul>
                         <div class="activities">
                             <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Conceptos fundamentales con ejemplos en vivo.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Ejercicios prácticos: calculadora básica, conversor de temperatura, uso de prompt.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora básica con prompt/alert + Gestor de Tareas v1 (análisis de expresiones con operadores de comparación y lógicos).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
@@ -592,15 +592,14 @@
                     <div class="session-body">
                         <ul class="content-list">
                             <li>Estructuras condicionales: if/else, else if, switch.</li>
-                            <li>Operador ternario.</li>
                             <li>Bucles: for, while, do while.</li>
-                            <li>Iterar arrays con forEach (introducción).</li>
-                            <li>Ejercicios de lógica: validación de formularios simple, tabla de multiplicar.</li>
+                            <li>Arrays: creación, acceso por índice, length, método push.</li>
+                            <li>Recorrer arrays con for y forEach.</li>
                         </ul>
                         <div class="activities">
                             <h4>📌 Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de condicionales y bucles con ejemplos.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Desarrollar juego de adivinanza, simulación de notas, validación de contraseña con bucle. Práctica en parejas.<br>
+                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de condicionales, bucles y arrays con ejemplos.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora con menú (switch) + Gestor de Tareas v2 (arrays, while, forEach, objetos tarea).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
@@ -627,7 +626,7 @@
                         <div class="activities">
                             <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Explicación de funciones, scope y callbacks con ejemplos en vivo.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Ejercicios: calculadora con funciones separadas, validación con callbacks, sistema de notas con funciones y arrays.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora con Funciones (arrow + callback para operaciones) + Gestor de Tareas v3 (refactor con funciones, callbacks para notificaciones).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
@@ -636,7 +635,7 @@
                     <div class="session-header">
                         <span class="session-number">Sesión 12</span>
                         <span class="session-title">
-                            <a href="../sesiones_clase/sesion_12/index.html">JavaScript IV: DOM y Almacenamiento</a>
+                            <a href="../sesiones_clase/sesion_12/index.html">JavaScript IV: Manipulación del DOM</a>
                         </span>
                         <span class="session-exercises">
                             <a href="../sesiones_clase/sesion_12/index_ejercicios.html">📝 Ejercicios</a>
@@ -645,18 +644,20 @@
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>El DOM: seleccionar elementos (getElementById, querySelector).</li>
-                            <li>Eventos del DOM: click, submit, mouseover. addEventListener.</li>
-                            <li>Modificar contenido (textContent, innerHTML) y estilos (style, classList).</li>
-                            <li>Crear y eliminar elementos dinámicamente (createElement, appendChild, remove).</li>
-                            <li>localStorage y sessionStorage: guardar, recuperar y eliminar datos.</li>
-                            <li>JSON.stringify y JSON.parse para objetos y arrays.</li>
-                            <li>Validación de formularios con JavaScript.</li>
+                            <li>El DOM: representación del HTML como objetos JavaScript.</li>
+                            <li>Seleccionar elementos: getElementById, querySelector, querySelectorAll.</li>
+                            <li>Eventos del DOM: click, mouseover, keyup. addEventListener con funciones nombradas, anónimas y arrow.</li>
+                            <li>Modificar contenido: textContent, innerHTML. Leer/escribir value en inputs.</li>
+                            <li>Modificar estilos: style inline, classList.add/remove/toggle.</li>
+                            <li>Crear elementos: createElement, configurar con textContent y setAttribute.</li>
+                            <li>Agregar al DOM: appendChild, prepend, insertBefore, after.</li>
+                            <li>Eliminar elementos: remove, removeChild. Vaciar contenedores.</li>
+                            <li>Modificar atributos: getAttribute, setAttribute, dataset.</li>
                         </ul>
                         <div class="activities">
                             <h4>📌 Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1.5h</span> Explicación integrada del DOM, eventos, almacenamiento y validación.<br>
-                                <span class="badge-time">Práctica 2.2h</span> Desarrollo guiado de To-Do List con DOM + localStorage. Ejercicios de validación de formularios.<br>
+                            <p><span class="badge-time">Teoría 1.5h</span> Explicación del DOM, selección, eventos, creación y eliminación de elementos con ejemplos en vivo.<br>
+                                <span class="badge-time">Práctica 2.2h</span> Calculadora Visual con DOM (inputs, botones, addEventListener, textContent) + Gestor de Tareas v4 con DOM (createElement, classList, eventos dinámicos en cada tarea).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
