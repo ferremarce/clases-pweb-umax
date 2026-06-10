@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sesión 10: JavaScript II - Operadores, Condicionales y Bucles - INI04</title>
+    <title>Sesión 10: JavaScript II - Condicionales y Bucles - INI04</title>
     <link rel="stylesheet" href="css/estilos_slides.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
         <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
         <div class="titulos">
             <h1>Sesión 10: JavaScript II</h1>
-            <div class="subtitulo">Operadores, Condicionales y Bucles | Unidad IV</div>
+            <div class="subtitulo">Condicionales y Bucles | Unidad IV</div>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira
             <div class="enlaces-plan">
@@ -25,14 +25,13 @@
         <section class="diapositiva" id="slide-01">
             <img src="images/logo_umax.png" alt="Logo UMAX" class="logo-grande">
             <h2>JavaScript II</h2>
-            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Operadores, Condicionales y Bucles</p>
+            <p style="font-size: 1.3rem; color: var(--color-texto-claro); margin-top: 10px;">Condicionales y Bucles</p>
         </section>
 
         <section class="diapositiva" id="slide-02">
             <h2>Objetivos de la Sesión</h2>
             <p>Al finalizar esta sesión, serás capaz de:</p>
             <ul class="objetivos-lista">
-                <li>Utilizar operadores de comparación (<code>===</code>, <code>!==</code>, <code>&gt;</code>, <code>&lt;</code>) y lógicos (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>)</li>
                 <li>Utilizar estructuras condicionales if/else, else if y switch</li>
                 <li>Aplicar el operador ternario para condiciones simples</li>
                 <li>Implementar bucles for, while y do while</li>
@@ -40,125 +39,11 @@
                 <li>Controlar el flujo con break y continue</li>
             </ul>
             <div class="tarjeta">
-                <strong>Repaso:</strong> En la sesión anterior aprendimos variables con let y const, tipos primitivos y operadores aritméticos en JavaScript.
+                <strong>Repaso:</strong> En la sesión anterior aprendimos variables, tipos de datos, operadores aritméticos, de comparación y lógicos en JavaScript.
             </div>
         </section>
 
         <section class="diapositiva" id="slide-03">
-            <h2>Operadores de Comparación</h2>
-            <div class="tarjeta">
-                <table class="tabla-codigo">
-                    <thead>
-                        <tr>
-                            <th>Operador</th>
-                            <th>Nombre</th>
-                            <th>Ejemplo</th>
-                            <th>Resultado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>===</code></td>
-                            <td>Estrictamente igual</td>
-                            <td><code>5 === "5"</code></td>
-                            <td><code>false</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>!==</code></td>
-                            <td>Estrictamente diferente</td>
-                            <td><code>5 !== "5"</code></td>
-                            <td><code>true</code></td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td><code>&gt;</code></td>
-                            <td>Mayor que</td>
-                            <td><code>10 > 5</code></td>
-                            <td><code>true</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;</code></td>
-                            <td>Menor que</td>
-                            <td><code>3 < 1</code></td>
-                            <td><code>false</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tarjeta">
-                <h3>Ejemplos prácticos</h3>
-                <pre><code>let edad = 18;
-let tienePermiso = true;
-
-// Comparación estricta
-edad === 18;       // true
-edad === "18";     // false (tipos diferentes)
-
-// Comparación de desigualdad
-edad !== 17;       // true
-
-// Mayor / menor que
-edad >= 18;        // true
-edad < 21;         // true</code></pre>
-            </div>
-            <div class="nota">
-                <strong>⚠️ Importante:</strong> Siempre usar <code>===</code> y <code>!==</code> para evitar errores de coerción de tipos.
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-04">
-            <h2>Operadores Lógicos</h2>
-            <div class="tarjeta">
-                <p>Los operadores lógicos permiten combinar condiciones y trabajar con valores booleanos.</p>
-                <table class="tabla-codigo">
-                    <thead>
-                        <tr>
-                            <th>Operador</th>
-                            <th>Nombre</th>
-                            <th>Ejemplo</th>
-                            <th>Resultado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>&&</code></td>
-                            <td>AND (y)</td>
-                            <td><code>true && false</code></td>
-                            <td><code>false</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>||</code></td>
-                            <td>OR (o)</td>
-                            <td><code>true || false</code></td>
-                            <td><code>true</code></td>
-                        </tr>
-                        <tr>
-                            <td><code>!</code></td>
-                            <td>NOT (no)</td>
-                            <td><code>!true</code></td>
-                            <td><code>false</code></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tarjeta">
-                <h3>Ejemplos prácticos</h3>
-                <pre><code>let edad = 20;
-let tienePermiso = true;
-
-// AND - ambas deben ser true
-edad >= 18 && tienePermiso; // true
-
-// OR - al menos una debe ser true
-edad >= 18 || tienePermiso; // true
-
-// NOT - invierte el valor
-!tienePermiso; // false</code></pre>
-            </div>
-        </section>
-
-        <section class="diapositiva" id="slide-05">
             <h2>Condicionales: if / else</h2>
             <div class="tarjeta">
                 <p>Los condicionales permiten ejecutar código según una condición.</p>
@@ -181,7 +66,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-06">
+        <section class="diapositiva" id="slide-04">
             <h2>Condicionales: else if</h2>
             <div class="tarjeta">
                 <p>Para múltiples condiciones, usar <code>else if</code>.</p>
@@ -200,7 +85,7 @@ if (nota >= 90) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-07">
+        <section class="diapositiva" id="slide-05">
             <h2>Operador Ternario</h2>
             <div class="tarjeta">
                 <p>Sintaxis reducida para condiciones simples:</p>
@@ -222,7 +107,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-08">
+        <section class="diapositiva" id="slide-06">
             <h2>Switch: Estructura</h2>
             <div class="tarjeta">
                 <p>Para comparar una variable contra múltiples valores.</p>
@@ -243,7 +128,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-09">
+        <section class="diapositiva" id="slide-07">
             <h2>Switch: Ejemplo</h2>
             <div class="tarjeta">
                 <pre><code>let dia = prompt("Ingresa un día (1-7):");
@@ -276,7 +161,7 @@ switch (dia) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-10">
+        <section class="diapositiva" id="slide-08">
             <h2>Bucles: while</h2>
             <div class="tarjeta">
                 <p>Repite código mientras la condición sea verdadera.</p>
@@ -296,7 +181,7 @@ while (contador <= 5) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-11">
+        <section class="diapositiva" id="slide-09">
             <h2>Bucles: do-while</h2>
             <div class="tarjeta">
                 <p>Ejecuta el código al menos una vez, luego verifica la condición.</p>
@@ -319,7 +204,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-12">
+        <section class="diapositiva" id="slide-10">
             <h2>Bucles: for</h2>
             <div class="tarjeta">
                 <p>Bucle con contador, ideal para repeticiones conocidas.</p>
@@ -336,7 +221,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-13">
+        <section class="diapositiva" id="slide-11">
             <h2>Break y Continue</h2>
             <div class="tarjeta">
                 <table class="tabla-codigo">
@@ -365,7 +250,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-14">
+        <section class="diapositiva" id="slide-12">
             <h2>Iterar Arrays con for</h2>
             <div class="tarjeta">
                 <pre><code>let nombres = ["Ana", "Juan", "Pedro", "María"];
@@ -379,12 +264,22 @@ for (let i = 0; i < nombres.length; i++) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-15">
+        <section class="diapositiva" id="slide-13">
+            <h2>Ejercicios de Práctica</h2>
+            <div class="tarjeta">
+                <h3>Ejercicio en Clase:</h3>
+                <p>Calculadora con Menú — calculadora interactiva con if/else donde el usuario elige la operación a realizar.</p>
+                <br>
+                <h3>Ejercicio Desafío (Entregar):</h3>
+                <p>Gestor de Tareas v2 — menú interactivo con while/switch para agregar, listar y completar tareas usando arrays.</p>
+            </div>
+            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
+        </section>
+
+        <section class="diapositiva" id="slide-14">
             <h2>Resumen de la Sesión</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
-                    <li><strong>Comparación:</strong> ===, !==, &gt;, &lt;</li>
-                    <li><strong>Lógicos:</strong> &amp;&amp;, ||, !</li>
                     <li><strong>Condicionales:</strong> if, else if, else</li>
                     <li><strong>Operador ternario:</strong> condición ? true : false</li>
                     <li><strong>Switch:</strong> múltiples valores, usar break</li>
@@ -397,7 +292,7 @@ for (let i = 0; i < nombres.length; i++) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-16">
+        <section class="diapositiva" id="slide-15">
             <h2>Temas Próximos</h2>
             <div class="tarjeta">
                 <h3>Sesión 11: JavaScript III - Funciones</h3>
@@ -414,19 +309,7 @@ for (let i = 0; i < nombres.length; i++) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-17">
-            <h2>Ejercicios de Práctica</h2>
-            <div class="tarjeta">
-                <h3>Ejercicio en Clase:</h3>
-                <p>Juego de adivinanza: el programa genera un número aleatorio y el usuario debe adivinarlo con pistas usando while.</p>
-                <br>
-                <h3>Ejercicio Desafío (Entregar):</h3>
-                <p>Validación de contraseña con intentos limitados y criterios de seguridad (longitud, mayúsculas, números).</p>
-            </div>
-            <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
-        </section>
-
-        <section class="diapositiva" id="slide-18">
+        <section class="diapositiva" id="slide-16">
             <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
     </main>
