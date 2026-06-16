@@ -1,7 +1,7 @@
 # Guía Docente — Sesión 10: JavaScript II
 
 > **Duración estimada:** ~1.5 h de teoría
-> **Objetivo:** Introducir estructuras condicionales (if/else, switch, ternario), bucles (for, while, do-while) e iteración de arrays en JavaScript.
+> **Objetivo:** Introducir el tipo de dato array, estructuras condicionales (if/else, switch, ternario), bucles (for, while, do-while) e iteración de arrays en JavaScript.
 > **Estilo:** Explicación como si estuvieras frente a la clase, con ejemplos, preguntas y transiciones.
 
 ---
@@ -12,9 +12,9 @@
 
 **Explicación al alumno:**
 
-> "Buenos días. En la sesión anterior aprendimos los fundamentos de JavaScript: variables, tipos de datos, operadores aritméticos, de comparación y lógicos. Hoy vamos a dar el siguiente paso: **tomar decisiones** con condicionales y **repetir acciones** con bucles.
->
-> Estas dos estructuras son la base de cualquier programa. Con condicionales, nuestro código puede reaccionar a diferentes situaciones. Con bucles, podemos automatizar tareas repetitivas sin escribir el mismo código una y otra vez."
+> "Buenos días. En la sesión anterior aprendimos los fundamentos de JavaScript: variables, tipos de datos, operadores aritméticos, de comparación y lógicos. Hoy vamos a dar el siguiente paso: aprenderemos un nuevo tipo de dato llamado **array** para almacenar listas, y luego **tomar decisiones** con condicionales y **repetir acciones** con bucles.
+> 
+> Estas estructuras son la base de cualquier programa. Con arrays organizamos datos, con condicionales nuestro código puede reaccionar a diferentes situaciones, y con bucles podemos automatizar tareas repetitivas sin escribir el mismo código una y otra vez."
 
 **Nota docente:** Haz una pausa. Pregunta si recuerdan los operadores de comparación y lógicos de la sesión 9.
 
@@ -26,19 +26,114 @@
 
 > "Al terminar esta sesión serán capaces de:
 >
-> 1. **Usar if/else, else if y switch** para que el programa tome decisiones.
-> 2. **Aplicar el operador ternario** para condiciones simples en una línea.
-> 3. **Usar bucles while, do-while y for** para repetir código.
-> 4. **Recorrer arrays con for** para procesar listas de datos.
-> 5. **Controlar el flujo** con break y continue.
+> 1. **Usar arrays** para almacenar colecciones de datos.
+> 2. **Usar if/else, else if y switch** para que el programa tome decisiones.
+> 3. **Aplicar el operador ternario** para condiciones simples en una línea.
+> 4. **Usar bucles while, do-while y for** para repetir código.
+> 5. **Recorrer arrays con for** para procesar listas de datos.
+> 6. **Controlar el flujo** con break y continue.
 >
 > Todo esto lo pondremos en práctica con dos ejercicios: una calculadora con menú y un gestor de tareas interactivo."
 
-**Transición:** "Empecemos por lo más básico: tomar decisiones con if/else."
+**Transición:** "Antes de empezar con condicionales y bucles, tenemos que conocer un tipo de dato muy útil: los arrays. Los necesitaremos para el ejercicio práctico y para los ejemplos de bucles."
 
 ---
 
-## Slide 3 — Condicionales: if / else
+## Slide 3 — El Tipo Array
+
+**Explicación al alumno:**
+
+> "Hasta ahora hemos visto tipos de datos simples: string, number, boolean. Pero ¿qué pasa si queremos guardar una **lista** de cosas? Por ejemplo, los nombres de todos los alumnos de la clase, o una lista de tareas pendientes.
+>
+> Para eso existen los **arrays**. Un array es una colección ordenada de elementos. Se escribe con corchetes y los elementos separados por comas.
+>
+> ```javascript
+> let frutas = ["manzana", "banana", "naranja"];
+> let numeros = [10, 20, 30, 40];
+> let vacio = [];
+> ```
+>
+> Cada elemento tiene una **posición** llamada **índice**. Los índices empiezan en **0**. Así que en `frutas`:
+> - `frutas[0]` es `"manzana"`
+> - `frutas[1]` es `"banana"`
+> - `frutas[2]` es `"naranja"`
+>
+> Podemos preguntar cuántos elementos tiene con **`.length`**:
+> ```javascript
+> console.log(frutas.length); // 3
+> ```
+>
+> Y podemos acceder al último elemento con `frutas[frutas.length - 1]`."
+
+**Analogía:** "Un array es como una estantería con baldas numeradas. Cada balda tiene un número (índice) y guarda un objeto. El 0 es la primera balda, la 1 la segunda, etc. .length te dice cuántas baldas tienes."
+
+**Demo en vivo:** Abre la consola y escribe:
+```javascript
+let frutas = ["manzana", "banana", "naranja"];
+console.log(frutas[0]);     // "manzana"
+console.log(frutas.length); // 3
+console.log(frutas[frutas.length - 1]); // "naranja"
+```
+
+**Pregunta a la clase:** "Si un array tiene 5 elementos, ¿cuál es el índice del último?" (4, porque empieza en 0.)
+
+**Transición:** "Ahora que sabemos acceder a los elementos, veamos cómo modificarlos y añadir nuevos."
+
+---
+
+## Slide 4 — Arrays: Modificación y Métodos Básicos
+
+**Explicación al alumno:**
+
+> "Los arrays no son fijos. Podemos cambiar su contenido y añadir nuevos elementos.
+>
+> **Modificar un elemento existente:**
+> ```javascript
+> let frutas = ["manzana", "banana", "naranja"];
+> frutas[1] = "pera";
+> console.log(frutas); // ["manzana", "pera", "naranja"]
+> ```
+>
+> **Añadir un elemento al final con `.push()`:**
+> ```javascript
+> frutas.push("uva");
+> console.log(frutas); // ["manzana", "pera", "naranja", "uva"]
+> console.log(frutas.length); // 4
+> ```
+>
+> **Los arrays pueden mezclar tipos:**
+> ```javascript
+> let mezcla = ["texto", 42, true, null];
+> ```
+>
+> **Y pueden contener objetos** (esto lo usaremos en el ejercicio 2):
+> ```javascript
+> let tareas = [
+>     { nombre: "Estudiar JS", completada: false },
+>     { nombre: "Hacer ejercicio", completada: true }
+> ];
+> console.log(tareas[0].nombre); // "Estudiar JS"
+> ```
+>
+> No se asusten por los objetos ahora, los veremos en detalle más adelante. Por ahora sepan que podemos guardar estructuras más complejas dentro de un array."
+
+**Analogía:** ".push() es como añadir un libro nuevo al final de una estantería. La estantería ahora tiene un libro más."
+
+**Demo en vivo:**
+```javascript
+let frutas = ["manzana", "banana"];
+frutas.push("kiwi");
+console.log(frutas);        // ["manzana", "banana", "kiwi"]
+console.log(frutas.length); // 3
+```
+
+**Pregunta a la clase:** "¿Cómo añadiríais 'fresa' al array `frutas`?" (frutas.push("fresa")).
+
+**Transición:** "Ahora que ya sabemos qué son los arrays y cómo usarlos, pasemos a las estructuras que nos permiten tomar decisiones: los condicionales."
+
+---
+
+## Slide 5 — Condicionales: if / else
 
 **Explicación al alumno:**
 
@@ -86,7 +181,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 4 — Condicionales: else if
+## Slide 6 — Condicionales: else if
 
 **Explicación al alumno:**
 
@@ -118,7 +213,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 5 — Operador Ternario
+## Slide 7 — Operador Ternario
 
 **Explicación al alumno:**
 
@@ -157,7 +252,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 6 — Switch: Estructura
+## Slide 8 — Switch: Estructura
 
 **Explicación al alumno:**
 
@@ -187,7 +282,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 7 — Switch: Ejemplo
+## Slide 9 — Switch: Ejemplo
 
 **Explicación al alumno:**
 
@@ -233,7 +328,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 8 — Bucles: while
+## Slide 10 — Bucles: while
 
 **Explicación al alumno:**
 
@@ -275,7 +370,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 9 — Bucles: do-while
+## Slide 11 — Bucles: do-while
 
 **Explicación al alumno:**
 
@@ -309,7 +404,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 10 — Bucles: for
+## Slide 12 — Bucles: for
 
 **Explicación al alumno:**
 
@@ -347,7 +442,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 11 — Break y Continue
+## Slide 13 — Break y Continue
 
 **Explicación al alumno:**
 
@@ -389,7 +484,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 12 — Iterar Arrays con for
+## Slide 14 — Iterar Arrays con for
 
 **Explicación al alumno:**
 
@@ -432,7 +527,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 13 — Actividad Práctica
+## Slide 15 — Actividad Práctica
 
 **Explicación al alumno:**
 
@@ -450,12 +545,13 @@ if (edad >= 18) {
 
 ---
 
-## Slide 14 — Resumen de la Sesión
+## Slide 16 — Resumen de la Sesión
 
 **Explicación al alumno (recapitulación rápida):**
 
 > "Resumen de lo que aprendimos hoy:
 >
+> - **Arrays**: colecciones ordenadas con `[]`, índices desde 0, `.length` y `.push()`.
 > - **Condicionales**: if, else if, else — para tomar decisiones.
 > - **Operador ternario**: condición ? true : false — forma compacta.
 > - **Switch**: para múltiples valores de una misma variable. No olviden el break.
@@ -463,13 +559,13 @@ if (edad >= 18) {
 > - **Do-while**: igual, pero ejecuta al menos una vez.
 > - **For**: bucle con contador, el más usado.
 > - **Break**: sale del bucle; **Continue**: salta a la siguiente iteración.
-> - **Arrays + For**: la combinación perfecta para procesar listas."
+> - **Arrays + For**: recorrer listas con un bucle."
 
 **Pregunta final:** "¿Alguna duda antes de empezar la práctica?"
 
 ---
 
-## Slide 15 — Temas Próximos
+## Slide 17 — Temas Próximos
 
 **Explicación al alumno:**
 
@@ -487,7 +583,7 @@ if (edad >= 18) {
 
 ---
 
-## Slide 16 — Volver al Inicio
+## Slide 18 — Volver al Inicio
 
 **Explicación al alumno:**
 

@@ -11,7 +11,7 @@
         <img src="images/logo_umax.png" alt="Logo UMAX" class="logo">
         <div class="titulos">
             <h1>Sesión 10: JavaScript II</h1>
-            <div class="subtitulo">Condicionales y Bucles | Unidad IV</div>
+            <div class="subtitulo">Arrays, Condicionales y Bucles | Unidad IV</div>
         </div>
         <div class="profesor">Prof. Ing. Juan M. Ferreira
             <div class="enlaces-plan">
@@ -32,6 +32,7 @@
             <h2>Objetivos de la Sesión</h2>
             <p>Al finalizar esta sesión, serás capaz de:</p>
             <ul class="objetivos-lista">
+                <li>Utilizar arrays para almacenar colecciones de datos</li>
                 <li>Utilizar estructuras condicionales if/else, else if y switch</li>
                 <li>Aplicar el operador ternario para condiciones simples</li>
                 <li>Implementar bucles for, while y do while</li>
@@ -44,6 +45,54 @@
         </section>
 
         <section class="diapositiva" id="slide-03">
+            <h2>El Tipo Array</h2>
+            <div class="tarjeta">
+                <p>Un <strong>array</strong> es una colección ordenada de elementos. Permite guardar múltiples valores en una sola variable.</p>
+                <br>
+                <pre><code>// Sintaxis: corchetes y elementos separados por comas
+let frutas = ["manzana", "banana", "naranja"];
+let numeros = [10, 20, 30, 40];
+let vacio = [];</code></pre>
+                <br>
+                <h3>Acceso por índice (empieza en 0)</h3>
+                <pre><code>frutas[0]   // "manzana"
+frutas[1]   // "banana"
+frutas[2]   // "naranja"
+frutas.length  // 3 (cantidad de elementos)</code></pre>
+            </div>
+            <div class="nota">
+                <strong>📌 Importante:</strong> Los índices empiezan en <strong>0</strong>, no en 1. El último elemento está en <code>frutas[frutas.length - 1]</code>.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-04">
+            <h2>Arrays: Modificación y Métodos</h2>
+            <div class="tarjeta">
+                <h3>Modificar un elemento</h3>
+                <pre><code>frutas[1] = "pera";
+console.log(frutas); // ["manzana", "pera", "naranja"]</code></pre>
+                <br>
+                <h3>Añadir al final con .push()</h3>
+                <pre><code>frutas.push("uva");
+console.log(frutas); // ["manzana", "pera", "naranja", "uva"]
+console.log(frutas.length); // 4</code></pre>
+                <br>
+                <h3>Arrays heterogéneos</h3>
+                <pre><code>let mezcla = ["texto", 42, true, null];</code></pre>
+                <br>
+                <h3>Arrays de objetos (para ejercicios)</h3>
+                <pre><code>let tareas = [
+    { nombre: "Estudiar JS", completada: false },
+    { nombre: "Hacer ejercicio", completada: true }
+];
+console.log(tareas[0].nombre); // "Estudiar JS"</code></pre>
+            </div>
+            <div class="nota">
+                <strong>💡 Recuerda:</strong> <code>.push()</code> añade un elemento al final del array. <code>.length</code> se actualiza automáticamente.
+            </div>
+        </section>
+
+        <section class="diapositiva" id="slide-05">
             <h2>Condicionales: if / else</h2>
             <div class="tarjeta">
                 <p>Los condicionales permiten ejecutar código según una condición.</p>
@@ -66,7 +115,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-04">
+        <section class="diapositiva" id="slide-06">
             <h2>Condicionales: else if</h2>
             <div class="tarjeta">
                 <p>Para múltiples condiciones, usar <code>else if</code>.</p>
@@ -85,7 +134,7 @@ if (nota >= 90) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-05">
+        <section class="diapositiva" id="slide-07">
             <h2>Operador Ternario</h2>
             <div class="tarjeta">
                 <p>Sintaxis reducida para condiciones simples:</p>
@@ -107,7 +156,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-06">
+        <section class="diapositiva" id="slide-08">
             <h2>Switch: Estructura</h2>
             <div class="tarjeta">
                 <p>Para comparar una variable contra múltiples valores.</p>
@@ -128,7 +177,7 @@ if (edad >= 18) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-07">
+        <section class="diapositiva" id="slide-09">
             <h2>Switch: Ejemplo</h2>
             <div class="tarjeta">
                 <pre><code>let dia = prompt("Ingresa un día (1-7):");
@@ -161,7 +210,7 @@ switch (dia) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-08">
+        <section class="diapositiva" id="slide-10">
             <h2>Bucles: while</h2>
             <div class="tarjeta">
                 <p>Repite código mientras la condición sea verdadera.</p>
@@ -181,7 +230,7 @@ while (contador <= 5) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-09">
+        <section class="diapositiva" id="slide-11">
             <h2>Bucles: do-while</h2>
             <div class="tarjeta">
                 <p>Ejecuta el código al menos una vez, luego verifica la condición.</p>
@@ -204,7 +253,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-10">
+        <section class="diapositiva" id="slide-12">
             <h2>Bucles: for</h2>
             <div class="tarjeta">
                 <p>Bucle con contador, ideal para repeticiones conocidas.</p>
@@ -221,7 +270,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-11">
+        <section class="diapositiva" id="slide-13">
             <h2>Break y Continue</h2>
             <div class="tarjeta">
                 <table class="tabla-codigo">
@@ -250,7 +299,7 @@ alert("Gracias");</code></pre>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-12">
+        <section class="diapositiva" id="slide-14">
             <h2>Iterar Arrays con for</h2>
             <div class="tarjeta">
                 <pre><code>let nombres = ["Ana", "Juan", "Pedro", "María"];
@@ -264,7 +313,7 @@ for (let i = 0; i < nombres.length; i++) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-13">
+        <section class="diapositiva" id="slide-15">
             <h2>Ejercicios de Práctica</h2>
             <div class="tarjeta">
                 <h3>Ejercicio en Clase:</h3>
@@ -276,10 +325,11 @@ for (let i = 0; i < nombres.length; i++) {
             <a href="index_ejercicios.html" class="btn-navegacion" target="_blank">Ver enunciados completos</a>
         </section>
 
-        <section class="diapositiva" id="slide-14">
+        <section class="diapositiva" id="slide-16">
             <h2>Resumen de la Sesión</h2>
             <div class="tarjeta">
                 <ul class="lista-grande">
+                    <li><strong>Arrays:</strong> colecciones con `[]`, índices 0, `.length`, `.push()`</li>
                     <li><strong>Condicionales:</strong> if, else if, else</li>
                     <li><strong>Operador ternario:</strong> condición ? true : false</li>
                     <li><strong>Switch:</strong> múltiples valores, usar break</li>
@@ -287,12 +337,12 @@ for (let i = 0; i < nombres.length; i++) {
                     <li><strong>Do-while:</strong> bucle con condición al final</li>
                     <li><strong>For:</strong> bucle con contador</li>
                     <li><strong>Break/Continue:</strong> controlar el flujo</li>
-                    <li><strong>Arrays:</strong> usar for para recorrer</li>
+                    <li><strong>Arrays + For:</strong> recorrer listas con bucle</li>
                 </ul>
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-15">
+        <section class="diapositiva" id="slide-17">
             <h2>Temas Próximos</h2>
             <div class="tarjeta">
                 <h3>Sesión 11: JavaScript III - Funciones</h3>
@@ -309,7 +359,7 @@ for (let i = 0; i < nombres.length; i++) {
             </div>
         </section>
 
-        <section class="diapositiva" id="slide-16">
+        <section class="diapositiva" id="slide-18">
             <a href="#" class="btn-navegacion" onclick="window.scrollTo(0, 0); return false;" style="display: block; margin: 30px auto 10px; width: fit-content;">Volver al Inicio</a>
         </section>
     </main>
