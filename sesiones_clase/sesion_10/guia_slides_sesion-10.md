@@ -101,6 +101,13 @@ console.log(frutas[frutas.length - 1]); // "naranja"
 > console.log(frutas.length); // 4
 > ```
 >
+> **Eliminar el último elemento con `.pop()`:**
+> ```javascript
+> frutas.pop();
+> console.log(frutas);        // ["manzana", "pera", "naranja"]
+> console.log(frutas.length); // 3
+> ```
+>
 > **Los arrays pueden mezclar tipos:**
 > ```javascript
 > let mezcla = ["texto", 42, true, null];
@@ -115,21 +122,35 @@ console.log(frutas[frutas.length - 1]); // "naranja"
 > console.log(tareas[0].nombre); // "Estudiar JS"
 > ```
 >
+> **Y eliminar en cualquier posición con `.splice()`:**
+> ```javascript
+> let frutas = ["manzana", "pera", "naranja"];
+> frutas.splice(1, 1); // desde índice 1, elimina 1 elemento
+> console.log(frutas);  // ["manzana", "naranja"]
+> ```
+>
+> El primer número es el índice donde empezar, el segundo es cuántos elementos eliminar.
+>
 > No se asusten por los objetos ahora, los veremos en detalle más adelante. Por ahora sepan que podemos guardar estructuras más complejas dentro de un array."
 
-**Analogía:** ".push() es como añadir un libro nuevo al final de una estantería. La estantería ahora tiene un libro más."
+**Analogía:** ".push() es como añadir un libro nuevo al final de una estantería. .pop() es sacar ese libro del final. Y .splice() es como quitar un libro de cualquier posición de la estantería."
 
 **Demo en vivo:**
 ```javascript
-let frutas = ["manzana", "banana"];
-frutas.push("kiwi");
+let frutas = ["manzana", "banana", "kiwi"];
+frutas.push("uva");
+console.log(frutas);        // ["manzana", "banana", "kiwi", "uva"]
+frutas.pop();
 console.log(frutas);        // ["manzana", "banana", "kiwi"]
-console.log(frutas.length); // 3
+frutas.splice(1, 1);
+console.log(frutas);        // ["manzana", "kiwi"]
 ```
 
-**Pregunta a la clase:** "¿Cómo añadiríais 'fresa' al array `frutas`?" (frutas.push("fresa")).
+**Pregunta a la clase:** "¿Cómo añadiríais 'fresa' al array `frutas`?" (frutas.push("fresa")). "¿Y cómo eliminaríais el último elemento?" (frutas.pop()).
 
-**Transición:** "Ahora que ya sabemos qué son los arrays y cómo usarlos, pasemos a las estructuras que nos permiten tomar decisiones: los condicionales."
+**Pregunta trampa:** "¿Qué pasa si hago frutas.splice(0, 2)?" (Elimina los dos primeros elementos del array).
+
+**Transición:** "Ahora que ya sabemos crear, modificar, añadir y eliminar elementos en arrays, pasemos a las estructuras que nos permiten tomar decisiones: los condicionales."
 
 ---
 
