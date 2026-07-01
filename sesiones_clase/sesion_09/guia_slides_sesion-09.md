@@ -51,7 +51,7 @@
 > - Firefox usa **SpiderMonkey**
 > - Safari usa **JavaScriptCore**
 >
-> Esto significa que JS se ejecuta **del lado del cliente**, en el computadora del usuario, sin necesidad de enviar nada al servidor.
+> Esto significa que JS se ejecuta **del lado del cliente**, en la computadora del usuario, sin necesidad de enviar nada al servidor.
 >
 > Un error común: **JavaScript NO es Java**. Son lenguajes completamente distintos. Java es como el inglés británico y JavaScript como el español, comparten alguna palabra pero no se parecen en nada. El nombre fue una estrategia de marketing.
 >
@@ -464,7 +464,7 @@ console.log("El alumno se llama:", nombre);
 > - **Conversión**: Number(), String(), Boolean() — sean explícitos.
 > - **Buenas prácticas**: camelCase, nombres descriptivos, comentarios."
 
-**Pregunta final:** "¿Alguna duda antes de empezar la práctica?"
+**Pregunta final:** "¿Alguna duda antes de empezar la práctica?" (Pausa. Resolver dudas conceptuales antes de pasar a la práctica.)
 
 ---
 

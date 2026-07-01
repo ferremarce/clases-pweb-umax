@@ -24,9 +24,9 @@
 **Título:** Objetivos de la Sesión
 
 **Explicación al alumno:**
-> "Al finalizar esta sesión, seréis capaces de seleccionar elementos del DOM de distintas formas, manejar eventos como clics y teclados, modificar contenido y estilos, y crear o eliminar elementos dinámicamente. Todo esto sin recargar la página."
+> "Al finalizar esta sesión, serán capaces de seleccionar elementos del DOM de distintas formas, manejar eventos como clics y teclados, modificar contenido y estilos, y crear o eliminar elementos dinámicamente. Todo esto sin recargar la página."
 
-**Pregunta a la clase:** "¿Alguien ha visto una página que cambie sin recargar, como cuando le dais a 'Me gusta' en una red social?"
+**Pregunta a la clase:** "¿Alguien ha visto una página que cambie sin recargar, como cuando le dan a 'Me gusta' en una red social?" (Esperar ejemplos: feeds que se actualizan, ventanas modales, validación en tiempo real, menús desplegables.)
 
 **Analogía:** "El DOM es como el esqueleto de la página. JavaScript puede mover, añadir o quitar huesos de ese esqueleto en tiempo real."
 
@@ -45,7 +45,7 @@
 
 **Actividad rápida:** "Escribid en la consola `document.title` y luego cambiad el valor: `document.title = 'Mi título nuevo'`. Ved cómo cambia la pestaña."
 
-**Pregunta a la clase:** "¿Qué creéis que pasa si escribimos `document.body.innerHTML = ''`?" (Respuesta: se borra toda la página.)
+**Pregunta a la clase:** "¿Qué creen que pasa si escribimos `document.body.innerHTML = ''`?" (Respuesta: se borra toda la página.)
 
 **Transición:** "Para manipular elementos, primero tenemos que seleccionarlos."
 
@@ -79,7 +79,7 @@ console.log(titulo);
 **Explicación al alumno:**
 > "Los eventos son acciones que ocurren en la página: un clic, mover el ratón, escribir en un input, enviar un formulario. JavaScript puede escuchar estos eventos y ejecutar código cuando ocurren. Cada evento tiene un nombre: `click`, `mouseover`, `keyup`, `submit`, etc."
 
-**Pregunta a la clase:** "¿Qué eventos creéis que podría tener un botón?"
+**Pregunta a la clase:** "¿Qué eventos creen que podría tener un botón?" (Respuesta: `click`, `mouseenter`, `mouseleave`, `focus`, `blur`, `dblclick`.)
 
 **Analogía:** "Un evento es como un timbre: cuando alguien lo pulsa, suena. Nosotros decidimos qué hacer cuando suena."
 
@@ -104,7 +104,7 @@ boton.addEventListener("click", () => {
 
 **Nota docente:** Mostrar las tres formas (anónima, arrow, nombrada). Explicar que la función nombrada es reutilizable.
 
-**Pregunta a la clase:** "¿Por qué creéis que es mejor usar addEventListener que el atributo `onclick` en HTML?"
+**Pregunta a la clase:** "¿Por qué creen que es mejor usar addEventListener que el atributo `onclick` en HTML?" (Respuesta: separa el comportamiento de la estructura, permite múltiples eventos del mismo tipo, y se puede remover con `removeEventListener`.)
 
 **Transición:** "Ahora que sabemos escuchar eventos, veamos cómo modificar el contenido de los elementos."
 
@@ -155,7 +155,7 @@ elemento.classList.toggle("visible");
 
 **Analogía:** "Modificar `style` es como pintar una pared con un rodillo. Usar `classList` es como cambiar la funda de un cojín: tienes fundas predefinidas y solo las cambias."
 
-**Actividad rápida:** "Coged un elemento de la página y probad `classList.toggle('activa')` en la consola."
+**Actividad rápida:** "Tomen un elemento de la página y prueben `classList.toggle('activa')` en la consola."
 
 **Transición:** "Ahora veamos cómo crear nuevos elementos desde JavaScript."
 
@@ -176,9 +176,9 @@ nuevoDiv.className = "nuevo-elemento";
 nuevoDiv.setAttribute("id", "miId");
 ```
 
-**Analogía:** "`createElement` es como comprar un mueble en caja plana. Lo tenéis, pero todavía no está montado ni colocado en la habitación."
+**Analogía:** "`createElement` es como comprar un mueble en caja plana. Lo tienen, pero todavía no está montado ni colocado en la habitación."
 
-**Pregunta a la clase:** "¿Qué creéis que pasa si creamos un elemento pero no lo insertamos en el DOM?" (Respuesta: existe en memoria pero no se ve en la página.)
+**Pregunta a la clase:** "¿Qué creen que pasa si creamos un elemento pero no lo insertamos en el DOM?" (Respuesta: existe en memoria pero no se ve en la página.)
 
 **Transición:** "Una vez creado, tenemos que insertarlo en el DOM."
 
@@ -250,7 +250,7 @@ boton.disabled = false;
 elemento.dataset.info = "valor";
 ```
 
-**Actividad rápida:** "Buscad un elemento con `data-*` en la página de ejercicios y probad a leerlo con `dataset`."
+**Actividad rápida:** "Busquen un elemento con `data-*` en la página de ejercicios y prueben a leerlo con `dataset`."
 
 **Transición:** "Ahora vamos a practicar todo lo que hemos aprendido."
 
@@ -261,11 +261,11 @@ elemento.dataset.info = "valor";
 **Título:** Ejercicios de Práctica
 
 **Explicación al alumno:**
-> "Vamos a hacer dos ejercicios. El primero: una calculadora visual con inputs, botones y resultado en pantalla. Reutilizaréis las funciones de la sesión anterior, pero ahora conectadas al DOM con eventos. El segundo: un gestor de tareas con interfaz visual donde podréis agregar, completar y eliminar tareas dinámicamente."
+> "Vamos a hacer dos ejercicios. El primero: una calculadora visual con inputs, botones y resultado en pantalla. Reutilizarán las funciones de la sesión anterior, pero ahora conectadas al DOM con eventos. El segundo: un gestor de tareas con interfaz visual donde podrán agregar, completar y eliminar tareas dinámicamente."
 
 **Nota docente:** Explicar que el ejercicio 1 es el que harán en clase; el ejercicio 2 es para entregar. Recordar que no deben usar localStorage, solo arrays en memoria.
 
-**Transición:** "Abrid los enunciados y empezad con el ejercicio 1."
+**Transición:** "Abran los enunciados y empiecen con el ejercicio 1."
 
 ---
 
@@ -300,4 +300,4 @@ elemento.dataset.info = "valor";
 **Título:** (sin título — enlace de volver al inicio)
 
 **Cierre:**
-> "Hoy habéis dado un paso enorme. Ahora sabéis hacer páginas web interactivas que responden a clics, que crean y eliminan contenido, que cambian estilos en tiempo real. Esto es lo que separa una página estática de una aplicación web. Practicad los ejercicios, experimentad en la consola, y nos vemos en la próxima sesión. ¡Buen trabajo!"
+> "Hoy han dado un paso enorme. Ahora saben hacer páginas web interactivas que responden a clics, que crean y eliminan contenido, que cambian estilos en tiempo real. Esto es lo que separa una página estática de una aplicación web. Practiquen los ejercicios, experimenten en la consola, y nos vemos en la próxima sesión. ¡Buen trabajo!"

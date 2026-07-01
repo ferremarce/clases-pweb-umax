@@ -146,7 +146,7 @@ frutas.splice(1, 1);
 console.log(frutas);        // ["manzana", "kiwi"]
 ```
 
-**Pregunta a la clase:** "¿Cómo añadiríais 'fresa' al array `frutas`?" (frutas.push("fresa")). "¿Y cómo eliminaríais el último elemento?" (frutas.pop()).
+**Pregunta a la clase:** "¿Cómo añadirían 'fresa' al array `frutas`?" (frutas.push("fresa")). "¿Y cómo eliminarían el último elemento?" (frutas.pop()).
 
 **Pregunta trampa:** "¿Qué pasa si hago frutas.splice(0, 2)?" (Elimina los dos primeros elementos del array).
 
@@ -582,7 +582,7 @@ if (edad >= 18) {
 > - **Break**: sale del bucle; **Continue**: salta a la siguiente iteración.
 > - **Arrays + For**: recorrer listas con un bucle."
 
-**Pregunta final:** "¿Alguna duda antes de empezar la práctica?"
+**Pregunta final:** "¿Alguna duda antes de empezar la práctica?" (Pausa. Resolver dudas conceptuales antes de pasar a la práctica.)
 
 ---
 

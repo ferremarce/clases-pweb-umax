@@ -24,11 +24,11 @@
 **Título:** Objetivos de la Sesión
 
 **Explicación al alumno:**
-> "Estos son los objetivos de hoy. Vamos a aprender a declarar funciones de tres formas distintas: declaración tradicional, expresión de función, y arrow functions. También veremos parámetros con valores por defecto, cómo funciona el ámbito de variables, y el concepto de callbacks — funciones que se pasan como argumento a otras funciones. Al finalizar, podréis organizar vuestro código de forma profesional."
+> "Estos son los objetivos de hoy. Vamos a aprender a declarar funciones de tres formas distintas: declaración tradicional, expresión de función, y arrow functions. También veremos parámetros con valores por defecto, cómo funciona el ámbito de variables, y el concepto de callbacks — funciones que se pasan como argumento a otras funciones. Al finalizar, podrán organizar su código de forma profesional."
 
-**Pregunta a la clase:** "¿Alguien ha usado funciones antes, aunque sea en otro lenguaje?"
+**Pregunta a la clase:** "¿Alguien ha usado funciones antes, aunque sea en otro lenguaje?" (Escuchar respuestas. Si nadie, usar analogía de recetas de cocina.)
 
-**Analogía:** "Pensad en una función como una receta de cocina: tenéis una lista de ingredientes (parámetros) y unos pasos (el código). Cada vez que queréis hacer ese plato, seguís la misma receta sin tener que escribirla de nuevo."
+**Analogía:** "Piensen en una función como una receta de cocina: tienen una lista de ingredientes (parámetros) y unos pasos (el código). Cada vez que quieren hacer ese plato, siguen la misma receta sin tener que escribirla de nuevo."
 
 **Transición:** "Empecemos por lo básico: ¿qué es una función?"
 
@@ -39,11 +39,11 @@
 **Título:** Qué son las Funciones
 
 **Explicación al alumno:**
-> "Una función es un bloque de código reutilizable que realiza una tarea específica. Imaginad que en un programa tenéis que calcular el IVA de un producto en cinco sitios distintos. Sin funciones, tendríais que escribir la misma fórmula cinco veces. Con una función, escribís la fórmula una vez y la llamáis cada vez que la necesitéis."
+> "Una función es un bloque de código reutilizable que realiza una tarea específica. Imaginen que en un programa tienen que calcular el IVA de un producto en cinco sitios distintos. Sin funciones, tendrían que escribir la misma fórmula cinco veces. Con una función, escriben la fórmula una vez y la llaman cada vez que la necesiten."
 
-**Analogía:** "Una función es como un trabajador especializado. Si necesitáis que alguien pinte una pared, llamáis al pintor (la función), le pasáis la pared (parámetros), y él os devuelve la pared pintada (el resultado). No necesitáis saber cómo mezcla la pintura, solo que hace su trabajo."
+**Analogía:** "Una función es como un trabajador especializado. Si necesitan que alguien pinte una pared, llaman al pintor (la función), le pasan la pared (parámetros), y él les devuelve la pared pintada (el resultado). No necesitan saber cómo mezcla la pintura, solo que hace su trabajo."
 
-**Pregunta a la clase:** "¿Qué ventajas creéis que tiene usar funciones?"
+**Pregunta a la clase:** "¿Qué ventajas creen que tiene usar funciones?" (Reutilización de código, organización, facilitar el mantenimiento, evitar repetir código.)
 
 **Transición:** "Veamos cómo se declara una función en JavaScript."
 
@@ -66,7 +66,7 @@ alert(saludar("Juan"));
 
 **Nota docente:** Explicar el concepto de `return`: devuelve un valor y termina la ejecución de la función. Mencionar el hoisting: las funciones declaradas con `function` pueden llamarse antes de su declaración en el código.
 
-**Pregunta a la clase:** "¿Qué pasa si una función no tiene `return`?"
+**Pregunta a la clase:** "¿Qué pasa si una función no tiene `return`?" (Respuesta: devuelve `undefined`, pero igual ejecuta el código interno.)
 
 **Transición:** "Además de la declaración tradicional, hay otras formas de crear funciones."
 
@@ -113,7 +113,7 @@ function saludar(nombre = "Usuario") {
 alert(saludar()); // "Hola, Usuario"
 ```
 
-**Pregunta a la clase:** "¿Qué creéis que pasa si llamamos a una función con más argumentos de los que tiene parámetros?"
+**Pregunta a la clase:** "¿Qué creen que pasa si llamamos a una función con más argumentos de los que tiene parámetros?" (Respuesta: los argumentos extra se ignoran.)
 
 **Transición:** "Ahora hablemos de dónde viven las variables que declaramos."
 
@@ -126,7 +126,7 @@ alert(saludar()); // "Hola, Usuario"
 **Explicación al alumno:**
 > "El ámbito o scope de una variable determina desde dónde podemos acceder a ella. Las variables declaradas fuera de cualquier función tienen ámbito global: se pueden usar en cualquier parte del código. Las variables declaradas dentro de una función son locales: solo existen dentro de esa función. Esto es muy importante para evitar conflictos."
 
-**Analogía:** "Pensad en una empresa: la variable global sería como un anuncio en la recepción que todos pueden ver. La variable local sería como un documento en el escritorio de un empleado: solo él puede acceder a él."
+**Analogía:** "Piensen en una empresa: la variable global sería como un anuncio en la recepción que todos pueden ver. La variable local sería como un documento en el escritorio de un empleado: solo él puede acceder a él."
 
 **Pregunta trampa:** "¿Qué pasa si declaramos una variable con `var` dentro de un bloque `if`?" (Respuesta: Con `var` el ámbito es de función, no de bloque. Con `let` y `const` es de bloque.)
 
@@ -143,7 +143,7 @@ alert(saludar()); // "Hola, Usuario"
 **Explicación al alumno:**
 > "Un callback es una función que se pasa como argumento a otra función. La función que recibe el callback lo ejecuta en el momento adecuado. Esto es muy útil para personalizar el comportamiento. En el ejemplo, la función `procesar` recibe un dato y un callback. Lo ejecuta con el resultado."
 
-**Analogía:** "Es como pedir una pizza: llamáis a la pizzería (función principal) y les decís que os llamen cuando esté lista (callback). No os quedáis esperando en la cocina; seguís haciendo otras cosas y ellos os avisan."
+**Analogía:** "Es como pedir una pizza: llaman a la pizzería (función principal) y les dicen que los llamen cuando esté lista (callback). No se quedan esperando en la cocina; siguen haciendo otras cosas y ellos les avisan."
 
 **Demo en vivo:**
 ```javascript
@@ -157,7 +157,7 @@ procesar(5, (valor) => {
 });
 ```
 
-**Pregunta a la clase:** "¿Dónde creéis que se usan los callbacks en la vida real del desarrollo web?"
+**Pregunta a la clase:** "¿Dónde creen que se usan los callbacks en la vida real del desarrollo web?" (Respuesta: eventos de clic, `setTimeout`, peticiones al servidor, animaciones.)
 
 **Transición:** "Para terminar la teoría, veamos algunas buenas prácticas."
 
@@ -168,11 +168,11 @@ procesar(5, (valor) => {
 **Título:** Buenas Prácticas con Funciones
 
 **Explicación al alumno:**
-> "Estas son las reglas que deberíais seguir al escribir funciones. La más importante: responsabilidad única. Cada función debe hacer una sola cosa y hacerla bien. Si una función hace más de una cosa, divididla. También usad nombres descriptivos y evitad modificar variables globales desde dentro de una función."
+> "Estas son las reglas que deberían seguir al escribir funciones. La más importante: responsabilidad única. Cada función debe hacer una sola cosa y hacerla bien. Si una función hace más de una cosa, divídanla. También usen nombres descriptivos y eviten modificar variables globales desde dentro de una función."
 
-**Pregunta a la clase:** "¿Por qué creéis que es malo modificar una variable global desde una función?"
+**Pregunta a la clase:** "¿Por qué creen que es malo modificar una variable global desde una función?" (Respuesta: crea dependencias ocultas, dificulta la depuración y hace la función impredecible.)
 
-**Actividad rápida:** "Pensad en un nombre para una función que calcula el precio con descuento. ¿Cómo la llamaríais?"
+**Actividad rápida:** "Piensen en un nombre para una función que calcula el precio con descuento. ¿Cómo la llamarían?"
 
 **Transición:** "Ahora vamos a practicar todo lo que hemos aprendido."
 
@@ -187,7 +187,7 @@ procesar(5, (valor) => {
 
 **Nota docente:** Explicar que los ejercicios se resuelven con prompt/alert, sin DOM. El ejercicio 1 es el que harán en clase; el ejercicio 2 es para entregar.
 
-**Transición:** "Abrid el enlace a los enunciados y empecemos con el ejercicio 1."
+**Transición:** "Abran el enlace a los enunciados y empecemos con el ejercicio 1."
 
 ---
 
@@ -209,9 +209,9 @@ procesar(5, (valor) => {
 **Título:** Temas Próximos
 
 **Explicación al alumno:**
-> "En la sesión 12 vamos a dar el salto al DOM: podréis seleccionar elementos HTML, modificar su contenido, responder a eventos como clics, crear elementos dinámicamente, y usar localStorage para guardar datos. Todo lo que hemos aprendido sobre funciones os será muy útil allí."
+> "En la sesión 12 vamos a dar el salto al DOM: podrán seleccionar elementos HTML, modificar su contenido, responder a eventos como clics, crear elementos dinámicamente, y usar localStorage para guardar datos. Todo lo que hemos aprendido sobre funciones les será muy útil allí."
 
-**Preparación:** "Os recomiendo repasar los conceptos de funciones para la próxima sesión. Vamos a usarlos intensivamente."
+**Preparación:** "Les recomiendo repasar los conceptos de funciones para la próxima sesión. Vamos a usarlos intensivamente."
 
 **Transición:** "Eso es todo por hoy. Vamos a cerrar la sesión."
 
@@ -222,4 +222,4 @@ procesar(5, (valor) => {
 **Título:** (sin título — enlace de volver al inicio)
 
 **Cierre:**
-> "Hemos cubierto mucho hoy. Las funciones son la base para escribir código profesional y os acompañarán en cada proyecto que hagáis. Recordad: función que hace una sola cosa, nombre descriptivo, y no modifiquéis variables globales. Practicad los ejercicios y nos vemos en la próxima sesión. ¡Buen trabajo!"
+> "Hemos cubierto mucho hoy. Las funciones son la base para escribir código profesional y los acompañarán en cada proyecto que hagan. Recuerden: función que hace una sola cosa, nombre descriptivo, y no modifiquen variables globales. Practiquen los ejercicios y nos vemos en la próxima sesión. ¡Buen trabajo!"
