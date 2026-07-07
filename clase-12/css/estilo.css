@@ -1,0 +1,15 @@
+section{
+    background-color: aliceblue;
+    border: 1px solid blue;
+    padding: 10px;
+}
+#textoSaludo{
+    font-size: 20px;
+    color: chocolate;
+    font-weight: bold;
+}
+.estiloInput{
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 20px;
+}

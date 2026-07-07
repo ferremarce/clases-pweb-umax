@@ -1,56 +1,83 @@
-let alumnos =
-    [
-        {
-            nombre: "Juan",
-            apellido: "Ferreira",
-            nota: 50
-        },
-        {
-            nombre: "María",
-            apellido: "Lopez",
-            nota: 80
-        },
-        {
-            id: 1,
-            estado: true,
-        }
+// Ejercicio 2: Gestor de Tareas v2
+// Array para almacenar tareas como objetos
+let tareas = [];
 
+// Variable de control del bucle
+let salir = false;
 
-    ];
-alumnos[0].nota = 100;
-alumnos.push(
-    {
-        nombre: "Oscar",
-        apellido: "Barrios",
-        edad: 22
-    }
-);
-alumnos.splice(2, 1);
-console.log(alumnos[1])
-
-/* if (alumnos[1].edad > 18) {
-    alert(alumnos[1].nombre + " es mayor de edad");
-} else {
-    alert(alumnos[1].nombre + " es menor de edad");
-} */
-
-let resultado=`${alumnos[1].nombre} ${alumnos[1].nota>50?"Aprobado":"Reprobado"}`;
-let resultado2=alumnos[1].nombre +(alumnos[1].nota>50?" Aprobado":" Reprobado");
-
-console.log(resultado2)
-
-
-for(let i=0;i<alumnos.length;i++){
-    if(i%2==0){
-        console.log("pares");
-    }
-    console.log(alumnos[i]);
-}
-
-let opcion = prompt("=== GESTOR DE TAREAS ===\n" +
+// Bucle principal del menú
+while (!salir) {
+    // Mostrar menú
+    let opcion = prompt("=== GESTOR DE TAREAS ===\n" +
                       "1. Agregar tarea\n" +
                       "2. Ver tareas\n" +
                       "3. Completar tarea\n" +
                       "4. Resumen\n" +
                       "5. Salir\n" +
                       "Elige una opción:");
+
+    // Procesar opción con switch
+    switch (opcion) {
+        case "1":
+            // Agregar tarea
+            let nombre = prompt("Nombre de la tarea:");
+            tareas.push({ nombre: nombre, completada: false });
+            alert("Tarea agregada correctamente");
+            break;
+
+        case "2":
+            // Ver tareas
+            if (tareas.length === 0) {
+                alert("No hay tareas registradas");
+            } else {
+                let lista = "TAREAS:\n";
+                for (let i = 0; i < tareas.length; i++) {
+                    let estado = tareas[i].completada ? "✅ Completada" : "⏳ Pendiente";
+                    lista += (i + 1) + ". " + tareas[i].nombre + " [" + estado + "]\n";
+                }
+                alert(lista);
+            }
+            break;
+
+        case "3":
+            // Completar tarea
+            if (tareas.length === 0) {
+                alert("No hay tareas para completar");
+            } else {
+                let indice = Number(prompt("Número de tarea a completar (1-" + tareas.length + "):"));
+                if (indice >= 1 && indice <= tareas.length) {
+                    tareas[indice - 1].completada = true;
+                    alert("Tarea completada");
+                } else {
+                    alert("Número inválido");
+                }
+            }
+            break;
+
+        case "4":
+            // Mostrar resumen
+            let pendientes = 0;
+            let completadas = 0;
+            for (let i = 0; i < tareas.length; i++) {
+                if (tareas[i].completada) {
+                    completadas++;
+                } else {
+                    pendientes++;
+                }
+            }
+            alert("RESUMEN:\n" +
+                  "Total: " + tareas.length + "\n" +
+                  "Pendientes: " + pendientes + "\n" +
+                  "Completadas: " + completadas);
+            break;
+
+        case "5":
+            // Salir
+            salir = true;
+            alert("¡Hasta luego!");
+            break;
+
+        default:
+            alert("Opción inválida. Intenta de nuevo.");
+    }
+}
