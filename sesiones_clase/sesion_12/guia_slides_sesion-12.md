@@ -1,4 +1,4 @@
-# Guía Docente — Sesión 12: JavaScript IV — Manipulación del DOM
+# Guía Docente — Sesión 12: JavaScript IV — Manipulación de DOM
 
 > **Duración estimada:** ~4 h (teoría + práctica)
 > **Objetivo:** Que los estudiantes aprendan a seleccionar, modificar, crear y eliminar elementos del DOM, manejar eventos y aplicar estilos dinámicamente desde JavaScript.
@@ -8,7 +8,7 @@
 
 ## Slide 1 — Portada
 
-**Título:** JavaScript IV — Manipulación del DOM
+**Título:** JavaScript IV — Manipulación de DOM
 
 **Explicación al alumno:**
 > "Bienvenidos a la sesión 12. Hoy vamos a dar un salto enorme: vamos a aprender a manipular la página web desde JavaScript. Hasta ahora hemos trabajado con prompt, alert y la consola. Hoy vamos a cambiar texto, estilos, crear elementos y responder a eventos como clics. Esto es lo que hace que una página web sea interactiva."
