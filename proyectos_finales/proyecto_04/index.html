@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final 4 - Gestor de Gastos - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Proyecto Final 4: Gestor de Gastos Personales</h1>
+            <p>INI04 - Introduccion al Desarrollo Web</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Descripcion General</h2>
+            <p>Desarrollar una aplicacion de control financiero personal que permita registrar ingresos y gastos, categorizarlos, visualizar balances por categoria y filtrar por tipo o periodo. El proyecto integra HTML semantico, CSS responsivo con Grid y Flexbox, y JavaScript con manipulacion del DOM.</p>
+
+            <div class="tarjeta-info">
+                <strong>Duracion estimada:</strong> 3-4 sesiones de clase<br>
+                <strong>Modalidad:</strong> Grupos de 3 estudiantes<br>
+                <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript (ES6+)
+            </div>
+
+            <h2>Requisitos HTML</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Estructura semantica completa: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li>Barra de navegacion fija con enlaces internos (anclas) a cada seccion</li>
+                    <li>Formulario de registro con campos: tipo (radio buttons: Ingreso/Gasto), monto (number con min=0), categoria (select dinamico segun tipo), descripcion (text), fecha (date)</li>
+                    <li>Seccion de resumen con 3 tarjetas (Total Ingresos, Total Gastos, Balance) y seccion de filtros por tipo y categoria</li>
+                    <li>Tabla semantica con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> para mostrar el historial de transacciones</li>
+                    <li>Validacion HTML5 en el formulario: <code>required</code>, <code>min="0"</code>, <code>minlength</code></li>
+                    <li>Uso de <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> para agrupar campos del formulario</li>
+                    <li>Seccion de desglose por categoria con <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code></li>
+                    <li>Footer con nombres de los integrantes del equipo</li>
+                    <li>Atributo <code>alt</code> descriptivo en todas las imagenes</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos CSS</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Variables CSS (<code>:root</code>) para la paleta de colores del proyecto, incluyendo colores para ingresos (verde) y gastos (rojo)</li>
+                    <li>CSS Grid para las 3 tarjetas de resumen: <code>grid-template-columns: repeat(3, 1fr)</code>, apilandose a 1 columna en movil</li>
+                    <li>Flexbox para la navbar, formulario, filtros y layout general</li>
+                    <li>Diseno mobile-first con media queries (breakpoints: 576px, 768px, 992px)</li>
+                    <li>Colores condicionales: verde para filas de ingreso, rojo para filas de gasto</li>
+                    <li>Tabla responsiva con zebra striping (<code>nth-child(even)</code>) y hover en filas</li>
+                    <li>Estados interactivos: <code>:hover</code> en botones y filas, <code>:focus</code> en inputs</li>
+                    <li>Formulario estilizado con estados <code>:valid</code> e <code>:invalid</code></li>
+                    <li>Navbar fija con <code>position: fixed</code> y <code>z-index</code></li>
+                    <li>Tarjetas de resumen con <code>box-shadow</code>, <code>border-radius</code> y borde superior de color segun tipo</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos JavaScript</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Objeto de categorias predefinidas <code>{ ingresos: [...], gastos: [...] }</code> y array de transacciones con estructura <code>{ id, tipo, monto, categoria, descripcion, fecha }</code></li>
+                    <li>Funcion que valida y agrega una transaccion al array</li>
+                    <li>Funcion que elimina una transaccion del array</li>
+                    <li>Funciones que retornan el balance general y la suma por tipo</li>
+                    <li>Funcion que retorna un objeto con totales por cada categoria</li>
+                    <li>Funciones que filtran las transacciones por tipo y categoria</li>
+                    <li>Funcion que genera dinamicamente las filas de la tabla con <code>createElement</code></li>
+                    <li>Funcion que actualiza las 3 tarjetas de resumen con los totales</li>
+                    <li>Funcion que cambia las opciones del select segun el tipo seleccionado</li>
+                    <li>Buenas practicas: eventos con <code>addEventListener</code>, uso de <code>const</code>/<code>let</code>, arrow functions, template literals y datos en memoria sin localStorage</li>
+                </ol>
+            </div>
+
+            <h2>Resultado Esperado</h2>
+            <div class="resultado-esperado">
+                <ul>
+                    <li>La pagina carga mostrando las 3 tarjetas de resumen en cero y una tabla vacia</li>
+                    <li>Al seleccionar Ingreso o Gasto en el formulario, el select de categorias se actualiza automaticamente</li>
+                    <li>Al registrar una transaccion, aparece en la tabla y las tarjetas de resumen se actualizan</li>
+                    <li>Las filas de ingreso se muestran en verde y las de gasto en rojo</li>
+                    <li>Se puede eliminar transacciones y los totales se recalculan automaticamente</li>
+                    <li>Los filtros por tipo (Todos, Ingresos, Gastos) muestran solo las transacciones correspondientes</li>
+                    <li>El filtro por categoria permite ver solo transacciones de una categoria especifica</li>
+                    <li>La seccion de desglose por categoria muestra el total gastado/ingresado en cada categoria</li>
+                    <li>La pagina es completamente responsiva: se adapta a movil, tablet y escritorio</li>
+                    <li>El codigo esta organizado, indentado y sigue las convenciones del curso (camelCase en JS, snake_case en CSS)</li>
+                </ul>
+            </div>
+
+            <h2>Entrega</h2>
+            <div class="entrega">
+                <ol>
+                    <li><strong>Formato:</strong> Carpeta comprimida (.zip) con la estructura de archivos indicada</li>
+                    <li><strong>Estructura minima de archivos:</strong>
+                        <ul>
+                            <li><code>index.html</code> - Pagina principal</li>
+                            <li><code>css/estilos.css</code> - Hoja de estilos</li>
+                            <li><code>js/app.js</code> - Logica de la aplicacion</li>
+                            <li><code>images/</code> - Carpeta de imagenes (si aplica)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defensa oral:</strong> Cada integrante debe explicar una parte del proyecto y responder preguntas del docente</li>
+                    <li><strong>Fecha limite:</strong> A definir por el docente</li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

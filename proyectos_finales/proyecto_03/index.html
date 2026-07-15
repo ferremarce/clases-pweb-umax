@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final 3 - Tablero Kanban - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Proyecto Final 3: Tablero Kanban de Tareas</h1>
+            <p>INI04 - Introduccion al Desarrollo Web</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Descripcion General</h2>
+            <p>Desarrollar un tablero Kanban tipo Trello con tres columnas (Pendiente, En Progreso, Completado) donde se pueden crear, mover y eliminar tarjetas de tareas. El proyecto integra HTML semantico, CSS responsivo con Grid y Flexbox, y JavaScript con manipulacion del DOM.</p>
+
+            <div class="tarjeta-info">
+                <strong>Duracion estimada:</strong> 3-4 sesiones de clase<br>
+                <strong>Modalidad:</strong> Grupos de 3 estudiantes<br>
+                <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript (ES6+)
+            </div>
+
+            <h2>Requisitos HTML</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Estructura semantica completa: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li>Barra de navegacion fija con enlaces internos (anclas) a cada seccion</li>
+                    <li>Formulario para crear tareas con campos: titulo (text), descripcion (textarea), prioridad (select: Alta, Media, Baja), fecha limite (date)</li>
+                    <li>Tres columnas/secciones para los estados (Pendiente, En Progreso, Completado), cada una con encabezado y contador de tareas</li>
+                    <li>Cada tarjeta de tarea muestra: titulo, descripcion, prioridad (badge con color), fecha limite, botones de accion</li>
+                    <li>Validacion HTML5 en el formulario: <code>required</code>, <code>minlength</code></li>
+                    <li>Uso de <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> para agrupar campos del formulario</li>
+                    <li>Seccion de filtros con botones para filtrar por prioridad</li>
+                    <li>Footer con nombres de los integrantes del equipo</li>
+                    <li>Atributo <code>alt</code> descriptivo en todas las imagenes</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos CSS</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Variables CSS (<code>:root</code>) para la paleta de colores del proyecto y colores por prioridad</li>
+                    <li>CSS Grid para las 3 columnas del tablero: <code>grid-template-columns: repeat(3, 1fr)</code>, apilandose a 1 columna en movil con media queries</li>
+                    <li>Flexbox dentro de cada columna para organizar las tarjetas verticalmente</li>
+                    <li>Diseno mobile-first con media queries (breakpoints: 576px, 768px, 992px)</li>
+                    <li>Tarjetas con <code>box-shadow</code>, <code>border-radius</code> y transiciones en hover</li>
+                    <li>Colores por prioridad: rojo para Alta, naranja para Media, verde para Baja (usando variables CSS)</li>
+                    <li>Badge de prioridad con <code>position: absolute</code> sobre tarjeta con <code>position: relative</code></li>
+                    <li>Estados interactivos: <code>:hover</code> en tarjetas y botones, <code>:focus</code> en inputs</li>
+                    <li>Formulario estilizado con estados <code>:valid</code> e <code>:invalid</code></li>
+                    <li>Navbar fija con <code>position: fixed</code> y <code>z-index</code></li>
+                </ol>
+            </div>
+
+            <h2>Requisitos JavaScript</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Array de tareas con estructura: <code>{ id, titulo, descripcion, prioridad, fechaLimite, estado }</code> y estados <code>"pendiente"</code>, <code>"en-progreso"</code>, <code>"completado"</code></li>
+                    <li>Funcion que valida y agrega una tarea al array con estado "pendiente"</li>
+                    <li>Funcion que elimina una tarea del array</li>
+                    <li>Funcion que cambia el estado de una tarea en el array</li>
+                    <li>Funcion que filtra tareas por prioridad y re-renderiza</li>
+                    <li>Funcion que genera dinamicamente las tarjetas en cada columna con <code>createElement</code></li>
+                    <li>Funcion que actualiza el numero de tareas en cada columna</li>
+                    <li>Funcion que retorna las tareas filtradas por estado</li>
+                    <li>Buenas practicas: eventos con <code>addEventListener</code>, uso de <code>const</code>/<code>let</code>, arrow functions y template literals</li>
+                    <li>Los datos se manejan en memoria (arrays), no se requiere localStorage</li>
+                </ol>
+            </div>
+
+            <h2>Resultado Esperado</h2>
+            <div class="resultado-esperado">
+                <ul>
+                    <li>La pagina carga mostrando el tablero con 3 columnas vacias y el formulario de creacion</li>
+                    <li>Al crear una tarea, aparece como tarjeta en la columna "Pendiente"</li>
+                    <li>Cada tarjeta muestra: titulo, descripcion, badge de prioridad con color, fecha limite</li>
+                    <li>Los contadores de cada columna se actualizan al agregar/eliminar/mover tareas</li>
+                    <li>Se puede mover una tarea a "En Progreso" o "Completado" con botones en la tarjeta</li>
+                    <li>Se puede eliminar una tarea con un boton de eliminar</li>
+                    <li>Los filtros por prioridad muestran solo las tareas de la prioridad seleccionada en todas las columnas</li>
+                    <li>Las tareas completadas se muestran con un estilo visual diferente (tachado o opacidad reducida)</li>
+                    <li>La pagina es completamente responsiva: en movil las columnas se apilan verticalmente</li>
+                    <li>El codigo esta organizado, indentado y sigue las convenciones del curso (camelCase en JS, snake_case en CSS)</li>
+                </ul>
+            </div>
+
+            <h2>Entrega</h2>
+            <div class="entrega">
+                <ol>
+                    <li><strong>Formato:</strong> Carpeta comprimida (.zip) con la estructura de archivos indicada</li>
+                    <li><strong>Estructura minima de archivos:</strong>
+                        <ul>
+                            <li><code>index.html</code> - Pagina principal</li>
+                            <li><code>css/estilos.css</code> - Hoja de estilos</li>
+                            <li><code>js/app.js</code> - Logica de la aplicacion</li>
+                            <li><code>images/</code> - Carpeta de imagenes (si aplica)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defensa oral:</strong> Cada integrante debe explicar una parte del proyecto y responder preguntas del docente</li>
+                    <li><strong>Fecha limite:</strong> A definir por el docente</li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

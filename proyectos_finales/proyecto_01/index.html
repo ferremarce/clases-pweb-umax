@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final 1 - Tienda Online - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Proyecto Final 1: Tienda Online</h1>
+            <p>INI04 - Introduccion al Desarrollo Web</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Descripcion General</h2>
+            <p>Desarrollar una tienda online funcional que muestre un catalogo de productos organizados por categorias, con un carrito de compras interactivo y un formulario de checkout. El proyecto integra todos los conocimientos adquiridos en las sesiones 1 a 12: HTML semantico, CSS responsivo y JavaScript con manipulacion del DOM.</p>
+
+            <div class="tarjeta-info">
+                <strong>Duracion estimada:</strong> 3-4 sesiones de clase<br>
+                <strong>Modalidad:</strong> Grupos de 3 estudiantes<br>
+                <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript (ES6+)
+            </div>
+
+            <h2>Requisitos HTML</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Estructura semantica completa: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li>Barra de navegacion fija con enlaces internos (anclas) a cada seccion y un contador del carrito</li>
+                    <li>Seccion de catalogo con tarjetas de producto (imagen, nombre, precio, descripcion, boton "Agregar al carrito")</li>
+                    <li>Seccion de filtros por categoria con botones para seleccionar Tecnologia, Ropa o Libros</li>
+                    <li>Seccion de carrito con tabla semantica (<code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>) que muestre productos agregados</li>
+                    <li>Formulario de checkout con campos: nombre completo, email, telefono, direccion, ciudad</li>
+                    <li>Validacion HTML5 en el formulario: <code>required</code>, <code>type="email"</code>, <code>minlength</code>, <code>pattern</code></li>
+                    <li>Uso de <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> para agrupar campos del formulario</li>
+                    <li>Footer con nombres de los integrantes del equipo</li>
+                    <li>Atributo <code>alt</code> descriptivo en todas las imagenes</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos CSS</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Variables CSS (<code>:root</code>) para la paleta de colores del proyecto</li>
+                    <li>CSS Grid para el catalogo de productos: 1 columna en movil, 2 en tablet, 3-4 en escritorio</li>
+                    <li>Flexbox para la navbar, tarjetas de producto y layout del carrito</li>
+                    <li>Diseno mobile-first con media queries (breakpoints: 576px, 768px, 992px)</li>
+                    <li>Estados interactivos: <code>:hover</code> en tarjetas y botones, <code>:focus</code> en inputs</li>
+                    <li>Badge de categoria en cada tarjeta usando <code>position: absolute</code> sobre contenedor con <code>position: relative</code></li>
+                    <li>Transiciones suaves (<code>transition</code>) en botones y tarjetas</li>
+                    <li>Tabla del carrito con zebra striping (<code>nth-child</code>) y hover en filas</li>
+                    <li>Formulario estilizado con estados <code>:valid</code> e <code>:invalid</code></li>
+                    <li>Navbar fija con <code>position: fixed</code> y <code>z-index</code></li>
+                </ol>
+            </div>
+
+            <h2>Requisitos JavaScript</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Funcion que genera las tarjetas del catalogo dinamicamente con <code>createElement</code></li>
+                    <li>Funcion que filtra y re-renderiza productos segun la categoria seleccionada</li>
+                    <li>Funcion que agrega un producto al array del carrito</li>
+                    <li>Funcion que elimina un producto del carrito</li>
+                    <li>Funcion que re-renderiza la tabla del carrito y recalcula el total</li>
+                    <li>Funcion que retorna el total de la compra (suma de precio x cantidad)</li>
+                    <li>Funcion que valida los campos del formulario antes de confirmar la compra</li>
+                    <li>Todos los eventos deben registrarse con <code>addEventListener</code> (no usar onclick inline)</li>
+                    <li>Usar <code>const</code> y <code>let</code> (no <code>var</code>), arrow functions cuando corresponda, y template literals</li>
+                    <li>Los datos del carrito se manejan en memoria (array), no se requiere localStorage</li>
+                </ol>
+            </div>
+
+
+            <h2>Resultado Esperado</h2>
+            <div class="resultado-esperado">
+                <ul>
+                    <li>La pagina carga mostrando los 12 productos organizados en un grid responsivo</li>
+                    <li>Al hacer clic en un boton de categoria, se filtran y muestran solo los productos de esa categoria</li>
+                    <li>Al hacer clic en "Agregar al carrito", el producto aparece en la tabla del carrito y el contador de la navbar se actualiza</li>
+                    <li>Se puede eliminar productos del carrito y el total se recalcula automaticamente</li>
+                    <li>El formulario de checkout valida los datos antes de mostrar un mensaje de confirmacion</li>
+                    <li>La pagina es completamente responsiva: se adapta a movil, tablet y escritorio</li>
+                    <li>El codigo esta organizado, indentado y sigue las convenciones del curso (camelCase en JS, snake_case en CSS)</li>
+                </ul>
+            </div>
+
+            <h2>Entrega</h2>
+            <div class="entrega">
+                <ol>
+                    <li><strong>Formato:</strong> Carpeta comprimida (.zip) con la estructura de archivos indicada</li>
+                    <li><strong>Estructura minima de archivos:</strong>
+                        <ul>
+                            <li><code>index.html</code> - Pagina principal</li>
+                            <li><code>css/estilos.css</code> - Hoja de estilos</li>
+                            <li><code>js/app.js</code> - Logica de la aplicacion</li>
+                            <li><code>images/</code> - Carpeta de imagenes (si aplica)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defensa oral:</strong> Cada integrante debe explicar una parte del proyecto y responder preguntas del docente</li>
+                    <li><strong>Fecha limite:</strong> A definir por el docente</li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

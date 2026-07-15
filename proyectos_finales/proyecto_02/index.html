@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final 2 - Sistema de Notas - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Proyecto Final 2: Sistema de Gestion de Notas</h1>
+            <p>INI04 - Introduccion al Desarrollo Web</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Descripcion General</h2>
+            <p>Desarrollar un sistema de gestion de notas estudiantil que permita a un profesor registrar estudiantes, asignar calificaciones por asignatura y generar reportes automaticos con estadisticas. El proyecto integra HTML semantico, CSS responsivo y JavaScript con manipulacion del DOM.</p>
+
+            <div class="tarjeta-info">
+                <strong>Duracion estimada:</strong> 3-4 sesiones de clase<br>
+                <strong>Modalidad:</strong> Grupos de 3 estudiantes<br>
+                <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript (ES6+)
+            </div>
+
+            <h2>Requisitos HTML</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Estructura semantica completa: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li>Barra de navegacion fija con enlaces internos (anclas) a cada seccion</li>
+                    <li>Formulario de registro de estudiantes con campos: nombre completo, codigo de estudiante, email</li>
+                    <li>Formulario de registro de notas con: selector de estudiante (select), selector de asignatura (select), calificacion (input number con min=0, max=100)</li>
+                    <li>Tabla semantica con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code> para mostrar estudiantes y sus notas</li>
+                    <li>Seccion de reportes con <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code> para mostrar estadisticas</li>
+                    <li>Validacion HTML5 en formularios: <code>required</code>, <code>type="email"</code>, <code>minlength</code>, <code>min</code>, <code>max</code></li>
+                    <li>Uso de <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> para agrupar campos</li>
+                    <li>Footer con nombres de los integrantes del equipo</li>
+                    <li>Atributo <code>alt</code> descriptivo en todas las imagenes</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos CSS</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Variables CSS (<code>:root</code>) para la paleta de colores del proyecto</li>
+                    <li>Flexbox para la navbar, formularios y layout general</li>
+                    <li>Diseno mobile-first con media queries (breakpoints: 576px, 768px, 992px)</li>
+                    <li>Estados interactivos: <code>:hover</code> en botones y filas de tabla, <code>:focus</code> en inputs</li>
+                    <li>Tabla responsiva con zebra striping (<code>nth-child(even)</code>) y hover en filas</li>
+                    <li>Formularios estilizados con estados <code>:valid</code> e <code>:invalid</code></li>
+                    <li>Navbar fija con <code>position: fixed</code> y <code>z-index</code></li>
+                    <li>Tarjetas de estadisticas con <code>box-shadow</code> y <code>border-radius</code></li>
+                    <li>Colores condicionales: verde para aprobados (>=51), rojo para reprobados (&lt;51)</li>
+                    <li>Transiciones suaves (<code>transition</code>) en botones y elementos interactivos</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos JavaScript</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Array de estudiantes con estructura: <code>{ id, nombre, codigo, email, notas: [] }</code></li>
+                    <li>Funcion que valida y agrega un estudiante al array</li>
+                    <li>Funcion que elimina un estudiante y sus notas del array</li>
+                    <li>Funcion que agrega una nota al estudiante</li>
+                    <li>Funcion que retorna el promedio de un array de notas</li>
+                    <li>Funciones que retornan la nota mas alta y mas baja del array</li>
+                    <li>Funcion que calcula estadisticas generales (promedio general, % aprobados, mejor estudiante, peor estudiante)</li>
+                    <li>Funcion que genera dinamicamente las filas de la tabla con <code>createElement</code></li>
+                    <li>Buenas practicas: eventos con <code>addEventListener</code>, uso de <code>const</code>/<code>let</code>, arrow functions y template literals</li>
+                    <li>Los datos se manejan en memoria (arrays), no se requiere localStorage</li>
+                </ol>
+            </div>
+
+            <h2>Resultado Esperado</h2>
+            <div class="resultado-esperado">
+                <ul>
+                    <li>La pagina carga mostrando formularios de registro y una tabla vacia</li>
+                    <li>Al registrar un estudiante, aparece en la tabla y en el selector del formulario de notas</li>
+                    <li>Al agregar una nota, se actualiza la tabla mostrando la nueva calificacion</li>
+                    <li>Se puede eliminar estudiantes y sus notas desaparecen de la tabla</li>
+                    <li>El pie de la tabla (<code>tfoot</code>) muestra el promedio general de todos los estudiantes</li>
+                    <li>La seccion de reportes muestra: promedio general, cantidad de aprobados/reprobados, mejor y peor estudiante</li>
+                    <li>Las notas se muestran con colores: verde si >= 51, rojo si &lt; 51</li>
+                    <li>La pagina es completamente responsiva: se adapta a movil, tablet y escritorio</li>
+                    <li>El codigo esta organizado, indentado y sigue las convenciones del curso (camelCase en JS, snake_case en CSS)</li>
+                </ul>
+            </div>
+
+            <h2>Entrega</h2>
+            <div class="entrega">
+                <ol>
+                    <li><strong>Formato:</strong> Carpeta comprimida (.zip) con la estructura de archivos indicada</li>
+                    <li><strong>Estructura minima de archivos:</strong>
+                        <ul>
+                            <li><code>index.html</code> - Pagina principal</li>
+                            <li><code>css/estilos.css</code> - Hoja de estilos</li>
+                            <li><code>js/app.js</code> - Logica de la aplicacion</li>
+                            <li><code>images/</code> - Carpeta de imagenes (si aplica)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defensa oral:</strong> Cada integrante debe explicar una parte del proyecto y responder preguntas del docente</li>
+                    <li><strong>Fecha limite:</strong> A definir por el docente</li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

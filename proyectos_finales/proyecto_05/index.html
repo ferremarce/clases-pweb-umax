@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Final 5 - Quiz Interactivo - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Proyecto Final 5: Quiz Interactivo Educativo</h1>
+            <p>INI04 - Introduccion al Desarrollo Web</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Descripcion General</h2>
+            <p>Desarrollar una plataforma de cuestionarios interactivos con multiples categorias, temporizador por pregunta, puntuacion dinamica y retroalimentacion inmediata. El proyecto integra HTML semantico, CSS responsivo y JavaScript con manipulacion del DOM.</p>
+
+            <div class="tarjeta-info">
+                <strong>Duracion estimada:</strong> 3-4 sesiones de clase<br>
+                <strong>Modalidad:</strong> Grupos de 3 estudiantes<br>
+                <strong>Tecnologias:</strong> HTML5, CSS3, JavaScript (ES6+)
+            </div>
+
+            <h2>Requisitos HTML</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Estructura semantica completa: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code></li>
+                    <li>Tres pantallas/secciones principales: Inicio (seleccion de categoria), Quiz (preguntas), Resultados</li>
+                    <li>Pantalla de inicio con botones de categoria y descripcion del quiz</li>
+                    <li>Pantalla de quiz con: numero de pregunta actual, barra de progreso, pregunta, opciones (radio buttons), temporizador, botones de navegacion</li>
+                    <li>Pantalla de resultados con: puntuacion final, tabla semantica con historial de intentos, boton para reiniciar</li>
+                    <li>Navegacion entre pantallas (Inicio, Quiz, Resultados) con indicador de seccion activa</li>
+                    <li>Uso de <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code> para agrupar opciones de respuesta</li>
+                    <li>Tabla de resultados con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></li>
+                    <li>Footer con nombres de los integrantes del equipo</li>
+                    <li>Atributos <code>alt</code> descriptivos en todas las imagenes</li>
+                </ol>
+            </div>
+
+            <h2>Requisitos CSS</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Variables CSS (<code>:root</code>) para la paleta de colores del proyecto</li>
+                    <li>Flexbox para centrado de contenido, botones y layout general</li>
+                    <li>Diseno mobile-first con media queries (breakpoints: 576px, 768px, 992px)</li>
+                    <li>Estados interactivos: <code>:hover</code> en botones y opciones, <code>:checked</code> en radio buttons</li>
+                    <li>Transiciones suaves (<code>transition</code>) en botones, opciones y cambios de pantalla</li>
+                    <li>Barra de progreso con ancho dinamico y color que cambia segun el progreso</li>
+                    <li>Colores de retroalimentacion: verde para respuesta correcta, rojo para incorrecta</li>
+                    <li>Tarjetas de categoria con <code>position: relative</code> y badges con <code>position: absolute</code></li>
+                    <li>Temporizador con estilo destacado (tamano grande, color que cambia cuando queda poco tiempo)</li>
+                    <li>Animacion de entrada/salida al cambiar de pantalla usando <code>display</code> y <code>opacity</code></li>
+                </ol>
+            </div>
+
+            <h2>Requisitos JavaScript</h2>
+            <div class="requisitos">
+                <ol>
+                    <li>Array de preguntas con estructura <code>{ id, categoria, pregunta, opciones: [], respuestaCorrecta: numero }</code>, minimo 15 en 3 categorias</li>
+                    <li>Funcion que filtra preguntas por categoria e inicializa el estado del quiz</li>
+                    <li>Funcion que renderiza dinamicamente la pregunta actual con <code>createElement</code></li>
+                    <li>Funcion que compara la respuesta seleccionada con la correcta y muestra retroalimentacion visual</li>
+                    <li>Funcion que avanza a la siguiente pregunta o muestra resultados si es la ultima</li>
+                    <li>Funciones que manejan el temporizador con <code>setInterval</code> (iniciar) y <code>clearInterval</code> (detener)</li>
+                    <li>Funcion que retorna el porcentaje de respuestas correctas</li>
+                    <li>Funcion que renderiza la pantalla de resultados con puntuacion y tabla de historial</li>
+                    <li>Funcion que actualiza el ancho de la barra segun la pregunta actual</li>
+                    <li>Buenas practicas: eventos con <code>addEventListener</code>, uso de <code>const</code>/<code>let</code>, arrow functions, template literals y datos en memoria sin localStorage</li>
+                </ol>
+            </div>
+
+            <h2>Resultado Esperado</h2>
+            <div class="resultado-esperado">
+                <ul>
+                    <li>La pagina carga mostrando la pantalla de inicio con botones de categorias</li>
+                    <li>Al seleccionar una categoria, se inicia el quiz con la primera pregunta</li>
+                    <li>La barra de progreso se actualiza con cada pregunta</li>
+                    <li>El temporizador cuenta regresivamente desde 30 segundos por pregunta</li>
+                    <li>Al seleccionar una respuesta, se muestra retroalimentacion inmediata (verde/rojo)</li>
+                    <li>El boton "Siguiente" avanza a la siguiente pregunta o muestra resultados</li>
+                    <li>Si el tiempo se agota, avanza automaticamente a la siguiente pregunta</li>
+                    <li>La pantalla de resultados muestra: puntuacion final, porcentaje, tabla con historial de intentos</li>
+                    <li>El boton "Reiniciar" permite volver a la pantalla de inicio</li>
+                    <li>La pagina es completamente responsiva: se adapta a movil, tablet y escritorio</li>
+                    <li>El codigo esta organizado, indentado y sigue las convenciones del curso (camelCase en JS, snake_case en CSS)</li>
+                </ul>
+            </div>
+
+            <h2>Entrega</h2>
+            <div class="entrega">
+                <ol>
+                    <li><strong>Formato:</strong> Carpeta comprimida (.zip) con la estructura de archivos indicada</li>
+                    <li><strong>Estructura minima de archivos:</strong>
+                        <ul>
+                            <li><code>index.html</code> - Pagina principal</li>
+                            <li><code>css/estilos.css</code> - Hoja de estilos</li>
+                            <li><code>js/app.js</code> - Logica de la aplicacion</li>
+                            <li><code>images/</code> - Carpeta de imagenes (si aplica)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Defensa oral:</strong> Cada integrante debe explicar una parte del proyecto y responder preguntas del docente</li>
+                    <li><strong>Fecha limite:</strong> A definir por el docente</li>
+                </ol>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

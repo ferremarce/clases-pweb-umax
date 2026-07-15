@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubrica - Proyecto Final 2: Sistema de Notas - INI04</title>
+    <link rel="stylesheet" href="css/estilos_proyecto.css">
+    <style>
+        .rubrica-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.85rem;
+        }
+
+        .rubrica-tabla th {
+            background: var(--color-primario);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .rubrica-tabla th:first-child {
+            text-align: left;
+            width: 20%;
+        }
+
+        .rubrica-tabla td {
+            padding: 10px 8px;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .rubrica-tabla td:first-child {
+            font-weight: 600;
+            background: #f8f9fa;
+            color: var(--color-primario);
+        }
+
+        .rubrica-tabla tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .nivel {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .excelente { color: #2e7d32; }
+        .bueno { color: #1976d2; }
+        .suficiente { color: #f57c00; }
+        .insuficiente { color: #c62828; }
+
+        .peso {
+            display: inline-block;
+            background: var(--color-primario);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 5px;
+        }
+
+        .total-fila {
+            background: var(--color-primario) !important;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .total-fila td {
+            color: white;
+            border-color: var(--color-primario);
+        }
+    </style>
+</head>
+<body>
+    <header class="header-proyecto">
+        <img src="images/logo_umax.png" alt="Logo UMAX">
+        <div class="header-texto">
+            <h1>Rubrica de Evaluacion</h1>
+            <p>Proyecto Final 2: Sistema de Gestion de Notas - INI04</p>
+        </div>
+        <div class="profesor">Prof. Ing. Juan M. Ferreira</div>
+    </header>
+
+    <main class="contenedor">
+        <div class="enunciado">
+
+            <h2>Criterios de Evaluacion</h2>
+            <p>La siguiente rubrica se utiliza para evaluar el Proyecto Final 2. Cada criterio tiene un peso porcentual que refleja su importancia relativa en la calificacion final.</p>
+
+            <table class="rubrica-tabla">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>Excelente (10)</th>
+                        <th>Bueno (7-9)</th>
+                        <th>Suficiente (4-6)</th>
+                        <th>Insuficiente (1-3)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML Semantico <span class="peso">20%</span></td>
+                        <td>
+                            <span class="nivel excelente">Excelente (10)</span>
+                            Estructura semantica completa y correcta. Uso adecuado de header, nav, main, section, footer. Formularios con label, fieldset, validacion HTML5. Tabla con thead, tbody, tfoot correctamente estructurados.
+                        </td>
+                        <td>
+                            <span class="nivel bueno">Bueno (7-9)</span>
+                            Estructura semantica mayormente correcta. Falta alguna etiqueta semantica menor. Formularios funcionales con validacion basica. Tabla con estructura correcta pero sin tfoot o detalles menores.
+                        </td>
+                        <td>
+                            <span class="nivel suficiente">Suficiente (4-6)</span>
+                            Estructura HTML basica con uso limitado de etiquetas semanticas. Formularios sin validacion HTML5 o con errores en labels. Tabla sin estructura semantica completa.
+                        </td>
+                        <td>
+                            <span class="nivel insuficiente">Insuficiente (1-3)</span>
+                            HTML sin estructura semantica. Uso de div para todo. Formularios incompletos o sin labels. Tabla sin thead/tbody/tfoot.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CSS Responsivo <span class="peso">20%</span></td>
+                        <td>
+                            <span class="nivel excelente">Excelente (10)</span>
+                            Diseno mobile-first con media queries correctas. Uso eficaz de Flexbox. Variables CSS, transiciones, estados hover/focus. Tabla responsiva con zebra striping. Colores condicionales para aprobados/reprobados.
+                        </td>
+                        <td>
+                            <span class="nivel bueno">Bueno (7-9)</span>
+                            Diseno responsivo funcional con Flexbox. Media queries presentes pero con mejoras posibles. Variables CSS utilizadas. Estados interactivos basicos. Tabla responsiva.
+                        </td>
+                        <td>
+                            <span class="nivel suficiente">Suficiente (4-6)</span>
+                            Diseno parcialmente responsivo. Uso basico de Flexbox sin media queries adecuadas. CSS sin variables. Pocos estados interactivos. Tabla no se adapta a movil.
+                        </td>
+                        <td>
+                            <span class="nivel insuficiente">Insuficiente (1-3)</span>
+                            Diseno no responsivo. No usa Flexbox. CSS desorganizado sin variables. No se adapta a diferentes pantallas.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript Funcional <span class="peso">25%</span></td>
+                        <td>
+                            <span class="nivel excelente">Excelente (10)</span>
+                            Todas las funciones requeridas implementadas correctamente. Calculos de promedio, maximo, minimo funcionan sin errores. Uso de const/let, arrow functions, template literals. Arrays con reduce, map, filter, find. Codigo limpio y bien organizado.
+                        </td>
+                        <td>
+                            <span class="nivel bueno">Bueno (7-9)</span>
+                            Mayoria de funciones implementadas. Calculos correctos con errores menores. Uso correcto de ES6+ con mejoras posibles. Logica funcional pero con codigo mejorable.
+                        </td>
+                        <td>
+                            <span class="nivel suficiente">Suficiente (4-6)</span>
+                            Funciones basicas implementadas parcialmente. Mezcla de var con let/const. Calculos con errores menores que no impiden el funcionamiento basico.
+                        </td>
+                        <td>
+                            <span class="nivel insuficiente">Insuficiente (1-3)</span>
+                            Funciones incompletas o con errores graves. Uso de var. Codigo desorganizado. Los calculos no funcionan correctamente.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Manipulacion del DOM <span class="peso">20%</span></td>
+                        <td>
+                            <span class="nivel excelente">Excelente (10)</span>
+                            Renderizado dinamico completo de tabla con createElement. Eventos con addEventListener (sin onclick inline). Uso de classList, textContent, innerHTML. Actualizacion dinamica de tabla, selectores y reportes. Colores condicionales aplicados dinamicamente.
+                        </td>
+                        <td>
+                            <span class="nivel bueno">Bueno (7-9)</span>
+                            Renderizado dinamico funcional. Eventos registrados correctamente. Uso adecuado de classList. Algunas actualizaciones del DOM podrian optimizarse.
+                        </td>
+                        <td>
+                            <span class="nivel suficiente">Suficiente (4-6)</span>
+                            Manipulacion basica del DOM. Mezcla de onclick inline con addEventListener. Renderizado parcial. Uso excesivo de innerHTML.
+                        </td>
+                        <td>
+                            <span class="nivel insuficiente">Insuficiente (1-3)</span>
+                            Poca o nula manipulacion dinamica del DOM. Todo el contenido es estatico en HTML. No usa addEventListener. No hay interactividad real.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Organizacion y Trabajo en Equipo <span class="peso">15%</span></td>
+                        <td>
+                            <span class="nivel excelente">Excelente (10)</span>
+                            Codigo bien organizado y comentado. Nombres descriptivos. Estructura de archivos correcta. Todos los integrantes dominan todo el proyecto en la defensa oral.
+                        </td>
+                        <td>
+                            <span class="nivel bueno">Bueno (7-9)</span>
+                            Codigo organizado con nombres claros. Estructura de archivos correcta. Los integrantes conocen bien su parte y tienen nocion general del proyecto.
+                        </td>
+                        <td>
+                            <span class="nivel suficiente">Suficiente (4-6)</span>
+                            Codigo parcialmente organizado. Nombres poco descriptivos. Estructura de archivos basica. Los integrantes solo conocen su parte especifica.
+                        </td>
+                        <td>
+                            <span class="nivel insuficiente">Insuficiente (1-3)</span>
+                            Codigo desorganizado sin convenciones. Estructura de archivos incorrecta. Los integrantes no pueden explicar el proyecto en la defensa oral.
+                        </td>
+                    </tr>
+                    <tr class="total-fila">
+                        <td>TOTAL</td>
+                        <td colspan="4">Nota Final: _____ / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Calculo de la Nota Final</h2>
+            <div class="codigo"><span class="comentario">// Formula de calculo</span>
+<span class="variable">notaFinal</span> = (<span class="variable">html</span> * <span class="numero">0.20</span>) + (<span class="variable">css</span> * <span class="numero">0.20</span>) + (<span class="variable">js</span> * <span class="numero">0.25</span>) + (<span class="variable">dom</span> * <span class="numero">0.20</span>) + (<span class="variable">organizacion</span> * <span class="numero">0.15</span>)
+
+<span class="comentario">// Ejemplo:</span>
+<span class="variable">notaFinal</span> = (<span class="numero">9</span> * <span class="numero">0.20</span>) + (<span class="numero">8</span> * <span class="numero">0.20</span>) + (<span class="numero">9</span> * <span class="numero">0.25</span>) + (<span class="numero">8</span> * <span class="numero">0.20</span>) + (<span class="numero">10</span> * <span class="numero">0.15</span>)
+<span class="variable">notaFinal</span> = <span class="numero">1.80</span> + <span class="numero">1.60</span> + <span class="numero">2.25</span> + <span class="numero">1.60</span> + <span class="numero">1.50</span> = <span class="numero">8.75</span></div>
+
+            <h2>Observaciones</h2>
+            <div class="tarjeta-info">
+                <p><strong>Trabajo en equipo:</strong> La nota es grupal, pero la defensa oral puede ajustar la nota individual si un integrante demuestra no haber participado.</p>
+                <p><strong>Plagio:</strong> Copiar codigo de otros grupos o de Internet sin comprenderlo resultara en nota 1 para todos los integrantes involucrados.</p>
+                <p><strong>Entrega tardia:</strong> Se descontara 1 punto por cada dia de retraso.</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
