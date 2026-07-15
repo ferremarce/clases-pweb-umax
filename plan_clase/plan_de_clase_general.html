@@ -203,6 +203,24 @@
             border-top: 1px solid #d0dee5;
         }
 
+        .badge-ok {
+            display: inline-block;
+            background: #d4edda;
+            color: #155724;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-pending {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
         @media (max-width: 768px) {
             .content {
                 padding: 20px;
@@ -224,77 +242,79 @@
         <h1>📚 Plan de Clase - INI04</h1>
         <div class="subtitle">Introducción al Desarrollo Web</div>
         <div class="meta">
-            <span>📅 18 sesiones</span>
+            <span>📅 14 sesiones</span>
             <span>⏱️ 4 horas por sesión</span>
-            <span>🎓 Total: 72 horas presenciales</span>
+            <span>🎓 Total: 56 horas presenciales</span>
             <span>📖 Basado en programa académico</span>
         </div>
     </div>
 
     <div class="content">
-        <h2>📋 Estructura de las 18 Sesiones</h2>
+        <h2>📋 Estructura de las 14 Sesiones</h2>
         <p>El siguiente plan de clase está alineado con las unidades programáticas del sílabo, integrando teoría, práctica y el proyecto final. Cada sesión combina exposición de conceptos, ejercicios guiados y trabajo colaborativo.</p>
 
         <table class="sessions-table">
             <thead>
-                <tr><th>Sesión</th><th>Unidad(es)</th><th>Título / Contenido Principal</th><th>Actividades Clave</th></tr>
+                <tr><th>Sesión</th><th>Unidad(es)</th><th>Título / Contenido Principal</th><th>Actividades Clave</th><th>Estado</th></tr>
             </thead>
             <tbody>
-                <tr><td class="session-number">1</td><td class="session-units">Unidad I</td><td class="session-title"><a href="../sesiones_clase/sesion_01/index.html">Fundamentos de la Web y Entorno de Trabajo</a></td><td>Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server.</td></tr>
-                <tr><td class="session-number">2</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_02/index.html">HTML I: Estructura, Texto y Listas</a></td><td>Etiquetas semánticas, títulos, párrafos, listas ordenadas y desordenadas, primera página personal.</td></tr>
-                <tr><td class="session-number">3</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_03/index.html">HTML II: Enlaces, Imágenes y Multimedia</a></td><td>Rutas relativas/absolutas, etiqueta &lt;a&gt;, &lt;img&gt;, inserción de audio/video, barra de navegación.</td></tr>
-                <tr><td class="session-number">4</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_04/index.html">HTML III: Tablas y Formularios</a></td><td>Creación de tablas, formularios con campos básicos, atributos de validación required.</td></tr>
-                <tr><td class="session-number">5</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_05/index.html">CSS I: Fundamentos, Color y Texto</a></td><td>Selectores, colores, tipografías, modelo de caja básico, archivo CSS externo.</td></tr>
-                <tr><td class="session-number">6</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_06/index.html">CSS II: Modelo de Cajas y Layouts Básicos</a></td><td>Padding, margin, border, posicionamiento estático y relativo, float.</td></tr>
-                <tr><td class="session-number">7</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_07/index.html">CSS III: Flexbox y Grid</a></td><td>Introducción a Flexbox y CSS Grid para layouts modernos y responsivos.</td></tr>
-                <tr><td class="session-number">8</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_08/index.html">CSS IV: Formularios, Tablas y Diseño Responsivo</a></td><td>Media queries, diseño mobile-first, estilización de formularios y tablas.</td></tr>
-                <tr><td class="session-number">9</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_09/index.html">JavaScript I: Variables, Tipos y Operadores</a></td><td>Declaración de variables, tipos primitivos, operadores aritméticos y lógicos, consola.</td></tr>
-                <tr><td class="session-number">10</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_10/index.html">JavaScript II: Condicionales e Iteraciones</a></td><td>if/else, switch, bucles for/while, ejercicios de lógica.</td></tr>
-                <tr><td class="session-number">11</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_11/index.html">JavaScript III: Funciones</a></td><td>Declaración, expresión, arrow functions, parámetros, scope, callbacks.</td></tr>
-                <tr><td class="session-number">12</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_12/index.html">JavaScript IV: Manipulación del DOM</a></td><td>Seleccionar elementos, eventos, modificar contenido y estilos, crear y eliminar elementos dinámicamente.</td></tr>
-                <tr><td class="session-number">13</td><td class="session-units">Unidad V</td><td class="session-title"><a href="../sesiones_clase/sesion_13/index.html">Bootstrap I: Fundamentos y Grid System</a></td><td>CDN, sistema de rejilla, contenedores, filas y columnas responsivas, utilidades.</td></tr>
-                <tr><td class="session-number">14</td><td class="session-units">Unidad V</td><td class="session-title"><a href="../sesiones_clase/sesion_14/index.html">Bootstrap II: Componentes y Formularios</a></td><td>Navbar, cards, modal, formularios, botones, badges, iconos, personalización.</td></tr>
-                <tr><td class="session-number">15</td><td class="session-units">Unidad VI</td><td class="session-title"><a href="../sesiones_clase/sesion_15/index.html">Proyecto Final I: Planificación y Maquetación</a></td><td>Wireframes, Git, repositorio GitHub, estructura de carpetas, maquetación HTML + Bootstrap Grid.</td></tr>
-                <tr><td class="session-number">16</td><td class="session-units">Unidad VI</td><td class="session-title"><a href="../sesiones_clase/sesion_16/index.html">Proyecto Final II: Interactividad y Publicación</a></td><td>JS interactivo, localStorage, validación formularios, GitHub Pages, presentación final.</td></tr>
-                <tr><td class="session-number">17</td><td class="session-units">Unidad VI</td><td class="session-title">Examen Final Ordinario</td><td>Evaluación teórico-práctica de todos los contenidos del curso (HTML, CSS, JavaScript, Bootstrap).</td></tr>
-                <tr><td class="session-number">18</td><td class="session-units">Unidad VI</td><td class="session-title">Examen Final Extraordinario</td><td>Recuperación para estudiantes que no aprobaron el examen ordinario.</td></tr>
+                <tr><td class="session-number">1</td><td class="session-units">Unidad I</td><td class="session-title"><a href="../sesiones_clase/sesion_01/index.html">Fundamentos de la Web y Entorno de Trabajo</a></td><td>Configuración de VS Code, estructura cliente-servidor, primer archivo HTML, Live Server.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">2</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_02/index.html">HTML I: Estructura, Texto y Listas</a></td><td>Etiquetas semánticas, títulos, párrafos, listas ordenadas y desordenadas, primera página personal.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">3</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_03/index.html">HTML II: Enlaces, Imágenes y Multimedia</a></td><td>Rutas relativas/absolutas, etiqueta &lt;a&gt;, &lt;img&gt;, inserción de audio/video, barra de navegación.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">4</td><td class="session-units">Unidad II</td><td class="session-title"><a href="../sesiones_clase/sesion_04/index.html">HTML III: Tablas y Formularios</a></td><td>Creación de tablas, formularios con campos básicos, atributos de validación required.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">5</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_05/index.html">CSS I: Fundamentos, Color y Texto</a></td><td>Selectores, colores, tipografías, modelo de caja básico, archivo CSS externo.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">6</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_06/index.html">CSS II: Modelo de Cajas y Layouts Básicos</a></td><td>Padding, margin, border, posicionamiento estático y relativo, float.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">7</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_07/index.html">CSS III: Flexbox y Grid</a></td><td>Introducción a Flexbox y CSS Grid para layouts modernos y responsivos.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">8</td><td class="session-units">Unidad III</td><td class="session-title"><a href="../sesiones_clase/sesion_08/index.html">CSS IV: Formularios, Tablas y Diseño Responsivo</a></td><td>Media queries, diseño mobile-first, estilización de formularios y tablas.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">9</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_09/index.html">JavaScript I: Variables, Tipos y Operadores</a></td><td>Declaración de variables, tipos primitivos, operadores aritméticos y lógicos, consola.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">10</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_10/index.html">JavaScript II: Condicionales e Iteraciones</a></td><td>if/else, switch, bucles for/while, ejercicios de lógica.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">11</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_11/index.html">JavaScript III: Funciones</a></td><td>Declaración, expresión, arrow functions, parámetros, scope, callbacks.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">12</td><td class="session-units">Unidad IV</td><td class="session-title"><a href="../sesiones_clase/sesion_12/index.html">JavaScript IV: Manipulación del DOM</a></td><td>Seleccionar elementos, eventos, modificar contenido y estilos, crear y eliminar elementos dinámicamente.</td><td><span class="badge-ok">✅ Desarrollado</span></td></tr>
+                <tr><td class="session-number">13</td><td class="session-units">Unidad V</td><td class="session-title">Proyecto Final I: Asignación y Planificación</td><td>Presentación y asignación de los 5 proyectos finales, formación de grupos (3 integrantes), definición del proyecto, diseño del layout del sitio web y maquetación inicial.</td><td><span class="badge-pending">📋 Pendiente</span></td></tr>
+                <tr><td class="session-number">14</td><td class="session-units">Unidad V</td><td class="session-title">Proyecto Final II: Revisión por Grupo</td><td>Revisión del proyecto de cada grupo (HTML, CSS, JS), presentación de avance, retroalimentación del docente, ajustes finales y preparación de la defensa.</td><td><span class="badge-pending">📋 Pendiente</span></td></tr>
+
             </tbody>
         </table>
 
             <div class="recommendation">
-                <h3>📌 Recomendación sobre el Proyecto Final (Unidad VI)</h3>
-                <p>El proyecto final se desarrolla en las sesiones <strong>15</strong> (planificación y maquetación) y <strong>16</strong> (interactividad y publicación). En la sesión 16 los grupos presentan su proyecto y se evalúa con rúbrica. Las sesiones <strong>17 y 18</strong> corresponden a los exámenes finales ordinario y extraordinario respectivamente.</p>
-                <p><strong>Evaluación sugerida:</strong> Rúbrica que valore funcionamiento técnico, uso de estándares, creatividad, trabajo colaborativo (evidenciado en Git) y calidad de la presentación.</p>
+                <h3>📌 Recomendación sobre el Proyecto Final (Unidad V)</h3>
+                <p>Se dispone de <strong>5 proyectos predefinidos</strong> (ver sección siguiente) que abarcan los contenidos de las sesiones 1-12. Cada grupo de 3 estudiantes recibe un proyecto distinto. En la <strong>sesión 13</strong> se asignan los proyectos, se definen las funcionalidades y se realiza la maquetación inicial. En la <strong>sesión 14</strong> cada grupo presenta su proyecto, recibe retroalimentación y realiza ajustes finales, evaluándose con rúbrica.</p>
+                <p><strong>Evaluación sugerida:</strong> Rúbrica que valore funcionamiento técnico (HTML semántico, CSS responsivo, JS con DOM), cumplimiento de requisitos, presentación oral y trabajo en equipo.</p>
             </div>
 
         <div class="projects-section">
-            <h2>💡 Propuesta de Proyectos para Grupos</h2>
-            <p>Cada grupo (3 a 5 integrantes) seleccionará una de las siguientes ideas o propondrá una similar, con aprobación del docente. Los proyectos deben evidenciar el dominio de HTML, CSS, JavaScript y Bootstrap.</p>
+            <h2>💡 Proyectos Finales Disponibles</h2>
+            <p>Cada grupo (3 integrantes) recibirá uno de los siguientes proyectos. Todos los proyectos trabajan exclusivamente con <strong>HTML5, CSS3 y JavaScript (ES6+)</strong>, sin librerías externas. Los enunciados completos están disponibles en la carpeta <code>proyectos_finales/</code>.</p>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>📁 Portafolio Personal Avanzado</h3>
-                    <p>Galería de proyectos filtrable con JS, formulario de contacto validado, layout con Grid/Flexbox y barra de navegación responsiva con Bootstrap.</p>
-                    <div class="tech">HTML semántico · CSS Grid · Bootstrap · JS (filtros)</div>
+                    <h3>🛒 Tienda Online</h3>
+                    <p>Catálogo de productos con filtros por categoría, carrito de compras y formulario de checkout con validación. Grid responsivo para productos.</p>
+                    <div class="tech">HTML semántico · CSS Grid/Flexbox · JS (DOM, arrays, eventos)</div>
+                    <p><a href="../proyectos_finales/proyecto_01/index.html">📄 Ver enunciado</a></p>
                 </div>
                 <div class="project-card">
-                    <h3>✈️ Guía de Viajes / Blog de Turismo</h3>
-                    <p>Inicio con tarjetas de destinos, página detallada, tabla de información práctica, suscripción a newsletter y mapa interactivo (iframe).</p>
-                    <div class="tech">Multimedia · Formularios · Tablas · JS para mostrar/ocultar contenido</div>
+                    <h3>📊 Sistema de Gestión de Notas</h3>
+                    <p>Registro de estudiantes y notas, cálculo de promedios, reportes de rendimiento con tabla dinámica y sección de estadísticas.</p>
+                    <div class="tech">Formularios · Tablas semánticas · JS (arrays, funciones)</div>
+                    <p><a href="../proyectos_finales/proyecto_02/index.html">📄 Ver enunciado</a></p>
                 </div>
                 <div class="project-card">
-                    <h3>🛒 Tienda de Música / E-commerce Simple</h3>
-                    <p>Catálogo de productos, carrito de compras con localStorage, detalle de producto y formulario de checkout con validación avanzada.</p>
-                    <div class="tech">Grid de Bootstrap · Manipulación del DOM · localStorage · Eventos</div>
+                    <h3>📋 Tablero Kanban</h3>
+                    <p>Tablero tipo Trello con 3 columnas (Pendiente, En Progreso, Completado), tarjetas con prioridad por color y filtros.</p>
+                    <div class="tech">CSS Grid · Drag & drop lógico · JS (createElement, classList)</div>
+                    <p><a href="../proyectos_finales/proyecto_03/index.html">📄 Ver enunciado</a></p>
                 </div>
                 <div class="project-card">
-                    <h3>🎮 Club de Fans / Comunidad</h3>
-                    <p>Noticias con cards, galería de imágenes, foro estático, formulario de registro con validación y modales de Bootstrap.</p>
-                    <div class="tech">Bootstrap components · JS validación · Pestañas dinámicas · CSS personalizado</div>
+                    <h3>💰 Gestor de Gastos Personales</h3>
+                    <p>Control financiero con registro de ingresos/gastos, balance general, filtros por tipo y categoría, desglose dinámico.</p>
+                    <div class="tech">Formularios dinámicos · Tablas · JS (reduce, filter, map)</div>
+                    <p><a href="../proyectos_finales/proyecto_04/index.html">📄 Ver enunciado</a></p>
                 </div>
                 <div class="project-card">
-                    <h3>🍳 Página de Recetas de Cocina</h3>
-                    <p>Grid de recetas destacadas, página detallada con lista ingredientes, tabla nutricional, buscador en JS que filtre recetas.</p>
-                    <div class="tech">Listas, tablas, Flexbox · JavaScript (filtro) · Formulario envío recetas</div>
+                    <h3>❓ Quiz Interactivo</h3>
+                    <p>Plataforma de cuestionarios con múltiples categorías, temporizador por pregunta, puntuación dinámica y retroalimentación visual.</p>
+                    <div class="tech">Multi-pantalla · Temporizador (setInterval) · JS (objetos, array methods)</div>
+                    <p><a href="../proyectos_finales/proyecto_05/index.html">📄 Ver enunciado</a></p>
                 </div>
             </div>
         </div>
@@ -318,7 +338,7 @@
     </div>
 
     <div class="footer">
-        <p>Plan de Clase basado en el sílabo INI04 - Introducción al Desarrollo Web | 18 sesiones de 4 horas | Proyecto final colaborativo con publicación en GitHub Pages</p>
+        <p>Plan de Clase basado en el sílabo INI04 - Introducción al Desarrollo Web | 14 sesiones de 4 horas | Proyecto final colaborativo con 5 proyectos predefinidos</p>
         <p>📧 Material diseñado para fines académicos | Adaptable según necesidades del grupo</p>
     </div>
 </div>

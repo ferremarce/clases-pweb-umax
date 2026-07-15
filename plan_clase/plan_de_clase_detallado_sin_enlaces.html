@@ -136,6 +136,16 @@
             font-weight: 600;
         }
 
+        .badge-completado {
+            background: #d4edda;
+            color: #155724;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
         .session-body {
             padding: 25px;
         }
@@ -270,18 +280,18 @@
 <body>
     <div class="container" id="planClaseContent">
         <div class="header">
-            <h1>Plan de Clase Detallado - INI04</h1>
-            <div class="subtitle">Introducción al Desarrollo Web | 18 sesiones de 4 horas</div>
+            <h1>📚 Plan de Clase Detallado - INI04</h1>
+            <div class="subtitle">Introducción al Desarrollo Web | 14 sesiones de 4 horas</div>
             <div class="meta">
-                <span>18 sesiones</span>
-                <span>4 horas / sesión</span>
-                <span>Total: 72 horas presenciales</span>
-                <span>Enfoque teórico-práctico</span>
+                <span>📅 14 sesiones</span>
+                <span>⏱️ 4 horas / sesión</span>
+                <span>🎓 Total: 56 horas presenciales</span>
+                <span>💻 Enfoque teórico-práctico</span>
             </div>
         </div>
 
         <div class="content">
-            <h2>Desarrollo detallado de las 18 sesiones</h2>
+            <h2>📖 Desarrollo detallado de las 14 sesiones</h2>
             <p>Cada sesión de 4 horas está estructurada para maximizar el aprendizaje combinando fundamentos, ejemplos
                 en vivo, ejercicios prácticos y avance del proyecto final. A continuación se despliega el contenido
                 específico por sesión en formato de viñetas.</p>
@@ -292,11 +302,13 @@
                     <div class="session-header">
                         <span class="session-number">Sesión 1</span>
                         <span class="session-title">Fundamentos de la Web y Entorno de Trabajo</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad I</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>Conceptos básicos: qué es Internet, diferencia entre web, servidor, cliente, navegador.</li>
+                            <li>Conceptos básicos: ¿Qué es Internet? Diferencia entre web, servidor, cliente, navegador.</li>
                             <li>Historia breve de la web: Web 1.0, 2.0, estándares W3C.</li>
                             <li>Instalación y configuración de Visual Studio Code (extensiones: Live Server, Prettier, Auto Rename Tag).</li>
                             <li>Estructura básica de un documento HTML: doctype, html, head, body.</li>
@@ -305,9 +317,9 @@
                             <li>Introducción a rutas de archivos y organización de carpetas para proyectos web.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1h</span> Exposición interactiva más navegación por sitios reales.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Configuración de VS Code, creación de Mi primera página con título, biografía personal y lista de hobbies. Uso de Live Server.<br>
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 1h</span> Exposición interactiva + navegación por sitios reales.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Configuración de VS Code, creación de "Mi primera página" con título, biografía personal y lista de hobbies. Uso de Live Server.<br>
                                 <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas. Tarea: investigar sobre servidores web y dominios.
                             </p>
                         </div>
@@ -319,7 +331,9 @@
                     <div class="session-header">
                         <span class="session-number">Sesión 2</span>
                         <span class="session-title">HTML I: Estructura, Texto y Listas</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad II</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -331,7 +345,7 @@
                             <li>Comentarios en HTML y organización de código.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Explicación de semántica y ejemplos comparativos.<br>
                                 <span class="badge-time">Práctica 2.5h</span> Construir página personal con estructura semántica, biografía, lista de habilidades y pasatiempos con listas anidadas.<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -345,7 +359,9 @@
                     <div class="session-header">
                         <span class="session-number">Sesión 3</span>
                         <span class="session-title">HTML II: Enlaces, Imágenes y Multimedia</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad II</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -353,14 +369,14 @@
                             <li>Enlaces internos (anclas) y navegación entre páginas.</li>
                             <li>Etiqueta img: atributos src, alt, width, height. Buenas prácticas de accesibilidad.</li>
                             <li>Formatos de imagen modernos (webp, svg).</li>
-                            <li>Inserción de audio y video con audio y video (controls, autoplay, loop).</li>
+                            <li>Inserción de audio y video con &lt;audio&gt; y &lt;video&gt; (controls, autoplay, loop).</li>
                             <li>Iframes: incrustar mapas, videos de YouTube.</li>
                             <li>Creación de una barra de navegación básica con enlaces.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1h</span> Demostración de rutas, multimedia.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Ampliar la página personal: agregar galería de imágenes, video incrustado, menú de navegación que conecte secciones internas y una página adicional acerca de.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Ampliar la página personal: agregar galería de imágenes, video incrustado, menú de navegación que conecte secciones internas y una página adicional "acerca de".<br>
                                 <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
                             </p>
                         </div>
@@ -372,20 +388,22 @@
                     <div class="session-header">
                         <span class="session-number">Sesión 4</span>
                         <span class="session-title">HTML III: Tablas y Formularios</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad II</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
                             <li>Tablas: table, tr, th, td, thead, tbody, tfoot, colspan y rowspan.</li>
                             <li>Atributos de accesibilidad en tablas (scope).</li>
-                            <li>Formularios: form, action, method GET/POST.</li>
+                            <li>Formularios: &lt;form&gt;, action, method GET/POST.</li>
                             <li>Campos: input (text, email, password, number, date, radio, checkbox), textarea, select, button.</li>
                             <li>Atributos de validación: required, minlength, pattern, placeholder.</li>
                             <li>Agrupación con fieldset y legend.</li>
                             <li>Buenas prácticas en formularios para UX.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Explicación de formularios, métodos HTTP.<br>
                                 <span class="badge-time">Práctica 2.5h</span> Crear tabla comparativa de lenguajes web. Diseñar formulario de contacto completo con validaciones HTML5 (sin JS aún).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -394,12 +412,14 @@
                     </div>
                 </div>
 
-                <!-- Sesión 5 -->
+                <!-- Sesión 5: CSS I -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 5</span>
                         <span class="session-title">CSS I: Fundamentos, Color y Texto</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad III</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -411,7 +431,7 @@
                             <li>Unidades de medida: px, em, rem, %.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1h</span> Explicación de cascada, especificidad.<br>
                                 <span class="badge-time">Práctica 2.5h</span> Tomar página personal de sesiones anteriores, crear archivo CSS externo, aplicar estilos tipográficos, colores corporativos, diseño de tarjetas.<br>
                                 <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -420,13 +440,14 @@
                     </div>
                 </div>
 
-                <!-- Sesión 6 -->
+                <!-- Sesión 6: CSS II Modelo de caja -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 6</span>
                         <span class="session-title">CSS II: Modelo de Cajas y Layouts Básicos</span>
-                        
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad III</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -438,7 +459,7 @@
                             <li>Diseño de columnas básicas con float.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Demostración de posicionamiento y floats.<br>
                                 <span class="badge-time">Práctica 2.5h</span> Maquetar un layout de dos columnas usando float. Crear header fijo sticky, sidebar flotante. Ajustar márgenes y paddings.<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -447,12 +468,14 @@
                     </div>
                 </div>
 
-                <!-- Sesión 7 -->
+                <!-- Sesión 7: Flexbox + Grid -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 7</span>
                         <span class="session-title">CSS III: Flexbox y CSS Grid</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad III</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -463,7 +486,7 @@
                             <li>Diseño responsivo con unidades fr, auto.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.5h</span> Ejemplos interactivos con Flexbox Froggy y Grid Garden.<br>
                                 <span class="badge-time">Práctica 2.2h</span> Reconstruir el layout de la página personal usando Flexbox para navbar y Grid para galería de proyectos.<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -472,13 +495,14 @@
                     </div>
                 </div>
 
-                <!-- Sesión 8 -->
+                <!-- Sesión 8: CSS IV + Responsive -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 8</span>
                         <span class="session-title">CSS IV: Formularios, Tablas y Diseño Responsivo</span>
-                        
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad III</span>
+                        <span class="badge-completado">✅ Completado</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
@@ -490,7 +514,7 @@
                             <li>Imágenes flexibles: max-width:100%.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1h</span> Media queries, ejemplos de sitios adaptables.<br>
                                 <span class="badge-time">Práctica 2.5h</span> Tomar el formulario de sesión 4 y estilizarlo con CSS avanzado. Adaptar toda la página personal para verse correctamente en móvil, tablet y escritorio.<br>
                                 <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.
@@ -499,291 +523,208 @@
                     </div>
                 </div>
 
-                <!-- Sesión 9 -->
+                <!-- Sesiones 9 a 12 JavaScript -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 9</span>
                         <span class="session-title">JavaScript I: Variables, Tipos y Operadores</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad IV</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>Introducción: qué es JS, inserción en HTML (interno/externo).</li>
+                            <li>Introducción: qué es JS, inserción en HTML (interno/externo), consola.</li>
                             <li>Declaración de variables: var, let, const, ámbito.</li>
                             <li>Tipos primitivos: string, number, boolean, null, undefined.</li>
-                            <li>Operadores aritméticos, asignación, comparación (== vs ===).</li>
+                            <li>Operadores: aritméticos, asignación, comparación (== vs ===, >, <, >=, <=), lógicos (&&, ||, !).</li>
                             <li>Interacción básica: alert, prompt, console.log.</li>
-                            <li>Conversión de tipos (coerción).</li>
+                            <li>Conversión de tipos (coerción) y comentarios en JS.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
+                            <h4>📌 Actividades (4h)</h4>
                             <p><span class="badge-time">Teoría 1.2h</span> Conceptos fundamentales con ejemplos en vivo.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Ejercicios prácticos: calculadora básica, conversor de temperatura, uso de prompt.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora básica con prompt/alert + Gestor de Tareas v1 (análisis de expresiones con operadores de comparación y lógicos).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Sesión 10 -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 10</span>
                         <span class="session-title">JavaScript II: Condicionales e Iteraciones</span>
-                        
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad IV</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
                             <li>Estructuras condicionales: if/else, else if, switch.</li>
-                            <li>Operador ternario.</li>
                             <li>Bucles: for, while, do while.</li>
-                            <li>Iterar arrays con forEach (introducción).</li>
-                            <li>Ejercicios de lógica: validación de formularios simple, tabla de multiplicar.</li>
+                            <li>Arrays: creación, acceso por índice, length, método push.</li>
+                            <li>Recorrer arrays con for y forEach.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de condicionales y bucles con ejemplos.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Desarrollar juego de adivinanza, simulación de notas, validación de contraseña con bucle. Práctica en parejas.<br>
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de condicionales, bucles y arrays con ejemplos.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora con menú (switch) + Gestor de Tareas v2 (arrays, while, forEach, objetos tarea).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Sesión 11 -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 11</span>
-                        <span class="session-title">JavaScript III: Funciones y Eventos del DOM</span>
+                        <span class="session-title">JavaScript III: Funciones</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad IV</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
                             <li>Declaración de funciones: expresión, declaración, arrow functions.</li>
-                            <li>Parámetros y retorno.</li>
-                            <li>Introducción al DOM: document, selección de elementos (getElementById, querySelector).</li>
-                            <li>Eventos: click, mouseover, submit, change. addEventListener.</li>
-                            <li>Modificar contenido y estilos desde JS.</li>
+                            <li>Parámetros con valores por defecto y retorno de valores.</li>
+                            <li>Ámbito de variables (scope): global vs local.</li>
+                            <li>Callbacks: pasar funciones como argumentos.</li>
+                            <li>Buenas prácticas: responsabilidad única, nombres descriptivos.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de funciones y eventos del DOM.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Interacción: botón que cambia color de fondo, mostrar/ocultar texto. Integrar eventos en formulario de contacto.<br>
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de funciones, scope y callbacks con ejemplos en vivo.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Calculadora con Funciones (arrow + callback para operaciones) + Gestor de Tareas v3 (refactor con funciones, callbacks para notificaciones).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Sesión 12 -->
                 <div class="session-card">
                     <div class="session-header">
                         <span class="session-number">Sesión 12</span>
-                        <span class="session-title">JavaScript IV: Manipulación DOM y Almacenamiento</span>
-                        
+                        <span class="session-title">JavaScript IV: Manipulación del DOM</span>
+                        <span class="session-exercises"><span>📝 Ejercicios</span></span>
                         <span class="session-units">Unidad IV</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>Crear y eliminar elementos dinámicamente (createElement, appendChild).</li>
-                            <li>localStorage y sessionStorage: guardar, recuperar datos.</li>
-                            <li>Proyecto práctico: Lista de tareas con agregar, eliminar y persistencia.</li>
-                            <li>Eventos de teclado y formularios avanzados.</li>
+                            <li>El DOM: representación del HTML como objetos JavaScript.</li>
+                            <li>Seleccionar elementos: getElementById, querySelector, querySelectorAll.</li>
+                            <li>Eventos del DOM: click, mouseover, keyup. addEventListener con funciones nombradas, anónimas y arrow.</li>
+                            <li>Modificar contenido: textContent, innerHTML. Leer/escribir value en inputs.</li>
+                            <li>Modificar estilos: style inline, classList.add/remove/toggle.</li>
+                            <li>Crear elementos: createElement, configurar con textContent y setAttribute.</li>
+                            <li>Agregar al DOM: appendChild, prepend, insertBefore, after.</li>
+                            <li>Eliminar elementos: remove, removeChild. Vaciar contenedores.</li>
+                            <li>Modificar atributos: getAttribute, setAttribute, dataset.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1h</span> Explicación de manipulación del DOM y almacenamiento.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Desarrollo guiado de To-Do List con localStorage. Cada estudiante sube su versión a GitHub.<br>
-                                <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sesión 13 -->
-                <div class="session-card">
-                    <div class="session-header">
-                        <span class="session-number">Sesión 13</span>
-                        <span class="session-title">Bootstrap I: Fundamentos y Grid System</span>
-                        <span class="session-units">Unidad V</span>
-                    </div>
-                    <div class="session-body">
-                        <ul class="content-list">
-                            <li>Qué es Bootstrap: ventajas, CDN vs descarga.</li>
-                            <li>Contenedores, filas, columnas, breakpoints responsivos.</li>
-                            <li>Sistema de 12 columnas, clases col-*, offset, ordering.</li>
-                            <li>Utilidades de espaciado, tipografía, colores.</li>
-                        </ul>
-                        <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1.2h</span> Explicación de Bootstrap y su sistema de grid.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Maquetar una página de inicio usando solo Bootstrap Grid sin CSS personalizado. Adaptar contenido de sesiones anteriores.<br>
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 1.5h</span> Explicación del DOM, selección, eventos, creación y eliminación de elementos con ejemplos en vivo.<br>
+                                <span class="badge-time">Práctica 2.2h</span> Calculadora Visual con DOM (inputs, botones, addEventListener, textContent) + Gestor de Tareas v4 con DOM (createElement, classList, eventos dinámicos en cada tarea).<br>
                                 <span class="badge-time">Cierre 0.3h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sesión 14 -->
+
+                <!-- Proyecto final sesiones 13 a 16 -->
                 <div class="session-card">
                     <div class="session-header">
-                        <span class="session-number">Sesión 14</span>
-                        <span class="session-title">Bootstrap II: Componentes y Formularios</span>
-                        
+                        <span class="session-number">Sesión 13</span>
+                        <span class="session-title">Proyecto Final I: Asignación y Planificación</span>
                         <span class="session-units">Unidad V</span>
                     </div>
                     <div class="session-body">
                         <ul class="content-list">
-                            <li>Componentes: Navbar, Cards, Modal, Carousel, Accordion.</li>
-                            <li>Formularios con clases de Bootstrap, validación visual.</li>
-                            <li>Iconos de Bootstrap (o Font Awesome).</li>
-                            <li>Personalización con CSS adicional.</li>
+                            <li>Presentación y asignación de los 5 proyectos finales a los grupos.</li>
+                            <li>Definición del proyecto: temática, funcionalidades, público objetivo.</li>
+                            <li>Metodología de trabajo en equipo (3 integrantes) y división de roles.</li>
+                            <li>Diseño del layout del sitio web.</li>
+                            <li>Estructura de carpetas y archivos del proyecto.</li>
+                            <li>Maquetación inicial con HTML semántico.</li>
+                            <li>Definición de entregables y rúbrica de evaluación.</li>
                         </ul>
                         <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1h</span> Explicación de componentes de Bootstrap.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Crear una página de portafolio con navbar responsivo, cards para proyectos, modal de contacto y carrusel de imágenes.<br>
-                                <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 1h</span> Presentación de los 5 proyectos y metodología de trabajo.<br>
+                                <span class="badge-time">Práctica 2.5h</span> Asignación de proyectos por grupo, diseño de layout, definición de funcionalidades y maquetación inicial.<br>
+                                <span class="badge-time">Cierre 0.5h</span> Revisión de layout y definiciones, feedback del docente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="session-card">
+                    <div class="session-header">
+                        <span class="session-number">Sesión 14</span>
+                        <span class="session-title">Proyecto Final II: Revisión por Grupo</span>
+                        <span class="session-units">Unidad V</span>
+                    </div>
+                    <div class="session-body">
+                        <ul class="content-list">
+                            <li>Revisión del proyecto de cada grupo: estructura HTML, estilos CSS y funcionalidad JS.</li>
+                            <li>Presentación del avance por grupo (5-7 min por grupo).</li>
+                            <li>Retroalimentación del docente y compañeros.</li>
+                            <li>Ajustes finales según feedback recibido.</li>
+                            <li>Preparación para la defensa y presentación final.</li>
+                            <li>Evaluación con rúbrica: HTML, CSS, JS, funcionalidad, presentación.</li>
+                        </ul>
+                        <div class="activities">
+                            <h4>📌 Actividades (4h)</h4>
+                            <p><span class="badge-time">Teoría 0.5h</span> Criterios de evaluación y estructura de la defensa.<br>
+                                <span class="badge-time">Práctica 3h</span> Revisión por grupos: cada grupo presenta su proyecto, recibe feedback y realiza ajustes finales.<br>
+                                <span class="badge-time">Cierre 0.5h</span> Resumen de feedback general y cierre del proyecto.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sesión 15 -->
-                <div class="session-card">
-                    <div class="session-header">
-                        <span class="session-number">Sesión 15</span>
-                        <span class="session-title">Inicio Proyecto Final: Planificación y Estructura</span>
-                        
-                        <span class="session-units">Unidad VI</span>
-                    </div>
-                    <div class="session-body">
-                        <ul class="content-list">
-                            <li>Formación de grupos (3-5 integrantes).</li>
-                            <li>Presentación de las propuestas de proyectos (e-commerce, blog, portafolio, etc.).</li>
-                            <li>Creación de repositorio en GitHub, asignación de roles.</li>
-                            <li>Estructura de carpetas: assets (css, js, img), páginas.</li>
-                            <li>Definir wireframes y mapa de sitio.</li>
-                            <li>Establecer milestones y entregables.</li>
-                        </ul>
-                        <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 1h</span> Presentación de opciones de proyecto y metodología de trabajo.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Los grupos discuten y eligen proyecto, crean repositorio, primer commit con estructura base, presentan idea al docente.<br>
-                                <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sesión 16 -->
-                <div class="session-card">
-                    <div class="session-header">
-                        <span class="session-number">Sesión 16</span>
-                        <span class="session-title">Desarrollo I: HTML y CSS Avanzado del Proyecto</span>
-                        <span class="session-units">Unidad VI</span>
-                    </div>
-                    <div class="session-body">
-                        <ul class="content-list">
-                            <li>Implementación de estructura semántica completa (todas las páginas).</li>
-                            <li>Estilos con CSS puro más Bootstrap (opcional).</li>
-                            <li>Diseño responsivo y pruebas en distintos dispositivos.</li>
-                            <li>Uso de variables CSS, componentes reutilizables.</li>
-                        </ul>
-                        <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 0.5h</span> Repaso de HTML/CSS avanzado y mejores prácticas.<br>
-                                <span class="badge-time">Práctica 3h</span> Trabajo colaborativo en el código, mentoría docente, integración de ramas Git. Avance de al menos 60% del frontend estático.<br>
-                                <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sesión 17 -->
-                <div class="session-card">
-                    <div class="session-header">
-                        <span class="session-number">Sesión 17</span>
-                        <span class="session-title">Desarrollo II: JavaScript e Interactividad</span>
-                        <span class="session-units">Unidad VI</span>
-                    </div>
-                    <div class="session-body">
-                        <ul class="content-list">
-                            <li>Validación de formularios con JS personalizado.</li>
-                            <li>Funcionalidades dinámicas: carrito de compras (localStorage), filtros de catálogo, menús interactivos.</li>
-                            <li>Uso de eventos, manipulación del DOM.</li>
-                            <li>Pruebas de funcionalidad y corrección de errores.</li>
-                        </ul>
-                        <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 0.5h</span> Repaso de JavaScript y conceptos de interactividad.<br>
-                                <span class="badge-time">Práctica 3h</span> Cada grupo implementa las características dinámicas según su temática. Integración final con el HTML/CSS.<br>
-                                <span class="badge-time">Cierre 0.5h</span> Revisión del código de los ejercicios, presentación del funcionamiento y discusión de lecciones aprendidas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sesión 18 -->
-                <div class="session-card">
-                    <div class="session-header">
-                        <span class="session-number">Sesión 18</span>
-                        <span class="session-title">Publicación, Presentación y Evaluación Final</span>
-                        <span class="session-units">Unidad VI</span>
-                    </div>
-                    <div class="session-body">
-                        <ul class="content-list">
-                            <li>Despliegue en GitHub Pages: configuración, dominio personalizado opcional.</li>
-                            <li>Preparación de presentación (5-7 minutos por grupo).</li>
-                            <li>Demostración en vivo, explicación de decisiones técnicas.</li>
-                            <li>Evaluación con rúbrica: código, diseño, funcionalidad, colaboración Git, presentación.</li>
-                            <li>Feedback y cierre del curso.</li>
-                        </ul>
-                        <div class="activities">
-                            <h4>Actividades (4h)</h4>
-                            <p><span class="badge-time">Teoría 0.5h</span> Repaso general y preparación para presentaciones.<br>
-                                <span class="badge-time">Práctica 2.5h</span> Presentaciones grupales, revisión de proyectos, entrega de link final.<br>
-                                <span class="badge-time">Cierre 1h</span> Revisión del código de los proyectos, presentación final y discusión de lecciones aprendidas. Coevaluación y autoevaluación.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="recommendation">
-                <h3>Recomendaciones metodológicas</h3>
+                <h3>📌 Recomendaciones metodológicas</h3>
                 <p>Para un correcto aprovechamiento de las 4 horas, se recomienda fraccionar cada sesión en bloques de
                     50-60 minutos con pausas activas. Se sugiere utilizar plataformas colaborativas (GitHub Classroom,
-                    Google Drive) y realizar revisiones semanales de avance. El proyecto final debe ser incremental, con
-                    entregas parciales en las sesiones 15, 16 y 17 para retroalimentación temprana.</p>
+                    Google Drive) y realizar revisiones semanales de avance. El proyecto final se desarrolla en las sesiones 13 (asignación y planificación) y 14 (revisión por grupo y defensa).</p>
             </div>
 
             <div class="projects-section">
-                <h2>Proyectos Sugeridos (para grupos)</h2>
+                <h2>💡 Proyectos Finales Disponibles</h2>
+                <p>Cada grupo (3 integrantes) recibirá uno de los siguientes proyectos. Todos los proyectos trabajan exclusivamente con <strong>HTML5, CSS3 y JavaScript (ES6+)</strong>, sin librerías externas. Los enunciados completos están disponibles en la carpeta <code>proyectos_finales/</code>.</p>
                 <div class="project-grid">
                     <div class="project-card">
-                        <h3>Portafolio Personal Avanzado</h3>
-                        <p>Galería filtrable, formulario validado, diseño responsivo y modo oscuro con JS.</p>
+                        <h3>🛒 Tienda Online</h3>
+                        <p>Catálogo de productos con filtros por categoría, carrito de compras y formulario de checkout con validación. Grid responsivo para productos.</p>
+                        <div class="tech">HTML semántico · CSS Grid/Flexbox · JS (DOM, arrays, eventos)</div>
                     </div>
                     <div class="project-card">
-                        <h3>Guía de Viajes</h3>
-                        <p>Blog con destinos, tabla de precios, mapa interactivo y newsletter.</p>
+                        <h3>📊 Sistema de Gestión de Notas</h3>
+                        <p>Registro de estudiantes y notas, cálculo de promedios, reportes de rendimiento con tabla dinámica y sección de estadísticas.</p>
+                        <div class="tech">Formularios · Tablas semánticas · JS (arrays, funciones)</div>
                     </div>
                     <div class="project-card">
-                        <h3>Tienda de Música</h3>
-                        <p>Catálogo, carrito con localStorage, checkout simulado y detalles de producto.</p>
+                        <h3>📋 Tablero Kanban</h3>
+                        <p>Tablero tipo Trello con 3 columnas (Pendiente, En Progreso, Completado), tarjetas con prioridad por color y filtros.</p>
+                        <div class="tech">CSS Grid · Drag & drop lógico · JS (createElement, classList)</div>
                     </div>
                     <div class="project-card">
-                        <h3>Comunidad Gamer</h3>
-                        <p>Foro estático, noticias, galería y sistema de registro con validación.</p>
+                        <h3>💰 Gestor de Gastos Personales</h3>
+                        <p>Control financiero con registro de ingresos/gastos, balance general, filtros por tipo y categoría, desglose dinámico.</p>
+                        <div class="tech">Formularios dinámicos · Tablas · JS (reduce, filter, map)</div>
+                    </div>
+                    <div class="project-card">
+                        <h3>❓ Quiz Interactivo</h3>
+                        <p>Plataforma de cuestionarios con múltiples categorías, temporizador por pregunta, puntuación dinámica y retroalimentación visual.</p>
+                        <div class="tech">Multi-pantalla · Temporizador (setInterval) · JS (objetos, array methods)</div>
                     </div>
                 </div>
             </div>
 
             <div class="bibliography">
-                <h2>Bibliografía Base</h2>
+                <h2>📚 Bibliografía Base</h2>
                 <ul>
-                    <li>Aubry, C. (2014). HTML5 y CSS3: Domine los estándares de creación de sitios web (2ª ed.). ENI.</li>
-                    <li>Duckett, J. (2024). HTML & CSS: Diseño y construcción de sitios web. Anaya Multimedia.</li>
-                    <li>Matarazzo, D. (2018). Aprenda los lenguajes HTML5, CSS3 y JavaScript para crear su primer sitio web. ENI.</li>
-                    <li>Flanagan, D. (2020). JavaScript: The Definitive Guide. OReillyilly.</li>
+                    <li>Aubry, C. (2014). <em>HTML5 y CSS3: Domine los estándares de creación de sitios web</em> (2ª ed.). ENI.</li>
+                    <li>Duckett, J. (2024). <em>HTML & CSS: Diseño y construcción de sitios web</em>. Anaya Multimedia.</li>
+                    <li>Matarazzo, D. (2018). <em>Aprenda los lenguajes HTML5, CSS3 y JavaScript para crear su primer sitio web</em>. ENI.</li>
+                    <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide</em>. O'Reilly.</li>
                 </ul>
             </div>
         </div>
         <div class="footer">
-            <p>Plan de Clase detallado - INI04 Introducción al Desarrollo Web | 18 sesiones de 4h | Proyecto final integrador con Git y GitHub Pages</p>
-            <p>Material diseñado para fines académicos | Adaptable según necesidades del grupo</p>
+            <p>Plan de Clase detallado - INI04 Introducción al Desarrollo Web | 14 sesiones de 4h | Proyecto final integrador con Git y GitHub Pages</p>
+            <p>📧 Material diseñado para fines académicos | Adaptable según necesidades del grupo</p>
         </div>
     </div>
 </body>
